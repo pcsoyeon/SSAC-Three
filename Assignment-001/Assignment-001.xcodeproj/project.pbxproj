@@ -15,6 +15,7 @@
 		926C7E3E2884AEE600C0D3B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926C7E3C2884AEE600C0D3B4 /* LaunchScreen.storyboard */; };
 		926C7E482884AF7B00C0D3B4 /* Movie.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926C7E472884AF7B00C0D3B4 /* Movie.xcassets */; };
 		926C7E4A2884AFB000C0D3B4 /* Food.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926C7E492884AFB000C0D3B4 /* Food.xcassets */; };
+		926C7E4C2884B9CE00C0D3B4 /* BaeminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C7E4B2884B9CE00C0D3B4 /* BaeminViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		926C7E3F2884AEE600C0D3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		926C7E472884AF7B00C0D3B4 /* Movie.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Movie.xcassets; sourceTree = "<group>"; };
 		926C7E492884AFB000C0D3B4 /* Food.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Food.xcassets; sourceTree = "<group>"; };
+		926C7E4B2884B9CE00C0D3B4 /* BaeminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaeminViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				926C7E3F2884AEE600C0D3B4 /* Info.plist */,
 				926C7E472884AF7B00C0D3B4 /* Movie.xcassets */,
 				926C7E492884AFB000C0D3B4 /* Food.xcassets */,
+				926C7E4B2884B9CE00C0D3B4 /* BaeminViewController.swift */,
 			);
 			path = "Assignment-001";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926C7E4C2884B9CE00C0D3B4 /* BaeminViewController.swift in Sources */,
 				926C7E362884AEE400C0D3B4 /* ViewController.swift in Sources */,
 				926C7E322884AEE400C0D3B4 /* AppDelegate.swift in Sources */,
 				926C7E342884AEE400C0D3B4 /* SceneDelegate.swift in Sources */,
