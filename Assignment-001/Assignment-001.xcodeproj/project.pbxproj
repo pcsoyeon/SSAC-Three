@@ -13,6 +13,8 @@
 		926C7E392884AEE400C0D3B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926C7E372884AEE400C0D3B4 /* Main.storyboard */; };
 		926C7E3B2884AEE600C0D3B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926C7E3A2884AEE600C0D3B4 /* Assets.xcassets */; };
 		926C7E3E2884AEE600C0D3B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926C7E3C2884AEE600C0D3B4 /* LaunchScreen.storyboard */; };
+		926C7E482884AF7B00C0D3B4 /* Movie.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926C7E472884AF7B00C0D3B4 /* Movie.xcassets */; };
+		926C7E4A2884AFB000C0D3B4 /* Food.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926C7E492884AFB000C0D3B4 /* Food.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		926C7E3A2884AEE600C0D3B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		926C7E3D2884AEE600C0D3B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		926C7E3F2884AEE600C0D3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		926C7E472884AF7B00C0D3B4 /* Movie.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Movie.xcassets; sourceTree = "<group>"; };
+		926C7E492884AFB000C0D3B4 /* Food.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Food.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				926C7E3A2884AEE600C0D3B4 /* Assets.xcassets */,
 				926C7E3C2884AEE600C0D3B4 /* LaunchScreen.storyboard */,
 				926C7E3F2884AEE600C0D3B4 /* Info.plist */,
+				926C7E472884AF7B00C0D3B4 /* Movie.xcassets */,
+				926C7E492884AFB000C0D3B4 /* Food.xcassets */,
 			);
 			path = "Assignment-001";
 			sourceTree = "<group>";
@@ -127,7 +133,9 @@
 			files = (
 				926C7E3E2884AEE600C0D3B4 /* LaunchScreen.storyboard in Resources */,
 				926C7E3B2884AEE600C0D3B4 /* Assets.xcassets in Resources */,
+				926C7E482884AF7B00C0D3B4 /* Movie.xcassets in Resources */,
 				926C7E392884AEE400C0D3B4 /* Main.storyboard in Resources */,
+				926C7E4A2884AFB000C0D3B4 /* Food.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
