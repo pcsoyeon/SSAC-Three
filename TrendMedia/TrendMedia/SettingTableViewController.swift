@@ -66,14 +66,17 @@ class SettingTableViewController: UITableViewController {
             cell.textLabel?.text = birthdayFriends[indexPath.row]
             cell.textLabel?.textColor = .systemPink
             cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            cell.selectionStyle = .none
         } else if indexPath.section == 1 {
             cell.textLabel?.text = "1번 인덱스 텍스트"
             cell.textLabel?.textColor = .systemMint
             cell.textLabel?.font = .italicSystemFont(ofSize: 25)
+            cell.selectionStyle = .none
         } else {
             cell.textLabel?.text = "김후리방구"
             cell.textLabel?.textColor = .systemGray
             cell.textLabel?.font = .boldSystemFont(ofSize: 15)
+            cell.selectionStyle = .none
         }
         
         return cell
