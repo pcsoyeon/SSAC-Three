@@ -33,7 +33,7 @@ class SearchCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as! SearchCollectionViewCell
-        cell.configureCell()
+        cell.configureCell(bookInfo.book[indexPath.item])
         return cell
     }
 }

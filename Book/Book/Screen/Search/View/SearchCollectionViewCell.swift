@@ -16,7 +16,13 @@ class SearchCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var coverImageView: UIImageView!
     
-    func configureCell() {
+    func configureCell(_ data: Book) {
+        backView.backgroundColor = .systemPink
         
+        titleLabel.text = data.title
+        
+        authorLabel.text = data.author
+        
+        coverImageView.image = UIImage(named: data.cover)
     }
 }
