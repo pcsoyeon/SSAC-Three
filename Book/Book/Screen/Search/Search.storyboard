@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Collection View Controller-->
+        <!--SearchCollectionViewController-->
         <scene sceneID="c4W-Qw-JA1">
             <objects>
-                <collectionViewController id="Y5f-0n-yfc" customClass="SearchCollectionViewController" customModule="Book" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="SearchCollectionViewController" title="SearchCollectionViewController" id="Y5f-0n-yfc" customClass="SearchCollectionViewController" customModule="Book" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hG6-x5-vYX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,8 +34,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxb-NM-YUX">
-                                                    <rect key="frame" x="10" y="10" width="44.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <rect key="frame" x="10" y="10" width="43.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -45,11 +45,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-nO-0Db">
-                                                    <rect key="frame" x="72" y="55" width="120" height="145"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-nO-0Db">
+                                                    <rect key="frame" x="92" y="80" width="100" height="120"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="Evc-Ep-agm"/>
-                                                        <constraint firstAttribute="height" constant="145" id="pbF-C9-qpU"/>
+                                                        <constraint firstAttribute="width" constant="100" id="Evc-Ep-agm"/>
+                                                        <constraint firstAttribute="height" constant="120" id="pbF-C9-qpU"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>

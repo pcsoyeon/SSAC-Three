@@ -14,12 +14,12 @@ class SearchCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "MY MEDIA"
+        title = ""
         
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 8
-        let width = UIScreen.main.bounds.width - (spacing * 4)
-        layout.itemSize = CGSize(width: width / 2, height: (width / 3) * 1.2)
+        let width = UIScreen.main.bounds.width - (spacing * 3)
+        layout.itemSize = CGSize(width: width / 2, height: width / 2)
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing

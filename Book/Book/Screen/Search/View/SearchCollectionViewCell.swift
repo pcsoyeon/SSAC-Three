@@ -17,7 +17,10 @@ class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var coverImageView: UIImageView!
     
     func configureCell(_ data: Book) {
-        backView.backgroundColor = .systemPink
+        contentView.layer.cornerRadius = 10
+        contentView.layer.masksToBounds = true
+        
+        backView.backgroundColor = data.backgroundColor
         
         titleLabel.text = data.title
         
