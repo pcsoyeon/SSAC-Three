@@ -22,6 +22,9 @@
 		92A86E542887D7D400957F08 /* SearchTrendMedia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A86E532887D7D400957F08 /* SearchTrendMedia.storyboard */; };
 		92A86E582887D8FC00957F08 /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E572887D8FC00957F08 /* ShoppingListTableViewCell.swift */; };
 		92A86E5A2887D92100957F08 /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E592887D92100957F08 /* ShoppingListTableViewController.swift */; };
+		92A86E5E2887DF2C00957F08 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E5D2887DF2C00957F08 /* SearchTableViewCell.swift */; };
+		92A86E602887E11300957F08 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E5F2887E11300957F08 /* SearchTableViewController.swift */; };
+		92A86E632887E5EB00957F08 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E622887E5EB00957F08 /* MovieInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		92A86E532887D7D400957F08 /* SearchTrendMedia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTrendMedia.storyboard; sourceTree = "<group>"; };
 		92A86E572887D8FC00957F08 /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
 		92A86E592887D92100957F08 /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
+		92A86E5D2887DF2C00957F08 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		92A86E5F2887E11300957F08 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		92A86E622887E5EB00957F08 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				92A86E532887D7D400957F08 /* SearchTrendMedia.storyboard */,
+				92A86E612887E5D800957F08 /* Model */,
+				92A86E5C2887DF1C00957F08 /* View */,
+				92A86E5B2887DF1500957F08 /* Controller */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -210,6 +219,30 @@
 				92A86E572887D8FC00957F08 /* ShoppingListTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		92A86E5B2887DF1500957F08 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92A86E5F2887E11300957F08 /* SearchTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		92A86E5C2887DF1C00957F08 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92A86E5D2887DF2C00957F08 /* SearchTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92A86E612887E5D800957F08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92A86E622887E5EB00957F08 /* MovieInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,10 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A86E292887A9BC00957F08 /* MainViewController.swift in Sources */,
+				92A86E602887E11300957F08 /* SearchTableViewController.swift in Sources */,
 				92A86E252887A9BC00957F08 /* AppDelegate.swift in Sources */,
 				92A86E272887A9BC00957F08 /* SceneDelegate.swift in Sources */,
 				92A86E5A2887D92100957F08 /* ShoppingListTableViewController.swift in Sources */,
 				92A86E582887D8FC00957F08 /* ShoppingListTableViewCell.swift in Sources */,
+				92A86E632887E5EB00957F08 /* MovieInfo.swift in Sources */,
+				92A86E5E2887DF2C00957F08 /* SearchTableViewCell.swift in Sources */,
 				92A86E482887AB8600957F08 /* RecommandCollectionViewCell.swift in Sources */,
 				92A86E3D2887A9F000957F08 /* RecommandCollectionViewController.swift in Sources */,
 			);
@@ -452,7 +488,7 @@
 				INFOPLIST_FILE = TrendMedia/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ShoppingList;
+				INFOPLIST_KEY_UIMainStoryboardFile = SearchTrendMedia;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,7 +516,7 @@
 				INFOPLIST_FILE = TrendMedia/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ShoppingList;
+				INFOPLIST_KEY_UIMainStoryboardFile = SearchTrendMedia;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
