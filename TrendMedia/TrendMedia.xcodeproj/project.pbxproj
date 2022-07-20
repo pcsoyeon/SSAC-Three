@@ -15,6 +15,7 @@
 		926C7E862884DDF200C0D3B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926C7E842884DDF200C0D3B4 /* LaunchScreen.storyboard */; };
 		926C7E8E2884F13800C0D3B4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926C7E8D2884F13800C0D3B4 /* Home.storyboard */; };
 		926C7E902884FE3400C0D3B4 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C7E8F2884FE3400C0D3B4 /* SettingTableViewController.swift */; };
+		92A86E0B28877E7A00957F08 /* TrendMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E0A28877E7A00957F08 /* TrendMediaTableViewCell.swift */; };
 		92F1678C2885D64E003119FA /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F1678B2885D64E003119FA /* Setting.storyboard */; };
 		92F1678E2885DC6D003119FA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1678D2885DC6D003119FA /* SettingViewController.swift */; };
 		92F167902886367A003119FA /* MySettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1678F2886367A003119FA /* MySettingTableViewController.swift */; };
@@ -27,6 +28,7 @@
 		92F1679F28864796003119FA /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1679E28864796003119FA /* UITextField+Extension.swift */; };
 		92F167A128864B86003119FA /* BucketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F167A028864B86003119FA /* BucketListViewController.swift */; };
 		92F167A328864D99003119FA /* BucketListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F167A228864D99003119FA /* BucketListTableViewCell.swift */; };
+		92F167A52886822A003119FA /* TrendMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F167A42886822A003119FA /* TrendMediaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		926C7E872884DDF200C0D3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		926C7E8D2884F13800C0D3B4 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		926C7E8F2884FE3400C0D3B4 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		92A86E0A28877E7A00957F08 /* TrendMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMediaTableViewCell.swift; sourceTree = "<group>"; };
 		92F1678B2885D64E003119FA /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		92F1678D2885DC6D003119FA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		92F1678F2886367A003119FA /* MySettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingTableViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		92F1679E28864796003119FA /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		92F167A028864B86003119FA /* BucketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListViewController.swift; sourceTree = "<group>"; };
 		92F167A228864D99003119FA /* BucketListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListTableViewCell.swift; sourceTree = "<group>"; };
+		92F167A42886822A003119FA /* TrendMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMediaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,14 +88,11 @@
 		926C7E782884DDF000C0D3B4 /* TrendMedia */ = {
 			isa = PBXGroup;
 			children = (
-				92F1679728864090003119FA /* TrendMedia */,
-				926C7E792884DDF000C0D3B4 /* AppDelegate.swift */,
-				926C7E7B2884DDF000C0D3B4 /* SceneDelegate.swift */,
-				926C7E7D2884DDF000C0D3B4 /* ViewController.swift */,
-				926C7E7F2884DDF100C0D3B4 /* Main.storyboard */,
-				926C7E822884DDF200C0D3B4 /* Assets.xcassets */,
-				926C7E842884DDF200C0D3B4 /* LaunchScreen.storyboard */,
 				926C7E872884DDF200C0D3B4 /* Info.plist */,
+				92F167A728868353003119FA /* Resource */,
+				92F167A628868348003119FA /* Support */,
+				92F1679728864090003119FA /* TrendMedia */,
+				926C7E7D2884DDF000C0D3B4 /* ViewController.swift */,
 				926C7E8D2884F13800C0D3B4 /* Home.storyboard */,
 				926C7E8F2884FE3400C0D3B4 /* SettingTableViewController.swift */,
 				92F1678D2885DC6D003119FA /* SettingViewController.swift */,
@@ -113,8 +114,29 @@
 				92F1679E28864796003119FA /* UITextField+Extension.swift */,
 				92F167A028864B86003119FA /* BucketListViewController.swift */,
 				92F167A228864D99003119FA /* BucketListTableViewCell.swift */,
+				92F167A42886822A003119FA /* TrendMediaViewController.swift */,
+				92A86E0A28877E7A00957F08 /* TrendMediaTableViewCell.swift */,
 			);
 			path = TrendMedia;
+			sourceTree = "<group>";
+		};
+		92F167A628868348003119FA /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				926C7E792884DDF000C0D3B4 /* AppDelegate.swift */,
+				926C7E7B2884DDF000C0D3B4 /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		92F167A728868353003119FA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				926C7E7F2884DDF100C0D3B4 /* Main.storyboard */,
+				926C7E822884DDF200C0D3B4 /* Assets.xcassets */,
+				926C7E842884DDF200C0D3B4 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +217,7 @@
 			files = (
 				92F167902886367A003119FA /* MySettingTableViewController.swift in Sources */,
 				92F1678E2885DC6D003119FA /* SettingViewController.swift in Sources */,
+				92A86E0B28877E7A00957F08 /* TrendMediaTableViewCell.swift in Sources */,
 				92F1679B2886440D003119FA /* SearchViewController.swift in Sources */,
 				926C7E902884FE3400C0D3B4 /* SettingTableViewController.swift in Sources */,
 				926C7E7E2884DDF000C0D3B4 /* ViewController.swift in Sources */,
@@ -204,6 +227,7 @@
 				926C7E7A2884DDF000C0D3B4 /* AppDelegate.swift in Sources */,
 				92F167A328864D99003119FA /* BucketListTableViewCell.swift in Sources */,
 				92F167A128864B86003119FA /* BucketListViewController.swift in Sources */,
+				92F167A52886822A003119FA /* TrendMediaViewController.swift in Sources */,
 				926C7E7C2884DDF000C0D3B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
