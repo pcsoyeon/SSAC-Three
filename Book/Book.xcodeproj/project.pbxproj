@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9210A21A28891FA9000DCCD1 /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9210A21928891FA9000DCCD1 /* SearchBookViewController.swift */; };
 		92A86E712887EB6700957F08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E702887EB6700957F08 /* AppDelegate.swift */; };
 		92A86E732887EB6700957F08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E722887EB6700957F08 /* SceneDelegate.swift */; };
 		92A86E752887EB6700957F08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E742887EB6700957F08 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9210A21928891FA9000DCCD1 /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 		92A86E6D2887EB6700957F08 /* Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Book.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A86E702887EB6700957F08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92A86E722887EB6700957F08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				92A86E8A2887EE8700957F08 /* SearchCollectionViewController.swift */,
+				9210A21928891FA9000DCCD1 /* SearchBookViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A86E922887EF5D00957F08 /* IntroViewController.swift in Sources */,
+				9210A21A28891FA9000DCCD1 /* SearchBookViewController.swift in Sources */,
 				92A86E752887EB6700957F08 /* ViewController.swift in Sources */,
 				92A86E962887F01A00957F08 /* SearchCollectionViewCell.swift in Sources */,
 				92A86E712887EB6700957F08 /* AppDelegate.swift in Sources */,
