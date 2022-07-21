@@ -26,6 +26,14 @@ class ShoppingListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "쇼핑 리스트"
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonDidTap))
+    }
+    
+    @objc func closeButtonDidTap() {
+        dismiss(animated: true)
     }
     
     // MARK: - IB Actions

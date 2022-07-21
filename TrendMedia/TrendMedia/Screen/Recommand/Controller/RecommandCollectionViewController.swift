@@ -12,6 +12,8 @@ import Toast
 
 class RecommandCollectionViewController: UICollectionViewController {
     
+    static let identifier = "RecommandCollectionViewController"
+    
     var imageURL = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MDNfMjEy%2FMDAxNjUxNTM0MzM1NzEw.lyWEtzsHMuc34Trm9wER2yufxNp6JTyA1Zz02HgYaf4g.k7p0kBS1M_PhPlcQBYJ-y6bBRN_YiCeZNXimt1g1EtYg.JPEG.pieceofmarch%2FIMG_6006.jpg&type=sc960_832"
 
     override func viewDidLoad() {

@@ -17,7 +17,6 @@ class SearchTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     // MARK: - Protocol
@@ -34,5 +33,12 @@ class SearchTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height / 6
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Recommand", bundle: nil)
+        let viewcontroller = storyboard.instantiateViewController(withIdentifier: RecommandCollectionViewController.identifier) as! RecommandCollectionViewController
+        
+        navigationController?.pushViewController(viewcontroller, animated: true)
     }
 }
