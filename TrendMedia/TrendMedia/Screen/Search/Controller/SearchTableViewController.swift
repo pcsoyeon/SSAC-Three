@@ -23,7 +23,7 @@ class SearchTableViewController: UITableViewController {
     // MARK: - Protocol
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
         cell.configureCell(data: movieInfo.movie[indexPath.row])
         return cell
     }

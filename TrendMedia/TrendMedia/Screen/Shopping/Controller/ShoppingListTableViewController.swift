@@ -34,7 +34,17 @@ class ShoppingListTableViewController: UITableViewController {
     }
     
     @IBAction func addButtonDidTap(_ sender: UIButton) {
-        self.shoppingList.append(inputTextField.text!)
+        // if let 구문으로
+        if let text = inputTextField.text {
+            self.shoppingList.append(text)
+            self.tableView.reloadData()
+        } else {
+            view.makeToast("값이 없습니다.")
+        }
+        
+        // guard 구문으로
+        guard let text = inputTextField.text else { return }
+        self.shoppingList.append(text)
         self.tableView.reloadData()
     }
     

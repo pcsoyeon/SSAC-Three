@@ -8,6 +8,7 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
+    static let identifier = "SearchTableViewCell"
     
     @IBOutlet weak var posterImageView: UIImageView!
     
