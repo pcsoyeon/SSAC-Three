@@ -9,6 +9,8 @@ import UIKit
 
 class ShoppingListTableViewController: UITableViewController {
     
+    static let identifier = "ShoppingListTableViewController"
+    
     // MARK: - Property
     
     private var shoppingList = ["매직 키보드 구매",

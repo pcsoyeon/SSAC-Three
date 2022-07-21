@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921CB3DA2888E70600240DB5 /* Trend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921CB3D92888E70600240DB5 /* Trend.storyboard */; };
+		921CB3DE2888E75D00240DB5 /* TrendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921CB3DD2888E75D00240DB5 /* TrendTableViewController.swift */; };
 		92A86E252887A9BC00957F08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E242887A9BC00957F08 /* AppDelegate.swift */; };
 		92A86E272887A9BC00957F08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E262887A9BC00957F08 /* SceneDelegate.swift */; };
 		92A86E292887A9BC00957F08 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E282887A9BC00957F08 /* MainViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		921CB3D92888E70600240DB5 /* Trend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trend.storyboard; sourceTree = "<group>"; };
+		921CB3DD2888E75D00240DB5 /* TrendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewController.swift; sourceTree = "<group>"; };
 		92A86E212887A9BC00957F08 /* TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A86E242887A9BC00957F08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92A86E262887A9BC00957F08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921CB3D82888E6FE00240DB5 /* Trend */ = {
+			isa = PBXGroup;
+			children = (
+				921CB3D92888E70600240DB5 /* Trend.storyboard */,
+				921CB3DC2888E74800240DB5 /* View */,
+				921CB3DB2888E74300240DB5 /* Controller */,
+			);
+			path = Trend;
+			sourceTree = "<group>";
+		};
+		921CB3DB2888E74300240DB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				921CB3DD2888E75D00240DB5 /* TrendTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		921CB3DC2888E74800240DB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		92A86E182887A9BC00957F08 = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +138,9 @@
 		92A86E3A2887A9D900957F08 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				921CB3D82888E6FE00240DB5 /* Trend */,
 				92A86E522887D7C300957F08 /* Shopping */,
-				92A86E4F2887D78300957F08 /* Search */,
+				92A86E4F2887D78300957F08 /* SearchTrend */,
 				92A86E452887AAA700957F08 /* Main */,
 				92A86E3B2887A9E200957F08 /* Recommand */,
 			);
@@ -184,7 +214,7 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		92A86E4F2887D78300957F08 /* Search */ = {
+		92A86E4F2887D78300957F08 /* SearchTrend */ = {
 			isa = PBXGroup;
 			children = (
 				92A86E532887D7D400957F08 /* SearchTrendMedia.storyboard */,
@@ -192,7 +222,7 @@
 				92A86E5C2887DF1C00957F08 /* View */,
 				92A86E5B2887DF1500957F08 /* Controller */,
 			);
-			path = Search;
+			path = SearchTrend;
 			sourceTree = "<group>";
 		};
 		92A86E522887D7C300957F08 /* Shopping */ = {
@@ -311,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921CB3DA2888E70600240DB5 /* Trend.storyboard in Resources */,
 				92A86E312887A9BE00957F08 /* LaunchScreen.storyboard in Resources */,
 				92A86E542887D7D400957F08 /* SearchTrendMedia.storyboard in Resources */,
 				92A86E512887D7BF00957F08 /* ShoppingList.storyboard in Resources */,
@@ -336,6 +367,7 @@
 				92A86E632887E5EB00957F08 /* MovieInfo.swift in Sources */,
 				92A86E5E2887DF2C00957F08 /* SearchTableViewCell.swift in Sources */,
 				92A86E482887AB8600957F08 /* RecommandCollectionViewCell.swift in Sources */,
+				921CB3DE2888E75D00240DB5 /* TrendTableViewController.swift in Sources */,
 				92A86E3D2887A9F000957F08 /* RecommandCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +520,7 @@
 				INFOPLIST_FILE = TrendMedia/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SearchTrendMedia;
+				INFOPLIST_KEY_UIMainStoryboardFile = Trend;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -516,7 +548,7 @@
 				INFOPLIST_FILE = TrendMedia/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SearchTrendMedia;
+				INFOPLIST_KEY_UIMainStoryboardFile = Trend;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
