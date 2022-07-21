@@ -59,4 +59,9 @@ final class SearchCollectionViewController: UICollectionViewController {
         cell.configureCell(bookInfo.book[indexPath.item])
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: BookDetailViewController.identifier) as? BookDetailViewController else { return }
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
