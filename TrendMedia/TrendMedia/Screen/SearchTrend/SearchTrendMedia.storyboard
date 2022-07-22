@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="646.37681159420299" y="66.964285714285708"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--UINavigationViewController-->
         <scene sceneID="Is2-UJ-I0F">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mKZ-Kl-NQ9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationViewController" title="UINavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="mKZ-Kl-NQ9" customClass="UINavigationViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="U7M-hr-19K">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

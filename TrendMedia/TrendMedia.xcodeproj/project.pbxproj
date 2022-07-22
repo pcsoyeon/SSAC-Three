@@ -27,6 +27,7 @@
 		92A86E5E2887DF2C00957F08 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E5D2887DF2C00957F08 /* SearchTableViewCell.swift */; };
 		92A86E602887E11300957F08 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E5F2887E11300957F08 /* SearchTableViewController.swift */; };
 		92A86E632887E5EB00957F08 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A86E622887E5EB00957F08 /* MovieInfo.swift */; };
+		92DA1BC0288A491000A21DBB /* UINavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1BBF288A491000A21DBB /* UINavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		92A86E5D2887DF2C00957F08 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		92A86E5F2887E11300957F08 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		92A86E622887E5EB00957F08 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		92DA1BBF288A491000A21DBB /* UINavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				92A86E5F2887E11300957F08 /* SearchTableViewController.swift */,
+				92DA1BBF288A491000A21DBB /* UINavigationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				92A86E602887E11300957F08 /* SearchTableViewController.swift in Sources */,
 				92A86E252887A9BC00957F08 /* AppDelegate.swift in Sources */,
 				92A86E272887A9BC00957F08 /* SceneDelegate.swift in Sources */,
+				92DA1BC0288A491000A21DBB /* UINavigationViewController.swift in Sources */,
 				92A86E5A2887D92100957F08 /* ShoppingListTableViewController.swift in Sources */,
 				92A86E582887D8FC00957F08 /* ShoppingListTableViewCell.swift in Sources */,
 				92A86E632887E5EB00957F08 /* MovieInfo.swift in Sources */,

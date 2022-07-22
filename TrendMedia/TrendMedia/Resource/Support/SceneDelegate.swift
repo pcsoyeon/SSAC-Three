@@ -15,8 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         // User Default로 분기처리
-        UserDefaults.standard.set(false, forKey: "First")
-        
+//        UserDefaults.standard.set(false, forKey: "First")
+        // -> 다른 화면에 배치되어야 함
+        // -> true : MainViewController / false : ShoppingListTableViewController
         
         if UserDefaults.standard.bool(forKey: "First") {
             guard let scene = (scene as? UIWindowScene) else { return }
@@ -31,8 +32,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             guard let scene = (scene as? UIWindowScene) else { return }
             window = UIWindow(windowScene: scene)
             
-            let storyboard = UIStoryboard(name: "ShoppingList", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "ShoppingListTableViewController") as! ShoppingListTableViewController
+            let storyboard = UIStoryboard(name: "SearchTrendMedia", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "UINavigationViewController") as! UINavigationViewController
             
             window?.rootViewController = viewController
             window?.makeKeyAndVisible()
