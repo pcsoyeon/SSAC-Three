@@ -37,8 +37,12 @@ class SearchTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Recommand", bundle: nil)
-        let viewcontroller = storyboard.instantiateViewController(withIdentifier: RecommandCollectionViewController.identifier) as! RecommandCollectionViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: RecommandCollectionViewController.identifier) as! RecommandCollectionViewController
         
-        navigationController?.pushViewController(viewcontroller, animated: true)
+        viewController.movieTitle = movieInfo.movie[indexPath.row].title
+        viewController.releaseDate = movieInfo.movie[indexPath.row].releaseDate
+        
+        viewController.movieData = movieInfo.movie[indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

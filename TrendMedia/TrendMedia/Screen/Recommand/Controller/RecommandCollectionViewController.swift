@@ -12,13 +12,34 @@ import Toast
 
 class RecommandCollectionViewController: UICollectionViewController {
     
+    // MARK: - Property
+    
+    var movieTitle: String = ""
+    
+    var releaseDate: String = ""
+    
+    // 따로 따로 프로퍼티를 만들지 않고 구조체 전체를 전달 받는 이유?
+    var movieData: Movie?
+    
     static let identifier = "RecommandCollectionViewController"
     
     var imageURL = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MDNfMjEy%2FMDAxNjUxNTM0MzM1NzEw.lyWEtzsHMuc34Trm9wER2yufxNp6JTyA1Zz02HgYaf4g.k7p0kBS1M_PhPlcQBYJ-y6bBRN_YiCeZNXimt1g1EtYg.JPEG.pieceofmarch%2FIMG_6006.jpg&type=sc960_832"
 
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setTitle()
+        setCollectionView()
+    }
+
+    // MARK: - Custom Method
+    
+    private func setTitle() {
+        title = movieData?.title
+    }
+    
+    private func setCollectionView() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 8
         let width = UIScreen.main.bounds.width - (spacing * 4)
@@ -29,7 +50,9 @@ class RecommandCollectionViewController: UICollectionViewController {
         layout.minimumInteritemSpacing = spacing
         collectionView.collectionViewLayout = layout
     }
-
+    
+    // MARK: - Protocol
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
     }

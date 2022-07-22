@@ -9,9 +9,12 @@ import UIKit
 
 class ShoppingListTableViewController: UITableViewController {
     
-    static let identifier = "ShoppingListTableViewController"
-    
     // MARK: - Property
+    
+    // 옵셔널 스트링 타입이어도 오류가 뜨지 않는 이유는?
+    var placeHolder: String?
+    
+    static let identifier = "ShoppingListTableViewController"
     
     private var shoppingList = ["매직 키보드 구매",
                                 "매직 마우스 구매",
@@ -30,7 +33,19 @@ class ShoppingListTableViewController: UITableViewController {
         navigationItem.title = "쇼핑 리스트"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonDidTap))
+        
+        setPlaceHolder()
     }
+    
+    // MARK: - Custom Method
+    
+    private func setPlaceHolder() {
+        if let placeHolder = placeHolder {
+            inputTextField.placeholder = placeHolder
+        }
+    }
+    
+    // MARK: - @objc
     
     @objc func closeButtonDidTap() {
         dismiss(animated: true)
