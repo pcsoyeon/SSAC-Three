@@ -1,24 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewlyCoinedWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="검색어를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VtO-q6-Z7T">
+                                <rect key="frame" x="25" y="59" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="oeh-dd-BMV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fy1-g7-HEn">
+                                <rect key="frame" x="345" y="59" width="44" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="0pg-PG-n4G"/>
+                                    <constraint firstAttribute="height" constant="44" id="jBf-yn-Yf0"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IYo-WA-Eyn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rl-U4-tow">
+                                <rect key="frame" x="25" y="113" width="55" height="31"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="태그1"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh3-6l-L6G">
+                                <rect key="frame" x="88" y="113" width="57" height="31"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="태그2"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVb-dO-HyT">
+                                <rect key="frame" x="153" y="113" width="57" height="31"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="태그3"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRW-lK-7Ki">
+                                <rect key="frame" x="218" y="113" width="58" height="31"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="태그4"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="l96-cw-Peh">
+                                <rect key="frame" x="57" y="303" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="MfF-Fs-ti3"/>
+                                    <constraint firstAttribute="height" constant="300" id="mAW-aA-uJk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신조어를 검색해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQU-7A-jlE">
+                                <rect key="frame" x="147" y="445" width="120" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fy1-g7-HEn" secondAttribute="trailing" constant="25" id="2m7-7L-v73"/>
+                            <constraint firstItem="0Rl-U4-tow" firstAttribute="top" secondItem="VtO-q6-Z7T" secondAttribute="bottom" constant="10" id="4MI-gj-ezn"/>
+                            <constraint firstItem="VtO-q6-Z7T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="8n8-js-mE5"/>
+                            <constraint firstItem="TVb-dO-HyT" firstAttribute="top" secondItem="VtO-q6-Z7T" secondAttribute="bottom" constant="10" id="Cuj-aE-FuR"/>
+                            <constraint firstItem="BQU-7A-jlE" firstAttribute="centerX" secondItem="l96-cw-Peh" secondAttribute="centerX" id="ERg-0l-Hp0"/>
+                            <constraint firstItem="l96-cw-Peh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Kp6-fR-9Er"/>
+                            <constraint firstItem="hh3-6l-L6G" firstAttribute="top" secondItem="VtO-q6-Z7T" secondAttribute="bottom" constant="10" id="Wgk-Cz-GTy"/>
+                            <constraint firstItem="TVb-dO-HyT" firstAttribute="leading" secondItem="hh3-6l-L6G" secondAttribute="trailing" constant="8" id="aUo-1P-sU9"/>
+                            <constraint firstItem="lRW-lK-7Ki" firstAttribute="top" secondItem="VtO-q6-Z7T" secondAttribute="bottom" constant="10" id="eLl-5j-ptp"/>
+                            <constraint firstItem="BQU-7A-jlE" firstAttribute="centerY" secondItem="l96-cw-Peh" secondAttribute="centerY" id="gOk-ja-yHv"/>
+                            <constraint firstItem="fy1-g7-HEn" firstAttribute="leading" secondItem="VtO-q6-Z7T" secondAttribute="trailing" id="hE7-rX-cik"/>
+                            <constraint firstItem="l96-cw-Peh" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jE6-Js-1iR"/>
+                            <constraint firstItem="lRW-lK-7Ki" firstAttribute="leading" secondItem="TVb-dO-HyT" secondAttribute="trailing" constant="8" id="jcd-xM-ZlT"/>
+                            <constraint firstItem="VtO-q6-Z7T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="m4q-6n-78g"/>
+                            <constraint firstItem="fy1-g7-HEn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="mDe-Wu-yDY"/>
+                            <constraint firstItem="0Rl-U4-tow" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="p8A-XZ-gLJ"/>
+                            <constraint firstItem="hh3-6l-L6G" firstAttribute="leading" secondItem="0Rl-U4-tow" secondAttribute="trailing" constant="8" id="qsp-nk-4fb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newlyDescriptionLabel" destination="BQU-7A-jlE" id="6vP-Ch-Opu"/>
+                        <outlet property="searchTextField" destination="VtO-q6-Z7T" id="ha5-pv-9XK"/>
+                        <outletCollection property="tagButtonCollection" destination="0Rl-U4-tow" collectionClass="NSMutableArray" id="XjI-vp-hju"/>
+                        <outletCollection property="tagButtonCollection" destination="hh3-6l-L6G" collectionClass="NSMutableArray" id="5am-dt-aER"/>
+                        <outletCollection property="tagButtonCollection" destination="TVb-dO-HyT" collectionClass="NSMutableArray" id="tZe-4h-wQl"/>
+                        <outletCollection property="tagButtonCollection" destination="lRW-lK-7Ki" collectionClass="NSMutableArray" id="kPT-Ai-g4h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-17.39130434782609" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="300" height="300"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
