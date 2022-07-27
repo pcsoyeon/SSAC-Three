@@ -78,3 +78,85 @@ User.staticNickname // 인스턴스를 만들지 않고 접근할 수 있는 프
  
  메소드의 경우도 구분
  */
+
+
+// 0722
+// Class VS Struct
+
+enum DrinkSize {
+    case short, tall, grande, venti
+}
+
+class DrinkClass {
+    let name: String
+    var count: Int
+    var size: DrinkSize
+    
+    // ‼️ 클래스는 초기화 구문이 필요
+    init (name: String, count: Int, size: DrinkSize) {
+        self.name = name
+        self.count = count
+        self.size = size
+    }
+}
+
+struct DrinkStruct {
+    let name: String
+    var count: Int
+    var size: DrinkSize
+}
+
+// class의 상수는 변경할 수 없지만, 변수는 변경할 수 있음
+let drinkClass = DrinkClass(name: "스무디", count: 0, size: .grande)
+drinkClass.count = 5
+drinkClass.size = .tall
+
+var drinkStruct = DrinkStruct(name: "스무디", count: 2, size: .grande)
+drinkStruct.count = 10
+drinkStruct.size = .venti
+// -> 구조체가 클래스와 마찬가지로 var가 아닌 let으로 선언이 된다면, 오류
+
+// 영화 타이틀, 러닝 타임, 영상
+struct Poster {
+    // 구조체를 인스턴스로 생성을 해야만, 그 인스턴스를 통해서 image 프로퍼티에 접근 가능
+    var image: UIImage = UIImage(named: "star") ?? UIImage()
+    
+    // 클래스는 반드시 필요
+    // 구조체는 어떻게 init 구문을 작성할 수 있는 것인가? 멤버와이즈 이니셜라이저를 갖고 있지만, 추가적인 구현도 가능하다~
+    init() {
+        print("Poster Initialized")
+    }
+    
+    // 추가로, 메서드 오버로딩을 활용해 하나의 초기화 구문인데 여러 구문처럼 쓸 수 있다.
+}
+
+// 인스턴스마다 image 프로퍼티가 다른 값을 가질 수 있을까요? OK
+var one = Poster()
+var two = Poster()
+var three = Poster()
+
+
+struct MediaInfo {
+    var mediaTitle: String
+    var mediaRuntime: Int
+    
+    lazy var mediaPoster: Poster = Poster()
+    // lazy let : error -> 상수는 인스턴스가 생성되기 전에 값을 갖고 있어야 함
+    // let 값 안바뀐다. 상수는 인스턴스가 생성되기 전에 값을 항상 갖고 있어야 해요.
+}
+
+// 구조체 초기화
+var media = MediaInfo(mediaTitle: "오징어 게임", mediaRuntime: 123)
+
+// Poster 구조체의 init은 적어도, 적지 않아도 상관 없지만, 실행 되는 것을 보기 위해서
+
+// 자주 사용하지 않는 프로퍼티에 대해서는 초기화를 항상 하지 않아도 됨 -> lazy라는 키워드 사용
+// 위의 경우 저장 프로퍼티 : 저장을 지연 -> option || 초반에 메모리에 올리기에 부담이 되는 경우
+
+// 타입 프로퍼티 : 지연 저장 프로퍼티 형태로 기본적으로 동작, 그래서 lazy를 안써도 된다.
+struct UserInfo {
+    static let name = "고래밥"
+    static let age = 33
+}
+
+UserInfo.name // 인스턴스를 만들지 않고 접근 가능, 호출하는 시점에 메모리에 올라감
