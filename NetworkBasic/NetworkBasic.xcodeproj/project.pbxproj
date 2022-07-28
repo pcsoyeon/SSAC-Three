@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		927DBC2928920CE600F25DE0 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */; };
 		92F137692890DD800040859E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F137682890DD800040859E /* AppDelegate.swift */; };
 		92F1376B2890DD800040859E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1376A2890DD800040859E /* SceneDelegate.swift */; };
 		92F1376D2890DD800040859E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1376C2890DD800040859E /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		92F137652890DD800040859E /* NetworkBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F137682890DD800040859E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92F1376A2890DD800040859E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		927DBC2328920C9E00F25DE0 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				92F137762890DD820040859E /* Info.plist */,
+				92F137682890DD800040859E /* AppDelegate.swift */,
+				92F1376A2890DD800040859E /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		927DBC2428920CB300F25DE0 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				92F137712890DD820040859E /* Assets.xcassets */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		927DBC2528920CB900F25DE0 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				92F1376C2890DD800040859E /* ViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		927DBC2628920CC500F25DE0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				92F1376E2890DD800040859E /* Main.storyboard */,
+				92F137732890DD820040859E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		927DBC2728920CD500F25DE0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		927DBC2A28920D7400F25DE0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				927DBC2628920CC500F25DE0 /* Storyboard */,
+				927DBC2428920CB300F25DE0 /* Asset */,
+				927DBC2328920C9E00F25DE0 /* Support */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		927DBC2B28920D8C00F25DE0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				927DBC2728920CD500F25DE0 /* Protocol */,
+				927DBC2528920CB900F25DE0 /* Screen */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		92F1375C2890DD800040859E = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +120,8 @@
 		92F137672890DD800040859E /* NetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
-				92F137682890DD800040859E /* AppDelegate.swift */,
-				92F1376A2890DD800040859E /* SceneDelegate.swift */,
-				92F1376C2890DD800040859E /* ViewController.swift */,
-				92F1376E2890DD800040859E /* Main.storyboard */,
-				92F137712890DD820040859E /* Assets.xcassets */,
-				92F137732890DD820040859E /* LaunchScreen.storyboard */,
-				92F137762890DD820040859E /* Info.plist */,
+				927DBC2B28920D8C00F25DE0 /* Source */,
+				927DBC2A28920D7400F25DE0 /* Resource */,
 			);
 			path = NetworkBasic;
 			sourceTree = "<group>";
@@ -140,6 +199,7 @@
 			files = (
 				92F1376D2890DD800040859E /* ViewController.swift in Sources */,
 				92F137692890DD800040859E /* AppDelegate.swift in Sources */,
+				927DBC2928920CE600F25DE0 /* ViewPresentableProtocol.swift in Sources */,
 				92F1376B2890DD800040859E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PU64TS56AD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkBasic/Info.plist;
+				INFOPLIST_FILE = NetworkBasic/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +377,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PU64TS56AD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkBasic/Info.plist;
+				INFOPLIST_FILE = NetworkBasic/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
