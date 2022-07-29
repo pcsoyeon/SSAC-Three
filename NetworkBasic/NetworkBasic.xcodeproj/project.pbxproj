@@ -12,6 +12,8 @@
 		925DCBCA289225D2002C027E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925DCBC9289225D2002C027E /* Search.storyboard */; };
 		925DCBCC28923057002C027E /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBCB28923057002C027E /* TranslateViewController.swift */; };
 		925DCBCE28923AE8002C027E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBCD28923AE8002C027E /* WebViewController.swift */; };
+		925DCBD128935D98002C027E /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925DCBD028935D98002C027E /* Location.storyboard */; };
+		925DCBD528935DBF002C027E /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBD428935DBF002C027E /* LocationViewController.swift */; };
 		927DBC2928920CE600F25DE0 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */; };
 		927DBC3128920F5500F25DE0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */; };
 		927DBC3228920F5500F25DE0 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */; };
@@ -29,6 +31,8 @@
 		925DCBC9289225D2002C027E /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		925DCBCB28923057002C027E /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		925DCBCD28923AE8002C027E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		925DCBD028935D98002C027E /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		925DCBD428935DBF002C027E /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -64,6 +68,31 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		925DCBCF28935D77002C027E /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				925DCBD328935DAB002C027E /* View */,
+				925DCBD228935DA4002C027E /* Controller */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		925DCBD228935DA4002C027E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				925DCBD428935DBF002C027E /* LocationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		925DCBD328935DAB002C027E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				925DCBD028935D98002C027E /* Location.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		927DBC2328920C9E00F25DE0 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +114,7 @@
 		927DBC2528920CB900F25DE0 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				925DCBCF28935D77002C027E /* Location */,
 				925DCBC42892172C002C027E /* Main */,
 				927DBC2C28920F2600F25DE0 /* Search */,
 			);
@@ -240,6 +270,7 @@
 				92F137752890DD820040859E /* LaunchScreen.storyboard in Resources */,
 				927DBC3228920F5500F25DE0 /* SearchTableViewCell.xib in Resources */,
 				92F137722890DD820040859E /* Assets.xcassets in Resources */,
+				925DCBD128935D98002C027E /* Location.storyboard in Resources */,
 				92F137702890DD800040859E /* Main.storyboard in Resources */,
 				925DCBCA289225D2002C027E /* Search.storyboard in Resources */,
 			);
@@ -257,6 +288,7 @@
 				92F137692890DD800040859E /* AppDelegate.swift in Sources */,
 				927DBC2928920CE600F25DE0 /* ViewPresentableProtocol.swift in Sources */,
 				925DCBC828922373002C027E /* LottoViewController.swift in Sources */,
+				925DCBD528935DBF002C027E /* LocationViewController.swift in Sources */,
 				925DCBC628921746002C027E /* MainViewController.swift in Sources */,
 				925DCBCC28923057002C027E /* TranslateViewController.swift in Sources */,
 				92F1376B2890DD800040859E /* SceneDelegate.swift in Sources */,
