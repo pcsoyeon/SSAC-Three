@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		925DCBC628921746002C027E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBC528921746002C027E /* MainViewController.swift */; };
+		925DCBC828922373002C027E /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBC728922373002C027E /* LottoViewController.swift */; };
+		925DCBCA289225D2002C027E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925DCBC9289225D2002C027E /* Search.storyboard */; };
+		925DCBCC28923057002C027E /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBCB28923057002C027E /* TranslateViewController.swift */; };
+		925DCBCE28923AE8002C027E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBCD28923AE8002C027E /* WebViewController.swift */; };
 		927DBC2928920CE600F25DE0 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */; };
+		927DBC3128920F5500F25DE0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */; };
+		927DBC3228920F5500F25DE0 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */; };
 		92F137692890DD800040859E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F137682890DD800040859E /* AppDelegate.swift */; };
 		92F1376B2890DD800040859E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1376A2890DD800040859E /* SceneDelegate.swift */; };
-		92F1376D2890DD800040859E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1376C2890DD800040859E /* ViewController.swift */; };
+		92F1376D2890DD800040859E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1376C2890DD800040859E /* SearchViewController.swift */; };
 		92F137702890DD800040859E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F1376E2890DD800040859E /* Main.storyboard */; };
 		92F137722890DD820040859E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F137712890DD820040859E /* Assets.xcassets */; };
 		92F137752890DD820040859E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F137732890DD820040859E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		925DCBC528921746002C027E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		925DCBC728922373002C027E /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		925DCBC9289225D2002C027E /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		925DCBCB28923057002C027E /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		925DCBCD28923AE8002C027E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
+		927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		92F137652890DD800040859E /* NetworkBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F137682890DD800040859E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92F1376A2890DD800040859E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92F1376C2890DD800040859E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92F1376C2890DD800040859E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		92F1376F2890DD800040859E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92F137712890DD820040859E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92F137742890DD820040859E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +53,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		925DCBC42892172C002C027E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				92F1376E2890DD800040859E /* Main.storyboard */,
+				925DCBC528921746002C027E /* MainViewController.swift */,
+				925DCBCB28923057002C027E /* TranslateViewController.swift */,
+				925DCBCD28923AE8002C027E /* WebViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		927DBC2328920C9E00F25DE0 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,7 +85,8 @@
 		927DBC2528920CB900F25DE0 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				92F1376C2890DD800040859E /* ViewController.swift */,
+				925DCBC42892172C002C027E /* Main */,
+				927DBC2C28920F2600F25DE0 /* Search */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -68,7 +94,6 @@
 		927DBC2628920CC500F25DE0 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				92F1376E2890DD800040859E /* Main.storyboard */,
 				92F137732890DD820040859E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -99,6 +124,34 @@
 				927DBC2528920CB900F25DE0 /* Screen */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		927DBC2C28920F2600F25DE0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				927DBC2E28920F3800F25DE0 /* View */,
+				927DBC2D28920F2F00F25DE0 /* Controller */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		927DBC2D28920F2F00F25DE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92F1376C2890DD800040859E /* SearchViewController.swift */,
+				925DCBC728922373002C027E /* LottoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		927DBC2E28920F3800F25DE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */,
+				927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */,
+				925DCBC9289225D2002C027E /* Search.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		92F1375C2890DD800040859E = {
@@ -185,8 +238,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				92F137752890DD820040859E /* LaunchScreen.storyboard in Resources */,
+				927DBC3228920F5500F25DE0 /* SearchTableViewCell.xib in Resources */,
 				92F137722890DD820040859E /* Assets.xcassets in Resources */,
 				92F137702890DD800040859E /* Main.storyboard in Resources */,
+				925DCBCA289225D2002C027E /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,10 +252,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F1376D2890DD800040859E /* ViewController.swift in Sources */,
+				92F1376D2890DD800040859E /* SearchViewController.swift in Sources */,
+				925DCBCE28923AE8002C027E /* WebViewController.swift in Sources */,
 				92F137692890DD800040859E /* AppDelegate.swift in Sources */,
 				927DBC2928920CE600F25DE0 /* ViewPresentableProtocol.swift in Sources */,
+				925DCBC828922373002C027E /* LottoViewController.swift in Sources */,
+				925DCBC628921746002C027E /* MainViewController.swift in Sources */,
+				925DCBCC28923057002C027E /* TranslateViewController.swift in Sources */,
 				92F1376B2890DD800040859E /* SceneDelegate.swift in Sources */,
+				927DBC3128920F5500F25DE0 /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +409,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PU64TS56AD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkBasic/Support/Info.plist;
+				INFOPLIST_FILE = NetworkBasic/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -377,7 +437,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PU64TS56AD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkBasic/Support/Info.plist;
+				INFOPLIST_FILE = NetworkBasic/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
