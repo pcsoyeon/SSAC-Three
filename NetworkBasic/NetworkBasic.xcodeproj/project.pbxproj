@@ -14,6 +14,10 @@
 		925DCBCE28923AE8002C027E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBCD28923AE8002C027E /* WebViewController.swift */; };
 		925DCBD128935D98002C027E /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925DCBD028935D98002C027E /* Location.storyboard */; };
 		925DCBD528935DBF002C027E /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBD428935DBF002C027E /* LocationViewController.swift */; };
+		925DCBDF289384F0002C027E /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 925DCBDB289384F0002C027E /* Pretendard-SemiBold.otf */; };
+		925DCBE0289384F0002C027E /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 925DCBDC289384F0002C027E /* Pretendard-Regular.otf */; };
+		925DCBE1289384F0002C027E /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 925DCBDD289384F0002C027E /* Pretendard-Medium.otf */; };
+		925DCBE2289384F0002C027E /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 925DCBDE289384F0002C027E /* Pretendard-Bold.otf */; };
 		927DBC2928920CE600F25DE0 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */; };
 		927DBC3128920F5500F25DE0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */; };
 		927DBC3228920F5500F25DE0 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */; };
@@ -33,6 +37,10 @@
 		925DCBCD28923AE8002C027E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		925DCBD028935D98002C027E /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		925DCBD428935DBF002C027E /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		925DCBDB289384F0002C027E /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		925DCBDC289384F0002C027E /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		925DCBDD289384F0002C027E /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		925DCBDE289384F0002C027E /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -93,6 +101,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		925DCBD6289383FE002C027E /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				925DCBDE289384F0002C027E /* Pretendard-Bold.otf */,
+				925DCBDD289384F0002C027E /* Pretendard-Medium.otf */,
+				925DCBDC289384F0002C027E /* Pretendard-Regular.otf */,
+				925DCBDB289384F0002C027E /* Pretendard-SemiBold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		927DBC2328920C9E00F25DE0 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +159,7 @@
 		927DBC2A28920D7400F25DE0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				925DCBD6289383FE002C027E /* Font */,
 				927DBC2628920CC500F25DE0 /* Storyboard */,
 				927DBC2428920CB300F25DE0 /* Asset */,
 				927DBC2328920C9E00F25DE0 /* Support */,
@@ -268,11 +288,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				92F137752890DD820040859E /* LaunchScreen.storyboard in Resources */,
+				925DCBE2289384F0002C027E /* Pretendard-Bold.otf in Resources */,
 				927DBC3228920F5500F25DE0 /* SearchTableViewCell.xib in Resources */,
+				925DCBDF289384F0002C027E /* Pretendard-SemiBold.otf in Resources */,
 				92F137722890DD820040859E /* Assets.xcassets in Resources */,
 				925DCBD128935D98002C027E /* Location.storyboard in Resources */,
+				925DCBE0289384F0002C027E /* Pretendard-Regular.otf in Resources */,
 				92F137702890DD800040859E /* Main.storyboard in Resources */,
 				925DCBCA289225D2002C027E /* Search.storyboard in Resources */,
+				925DCBE1289384F0002C027E /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
