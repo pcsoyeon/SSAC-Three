@@ -17,7 +17,8 @@ class LocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestAuthorization()
+        checkFontFile()
+//        requestAuthorization()
     }
 
     @IBAction func touchUpNotificationButton(_ sender: UIButton) {
@@ -25,6 +26,17 @@ class LocationViewController: UIViewController {
     }
     
     // MARK: - Custom Method
+    
+    private func checkFontFile() {
+        // Custom Font
+        for family in UIFont.familyNames {
+            print("========\(family)========")
+            
+            for name in UIFont.fontNames(forFamilyName: family) {
+                print(name)
+            }
+        }
+    }
     
     private func requestAuthorization() {
         // Notification 2. 권한 요청
