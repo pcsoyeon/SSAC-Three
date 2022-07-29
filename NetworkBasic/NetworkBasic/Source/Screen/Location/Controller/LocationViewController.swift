@@ -43,6 +43,19 @@ class LocationViewController: UIViewController {
     // iOS 시스템에서 알림을 담당 > 알림 등록
     
     /*
+     
+     - 권한 허용 해야만 알림이 옴
+     - 권한 허용 문구 시스템적으로 최소 한번만 가능
+     - 허용 안된 경우, 애플 설정으로 유도하는 코드 구성
+     
+     - 기본적으로 알림은 포그라운드에서 수신 불가
+     - 로컬 알림에서 60초 이상 반복 가능 / 개수 제한 64개 / 커스텀 사운드 30초 제한
+     
+     + @
+     - 노티는 앱 실행이 기본, 특정 노티에 따라서 원하는 (특정) 화면으로 가고 싶다면?
+     - 포그라운드 수신, 특정 화면에서는 안받고 특정 조건에 대해서만 포그라운 수신을 하고 싶다면?
+     - iOS 15 집중 모드 등 5~6 우선순위 존재 
+     
      1. 뱃지 제거?
      2. 노티 제거?
      3. foreground 일 때?
@@ -61,11 +74,11 @@ class LocationViewController: UIViewController {
         // 1. 시간 간격
         // 2. 캘린더
         // 3. 위치에 따라 설정 가능
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // 5초 뒤, 반복 X
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // 5초 뒤, 반복 X
         
-        var dateComponent = DateComponents()
-        dateComponent.minute = 15
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
+//        var dateComponent = DateComponents()
+//        dateComponent.minute = 15
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
         
         // content, trigger를 담기 위한 객체 생성
         // 알림 요청

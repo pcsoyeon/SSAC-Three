@@ -8,15 +8,25 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 노티 제거
+//        UNUserNotificationCenter.current().removeAllPendingNotificationRequests() // 올 노티 (예약된) - 알람 앱 미리 알림 스케줄 할 일 목록 .. 등 예약한 알림
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications() // 이미 온 노티에 대해서
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
 
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.list, .banner, .badge, .sound])
+        // iOS 14 list, banner <-> alert
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

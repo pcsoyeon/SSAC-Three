@@ -147,10 +147,12 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem title="Item" id="CiL-Um-03Z"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="x4j-RQ-Ego"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="cz0-dX-BVI"/>
                                     <barButtonItem title="새로고침" id="cVC-dU-Gi2"/>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="hQx-9Y-dCy"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="fTZ-3W-fOM"/>
                                     <barButtonItem title="Item" id="zqt-ix-ZcY"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="wHW-4U-xYF"/>
+                                    <barButtonItem title="Item" id="0XG-2V-Sog"/>
                                 </items>
                             </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tad-Bb-NYx">
