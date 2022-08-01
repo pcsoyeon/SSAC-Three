@@ -22,6 +22,8 @@
 		927DBC3128920F5500F25DE0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */; };
 		927DBC3228920F5500F25DE0 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */; };
 		92C0E24D2897603200B052C3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C0E24C2897603200B052C3 /* UserDefaultsHelper.swift */; };
+		92C0E25028977CE900B052C3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92C0E24F28977CE900B052C3 /* Alamofire */; };
+		92C0E25328977D3A00B052C3 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 92C0E25228977D3A00B052C3 /* SwiftyJSON */; };
 		92F137692890DD800040859E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F137682890DD800040859E /* AppDelegate.swift */; };
 		92F1376B2890DD800040859E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1376A2890DD800040859E /* SceneDelegate.swift */; };
 		92F1376D2890DD800040859E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1376C2890DD800040859E /* SearchViewController.swift */; };
@@ -61,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C0E25328977D3A00B052C3 /* SwiftyJSON in Frameworks */,
+				92C0E25028977CE900B052C3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +78,7 @@
 				925DCBC528921746002C027E /* MainViewController.swift */,
 				925DCBCB28923057002C027E /* TranslateViewController.swift */,
 				925DCBCD28923AE8002C027E /* WebViewController.swift */,
+				925DCBC728922373002C027E /* LottoViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -192,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				92F1376C2890DD800040859E /* SearchViewController.swift */,
-				925DCBC728922373002C027E /* LottoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +260,10 @@
 			dependencies = (
 			);
 			name = NetworkBasic;
+			packageProductDependencies = (
+				92C0E24F28977CE900B052C3 /* Alamofire */,
+				92C0E25228977D3A00B052C3 /* SwiftyJSON */,
+			);
 			productName = NetworkBasic;
 			productReference = 92F137652890DD800040859E /* NetworkBasic.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +292,10 @@
 				Base,
 			);
 			mainGroup = 92F1375C2890DD800040859E;
+			packageReferences = (
+				92C0E24E28977CE900B052C3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				92C0E25128977D3A00B052C3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 92F137662890DD800040859E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -480,7 +492,7 @@
 				INFOPLIST_FILE = NetworkBasic/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Location;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -508,7 +520,7 @@
 				INFOPLIST_FILE = NetworkBasic/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Location;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -546,6 +558,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		92C0E24E28977CE900B052C3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		92C0E25128977D3A00B052C3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		92C0E24F28977CE900B052C3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92C0E24E28977CE900B052C3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		92C0E25228977D3A00B052C3 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92C0E25128977D3A00B052C3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 92F1375D2890DD800040859E /* Project object */;
 }

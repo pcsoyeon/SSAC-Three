@@ -7,6 +7,10 @@
 
 import UIKit
 
+// 1. import
+import Alamofire
+import SwiftyJSON
+
 class LottoViewController: UIViewController {
 
     @IBOutlet weak var numberTextField: UITextField!
@@ -20,6 +24,7 @@ class LottoViewController: UIViewController {
         super.viewDidLoad()
         setPickerView()
         setTextField()
+        requestLotto(number: 1025)
     }
     
     private func setPickerView() {
@@ -29,6 +34,30 @@ class LottoViewController: UIViewController {
     
     private func setTextField() {
         numberTextField.inputView = lottoPickerView
+    }
+    
+    private func requestLotto(number: Int) {
+        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)"
+        
+        // AF: 200 ~ 209 status code
+        AF.request(url, method: .get).validate(statusCode: 200..<300).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                let bonus = json["bnusNo"].intValue
+                print("====bonus====\n", bonus)
+                
+                let date = json["drwNoDate"].stringValue
+                print("====date====\n", date)
+                
+                self.numberTextField.text = date
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
@@ -41,6 +70,9 @@ extension LottoViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         numberTextField.text = "\(numberList[row])회차"
+        
+        // 회차 선택 시 서버 통신
+        requestLotto(number: numberList[row])
     }
 }
 

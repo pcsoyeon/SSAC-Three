@@ -14,7 +14,7 @@ class UserDefaultsHelper {
     private init() { }
     
     // 인스턴스가 타입 저장 프로퍼티로
-    // stadard, shared, default .. 
+    // stadard, shared, default ..
     static let standard = UserDefaultsHelper()
     
     // 싱글톤 패턴 -> 자기 자신의 인스턴스를 타입 프로퍼티로 갖고 있음
