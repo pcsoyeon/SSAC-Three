@@ -13,12 +13,20 @@ import SwiftyJSON
 
 class LottoViewController: UIViewController {
 
+    // MARK: - UI Property
+    
     @IBOutlet weak var numberTextField: UITextField!
+    
+    @IBOutlet var numberLabelCollection: [UILabel]!
+    
+    // MARK: - Property
     
     var lottoPickerView = UIPickerView()
     
     // 데이터와 뷰 분리
     private let numberList: [Int] = Array(1...1025).reversed()
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +34,8 @@ class LottoViewController: UIViewController {
         setTextField()
         requestLotto(number: 1025)
     }
+    
+    // MARK: - Custom Method
     
     private func setPickerView() {
         lottoPickerView.delegate = self
@@ -46,13 +56,19 @@ class LottoViewController: UIViewController {
                 let json = JSON(value)
                 print("JSON: \(json)")
                 
-                let bonus = json["bnusNo"].intValue
-                print("====bonus====\n", bonus)
+                let number = json["drwNo"].intValue
+                self.numberTextField.text = String(number)
                 
-                let date = json["drwNoDate"].stringValue
-                print("====date====\n", date)
-                
-                self.numberTextField.text = date
+                DispatchQueue.main.async {
+                    for index in self.numberLabelCollection.indices {
+                        let data = json["drwtNo\(index+1)"].intValue
+                        self.numberLabelCollection[index].text = String(data)
+                        
+                        if index == 6 {
+                            self.numberLabelCollection[6].text = String(json["bnusNo"].intValue)
+                        }
+                    }
+                }
                 
             case .failure(let error):
                 print(error)

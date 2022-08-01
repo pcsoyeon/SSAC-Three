@@ -84,6 +84,13 @@
                     </view>
                     <connections>
                         <outlet property="numberTextField" destination="NJJ-Fl-vrV" id="V2e-se-Qo1"/>
+                        <outletCollection property="numberLabelCollection" destination="9V2-ET-Utr" collectionClass="NSMutableArray" id="gz1-Ra-dEt"/>
+                        <outletCollection property="numberLabelCollection" destination="xPE-iV-E5p" collectionClass="NSMutableArray" id="AKT-yv-4y3"/>
+                        <outletCollection property="numberLabelCollection" destination="dBW-an-6SS" collectionClass="NSMutableArray" id="jse-W8-KXE"/>
+                        <outletCollection property="numberLabelCollection" destination="azJ-A2-Xex" collectionClass="NSMutableArray" id="K6n-9D-Ecw"/>
+                        <outletCollection property="numberLabelCollection" destination="sZa-zR-xXR" collectionClass="NSMutableArray" id="Wru-WT-nTv"/>
+                        <outletCollection property="numberLabelCollection" destination="iYj-x8-vAi" collectionClass="NSMutableArray" id="gyc-UO-hoE"/>
+                        <outletCollection property="numberLabelCollection" destination="Vqd-hJ-NGO" collectionClass="NSMutableArray" id="2VD-FU-dp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vw7-as-y4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
