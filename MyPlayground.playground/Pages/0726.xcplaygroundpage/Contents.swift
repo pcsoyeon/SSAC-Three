@@ -135,23 +135,39 @@ struct Human {
     var age: Int
 }
 
+class Person {
+    var name: String
+    var age: Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}
+
 var huree = Human(name: "후리스콜링스", age: 24)
 var sokyte = huree
 sokyte.name = "소깡"
 
-print(huree.name)
-print(sokyte.name)
+print(huree.name, sokyte.name)
 
-class Person {
-    var name: String = ""
-    var age: Int = 0
-}
-
-var hooni = Person()
+var hooni = Person(name: "", age: 25)
 let jiwon = hooni
 
 hooni.name = "후니아씨"
 jiwon.name = "지원씨."
 
 print(hooni.name, jiwon.name)
+
+class SoKyte {
+    var age = 1
+}
+
+var test: SoKyte = SoKyte() {
+    didSet {
+        print("소깡이의 나이를 변경해볼까?!")
+    }
+}
+
+test.age = 25
 
