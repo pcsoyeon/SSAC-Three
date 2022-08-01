@@ -26,6 +26,9 @@ class MainViewController: UIViewController, ViewPresentableProtocol {
     
     var backgrounColor: UIColor = .systemPink
     static let identifier: String = "MainViewController"
+    
+    // 인스턴스가 있어야만 호출할 수 있음 
+//    let helper = UserDefaultsHelper()
 
     func configureView() {
         navigationTitleString = "고래밥님의 다마고치"
@@ -33,6 +36,9 @@ class MainViewController: UIViewController, ViewPresentableProtocol {
         
         title = navigationTitleString
         view.backgroundColor = backgrounColor
+        
+        UserDefaultsHelper.standard.nickName = "소깡님의 다마고치"
+        title = UserDefaultsHelper.standard.nickName
     }
     
     override func viewDidLoad() {

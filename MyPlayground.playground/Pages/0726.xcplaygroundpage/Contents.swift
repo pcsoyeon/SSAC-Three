@@ -129,3 +129,29 @@ ViewType.subTitle
 // 타입 프로퍼티는 인스턴스와 상관 없이 접근 가능 -> 따라서 열거형에서 (이미 존재하는 값처럼 사용되므로 빌드하는 순간에 메모리에 올라가 있음) 타입 저장 프로퍼티, 타입 연산 프로퍼티는 모두 사용 가능
 // 인스턴스 저장 프로퍼티는 메모리에, 값이 달라질 수 있음 -> 그러므로 열거형에서 사용할 수 없음, 열거형은 초기화 구문을 만들 수 없기 때문
 // 인스턴스 연산 프로퍼티는 사용할 때 메모리에 올라가므로 열거형에서 사용할 수 있음 
+
+struct Human {
+    var name: String
+    var age: Int
+}
+
+var huree = Human(name: "후리스콜링스", age: 24)
+var sokyte = huree
+sokyte.name = "소깡"
+
+print(huree.name)
+print(sokyte.name)
+
+class Person {
+    var name: String = ""
+    var age: Int = 0
+}
+
+var hooni = Person()
+let jiwon = hooni
+
+hooni.name = "후니아씨"
+jiwon.name = "지원씨."
+
+print(hooni.name, jiwon.name)
+
