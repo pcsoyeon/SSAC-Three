@@ -12,8 +12,15 @@ import SwiftyJSON
 
 class SearchViewController: UIViewController {
     
+    // MARK: - UI Property
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
+    
+    // MARK: - Property
+    
+    private var list: [String] = []
+    private var boxOfficeList: [BoxOfficeResponse] = []
     
     // MARK: - Life Cycle
     
@@ -51,11 +58,14 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return boxOfficeList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        cell.titleLabel.font = .boldSystemFont(ofSize: 13)
+        let data = boxOfficeList[indexPath.row]
+        cell.titleLabel.text = "\(data.movieTitle) | \(data.releaseDate) | \(data.totalCount)"
         return cell
     }
 }
@@ -65,6 +75,7 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let date = searchBar.text {
+            // 8글자 제한, 숫자만 (날짜 형식으로)
             requestBoxOffice(date: date)
         }
     }
@@ -80,7 +91,29 @@ extension SearchViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                dump(json)
+                
+                // 초기화를 해야 새로운 데이터가 담겨서 올 수 있음 
+                self.boxOfficeList.removeAll()
+                
+                for movie in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
+                    let movieNm = movie["movieNm"].stringValue
+                    let openDt = movie["openDt"].stringValue
+                    let audiAcc = movie["audiAcc"].stringValue
+                    
+                    let data = BoxOfficeResponse(movieTitle: movieNm, releaseDate: openDt, totalCount: audiAcc)
+                    self.boxOfficeList.append(data)
+                }
+                
+//                let movieNm1 = json["boxOfficeResult"]["dailyBoxOfficeList"][0]["movieNm"].stringValue
+//                let movieNm2 = json["boxOfficeResult"]["dailyBoxOfficeList"][1]["movieNm"].stringValue
+//                let movieNm3 = json["boxOfficeResult"]["dailyBoxOfficeList"][2]["movieNm"].stringValue
+//
+//                // list 배열에 데이터 추가
+//                self.list.append(movieNm1)
+//                self.list.append(movieNm2)
+//                self.list.append(movieNm3)
+                
+                self.searchTableView.reloadData()
                 
             case .failure(let error):
                 print(error)
