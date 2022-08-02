@@ -11,98 +11,91 @@ import Alamofire
 import SwiftyJSON
 
 final class BeerViewController: UIViewController {
-
+    
     // MARK: - UI Property
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var beerImageView: UIImageView!
+    // MARK: - Property
     
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
-    
+    private var beerList: [BeerResponse] = []
+
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        requestBeerInfo()
+        requestBeerData()
     }
     
     // MARK: - Custom Method
     
     private func configureUI() {
-        configureLabel()
-        configureImageView()
+        configureCollectionView()
     }
     
-    private func configureLabel() {
-        nameLabel.font = .boldSystemFont(ofSize: 14)
-        nameLabel.textColor = .darkGray
+    private func configureCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        let spacing: CGFloat = 8
+        let width = UIScreen.main.bounds.width - (spacing * 3)
+        layout.itemSize = CGSize(width: width / 2, height: (width / 2) * 1.8)
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        collectionView.collectionViewLayout = layout
         
-        detailLabel.font = .systemFont(ofSize: 13, weight: .regular)
-        detailLabel.textColor = .darkGray
-        detailLabel.numberOfLines = 0
-        
-        descriptionLabel.font = .systemFont(ofSize: 12, weight: .regular)
-        descriptionLabel.textColor = .gray
-        descriptionLabel.numberOfLines = 0
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: BeerCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: BeerCollectionViewCell.identifier)
+    }
+}
+
+// MARK: - UICollection Protocol
+
+extension BeerViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return beerList.count
     }
     
-    private func configureImageView() {
-        beerImageView.contentMode = .scaleAspectFit
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BeerCollectionViewCell.identifier, for: indexPath) as? BeerCollectionViewCell else { return UICollectionViewCell() }
+        cell.setData(beerList[indexPath.item])
+        return cell
     }
 }
 
 // MARK: - Network
 
 extension BeerViewController {
-    private func requestBeerInfo() {
-        let url = "https://api.punkapi.com/v2/beers/random"
+    func requestBeerData() {
+        let url = Constant.EndPoint.beerURL
         
-        // AF: 200 ~ 209 status code
-        AF.request(url, method: .get).validate().responseJSON { response in
+        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(json)")
+//                print("===================")
+//                print(json)
+//                print("===================")
                 
-                DispatchQueue.main.async {
-                    let name = json[0]["name"].stringValue
-                    self.nameLabel.text = name
-                    self.nameLabel.numberOfLines = 0
-                    
-                    let foodParing: [Any] = json[0]["food_pairing"].arrayObject!
-                    self.detailLabel.text = "Food Pairing: \(foodParing[0]), \(foodParing[1]), \(foodParing[2])"
-                    
-                    let description = json[0]["description"].stringValue
-                    self.descriptionLabel.text = description
-                    
-                    let imageURL = URL(string: json[0]["image_url"].stringValue)
-                    guard let imageURL = imageURL else {
-                        return
+                let statusCode = response.response?.statusCode ?? 500
+                if statusCode == 200 {
+                    for beer in json.arrayValue {
+                        let imageURL = beer["image_url"].stringValue
+                        let name = beer["name"].stringValue
+                        let description = beer["description"].stringValue
+                        
+                        let data = BeerResponse(imageURL: imageURL, name: name, welcomeDescription: description)
+                        self.beerList.append(data)
+                        
+                        self.collectionView.reloadData()
                     }
-                    self.beerImageView.load(url: imageURL)
+                    
+                } else {
+                    
                 }
-                
             case .failure(let error):
                 print(error)
-            }
-        }
-    }
-}
-
-// MARK: - UIImage+Extension
-
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
             }
         }
     }
