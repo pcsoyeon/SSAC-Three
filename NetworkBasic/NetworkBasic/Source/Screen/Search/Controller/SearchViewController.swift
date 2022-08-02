@@ -85,7 +85,7 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController {
     private func requestBoxOffice(date: String) {
-        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(Constant.APIKey.movieAPIKey)&targetDt=\(date)"
+        let url = "\(Constant.EndPoint.boxOfficeURL)?key=\(Constant.APIKey.BOXOFFICE)&targetDt=\(date)"
         
         AF.request(url, method: . get).validate().responseJSON { response in
             switch response.result {
