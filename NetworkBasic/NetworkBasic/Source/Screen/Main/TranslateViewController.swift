@@ -17,18 +17,39 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var userInputTextView: UITextView!
     @IBOutlet weak var translatedTextView: UITextView!
     
+    @IBOutlet weak var translateButton: UIButton!
+    
     private let textViewPlaceholderText = "번역하고 싶은 문장을 작성해보세요."
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTextView()
+        configureUI()
     }
     
-    private func setTextView() {
+    private func configureUI() {
+        configureTextView()
+        configureButton()
+    }
+    
+    private func configureTextView() {
         userInputTextView.delegate = self
         
         userInputTextView.text = textViewPlaceholderText
         userInputTextView.textColor = .lightGray
+        
+        translatedTextView.textColor = .black
+    }
+    
+    private func configureButton() {
+        translateButton.setTitle("번역하기", for: .normal)
+        translateButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+        translateButton.setTitleColor(.systemPink, for: .normal)
+    }
+    
+    @IBAction func touchUpTranslateButton(_ sender: UIButton) {
+        if let text = userInputTextView.text {
+            requestTranslatedData(text: text)
+        }
     }
 }
 
@@ -54,8 +75,6 @@ extension TranslateViewController: UITextViewDelegate {
         if textView.text.isEmpty {
             textView.text = textViewPlaceholderText
             textView.textColor = .lightGray
-        } else {
-            requestTranslatedData(text: textView.text)
         }
     }
 }
