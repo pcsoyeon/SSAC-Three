@@ -22,13 +22,20 @@ class SearchViewController: UIViewController {
     private var list: [String] = []
     private var boxOfficeList: [BoxOfficeResponse] = []
     
+    private var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYYMMdd"
+        return dateFormatter
+    }()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         configureSearchBar()
-        requestBoxOffice(date: "20220801")
+//        requestBoxOffice(date: "20220801")
+        requestInitialBoxOffice()
     }
     
     // MARK: - Custom Method
@@ -48,12 +55,20 @@ class SearchViewController: UIViewController {
     private func configureSearchBar() {
         searchBar.delegate = self
     }
+    
+    private func requestInitialBoxOffice() {
+        let date = Date()
+        let yesterdayDate = Calendar.current.date(byAdding: .day, value: -1, to: date)
+        requestBoxOffice(date: dateFormatter.string(from: yesterdayDate!))
+    }
 }
 
 // MARK: - UITableView Protocol
 
 extension SearchViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
 }
 
 extension SearchViewController: UITableViewDataSource {
@@ -63,9 +78,7 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
-        cell.titleLabel.font = .boldSystemFont(ofSize: 13)
-        let data = boxOfficeList[indexPath.row]
-        cell.titleLabel.text = "\(data.movieTitle) | \(data.releaseDate) | \(data.totalCount)"
+        cell.setData(boxOfficeList[indexPath.row])
         return cell
     }
 }
@@ -91,6 +104,7 @@ extension SearchViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+                print(json)
                 
                 // 초기화를 해야 새로운 데이터가 담겨서 올 수 있음 
                 self.boxOfficeList.removeAll()
