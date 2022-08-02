@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92216E5D2898A9F200D523D0 /* BeerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92216E5C2898A9F200D523D0 /* BeerResponse.swift */; };
+		92216E5F2898ADB700D523D0 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92216E5E2898ADB700D523D0 /* APIKey.swift */; };
 		925DCBC628921746002C027E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBC528921746002C027E /* MainViewController.swift */; };
 		925DCBC828922373002C027E /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBC728922373002C027E /* LottoViewController.swift */; };
 		925DCBCA289225D2002C027E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925DCBC9289225D2002C027E /* Search.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92216E5C2898A9F200D523D0 /* BeerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerResponse.swift; sourceTree = "<group>"; };
+		92216E5E2898ADB700D523D0 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		925DCBC528921746002C027E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		925DCBC728922373002C027E /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		925DCBC9289225D2002C027E /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -75,6 +79,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92216E592898A87D00D523D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				928974E8289844EB0047476F /* Network.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92216E5A2898A88600D523D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				928974EB289845200047476F /* BeerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		92216E5B2898A88C00D523D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92216E5C2898A9F200D523D0 /* BeerResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92216E602898ADD500D523D0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				92C0E24C2897603200B052C3 /* UserDefaultsHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		925DCBC42892172C002C027E /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +218,7 @@
 		927DBC2B28920D8C00F25DE0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				92216E602898ADD500D523D0 /* Helper */,
 				92C0E24B2897601800B052C3 /* Constant */,
 				927DBC2728920CD500F25DE0 /* Protocol */,
 				927DBC2528920CB900F25DE0 /* Screen */,
@@ -219,8 +256,9 @@
 		928974EA289844F00047476F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				928974E8289844EB0047476F /* Network.storyboard */,
-				928974EB289845200047476F /* BeerViewController.swift */,
+				92216E5B2898A88C00D523D0 /* Model */,
+				92216E592898A87D00D523D0 /* View */,
+				92216E5A2898A88600D523D0 /* Controller */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -228,7 +266,7 @@
 		92C0E24B2897601800B052C3 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				92C0E24C2897603200B052C3 /* UserDefaultsHelper.swift */,
+				92216E5E2898ADB700D523D0 /* APIKey.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -353,6 +391,8 @@
 				925DCBD528935DBF002C027E /* LocationViewController.swift in Sources */,
 				925DCBC628921746002C027E /* MainViewController.swift in Sources */,
 				92C0E24D2897603200B052C3 /* UserDefaultsHelper.swift in Sources */,
+				92216E5F2898ADB700D523D0 /* APIKey.swift in Sources */,
+				92216E5D2898A9F200D523D0 /* BeerResponse.swift in Sources */,
 				928974EC289845200047476F /* BeerViewController.swift in Sources */,
 				925DCBCC28923057002C027E /* TranslateViewController.swift in Sources */,
 				92F1376B2890DD800040859E /* SceneDelegate.swift in Sources */,
@@ -508,7 +548,7 @@
 				INFOPLIST_FILE = NetworkBasic/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Network;
+				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -536,7 +576,7 @@
 				INFOPLIST_FILE = NetworkBasic/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Network;
+				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
