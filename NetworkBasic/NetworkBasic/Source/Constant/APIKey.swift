@@ -9,6 +9,9 @@ import Foundation
 
 extension Constant {
     struct APIKey {
-        static let movieAPIKey = "9c2f46329f6dc7e3e31aba631ca48c49"
+        static let BOXOFFICE = ""
+        
+        static let NAVER_ID = ""
+        static let NAVER_SECRET = ""
     }
 }
