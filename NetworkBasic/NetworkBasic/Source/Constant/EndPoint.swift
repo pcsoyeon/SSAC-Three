@@ -11,5 +11,6 @@ extension  Constant {
     struct EndPoint {
         static let lottoURL = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber"
         static let boxOfficeURL = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
+        static let translateURL = "https://openapi.naver.com/v1/papago/n2mt"
     }
 }

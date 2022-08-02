@@ -7,11 +7,15 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 // UIResponderChain
 
 class TranslateViewController: UIViewController {
 
     @IBOutlet weak var userInputTextView: UITextView!
+    @IBOutlet weak var translatedTextView: UITextView!
     
     private let textViewPlaceholderText = "번역하고 싶은 문장을 작성해보세요."
     
@@ -33,7 +37,7 @@ class TranslateViewController: UIViewController {
 extension TranslateViewController: UITextViewDelegate {
     // 텍스트 뷰의 텍스트가 변할 때마다 호출
     func textViewDidChange(_ textView: UITextView) {
-        print(textView.text.count)
+//        print(textView.text.count)
     }
     
     // 편집이 시작될 때, 커서가 시작될 때
@@ -50,6 +54,49 @@ extension TranslateViewController: UITextViewDelegate {
         if textView.text.isEmpty {
             textView.text = textViewPlaceholderText
             textView.textColor = .lightGray
+        } else {
+            requestTranslatedData(text: textView.text)
+        }
+    }
+}
+
+// MARK: - Network
+
+extension TranslateViewController {
+    private func requestTranslatedData(text: String) {
+        let url = Constant.EndPoint.translateURL
+        
+        let params: Parameters = ["source" : "ko",
+                                  "target" : "en",
+                                  "text" : text]
+        
+        let header: HTTPHeaders = ["Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8",
+                                  "X-Naver-Client-Id" : Constant.APIKey.NAVER_ID,
+                                  "X-Naver-Client-Secret" : Constant.APIKey.NAVER_SECRET]
+        
+        // request의 파라미터 순서대로
+        AF.request(url, method: .post, parameters: params, headers: header).validate(statusCode: 200...500).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                // 전체 데이터 출력
+                let json = JSON(value)
+                print("==========================")
+                print(json)
+                print("==========================")
+                
+                // 오류 처리 (상태 코드에 따라서 분기처리)
+                let statusCode = response.response?.statusCode ?? 500
+                if statusCode == 200 {
+                    // 번역 응답 값 UI에 올리기
+                    let translatedData = json["message"]["result"]["translatedText"].stringValue
+                    self.translatedTextView.text = translatedData
+                } else {
+                    self.translatedTextView.text = json["errorMessage"].stringValue
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }

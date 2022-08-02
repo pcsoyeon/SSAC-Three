@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x79-N9-GiD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kKO-fv-YnL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -115,16 +115,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HQP-Zl-huB">
+                                <rect key="frame" x="20" y="314" width="374" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="pk9-d3-3T7"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NzP-lK-0yi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qQZ-tf-gyL" firstAttribute="top" secondItem="NzP-lK-0yi" secondAttribute="top" constant="50" id="6xV-uz-WwQ"/>
                             <constraint firstItem="qQZ-tf-gyL" firstAttribute="leading" secondItem="NzP-lK-0yi" secondAttribute="leading" constant="20" id="E9b-4u-5Ek"/>
+                            <constraint firstItem="HQP-Zl-huB" firstAttribute="top" secondItem="qQZ-tf-gyL" secondAttribute="bottom" constant="20" id="Jnp-lU-b1p"/>
+                            <constraint firstItem="HQP-Zl-huB" firstAttribute="leading" secondItem="NzP-lK-0yi" secondAttribute="leading" constant="20" id="Lpw-un-bPD"/>
                             <constraint firstItem="NzP-lK-0yi" firstAttribute="trailing" secondItem="qQZ-tf-gyL" secondAttribute="trailing" constant="20" id="gap-ln-B9Q"/>
+                            <constraint firstItem="NzP-lK-0yi" firstAttribute="trailing" secondItem="HQP-Zl-huB" secondAttribute="trailing" constant="20" id="py8-GL-7VU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="translatedTextView" destination="HQP-Zl-huB" id="7G4-sp-JWy"/>
                         <outlet property="userInputTextView" destination="qQZ-tf-gyL" id="sA2-E2-bcF"/>
                     </connections>
                 </viewController>
