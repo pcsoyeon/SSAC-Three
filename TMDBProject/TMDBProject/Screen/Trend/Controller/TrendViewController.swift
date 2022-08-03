@@ -24,6 +24,8 @@ enum TimeType: String, CaseIterable {
 
 final class TrendViewController: UIViewController {
 
+    // MARK: - UI Property
+    
     @IBOutlet weak var mediaCollectionView: UICollectionView!
     
     // MARK: - Property
@@ -33,11 +35,27 @@ final class TrendViewController: UIViewController {
     
     private var trendList: [TrendData] = []
     
+    private var posterPath: String = ""
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
         fetchTrendMedia(type: mediaType, time: timeType)
     }
+    
+    // MARK: - IBAction
+    
+    @IBAction func touchUpListButton(_ sender: Any) {
+        
+    }
+    
+    @IBAction func touchUpSearchButton(_ sender: Any) {
+        
+    }
+    
+    // MARK: - Custom Method
     
     private func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -74,7 +92,7 @@ extension TrendViewController: UICollectionViewDataSource {
 
 extension TrendViewController {
     private func fetchTrendMedia(type: String, time: String) {
-        let url = URLConstant.baseURL + URLConstant.trendingURL + "?api_key=\(APIKey.APIKey)"
+        let url = URLConstant.BaseURL + URLConstant.TrendingURL + "/\(type)" + "/\(time)" + "?api_key=\(APIKey.APIKey)"
         
         let params: Parameters = ["media_type" : type,
                                   "time_window" : time]
@@ -95,7 +113,7 @@ extension TrendViewController {
                         let video = media["video"].boolValue
                         
                         let backDrop = media["backdrop_path"].stringValue
-                        let poster = media["poster_path"].stringValue
+                        self.posterPath = media["poster_path"].stringValue
                         
                         let voteCount = media["vote_count"].intValue
                         
@@ -118,7 +136,7 @@ extension TrendViewController {
                         
                         let trendData = TrendData(video: video,
                                                   backdropPath: backDrop,
-                                                  posterPath: poster,
+                                                  posterPath: self.posterPath,
                                                   voteCount: voteCount,
                                                   mediaType: mediaType,
                                                   originalTitle: originalTitle,
@@ -133,11 +151,6 @@ extension TrendViewController {
                         self.trendList.append(trendData)
                         self.mediaCollectionView.reloadData()
                     }
-                    
-                    print("============== 사용할 데이터 ===============")
-                    print(self.trendList)
-                } else {
-                    
                 }
                 
             case .failure(let error):

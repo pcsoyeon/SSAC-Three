@@ -35,6 +35,9 @@ final class TrendCollectionViewCell: UICollectionViewCell {
         backView.layer.cornerRadius = 10
         backView.layer.masksToBounds = true
         
+        imageView.layer.cornerRadius = 10
+        imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
         backView.layer.applySketchShadow(color: .lightGray, alpha: 0.7, x: 0, y: 0, blur: 20, spread: 0)
     }
 
@@ -48,9 +51,17 @@ final class TrendCollectionViewCell: UICollectionViewCell {
         } else {
             titleLabel.text = data.title
         }
+        
         overviewLabel.text = data.overview
         
         popularityLabel.text = "\(data.voteAverage)"
+        
+        let url = URLConstant.ImageBaseURL + data.posterPath
+        let imageURL = URL(string: url)
+        guard let imageURL = imageURL else {
+            return
+        }
+        imageView.load(url: imageURL)
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		927EF5E1289AC72600C83A0F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5E0289AC72600C83A0F /* NavigationViewController.swift */; };
+		927EF5E3289ACB0000C83A0F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */; };
 		92AC0D3D2899F6FB001A3757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D3C2899F6FB001A3757 /* AppDelegate.swift */; };
 		92AC0D3F2899F6FB001A3757 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D3E2899F6FB001A3757 /* SceneDelegate.swift */; };
 		92AC0D412899F6FB001A3757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D402899F6FB001A3757 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		927EF5E0289AC72600C83A0F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		92AC0D392899F6FB001A3757 /* TMDBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AC0D3C2899F6FB001A3757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92AC0D3E2899F6FB001A3757 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				92AC0D6A289A7BDE001A3757 /* TrendViewController.swift */,
+				927EF5E0289AC72600C83A0F /* NavigationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				92AC0D81289AB684001A3757 /* CALayer+Extension.swift */,
 				92AC0D83289ABA17001A3757 /* String+Extension.swift */,
 				92AC0D85289ABA31001A3757 /* Date+Extension.swift */,
+				927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -310,6 +316,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92AC0D412899F6FB001A3757 /* ViewController.swift in Sources */,
+				927EF5E1289AC72600C83A0F /* NavigationViewController.swift in Sources */,
+				927EF5E3289ACB0000C83A0F /* UIImageView+Extension.swift in Sources */,
 				92AC0D84289ABA17001A3757 /* String+Extension.swift in Sources */,
 				92AC0D3D2899F6FB001A3757 /* AppDelegate.swift in Sources */,
 				92AC0D7F289AA81F001A3757 /* ReusableViewProtocol.swift in Sources */,
