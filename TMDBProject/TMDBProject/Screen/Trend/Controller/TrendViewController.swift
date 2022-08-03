@@ -37,12 +37,16 @@ final class TrendViewController: UIViewController {
     
     private var posterPath: String = ""
     
+    private var currentPage: Int = 1
+    private var totalPage: Int = 1
+    private var canFetchData: Bool = true
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        fetchTrendMedia(type: mediaType, time: timeType)
+        fetchTrendMedia(type: mediaType, time: timeType, page: currentPage)
     }
     
     // MARK: - IBAction
@@ -69,6 +73,7 @@ final class TrendViewController: UIViewController {
         mediaCollectionView.collectionViewLayout = layout
         
         mediaCollectionView.dataSource = self
+        mediaCollectionView.delegate = self
         
         mediaCollectionView.register(UINib(nibName: TrendCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: TrendCollectionViewCell.reuseIdentifier)
     }
@@ -88,10 +93,23 @@ extension TrendViewController: UICollectionViewDataSource {
     }
 }
 
+extension TrendViewController: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if mediaCollectionView.contentOffset.y > (mediaCollectionView.contentSize.height - mediaCollectionView.bounds.size.height) {
+            if canFetchData, currentPage < totalPage {
+                currentPage += 1
+                canFetchData = false
+                
+                fetchTrendMedia(type: mediaType, time: timeType, page: currentPage)
+            }
+        }
+    }
+}
+
 // MARK: - Network
 
 extension TrendViewController {
-    private func fetchTrendMedia(type: String, time: String) {
+    private func fetchTrendMedia(type: String, time: String, page: Int) {
         let url = URLConstant.BaseURL + URLConstant.TrendingURL + "/\(type)" + "/\(time)" + "?api_key=\(APIKey.APIKey)"
         
         let params: Parameters = ["media_type" : type,
@@ -106,8 +124,8 @@ extension TrendViewController {
                 
                 let statusCode = response.response?.statusCode ?? 500
                 if statusCode == 200 {
-                    let page = json["page"].intValue
-                    let totalPage = json["total_pages"].intValue
+                    self.totalPage = json["total_pages"].intValue
+                    self.canFetchData = true
                     
                     for media in json["results"].arrayValue {
                         let video = media["video"].boolValue
