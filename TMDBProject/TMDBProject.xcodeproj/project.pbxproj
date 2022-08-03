@@ -13,6 +13,9 @@
 		92AC0D442899F6FB001A3757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D422899F6FB001A3757 /* Main.storyboard */; };
 		92AC0D462899F6FC001A3757 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D452899F6FC001A3757 /* Assets.xcassets */; };
 		92AC0D492899F6FC001A3757 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D472899F6FC001A3757 /* LaunchScreen.storyboard */; };
+		92AC0D512899F7D3001A3757 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D502899F7D3001A3757 /* .gitignore */; };
+		92AC0D5B2899F92D001A3757 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D5A2899F92D001A3757 /* APIKey.swift */; };
+		92AC0D5E2899FAA7001A3757 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D5D2899FAA7001A3757 /* Example.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		92AC0D452899F6FC001A3757 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92AC0D482899F6FC001A3757 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92AC0D4A2899F6FC001A3757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92AC0D502899F7D3001A3757 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		92AC0D5A2899F92D001A3757 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		92AC0D5D2899FAA7001A3757 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,7 @@
 		92AC0D302899F6FB001A3757 = {
 			isa = PBXGroup;
 			children = (
+				92AC0D502899F7D3001A3757 /* .gitignore */,
 				92AC0D3B2899F6FB001A3757 /* TMDBProject */,
 				92AC0D3A2899F6FB001A3757 /* Products */,
 			);
@@ -56,15 +63,81 @@
 		92AC0D3B2899F6FB001A3757 /* TMDBProject */ = {
 			isa = PBXGroup;
 			children = (
-				92AC0D3C2899F6FB001A3757 /* AppDelegate.swift */,
-				92AC0D3E2899F6FB001A3757 /* SceneDelegate.swift */,
-				92AC0D402899F6FB001A3757 /* ViewController.swift */,
-				92AC0D422899F6FB001A3757 /* Main.storyboard */,
-				92AC0D452899F6FC001A3757 /* Assets.xcassets */,
-				92AC0D472899F6FC001A3757 /* LaunchScreen.storyboard */,
-				92AC0D4A2899F6FC001A3757 /* Info.plist */,
+				92AC0D5C2899FA8D001A3757 /* Key */,
+				92AC0D542899F840001A3757 /* Network */,
+				92AC0D532899F83A001A3757 /* Screen */,
+				92AC0D522899F830001A3757 /* Resource */,
 			);
 			path = TMDBProject;
+			sourceTree = "<group>";
+		};
+		92AC0D522899F830001A3757 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D572899F893001A3757 /* Asset */,
+				92AC0D562899F88A001A3757 /* Storyboard */,
+				92AC0D552899F884001A3757 /* Support */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		92AC0D532899F83A001A3757 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D402899F6FB001A3757 /* ViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		92AC0D542899F840001A3757 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D592899F922001A3757 /* Base */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		92AC0D552899F884001A3757 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D4A2899F6FC001A3757 /* Info.plist */,
+				92AC0D3C2899F6FB001A3757 /* AppDelegate.swift */,
+				92AC0D3E2899F6FB001A3757 /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		92AC0D562899F88A001A3757 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D422899F6FB001A3757 /* Main.storyboard */,
+				92AC0D472899F6FC001A3757 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		92AC0D572899F893001A3757 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D452899F6FC001A3757 /* Assets.xcassets */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		92AC0D592899F922001A3757 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D5A2899F92D001A3757 /* APIKey.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		92AC0D5C2899FA8D001A3757 /* Key */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D5D2899FAA7001A3757 /* Example.swift */,
+			);
+			path = Key;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92AC0D512899F7D3001A3757 /* .gitignore in Resources */,
 				92AC0D492899F6FC001A3757 /* LaunchScreen.storyboard in Resources */,
 				92AC0D462899F6FC001A3757 /* Assets.xcassets in Resources */,
 				92AC0D442899F6FB001A3757 /* Main.storyboard in Resources */,
@@ -140,7 +214,9 @@
 			files = (
 				92AC0D412899F6FB001A3757 /* ViewController.swift in Sources */,
 				92AC0D3D2899F6FB001A3757 /* AppDelegate.swift in Sources */,
+				92AC0D5B2899F92D001A3757 /* APIKey.swift in Sources */,
 				92AC0D3F2899F6FB001A3757 /* SceneDelegate.swift in Sources */,
+				92AC0D5E2899FAA7001A3757 /* Example.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PU64TS56AD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TMDBProject/Info.plist;
+				INFOPLIST_FILE = TMDBProject/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +393,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PU64TS56AD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TMDBProject/Info.plist;
+				INFOPLIST_FILE = TMDBProject/Resource/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
