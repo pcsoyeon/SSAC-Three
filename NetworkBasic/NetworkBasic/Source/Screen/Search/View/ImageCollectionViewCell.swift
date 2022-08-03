@@ -7,11 +7,41 @@
 
 import UIKit
 
-class ImageCollectionViewCell: UICollectionViewCell {
+final class ImageCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - UI Property
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    // MARK: - Initializer
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureUI()
     }
 
+    private func configureUI() {
+        configureLabel()
+        configureImageView()
+    }
+    
+    private func configureLabel() {
+        titleLabel.textColor = .darkGray
+        titleLabel.font = .systemFont(ofSize: 15, weight: .regular)
+    }
+    
+    private func configureImageView() {
+        imageView.contentMode = .scaleAspectFill
+    }
+    
+    func setData(_ data: ImageResponse) {
+        titleLabel.text = data.title
+        
+        let imageURL = URL(string: data.link)
+        guard let imageURL = imageURL else {
+            return
+        }
+        imageView.load(url: imageURL)
+    }
 }

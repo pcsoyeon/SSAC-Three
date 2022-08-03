@@ -29,6 +29,10 @@
 		927DBC2928920CE600F25DE0 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */; };
 		927DBC3128920F5500F25DE0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */; };
 		927DBC3228920F5500F25DE0 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */; };
+		927EF5EA289B378200C83A0F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5E8289B378200C83A0F /* ImageCollectionViewCell.swift */; };
+		927EF5EB289B378200C83A0F /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927EF5E9289B378200C83A0F /* ImageCollectionViewCell.xib */; };
+		927EF5ED289B384A00C83A0F /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5EC289B384A00C83A0F /* ReusableViewProtocol.swift */; };
+		927EF5EF289B38E600C83A0F /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5EE289B38E600C83A0F /* ImageResponse.swift */; };
 		928974E9289844EB0047476F /* Network.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928974E8289844EB0047476F /* Network.storyboard */; };
 		928974EC289845200047476F /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928974EB289845200047476F /* BeerDetailViewController.swift */; };
 		92AC0D60289A0992001A3757 /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D5F289A0992001A3757 /* ImageSearchViewController.swift */; };
@@ -66,6 +70,10 @@
 		927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		927EF5E8289B378200C83A0F /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		927EF5E9289B378200C83A0F /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		927EF5EC289B384A00C83A0F /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		927EF5EE289B38E600C83A0F /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
 		928974E8289844EB0047476F /* Network.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Network.storyboard; sourceTree = "<group>"; };
 		928974EB289845200047476F /* BeerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
 		92AC0D5F289A0992001A3757 /* ImageSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				92216E642898BD2900D523D0 /* BoxOfficeResponse.swift */,
+				927EF5EE289B38E600C83A0F /* ImageResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				927DBC2828920CE600F25DE0 /* ViewPresentableProtocol.swift */,
+				927EF5EC289B384A00C83A0F /* ReusableViewProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -276,6 +286,8 @@
 				927DBC2F28920F5500F25DE0 /* SearchTableViewCell.swift */,
 				927DBC3028920F5500F25DE0 /* SearchTableViewCell.xib */,
 				925DCBC9289225D2002C027E /* Search.storyboard */,
+				927EF5E8289B378200C83A0F /* ImageCollectionViewCell.swift */,
+				927EF5E9289B378200C83A0F /* ImageCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +410,7 @@
 				9249A1232898F864007DDBD1 /* BeerCollectionViewCell.xib in Resources */,
 				925DCBDF289384F0002C027E /* Pretendard-SemiBold.otf in Resources */,
 				92F137722890DD820040859E /* Assets.xcassets in Resources */,
+				927EF5EB289B378200C83A0F /* ImageCollectionViewCell.xib in Resources */,
 				925DCBD128935D98002C027E /* Location.storyboard in Resources */,
 				925DCBE0289384F0002C027E /* Pretendard-Regular.otf in Resources */,
 				92F137702890DD800040859E /* Main.storyboard in Resources */,
@@ -416,11 +429,13 @@
 				92F1376D2890DD800040859E /* SearchViewController.swift in Sources */,
 				925DCBCE28923AE8002C027E /* WebViewController.swift in Sources */,
 				92216E622898B4A500D523D0 /* Constant.swift in Sources */,
+				927EF5EA289B378200C83A0F /* ImageCollectionViewCell.swift in Sources */,
 				92F137692890DD800040859E /* AppDelegate.swift in Sources */,
 				927DBC2928920CE600F25DE0 /* ViewPresentableProtocol.swift in Sources */,
 				9249A1222898F864007DDBD1 /* BeerCollectionViewCell.swift in Sources */,
 				92AC0D60289A0992001A3757 /* ImageSearchViewController.swift in Sources */,
 				925DCBC828922373002C027E /* LottoViewController.swift in Sources */,
+				927EF5ED289B384A00C83A0F /* ReusableViewProtocol.swift in Sources */,
 				92216E652898BD2900D523D0 /* BoxOfficeResponse.swift in Sources */,
 				92216E672898C3A700D523D0 /* EndPoint.swift in Sources */,
 				9249A11D2898F70F007DDBD1 /* BeerViewController.swift in Sources */,
@@ -431,6 +446,7 @@
 				92216E5D2898A9F200D523D0 /* BeerResponse.swift in Sources */,
 				928974EC289845200047476F /* BeerDetailViewController.swift in Sources */,
 				925DCBCC28923057002C027E /* TranslateViewController.swift in Sources */,
+				927EF5EF289B38E600C83A0F /* ImageResponse.swift in Sources */,
 				92F1376B2890DD800040859E /* SceneDelegate.swift in Sources */,
 				927DBC3128920F5500F25DE0 /* SearchTableViewCell.swift in Sources */,
 			);

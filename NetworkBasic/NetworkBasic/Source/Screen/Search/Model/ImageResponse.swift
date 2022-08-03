@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct ImageResponse: Codable {
+    let link: String
+    let thumnail: String
+    let title: String
+}
