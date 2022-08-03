@@ -167,8 +167,9 @@ extension TrendViewController {
                                                   popularity: popularity)
                         
                         self.trendList.append(trendData)
-                        self.mediaCollectionView.reloadData()
                     }
+                    
+                    self.mediaCollectionView.reloadData()
                 }
                 
             case .failure(let error):
