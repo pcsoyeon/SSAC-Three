@@ -15,12 +15,18 @@
 		92AC0D492899F6FC001A3757 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D472899F6FC001A3757 /* LaunchScreen.storyboard */; };
 		92AC0D512899F7D3001A3757 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D502899F7D3001A3757 /* .gitignore */; };
 		92AC0D5B2899F92D001A3757 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D5A2899F92D001A3757 /* APIKey.swift */; };
-		92AC0D5E2899FAA7001A3757 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D5D2899FAA7001A3757 /* Example.swift */; };
 		92AC0D62289A7B0D001A3757 /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D61289A7B0D001A3757 /* URLConstant.swift */; };
 		92AC0D65289A7B96001A3757 /* Trend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D64289A7B96001A3757 /* Trend.storyboard */; };
 		92AC0D6B289A7BDE001A3757 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D6A289A7BDE001A3757 /* TrendViewController.swift */; };
 		92AC0D6E289A7C96001A3757 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92AC0D6D289A7C96001A3757 /* Alamofire */; };
 		92AC0D71289A7CA3001A3757 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 92AC0D70289A7CA3001A3757 /* SwiftyJSON */; };
+		92AC0D75289A89A7001A3757 /* TrendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D74289A89A7001A3757 /* TrendResponse.swift */; };
+		92AC0D7A289AA79B001A3757 /* TrendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D78289AA79B001A3757 /* TrendCollectionViewCell.swift */; };
+		92AC0D7B289AA79B001A3757 /* TrendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D79289AA79B001A3757 /* TrendCollectionViewCell.xib */; };
+		92AC0D7F289AA81F001A3757 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D7E289AA81F001A3757 /* ReusableViewProtocol.swift */; };
+		92AC0D82289AB685001A3757 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D81289AB684001A3757 /* CALayer+Extension.swift */; };
+		92AC0D84289ABA17001A3757 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D83289ABA17001A3757 /* String+Extension.swift */; };
+		92AC0D86289ABA31001A3757 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D85289ABA31001A3757 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +40,16 @@
 		92AC0D4A2899F6FC001A3757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92AC0D502899F7D3001A3757 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		92AC0D5A2899F92D001A3757 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		92AC0D5D2899FAA7001A3757 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		92AC0D61289A7B0D001A3757 /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
 		92AC0D64289A7B96001A3757 /* Trend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trend.storyboard; sourceTree = "<group>"; };
 		92AC0D6A289A7BDE001A3757 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
+		92AC0D74289A89A7001A3757 /* TrendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendResponse.swift; sourceTree = "<group>"; };
+		92AC0D78289AA79B001A3757 /* TrendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCollectionViewCell.swift; sourceTree = "<group>"; };
+		92AC0D79289AA79B001A3757 /* TrendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendCollectionViewCell.xib; sourceTree = "<group>"; };
+		92AC0D7E289AA81F001A3757 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		92AC0D81289AB684001A3757 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		92AC0D83289ABA17001A3757 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		92AC0D85289ABA31001A3757 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +85,7 @@
 		92AC0D3B2899F6FB001A3757 /* TMDBProject */ = {
 			isa = PBXGroup;
 			children = (
-				92AC0D5C2899FA8D001A3757 /* Key */,
+				92AC0D7C289AA7DB001A3757 /* Global */,
 				92AC0D542899F840001A3757 /* Network */,
 				92AC0D532899F83A001A3757 /* Screen */,
 				92AC0D522899F830001A3757 /* Resource */,
@@ -143,14 +155,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		92AC0D5C2899FA8D001A3757 /* Key */ = {
-			isa = PBXGroup;
-			children = (
-				92AC0D5D2899FAA7001A3757 /* Example.swift */,
-			);
-			path = Key;
-			sourceTree = "<group>";
-		};
 		92AC0D63289A7B8B001A3757 /* Trend */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				92AC0D64289A7B96001A3757 /* Trend.storyboard */,
+				92AC0D78289AA79B001A3757 /* TrendCollectionViewCell.swift */,
+				92AC0D79289AA79B001A3757 /* TrendCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 		92AC0D68289A7BAB001A3757 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92AC0D74289A89A7001A3757 /* TrendResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +198,33 @@
 				92AC0D402899F6FB001A3757 /* ViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		92AC0D7C289AA7DB001A3757 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D80289AB67A001A3757 /* Extension */,
+				92AC0D7D289AA7FC001A3757 /* Protocol */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		92AC0D7D289AA7FC001A3757 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D7E289AA81F001A3757 /* ReusableViewProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		92AC0D80289AB67A001A3757 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D81289AB684001A3757 /* CALayer+Extension.swift */,
+				92AC0D83289ABA17001A3757 /* String+Extension.swift */,
+				92AC0D85289ABA31001A3757 /* Date+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +295,7 @@
 			files = (
 				92AC0D65289A7B96001A3757 /* Trend.storyboard in Resources */,
 				92AC0D512899F7D3001A3757 /* .gitignore in Resources */,
+				92AC0D7B289AA79B001A3757 /* TrendCollectionViewCell.xib in Resources */,
 				92AC0D492899F6FC001A3757 /* LaunchScreen.storyboard in Resources */,
 				92AC0D462899F6FC001A3757 /* Assets.xcassets in Resources */,
 				92AC0D442899F6FB001A3757 /* Main.storyboard in Resources */,
@@ -275,11 +310,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				92AC0D412899F6FB001A3757 /* ViewController.swift in Sources */,
+				92AC0D84289ABA17001A3757 /* String+Extension.swift in Sources */,
 				92AC0D3D2899F6FB001A3757 /* AppDelegate.swift in Sources */,
+				92AC0D7F289AA81F001A3757 /* ReusableViewProtocol.swift in Sources */,
+				92AC0D82289AB685001A3757 /* CALayer+Extension.swift in Sources */,
+				92AC0D86289ABA31001A3757 /* Date+Extension.swift in Sources */,
+				92AC0D7A289AA79B001A3757 /* TrendCollectionViewCell.swift in Sources */,
+				92AC0D75289A89A7001A3757 /* TrendResponse.swift in Sources */,
 				92AC0D5B2899F92D001A3757 /* APIKey.swift in Sources */,
 				92AC0D3F2899F6FB001A3757 /* SceneDelegate.swift in Sources */,
 				92AC0D6B289A7BDE001A3757 /* TrendViewController.swift in Sources */,
-				92AC0D5E2899FAA7001A3757 /* Example.swift in Sources */,
 				92AC0D62289A7B0D001A3757 /* URLConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
