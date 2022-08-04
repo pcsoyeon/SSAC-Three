@@ -23,9 +23,7 @@ final class ImageSearchViewController: UIViewController {
     
     // 네크워크 요청 시 시작할 페이지 넘버
     private var startPage: Int = 1
-    private var displayCount: Int = 30
     private var totalCount: Int = 1
-    private var keyword: String = "클클클"
 
     // MARK: - Life Cycle
     
@@ -33,14 +31,12 @@ final class ImageSearchViewController: UIViewController {
         super.viewDidLoad()
         configureSearchBar()
         configureCollectionView()
-        fetchImage(keyword: keyword, display: displayCount, start: startPage)
     }
     
     // MARK: - Custom Method
     
     private func configureSearchBar() {
-        imageSearchBar.text = keyword
-        
+        imageSearchBar.placeholder = "검색어를 입력해주세요."
         imageSearchBar.delegate = self
     }
     
@@ -75,8 +71,8 @@ extension ImageSearchViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             if imageList.count - 1 == indexPath.item && imageList.count < totalCount {
-                startPage += displayCount
-                fetchImage(keyword: keyword, display: displayCount, start: startPage)
+                startPage += 30
+                fetchImage(keyword: imageSearchBar.text!)
             }
         }
     }
@@ -116,11 +112,29 @@ extension ImageSearchViewController: UICollectionViewDataSource {
 // MARK: - UISearchBar Protocol
 
 extension ImageSearchViewController: UISearchBarDelegate {
+    // 검색 버튼 클릭 시 실행 (return 버튼 눌렀을 때도 포함)
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
-            keyword = text
-            fetchImage(keyword: keyword, display: displayCount, start: 1)
+            imageList.removeAll()
+            startPage = 1
+            
+            imageCollectionView.scrollsToTop = true
+            
+            fetchImage(keyword: text)
         }
+        
+        view.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        imageList.removeAll()
+        imageCollectionView.reloadData()
+        searchBar.text = ""
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
     }
 }
 
@@ -128,10 +142,10 @@ extension ImageSearchViewController: UISearchBarDelegate {
 
 extension ImageSearchViewController {
     // fetchImage, requestImage, getImage ...
-    private func fetchImage(keyword: String, display: Int, start: Int) {
+    private func fetchImage(keyword: String) {
         guard let keywordData = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         
-        let url = Constant.EndPoint.imageSearchURL + "query=\(keywordData)&display=\(display)&start=\(start)"
+        let url = Constant.EndPoint.imageSearchURL + "query=\(keywordData)&display=30&start=\(startPage)"
         
         let header: HTTPHeaders = ["Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8",
                                   "X-Naver-Client-Id" : Constant.APIKey.NAVER_ID,
@@ -161,8 +175,6 @@ extension ImageSearchViewController {
                         self.imageList.append(data)
                     }
                     self.imageCollectionView.reloadData()
-                } else {
-                    print("ERROR")
                 }
                 
             case .failure(let error):
