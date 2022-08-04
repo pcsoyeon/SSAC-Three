@@ -22,6 +22,8 @@ final class TrendCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     
+    private var genre: [Int] = []
+    
     // MARK: - Initializer
     
     override func awakeFromNib() {
@@ -39,6 +41,10 @@ final class TrendCollectionViewCell: UICollectionViewCell {
         imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         backView.layer.applySketchShadow(color: .lightGray, alpha: 0.7, x: 0, y: 0, blur: 20, spread: 0)
+    }
+    
+    private func setGenre() {
+        
     }
 
     func setData(_ data: TrendData) {
@@ -62,6 +68,11 @@ final class TrendCollectionViewCell: UICollectionViewCell {
             return
         }
         imageView.load(url: imageURL)
+        
+        genre = data.genre
+        if genre.contains(28) {
+            genreLabel.text = "#Action"
+        }
     }
 }
 

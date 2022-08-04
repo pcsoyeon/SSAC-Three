@@ -10,18 +10,6 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-enum MediaType: String, CaseIterable {
-    case all
-    case movie
-    case tv
-    case person
-}
-
-enum TimeType: String, CaseIterable {
-    case day
-    case week
-}
-
 final class TrendViewController: UIViewController {
 
     // MARK: - UI Property
@@ -34,6 +22,7 @@ final class TrendViewController: UIViewController {
     let timeType = TimeType.day.rawValue
     
     private var trendList: [TrendData] = []
+    private var genreList: [Int] = []
     
     private var posterPath: String = ""
     
@@ -47,6 +36,7 @@ final class TrendViewController: UIViewController {
         super.viewDidLoad()
         configureCollectionView()
         fetchTrendMedia(type: mediaType, time: timeType, page: currentPage)
+        fetchGenre()
     }
     
     // MARK: - IBAction
@@ -128,14 +118,8 @@ extension TrendViewController {
                     self.canFetchData = true
                     
                     for media in json["results"].arrayValue {
-                        let video = media["video"].boolValue
-                        
-                        let backDrop = media["backdrop_path"].stringValue
                         self.posterPath = media["poster_path"].stringValue
                         
-                        let voteCount = media["vote_count"].intValue
-                        
-                        let mediaType = media["media_type"].stringValue
                         
                         let originalTitle = media["original_title"].stringValue
                         let title = media["title"].stringValue
@@ -150,13 +134,12 @@ extension TrendViewController {
                         
                         let overview = media["overview"].stringValue
                         
-                        let popularity = media["popularity"].doubleValue
+                        for item in media["genre_ids"].arrayValue {
+                            let data = item.intValue
+                            self.genreList.append(data)
+                        }
                         
-                        let trendData = TrendData(video: video,
-                                                  backdropPath: backDrop,
-                                                  posterPath: self.posterPath,
-                                                  voteCount: voteCount,
-                                                  mediaType: mediaType,
+                        let trendData = TrendData(posterPath: self.posterPath,
                                                   originalTitle: originalTitle,
                                                   title: title,
                                                   id: id,
@@ -164,13 +147,29 @@ extension TrendViewController {
                                                   voteAverage: voteAverage,
                                                   adult: adult,
                                                   overview: overview,
-                                                  popularity: popularity)
+                                                  genre: self.genreList)
                         
                         self.trendList.append(trendData)
                     }
                     
                     self.mediaCollectionView.reloadData()
                 }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func fetchGenre() {
+        let url = URLConstant.BaseURL + URLConstant.GenreBaseURL + "?api_key=\(APIKey.APIKey)&language=en-US"
+        
+        AF.request(url, method: .get).validate(statusCode: 200...500).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("============== 장르 ===============")
+                print(json)
                 
             case .failure(let error):
                 print(error)

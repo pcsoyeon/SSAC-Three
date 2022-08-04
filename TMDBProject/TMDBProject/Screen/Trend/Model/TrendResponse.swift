@@ -23,30 +23,23 @@ struct TrendResponse: Codable {
 // MARK: - Result
 
 struct TrendData: Codable {
-    let video: Bool?
-    let backdropPath, posterPath: String
-    let voteCount: Int
-    let mediaType: String
+    let posterPath: String
     let originalTitle, title: String?
     let id: Int
     let releaseDate: String?
     let voteAverage: Double
     let adult: Bool
     let overview: String
-    let popularity: Double
-
+    let genre: [Int]
+    
     enum CodingKeys: String, CodingKey {
-        case video
-        case backdropPath = "backdrop_path"
         case posterPath = "poster_path"
-        case voteCount = "vote_count"
-        case mediaType = "media_type"
         case originalTitle = "original_title"
         case title
         case id
         case releaseDate = "release_date"
         case voteAverage = "vote_average"
         case adult, overview
-        case popularity
+        case genre = "genre_ids"
     }
 }
