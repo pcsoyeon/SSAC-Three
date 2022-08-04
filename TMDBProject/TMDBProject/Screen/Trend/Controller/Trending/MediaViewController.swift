@@ -25,6 +25,7 @@ final class MediaViewController: UIViewController {
     private var genreList: [Int] = []
     
     private var posterPath: String = ""
+    private var backdropPath: String = ""
     
     private var currentPage: Int = 1
     private var totalPage: Int = 1
@@ -101,6 +102,11 @@ extension MediaViewController: UICollectionViewDelegate {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: MediaDetailViewController.reuseIdentifier) as? MediaDetailViewController else { return }
         viewController.id = mediaList[indexPath.item].id
         viewController.overview = mediaList[indexPath.item].overview
+        
+        viewController.backgroundImageURL = mediaList[indexPath.item].backdropPath
+        viewController.posterImageURL = mediaList[indexPath.item].posterPath
+        viewController.mediaTitle = mediaList[indexPath.item].title ?? mediaList[indexPath.item].originalTitle!
+        
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -144,6 +150,7 @@ extension MediaViewController {
                     for media in json["results"].arrayValue {
                         self.posterPath = media["poster_path"].stringValue
                         
+                        self.backdropPath = media["backdrop_path"].stringValue
                         
                         let originalTitle = media["original_title"].stringValue
                         let title = media["title"].stringValue
@@ -164,14 +171,15 @@ extension MediaViewController {
                         }
                         
                         let trendData = TrendMediaData(posterPath: self.posterPath,
-                                                  originalTitle: originalTitle,
-                                                  title: title,
-                                                  id: self.mediaId,
-                                                  releaseDate: releaseDate,
-                                                  voteAverage: voteAverage,
-                                                  adult: adult,
-                                                  overview: overview,
-                                                  genre: self.genreList)
+                                                       backdropPath: self.backdropPath,
+                                                       originalTitle: originalTitle,
+                                                       title: title,
+                                                       id: self.mediaId,
+                                                       releaseDate: releaseDate,
+                                                       voteAverage: voteAverage,
+                                                       adult: adult,
+                                                       overview: overview,
+                                                       genre: self.genreList)
                         
                         self.mediaList.append(trendData)
                     }

@@ -27,6 +27,10 @@ final class MediaDetailViewController: UIViewController {
     var id: Int = 1
     var overview: String = ""
     
+    var backgroundImageURL: String = ""
+    var posterImageURL: String = ""
+    var mediaTitle: String = ""
+    
     private var castList: [Cast] = []
     private var crewList: [Crew] = []
     
@@ -52,13 +56,15 @@ final class MediaDetailViewController: UIViewController {
 // MARK: - UITableView Protocol
 
 extension MediaDetailViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        if section == 0 {
-//            return UIView()
-//        } else {
-//            return nil
-//        }
-//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let headerView = DetailHeaderView()
+            headerView.setData(backgroundImageURL: backgroundImageURL, posterImageURL: posterImageURL, title: mediaTitle)
+            return headerView
+        } else {
+            return nil
+        }
+    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
@@ -74,9 +80,9 @@ extension MediaDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            return 120
+            return 180
         } else {
-            return 15
+            return 20
         }
     }
     

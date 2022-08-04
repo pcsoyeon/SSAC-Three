@@ -24,6 +24,7 @@ struct TrendMediaResponse: Codable {
 
 struct TrendMediaData: Codable {
     let posterPath: String
+    let backdropPath: String
     let originalTitle, title: String?
     let id: Int
     let releaseDate: String?
@@ -34,6 +35,7 @@ struct TrendMediaData: Codable {
     
     enum CodingKeys: String, CodingKey {
         case posterPath = "poster_path"
+        case backdropPath = "backdrop_path"
         case originalTitle = "original_title"
         case title
         case id
