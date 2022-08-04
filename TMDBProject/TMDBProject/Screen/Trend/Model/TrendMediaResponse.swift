@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - Trend Response
 
-struct TrendResponse: Codable {
-    let results: [TrendData]
+struct TrendMediaResponse: Codable {
+    let results: [TrendMediaData]
     let page, totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -22,7 +22,7 @@ struct TrendResponse: Codable {
 
 // MARK: - Result
 
-struct TrendData: Codable {
+struct TrendMediaData: Codable {
     let posterPath: String
     let originalTitle, title: String?
     let id: Int

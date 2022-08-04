@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TrendCollectionViewCell: UICollectionViewCell {
+final class TrendMediaCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Property
     
@@ -47,7 +47,7 @@ final class TrendCollectionViewCell: UICollectionViewCell {
         
     }
 
-    func setData(_ data: TrendData) {
+    func setData(_ data: TrendMediaData) {
         if let dateText = data.releaseDate {
             releaseDateLabel.text = dateText.toDate()?.toString()
         }

@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-final class TrendViewController: UIViewController {
+final class MediaViewController: UIViewController {
 
     // MARK: - UI Property
     
@@ -21,7 +21,7 @@ final class TrendViewController: UIViewController {
     let mediaType = MediaType.movie.rawValue
     let timeType = TimeType.day.rawValue
     
-    private var trendList: [TrendData] = []
+    private var trendList: [TrendMediaData] = []
     private var genreList: [Int] = []
     
     private var posterPath: String = ""
@@ -67,25 +67,25 @@ final class TrendViewController: UIViewController {
         mediaCollectionView.delegate = self
         mediaCollectionView.prefetchDataSource = self
         
-        mediaCollectionView.register(UINib(nibName: TrendCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: TrendCollectionViewCell.reuseIdentifier)
+        mediaCollectionView.register(UINib(nibName: TrendMediaCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: TrendMediaCollectionViewCell.reuseIdentifier)
     }
 }
 
 // MARK: - UICollectionView Protocol
 
-extension TrendViewController: UICollectionViewDataSource {
+extension MediaViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trendList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendCollectionViewCell.reuseIdentifier, for: indexPath) as? TrendCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendMediaCollectionViewCell.reuseIdentifier, for: indexPath) as? TrendMediaCollectionViewCell else { return UICollectionViewCell() }
         cell.setData(trendList[indexPath.item])
         return cell
     }
 }
 
-extension TrendViewController: UICollectionViewDelegate {
+extension MediaViewController: UICollectionViewDelegate {
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        if mediaCollectionView.contentOffset.y > (mediaCollectionView.contentSize.height - mediaCollectionView.bounds.size.height) {
 //            if canFetchData, currentPage < totalPage {
@@ -102,7 +102,7 @@ extension TrendViewController: UICollectionViewDelegate {
     }
 }
 
-extension TrendViewController: UICollectionViewDataSourcePrefetching {
+extension MediaViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             if trendList.count - 1 == indexPath.item && currentPage < totalPage {
@@ -119,7 +119,7 @@ extension TrendViewController: UICollectionViewDataSourcePrefetching {
 
 // MARK: - Network
 
-extension TrendViewController {
+extension MediaViewController {
     private func fetchTrendMedia(type: String, time: String, page: Int) {
         let url = URLConstant.BaseURL + URLConstant.TrendingURL + "/\(type)" + "/\(time)" + "?api_key=\(APIKey.APIKey)"
         
@@ -160,7 +160,7 @@ extension TrendViewController {
                             self.genreList.append(data)
                         }
                         
-                        let trendData = TrendData(posterPath: self.posterPath,
+                        let trendData = TrendMediaData(posterPath: self.posterPath,
                                                   originalTitle: originalTitle,
                                                   title: title,
                                                   id: self.mediaId,
