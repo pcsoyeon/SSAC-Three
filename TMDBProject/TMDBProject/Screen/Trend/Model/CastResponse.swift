@@ -6,3 +6,30 @@
 //
 
 import Foundation
+
+// MARK: - Cast Response
+
+struct CastResponse: Codable {
+    let id: Int
+    let cast: [Cast]
+}
+
+// MARK: - Cast Data
+
+struct Cast: Codable {
+    let adult: Bool
+    let gender, id: Int
+    let name, originalName: String
+    let popularity: Double
+    let profilePath: String
+    let character: String
+
+    enum CodingKeys: String, CodingKey {
+        case adult, gender, id
+        case name
+        case originalName = "original_name"
+        case popularity
+        case profilePath = "profile_path"
+        case character
+    }
+}

@@ -24,6 +24,8 @@ final class MediaDetailViewController: UIViewController {
     // MARK: - Property
     
     var id: Int = 1
+    var overview: String = ""
+    
     private var castList: [Cast] = []
     
     // MARK: - Life Cycle
@@ -39,18 +41,27 @@ final class MediaDetailViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: OverviewTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: OverviewTableViewCell.reuseIdentifier)
+        tableView.register(UINib(nibName: CastTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CastTableViewCell.reuseIdentifier)
     }
 }
 
 // MARK: - UITableView Protocol
 
 extension MediaDetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        if section == 0 {
+//            return UIView()
+//        } else {
+//            return nil
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
+            return nil
+        } else if section == 1 {
             return MediaDetailSection.overview.rawValue
         } else {
             return MediaDetailSection.cast.rawValue
@@ -58,12 +69,16 @@ extension MediaDetailViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 120
+        if section == 0 {
+            return 120
+        } else {
+            return 15
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 100
+        if indexPath.section == 1 {
+            return tableView.estimatedRowHeight
         } else {
             return 80
         }
@@ -72,11 +87,13 @@ extension MediaDetailViewController: UITableViewDelegate {
 
 extension MediaDetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
+            return 0
+        } else if section == 1 {
             return 1
         } else {
             return castList.count
@@ -84,7 +101,17 @@ extension MediaDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        if indexPath.section == 0 {
+            return UITableViewCell()
+        } else if indexPath.section == 1 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.reuseIdentifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
+            cell.setData(overview)
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.reuseIdentifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
+            cell.setData(castList[indexPath.row])
+            return cell
+        }
     }
 }
 

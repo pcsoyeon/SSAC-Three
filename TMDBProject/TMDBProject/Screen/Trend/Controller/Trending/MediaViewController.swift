@@ -100,6 +100,7 @@ extension MediaViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: MediaDetailViewController.reuseIdentifier) as? MediaDetailViewController else { return }
         viewController.id = mediaList[indexPath.item].id
+        viewController.overview = mediaList[indexPath.item].overview
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
