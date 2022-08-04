@@ -15,6 +15,7 @@
 		9249A11D2898F70F007DDBD1 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9249A11C2898F70F007DDBD1 /* BeerViewController.swift */; };
 		9249A1222898F864007DDBD1 /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9249A1202898F864007DDBD1 /* BeerCollectionViewCell.swift */; };
 		9249A1232898F864007DDBD1 /* BeerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9249A1212898F864007DDBD1 /* BeerCollectionViewCell.xib */; };
+		924DFCCB289B507100414B04 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 924DFCCA289B507100414B04 /* JGProgressHUD */; };
 		925DCBC628921746002C027E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBC528921746002C027E /* MainViewController.swift */; };
 		925DCBC828922373002C027E /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBC728922373002C027E /* LottoViewController.swift */; };
 		925DCBCA289225D2002C027E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925DCBC9289225D2002C027E /* Search.storyboard */; };
@@ -94,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C0E25328977D3A00B052C3 /* SwiftyJSON in Frameworks */,
+				924DFCCB289B507100414B04 /* JGProgressHUD in Frameworks */,
 				92C0E25028977CE900B052C3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +358,7 @@
 			packageProductDependencies = (
 				92C0E24F28977CE900B052C3 /* Alamofire */,
 				92C0E25228977D3A00B052C3 /* SwiftyJSON */,
+				924DFCCA289B507100414B04 /* JGProgressHUD */,
 			);
 			productName = NetworkBasic;
 			productReference = 92F137652890DD800040859E /* NetworkBasic.app */;
@@ -388,6 +391,7 @@
 			packageReferences = (
 				92C0E24E28977CE900B052C3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				92C0E25128977D3A00B052C3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				924DFCC9289B507100414B04 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 92F137662890DD800040859E /* Products */;
 			projectDirPath = "";
@@ -668,6 +672,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		924DFCC9289B507100414B04 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		92C0E24E28977CE900B052C3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -687,6 +699,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		924DFCCA289B507100414B04 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 924DFCC9289B507100414B04 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		92C0E24F28977CE900B052C3 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 92C0E24E28977CE900B052C3 /* XCRemoteSwiftPackageReference "Alamofire" */;

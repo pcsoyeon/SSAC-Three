@@ -9,6 +9,7 @@ import UIKit
 
 import Alamofire
 import SwiftyJSON
+import JGProgressHUD
 
 class SearchViewController: UIViewController {
     
@@ -27,6 +28,8 @@ class SearchViewController: UIViewController {
         dateFormatter.dateFormat = "YYYYMMdd"
         return dateFormatter
     }()
+    
+    let hud = JGProgressHUD()
     
     // MARK: - Life Cycle
     
@@ -98,16 +101,22 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController {
     private func requestBoxOffice(date: String) {
+        
+        hud.show(in: view)
+        
+        // 초기화를 해야 새로운 데이터가 담겨서 올 수 있음
+        boxOfficeList.removeAll()
+        
         let url = "\(Constant.EndPoint.boxOfficeURL)?key=\(Constant.APIKey.BOXOFFICE)&targetDt=\(date)"
         
-        AF.request(url, method: . get).validate().responseJSON { response in
+        // warning 해결
+        // 1. alamofire + codable (resposeDecodable)
+        // 2. alamofire에서 제공하는 함수 사용 : responseJSON, responseData, ...
+        AF.request(url, method: . get).validate().responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 print(json)
-                
-                // 초기화를 해야 새로운 데이터가 담겨서 올 수 있음 
-                self.boxOfficeList.removeAll()
                 
                 for movie in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
                     let movieNm = movie["movieNm"].stringValue
@@ -126,10 +135,12 @@ extension SearchViewController {
 //                self.list.append(movieNm1)
 //                self.list.append(movieNm2)
 //                self.list.append(movieNm3)
-                
+            
                 self.searchTableView.reloadData()
+                self.hud.dismiss(animated: true)
                 
             case .failure(let error):
+                self.hud.dismiss(animated: true)
                 print(error)
             }
         }
