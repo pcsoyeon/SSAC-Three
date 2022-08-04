@@ -63,7 +63,7 @@ final class ImageSearchViewController: UIViewController {
     }
 }
 
-// MARK: - Pagenation Protocol
+// MARK: - UICollectionView Protocol
 
 // 페이지네이션 방법 3.
 // 용량이 큰 이미지를 다운 받아서 셀에 보여주려고 하는 경우에 효과적
@@ -86,8 +86,6 @@ extension ImageSearchViewController: UICollectionViewDataSourcePrefetching {
         print("=========☁️\(indexPaths)☁️=========")
     }
 }
-
-// MARK: - UICollectionView Protocol
 
 extension ImageSearchViewController: UICollectionViewDelegate {
     // 페이지네이션 방법 1. 컬렉션 뷰가 특정 셀을 그리려는 시점에 호출되는 메서드
