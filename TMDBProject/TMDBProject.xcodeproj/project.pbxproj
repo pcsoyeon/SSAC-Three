@@ -242,8 +242,8 @@
 		92AC0D68289A7BAB001A3757 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				92AC0D74289A89A7001A3757 /* TrendMediaResponse.swift */,
 				9200210A289B970500C2BE5C /* MediaType.swift */,
+				92AC0D74289A89A7001A3757 /* TrendMediaResponse.swift */,
 				9200210E289BA83700C2BE5C /* CastResponse.swift */,
 			);
 			path = Model;

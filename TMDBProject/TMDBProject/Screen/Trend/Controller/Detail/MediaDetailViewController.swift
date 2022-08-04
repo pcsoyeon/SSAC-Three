@@ -125,7 +125,7 @@ extension MediaDetailViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("================= Credit Data =================")
+                print("================= Cast Data =================")
                 print(json)
                 
                 let statusCode = response.response?.statusCode ?? 500

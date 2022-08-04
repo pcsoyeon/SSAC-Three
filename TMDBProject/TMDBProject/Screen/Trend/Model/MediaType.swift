@@ -18,5 +18,3 @@ enum TimeType: String, CaseIterable {
     case day
     case week
 }
-
-

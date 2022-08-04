@@ -20,13 +20,25 @@ class CastTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUI()
     }
     
     // MARK: - Custom Method
+    
+    private func configureUI() {
+        castImageView.layer.cornerRadius = 10
+        castImageView.layer.masksToBounds = true
+    }
     
     func setData(_ data: Cast) {
         nameLabel.text = data.name
         
         characterLabel.text = data.character
+        
+        let imageURL = URL(string: URLConstant.ImageBaseURL + data.profilePath)
+        guard let imageURL = imageURL else {
+            return
+        }
+        castImageView.load(url: imageURL)
     }
 }
