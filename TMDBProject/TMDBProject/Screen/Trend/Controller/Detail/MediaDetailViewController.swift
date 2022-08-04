@@ -24,7 +24,7 @@ final class MediaDetailViewController: UIViewController {
     // MARK: - Property
     
     var id: Int = 1
-    private var actorList: [String] = []
+    private var castList: [Cast] = []
     
     // MARK: - Life Cycle
     
@@ -56,6 +56,18 @@ extension MediaDetailViewController: UITableViewDelegate {
             return MediaDetailSection.cast.rawValue
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 120
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 100
+        } else {
+            return 80
+        }
+    }
 }
 
 extension MediaDetailViewController: UITableViewDataSource {
@@ -67,7 +79,7 @@ extension MediaDetailViewController: UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return actorList.count
+            return castList.count
         }
     }
     
@@ -88,6 +100,37 @@ extension MediaDetailViewController {
                 let json = JSON(value)
                 print("================= Credit Data =================")
                 print(json)
+                
+                let statusCode = response.response?.statusCode ?? 500
+                if statusCode == 200 {
+                    for cast in json["cast"].arrayValue {
+                        let adult = cast["adult"].boolValue
+                        
+                        let gender = cast["gender"].intValue
+                        
+                        let id = cast["id"].intValue
+                        
+                        let popularity = cast["popularity"].doubleValue
+                        
+                        let name = cast["name"].stringValue
+                        let originalName = cast["original_name"].stringValue
+                        
+                        let profilePath = cast["profile_path"].stringValue
+                        let character = cast["character"].stringValue
+                        
+                        let data = Cast(adult: adult,
+                                        gender: gender,
+                                        id: id,
+                                        name: name,
+                                        originalName: originalName,
+                                        popularity: popularity,
+                                        profilePath: profilePath,
+                                        character: character)
+                        self.castList.append(data)
+                    }
+                    
+                    self.tableView.reloadData()
+                }
                 
             case .failure(let error):
                 print(error)
