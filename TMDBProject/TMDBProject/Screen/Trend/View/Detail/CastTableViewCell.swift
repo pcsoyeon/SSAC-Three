@@ -30,10 +30,20 @@ class CastTableViewCell: UITableViewCell {
         castImageView.layer.masksToBounds = true
     }
     
-    func setData(_ data: Cast) {
+    func setCastData(_ data: Cast) {
         nameLabel.text = data.name
         
         characterLabel.text = data.character
+        
+        let imageURL = URL(string: URLConstant.ImageBaseURL + data.profilePath)
+        guard let imageURL = imageURL else {
+            return
+        }
+        castImageView.load(url: imageURL)
+    }
+    
+    func setCrewData(_ data: Crew) {
+        nameLabel.text = data.name
         
         let imageURL = URL(string: URLConstant.ImageBaseURL + data.profilePath)
         guard let imageURL = imageURL else {

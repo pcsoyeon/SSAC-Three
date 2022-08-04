@@ -13,6 +13,7 @@ import SwiftyJSON
 enum MediaDetailSection: String {
     case overview = "OverView"
     case cast = "Cast"
+    case crew = "Crew"
 }
 
 final class MediaDetailViewController: UIViewController {
@@ -27,6 +28,7 @@ final class MediaDetailViewController: UIViewController {
     var overview: String = ""
     
     private var castList: [Cast] = []
+    private var crewList: [Crew] = []
     
     // MARK: - Life Cycle
     
@@ -63,8 +65,10 @@ extension MediaDetailViewController: UITableViewDelegate {
             return nil
         } else if section == 1 {
             return MediaDetailSection.overview.rawValue
-        } else {
+        } else if section == 2 {
             return MediaDetailSection.cast.rawValue
+        } else {
+            return MediaDetailSection.crew.rawValue
         }
     }
     
@@ -87,7 +91,7 @@ extension MediaDetailViewController: UITableViewDelegate {
 
 extension MediaDetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,8 +99,10 @@ extension MediaDetailViewController: UITableViewDataSource {
             return 0
         } else if section == 1 {
             return 1
-        } else {
+        } else if section == 2 {
             return castList.count
+        } else {
+            return crewList.count
         }
     }
     
@@ -107,9 +113,13 @@ extension MediaDetailViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.reuseIdentifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
             cell.setData(overview)
             return cell
+        } else if indexPath.section == 2 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.reuseIdentifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
+            cell.setCastData(castList[indexPath.row])
+            return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.reuseIdentifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
-            cell.setData(castList[indexPath.row])
+            cell.setCrewData(crewList[indexPath.row])
             return cell
         }
     }
@@ -154,6 +164,17 @@ extension MediaDetailViewController {
                                         profilePath: profilePath,
                                         character: character)
                         self.castList.append(data)
+                    }
+                    
+                    for crew in json["crew"].arrayValue {
+                        let name = crew["name"].stringValue
+                        let originalName = crew["original_name"].stringValue
+                        let profilePath = crew["profile_path"].stringValue
+                        
+                        let data = Crew(name: name,
+                                        originalName: originalName,
+                                        profilePath: profilePath)
+                        self.crewList.append(data)
                     }
                     
                     self.tableView.reloadData()

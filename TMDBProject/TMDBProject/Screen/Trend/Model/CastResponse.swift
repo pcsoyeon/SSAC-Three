@@ -33,3 +33,16 @@ struct Cast: Codable {
         case character
     }
 }
+
+// MARK: - Crew Data
+
+struct Crew: Codable {
+    let name, originalName: String
+    let profilePath: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case originalName = "original_name"
+        case profilePath = "profile_path"
+    }
+}
