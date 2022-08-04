@@ -30,13 +30,14 @@ final class TrendViewController: UIViewController {
     private var totalPage: Int = 1
     private var canFetchData: Bool = true
     
+    private var mediaId: Int = 0
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
         fetchTrendMedia(type: mediaType, time: timeType, page: currentPage)
-        fetchGenre()
     }
     
     // MARK: - IBAction
@@ -64,6 +65,7 @@ final class TrendViewController: UIViewController {
         
         mediaCollectionView.dataSource = self
         mediaCollectionView.delegate = self
+        mediaCollectionView.prefetchDataSource = self
         
         mediaCollectionView.register(UINib(nibName: TrendCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: TrendCollectionViewCell.reuseIdentifier)
     }
@@ -84,15 +86,34 @@ extension TrendViewController: UICollectionViewDataSource {
 }
 
 extension TrendViewController: UICollectionViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if mediaCollectionView.contentOffset.y > (mediaCollectionView.contentSize.height - mediaCollectionView.bounds.size.height) {
-            if canFetchData, currentPage < totalPage {
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if mediaCollectionView.contentOffset.y > (mediaCollectionView.contentSize.height - mediaCollectionView.bounds.size.height) {
+//            if canFetchData, currentPage < totalPage {
+//                currentPage += 1
+//                canFetchData = false
+//
+//                fetchTrendMedia(type: mediaType, time: timeType, page: currentPage)
+//            }
+//        }
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // 화면 전환
+    }
+}
+
+extension TrendViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if trendList.count - 1 == indexPath.item && currentPage < totalPage {
                 currentPage += 1
-                canFetchData = false
-                
                 fetchTrendMedia(type: mediaType, time: timeType, page: currentPage)
             }
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        
     }
 }
 
@@ -105,7 +126,7 @@ extension TrendViewController {
         let params: Parameters = ["media_type" : type,
                                   "time_window" : time]
         
-        AF.request(url, method: .get, parameters: params).validate(statusCode: 200...500).responseJSON { response in
+        AF.request(url, method: .get, parameters: params).validate(statusCode: 200...500).responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -115,7 +136,7 @@ extension TrendViewController {
                 let statusCode = response.response?.statusCode ?? 500
                 if statusCode == 200 {
                     self.totalPage = json["total_pages"].intValue
-                    self.canFetchData = true
+//                    self.canFetchData = true
                     
                     for media in json["results"].arrayValue {
                         self.posterPath = media["poster_path"].stringValue
@@ -124,7 +145,7 @@ extension TrendViewController {
                         let originalTitle = media["original_title"].stringValue
                         let title = media["title"].stringValue
                         
-                        let id = media["id"].intValue
+                        self.mediaId = media["id"].intValue
                         
                         let releaseDate = media["release_date"].stringValue
                         
@@ -142,7 +163,7 @@ extension TrendViewController {
                         let trendData = TrendData(posterPath: self.posterPath,
                                                   originalTitle: originalTitle,
                                                   title: title,
-                                                  id: id,
+                                                  id: self.mediaId,
                                                   releaseDate: releaseDate,
                                                   voteAverage: voteAverage,
                                                   adult: adult,
