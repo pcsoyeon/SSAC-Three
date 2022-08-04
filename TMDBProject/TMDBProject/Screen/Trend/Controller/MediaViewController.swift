@@ -21,7 +21,7 @@ final class MediaViewController: UIViewController {
     let mediaType = MediaType.movie.rawValue
     let timeType = TimeType.day.rawValue
     
-    private var trendList: [TrendMediaData] = []
+    private var mediaList: [TrendMediaData] = []
     private var genreList: [Int] = []
     
     private var posterPath: String = ""
@@ -75,12 +75,12 @@ final class MediaViewController: UIViewController {
 
 extension MediaViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return trendList.count
+        return mediaList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendMediaCollectionViewCell.reuseIdentifier, for: indexPath) as? TrendMediaCollectionViewCell else { return UICollectionViewCell() }
-        cell.setData(trendList[indexPath.item])
+        cell.setData(mediaList[indexPath.item])
         return cell
     }
 }
@@ -98,14 +98,16 @@ extension MediaViewController: UICollectionViewDelegate {
 //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // 화면 전환
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: MediaDetailViewController.reuseIdentifier) as? MediaDetailViewController else { return }
+        viewController.id = mediaList[indexPath.item].id
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
 extension MediaViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
-            if trendList.count - 1 == indexPath.item && currentPage < totalPage {
+            if mediaList.count - 1 == indexPath.item && currentPage < totalPage {
                 currentPage += 1
                 fetchTrendMedia(type: mediaType, time: timeType, page: currentPage)
             }
@@ -130,7 +132,7 @@ extension MediaViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("============== 전체 데이터 ===============")
+                print("============== Trending Data ===============")
                 print(json)
                 
                 let statusCode = response.response?.statusCode ?? 500
@@ -170,7 +172,7 @@ extension MediaViewController {
                                                   overview: overview,
                                                   genre: self.genreList)
                         
-                        self.trendList.append(trendData)
+                        self.mediaList.append(trendData)
                     }
                     
                     self.mediaCollectionView.reloadData()

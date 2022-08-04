@@ -13,4 +13,5 @@ struct URLConstant {
     static let GenreBaseURL = "/genre/movie/list"
     
     static let TrendingURL = "/trending"
+    static let MovieURL = "/movie"
 }
