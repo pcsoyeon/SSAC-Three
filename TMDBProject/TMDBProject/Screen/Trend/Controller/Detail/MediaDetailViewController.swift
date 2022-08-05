@@ -93,6 +93,12 @@ extension MediaDetailViewController: UITableViewDelegate {
             return 80
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            
+        }
+    }
 }
 
 extension MediaDetailViewController: UITableViewDataSource {
@@ -118,6 +124,7 @@ extension MediaDetailViewController: UITableViewDataSource {
         } else if indexPath.section == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.reuseIdentifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
             cell.setData(overview)
+            cell.delegate = self
             return cell
         } else if indexPath.section == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.reuseIdentifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
@@ -128,6 +135,14 @@ extension MediaDetailViewController: UITableViewDataSource {
             cell.setCrewData(crewList[indexPath.row])
             return cell
         }
+    }
+}
+
+// MARK: - Custom Protocol
+
+extension MediaDetailViewController: OverviewTableViewCellDelegate {
+    func touchUpMoreButton() {
+        
     }
 }
 

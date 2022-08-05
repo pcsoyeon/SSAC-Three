@@ -13,7 +13,6 @@ class DetailHeaderView : UIView{
     
     private var titleLabel : UILabel = {
         let label = UILabel()
-        label.text = "My Title"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

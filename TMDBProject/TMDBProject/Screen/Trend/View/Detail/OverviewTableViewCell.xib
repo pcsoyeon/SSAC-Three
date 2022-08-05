@@ -16,18 +16,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7E-Uh-0I2">
-                        <rect key="frame" x="20" y="15" width="335" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7E-Uh-0I2">
+                        <rect key="frame" x="20" y="15" width="335" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="iwj-YZ-i8D"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fd-JJ-Fda">
+                        <rect key="frame" x="20" y="65" width="335" height="25"/>
+                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system"/>
+                        <connections>
+                            <action selector="touchUpMoreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mmv-uW-Egt"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="F7E-Uh-0I2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="1Ww-dI-ANa"/>
+                    <constraint firstItem="6fd-JJ-Fda" firstAttribute="top" secondItem="F7E-Uh-0I2" secondAttribute="bottom" constant="10" id="FgH-ut-7ce"/>
+                    <constraint firstAttribute="trailing" secondItem="6fd-JJ-Fda" secondAttribute="trailing" constant="20" id="Lw1-ES-tVe"/>
                     <constraint firstItem="F7E-Uh-0I2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Uma-36-Dz0"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6fd-JJ-Fda" secondAttribute="bottom" constant="10" id="aP6-Ox-Arg"/>
                     <constraint firstAttribute="trailing" secondItem="F7E-Uh-0I2" secondAttribute="trailing" constant="20" id="bfU-s3-KLG"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="F7E-Uh-0I2" secondAttribute="bottom" constant="15" id="wGl-J8-h1i"/>
+                    <constraint firstItem="6fd-JJ-Fda" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="pJ8-NQ-wWu"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -37,4 +52,7 @@
             <point key="canvasLocation" x="139" y="110"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
+    </resources>
 </document>

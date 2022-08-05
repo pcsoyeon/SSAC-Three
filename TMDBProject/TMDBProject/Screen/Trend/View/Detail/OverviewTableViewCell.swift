@@ -7,11 +7,19 @@
 
 import UIKit
 
+protocol OverviewTableViewCellDelegate: MediaDetailViewController {
+    func touchUpMoreButton()
+}
+
 class OverviewTableViewCell: UITableViewCell {
 
     // MARK: - UI Property
     
     @IBOutlet weak var overviewLabel: UILabel!
+    
+    // MARK: - Property
+    
+    weak var delegate: OverviewTableViewCellDelegate?
     
     // MARK: - Initializer
     
@@ -23,5 +31,11 @@ class OverviewTableViewCell: UITableViewCell {
     
     func setData(_ data: String) {
         overviewLabel.text = data
+    }
+    
+    // MARK: - IBAction
+    
+    @IBAction func touchUpMoreButton(_ sender: Any) {
+        delegate?.touchUpMoreButton()
     }
 }
