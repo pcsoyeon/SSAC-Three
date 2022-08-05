@@ -156,3 +156,167 @@ func calculate(operand: String) -> (Int, Int) -> Int {
 calculate(operand: "+")(3, 5)  // 함수 실행
 let resultValue = calculate(operand: "*")
 resultValue(4, 9)
+
+
+/*
+ 클로저 : 이름 없는 함수
+ */
+
+func studyiOS() {
+    print("주말에도 공부하기")
+}
+
+// 1. 상수 또는 변수에 대입할 수 있다.
+
+let studyiOSHarder: () -> () = {
+    print("주말에도 공부하기")
+}
+
+let studyiOSHarder2 = { () -> () in
+    // in 이라는 키워드 기준으로 구분 (클로저 헤더와 바디를 구분하는 키워드)
+    // in 의 앞 : 클로저 헤더
+    // in 의 뒤 : 클로저 바디
+    print("주말에도 공부하기")
+}
+
+studyiOSHarder2 // 상수를 호출하는 것만으로 함수가 실행되지 않음
+studyiOSHarder2() // 함수 호출 연산자를 작성해야 함
+
+// 만약 상수에서 실행까지 담당하고 싶다면?
+//let studyiOSHarder2 = { () -> () in
+//    print("주말에도 공부하기")
+//}()
+
+// 2. 함수의 인자값으로 전달할 수 있다.
+// 함수 안에 함수 그 자체를 넣는 것
+func getStudyWithMe(study: () -> ()) {
+    print("get Study With Me")
+    study()
+}
+
+// 코드를 생략하지 않고 클로저 구문 사용 = 함수의 매개 변수 안에 클로저가 그대로 들어간 상태
+// -> 인라인 클로저
+getStudyWithMe(study:{ () -> () in
+    print("주말에도 공부하기")
+})
+
+// 함수 뒤에 클로저가 실행
+// -> 트레일링 클로저 (= 후행 클로저)
+getStudyWithMe() { () -> () in
+    print("주말에도 공부하기")
+}
+
+func randomNumber(result: (Int) -> String) {
+    result(Int.random(in: 1...100))
+}
+
+// 인라인 클로저
+randomNumber(result: { (number: Int) -> String in
+    return "행운의 숫자는 \(number)입니다."
+})
+
+// 후행 클로저
+randomNumber(result: { (number) in
+    return "행운의 숫자는 \(number)입니다."
+})
+
+randomNumber(result: { (number) in
+    "행운의 숫자는 \(number)입니다."
+})
+
+randomNumber() { (number) in
+    "행운의 숫자는 \(number)입니다."
+}
+
+// 매개변수가 생략되면 할당되어 있는 내부 상수 $0을 사용할 수 있다.
+randomNumber() {
+    "행운의 숫자는 \($0)입니다."
+}
+
+randomNumber { "행운의 숫자는 \($0)입니다."}
+
+// 고차 함수 : filter map reduce
+
+func processTime(code: () -> ()) {
+    let start = CFAbsoluteTimeGetCurrent()
+    code()
+    let end = CFAbsoluteTimeGetCurrent() - start
+    
+    print(end)
+}
+
+let student = [2.2, 4.5, 3.2, 4.9, 1.8, 3.3, 4.5]
+
+processTime {
+    var newStudent: [Double] = []
+
+    for student in student {
+        if student >= 4.0 {
+            newStudent.append(student)
+        }
+    }
+    print(newStudent)
+}
+
+// ex. 4.0 이상인 학생 고르기
+
+var newStudent: [Double] = []
+
+for student in student {
+    if student >= 4.0 {
+        newStudent.append(student)
+    }
+}
+print(newStudent)
+
+//let filterStudent = student.filter { value in
+//    value >= 4.0
+//}
+
+let filterStudent = student.filter { $0 >= 4.0 }
+print(filterStudent)
+
+processTime {
+    let filterStudent2 = student.filter { $0 >= 4.0 }
+    print(filterStudent2)
+}
+
+// map: 기존 요소를 클로저를 통해 원하는 결과값으로 변경
+let number = [Int](1...100)
+var newNumber: [Int] = []
+
+for number in number {
+    newNumber.append(number * 3)
+}
+print(newNumber)
+
+let mapNumber = number.map{ $0 * 3 }
+print(newNumber)
+
+let movieList = [
+    "괴물" : "박찬욱",
+    "기생충" : "봉준호",
+    "인터스텔라" : "크리스토퍼 놀란",
+    "인셉션" : "크리스토퍼 놀란",
+    "옥자" : "봉준호"
+]
+
+// 특정 감독의 영화만 출력
+let movieResult = movieList.filter { $0.value == "봉준호"}
+print(movieResult)
+
+// 영화 이름 배열로 변경
+let movieNameList = movieList.filter { $0.value == "봉준호" }.map { $0.key }
+
+// reduce
+
+let examScore: [Double] = [100, 20, 40, 77, 75, 91, 88, 95]
+var totalCount: Double = 0
+
+for score in examScore {
+    totalCount += score
+}
+print(totalCount / 8)
+
+let totalCountUsingReduce = examScore.reduce(0) { return $0 + $1 }
+print(totalCountUsingReduce / 8)
