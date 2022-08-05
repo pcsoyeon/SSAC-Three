@@ -63,7 +63,7 @@ let user: (String) -> String = hello(userName:)
 //}
 
 
-// 2.
+// 3. 함수의 인자값으로 함수를 사용할 수 있다.
 //() -> ()
 func oddNumber() {
     print("홀수")
@@ -71,6 +71,14 @@ func oddNumber() {
 
 func evenNumber() {
     print("짝수")
+}
+
+func plusNumber() {
+    
+}
+
+func minusNumber() {
+    
 }
 
 func resultNumber(number: Int, odd: () -> (), even: () -> ()) {
@@ -87,3 +95,64 @@ resultNumber(number: 9) {
     print("짝수")
 }
 
+// 어떤 함수가 들어가던 상관이 없고 타입만 잘 맞으면 된다.
+// 실질적 연산이 인자값에 들어가는 함수에 달려 있어 중개 역할만 담당하고 있어서 브로카라고 부름
+resultNumber(number: 32, odd: plusNumber, even: minusNumber) // 의도 하지 않은 함수가 들어갈 수 있음, 필요 이상의 함수가 자꾸 생김 
+
+// 2. 함수의 반환 타입으로 함수를 사용할 수 있다.
+
+func currentAccount() -> String {
+    return "계좌 있음"
+}
+
+func noCurrentAccount() -> String {
+    return "계좌 없음 "
+}
+
+// 가장 왼쪽에 위치한 -> 를 기준으로 오른쪽에 놓은 모든 타입은 반환값을 의미한다.
+func checkBank(bank: String) -> () -> String {
+    let backArray = ["우리", "신한", "국민"]
+    return backArray.contains(bank) ? currentAccount : noCurrentAccount // 함수를 호출하는 것이 아니라 함수를 던져줌
+}
+
+let sokyte = checkBank(bank: "우리") // 함수를 넣어주기만 했음
+sokyte() // 함수 호출
+let huree = checkBank(bank: "카카오뱅크")
+
+// 2-1. Calculate
+
+func plus(a: Int, b: Int) -> Int {
+    return a + b
+}
+
+func minus(a: Int, b: Int) -> Int {
+    return a - b
+}
+
+func multiple(a: Int, b: Int) -> Int {
+    return a * b
+}
+
+func divide(a: Int, b: Int) -> Int {
+    return a / b
+}
+
+func calculate(operand: String) -> (Int, Int) -> Int {
+    switch operand {
+    case "+":
+        return plus
+    case "-":
+        return minus
+    case "*":
+        return multiple
+    case "/":
+        return divide
+    default:
+        return plus
+    }
+}
+
+//calculate(operand: "+") // 함수가 실행되는 것은 아니고 불러온 것
+calculate(operand: "+")(3, 5)  // 함수 실행
+let resultValue = calculate(operand: "*")
+resultValue(4, 9)
