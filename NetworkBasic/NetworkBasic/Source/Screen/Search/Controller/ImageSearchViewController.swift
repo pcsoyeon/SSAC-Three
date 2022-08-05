@@ -20,6 +20,7 @@ final class ImageSearchViewController: UIViewController {
     // MARK: - Property
     
     private var imageList: [ImageResponse] = []
+    private var list: [String] = []
     
     // 네크워크 요청 시 시작할 페이지 넘버
     private var startPage: Int = 1
@@ -70,7 +71,7 @@ extension ImageSearchViewController: UICollectionViewDataSourcePrefetching {
     // 셀이 화면에 보이기 직전에 필요한 리소스를 미리 다운 받는 기능
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
-            if imageList.count - 1 == indexPath.item && imageList.count < totalCount {
+            if list.count - 1 == indexPath.item && list.count < totalCount {
                 startPage += 30
                 fetchImage(keyword: imageSearchBar.text!)
             }
@@ -99,12 +100,14 @@ extension ImageSearchViewController: UICollectionViewDelegate {
 
 extension ImageSearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageList.count
+//        return imageList.count
+        return list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier, for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
-        cell.setData(imageList[indexPath.item])
+//        cell.setData(imageList[indexPath.item])
+        cell.setImageData(list[indexPath.item])
         return cell
     }
 }
@@ -143,42 +146,56 @@ extension ImageSearchViewController: UISearchBarDelegate {
 extension ImageSearchViewController {
     // fetchImage, requestImage, getImage ...
     private func fetchImage(keyword: String) {
-        guard let keywordData = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+//        guard let keywordData = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+//
+//        let url = Constant.EndPoint.imageSearchURL + "query=\(keywordData)&display=30&start=\(startPage)"
+//
+//        let header: HTTPHeaders = ["Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8",
+//                                  "X-Naver-Client-Id" : Constant.APIKey.NAVER_ID,
+//                                  "X-Naver-Client-Secret" : Constant.APIKey.NAVER_SECRET]
+//
+//        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseData { response in
+//            switch response.result {
+//            case .success(let value):
+//                // 전체 데이터 출력
+//                let json = JSON(value)
+//                print("==========================")
+//                print(json)
+//
+//                // 오류 처리 (상태 코드에 따라서 분기처리)
+//                let statusCode = response.response?.statusCode ?? 500
+//                if statusCode == 200 {
+//
+//                    self.totalCount = json["total"].intValue
+//
+//                    for item in json["items"].arrayValue {
+//                        let title = item["title"].stringValue
+//                        let imageURL = item["link"].stringValue
+//                        let thumnailURL = item["thumbnail"].stringValue
+//
+//                        let data = ImageResponse(link: imageURL, thumnail: thumnailURL, title: title)
+//                        self.imageList.append(data)
+//                    }
+//
+//                    let results = json["items"].arrayValue.map { $0["link"].stringValue }
+//                    print("========================== 이미지 배열 ==========================")
+//                    print(results)
+//                    // 페이지네이션까지 구현하고 싶다면? append 활용
+//
+//                    self.imageCollectionView.reloadData()
+//                }
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
-        let url = Constant.EndPoint.imageSearchURL + "query=\(keywordData)&display=30&start=\(startPage)"
-        
-        let header: HTTPHeaders = ["Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8",
-                                  "X-Naver-Client-Id" : Constant.APIKey.NAVER_ID,
-                                  "X-Naver-Client-Secret" : Constant.APIKey.NAVER_SECRET]
-        
-        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                // 전체 데이터 출력
-                let json = JSON(value)
-                print("==========================")
-                print(json)
-                print("==========================")
-                
-                // 오류 처리 (상태 코드에 따라서 분기처리)
-                let statusCode = response.response?.statusCode ?? 500
-                if statusCode == 200 {
-                    
-                    self.totalCount = json["total"].intValue
-                    
-                    for item in json["items"].arrayValue {
-                        let title = item["title"].stringValue
-                        let imageURL = item["link"].stringValue
-                        let thumnailURL = item["thumbnail"].stringValue
-                        
-                        let data = ImageResponse(link: imageURL, thumnail: thumnailURL, title: title)
-                        self.imageList.append(data)
-                    }
-                    self.imageCollectionView.reloadData()
-                }
-                
-            case .failure(let error):
-                print(error)
+        ImageSearchAPIManager.shared.fetchImageData(keyword: keyword, startPage: startPage) { totalCount, list in
+            self.totalCount = totalCount
+//            self.list = list
+            self.list.append(contentsOf: list)
+            DispatchQueue.main.async {
+                self.imageCollectionView.reloadData()
             }
         }
     }

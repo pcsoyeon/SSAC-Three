@@ -44,4 +44,12 @@ final class ImageCollectionViewCell: UICollectionViewCell {
         }
         imageView.load(url: imageURL)
     }
+    
+    func setImageData(_ data: String) {
+        let imageURL = URL(string: data)
+        guard let imageURL = imageURL else {
+            return
+        }
+        imageView.load(url: imageURL)
+    }
 }
