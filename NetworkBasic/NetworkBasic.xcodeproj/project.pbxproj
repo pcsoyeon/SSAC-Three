@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		92216E5D2898A9F200D523D0 /* BeerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92216E5C2898A9F200D523D0 /* BeerResponse.swift */; };
-		92216E5F2898ADB700D523D0 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92216E5E2898ADB700D523D0 /* APIKey.swift */; };
 		92216E622898B4A500D523D0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92216E612898B4A500D523D0 /* Constant.swift */; };
 		92216E652898BD2900D523D0 /* BoxOfficeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92216E642898BD2900D523D0 /* BoxOfficeResponse.swift */; };
 		92216E672898C3A700D523D0 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92216E662898C3A700D523D0 /* EndPoint.swift */; };
@@ -37,6 +36,9 @@
 		928974E9289844EB0047476F /* Network.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928974E8289844EB0047476F /* Network.storyboard */; };
 		928974EC289845200047476F /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928974EB289845200047476F /* BeerDetailViewController.swift */; };
 		92AC0D60289A0992001A3757 /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D5F289A0992001A3757 /* ImageSearchViewController.swift */; };
+		92B60685289CB3FA008D899D /* ImageSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B60684289CB3FA008D899D /* ImageSearchAPIManager.swift */; };
+		92B60687289CDAF0008D899D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 92B60686289CDAF0008D899D /* .gitignore */; };
+		92B6068F289CDBBD008D899D /* NetworkAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6068E289CDBBD008D899D /* NetworkAPIKey.swift */; };
 		92C0E24D2897603200B052C3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C0E24C2897603200B052C3 /* UserDefaultsHelper.swift */; };
 		92C0E25028977CE900B052C3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92C0E24F28977CE900B052C3 /* Alamofire */; };
 		92C0E25328977D3A00B052C3 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 92C0E25228977D3A00B052C3 /* SwiftyJSON */; };
@@ -50,7 +52,6 @@
 
 /* Begin PBXFileReference section */
 		92216E5C2898A9F200D523D0 /* BeerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerResponse.swift; sourceTree = "<group>"; };
-		92216E5E2898ADB700D523D0 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		92216E612898B4A500D523D0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		92216E642898BD2900D523D0 /* BoxOfficeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeResponse.swift; sourceTree = "<group>"; };
 		92216E662898C3A700D523D0 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -78,6 +79,9 @@
 		928974E8289844EB0047476F /* Network.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Network.storyboard; sourceTree = "<group>"; };
 		928974EB289845200047476F /* BeerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
 		92AC0D5F289A0992001A3757 /* ImageSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewController.swift; sourceTree = "<group>"; };
+		92B60684289CB3FA008D899D /* ImageSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchAPIManager.swift; sourceTree = "<group>"; };
+		92B60686289CDAF0008D899D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		92B6068E289CDBBD008D899D /* NetworkAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIKey.swift; sourceTree = "<group>"; };
 		92C0E24C2897603200B052C3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		92F137652890DD800040859E /* NetworkBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F137682890DD800040859E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 		927DBC2B28920D8C00F25DE0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				92B60683289CB3DB008D899D /* APIManager */,
 				92216E602898ADD500D523D0 /* Helper */,
 				92C0E24B2897601800B052C3 /* Constant */,
 				927DBC2728920CD500F25DE0 /* Protocol */,
@@ -304,12 +309,20 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		92B60683289CB3DB008D899D /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				92B60684289CB3FA008D899D /* ImageSearchAPIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
 		92C0E24B2897601800B052C3 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
 				92216E612898B4A500D523D0 /* Constant.swift */,
-				92216E5E2898ADB700D523D0 /* APIKey.swift */,
 				92216E662898C3A700D523D0 /* EndPoint.swift */,
+				92B6068E289CDBBD008D899D /* NetworkAPIKey.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -317,6 +330,7 @@
 		92F1375C2890DD800040859E = {
 			isa = PBXGroup;
 			children = (
+				92B60686289CDAF0008D899D /* .gitignore */,
 				92F137672890DD800040859E /* NetworkBasic */,
 				92F137662890DD800040859E /* Products */,
 			);
@@ -415,6 +429,7 @@
 				925DCBDF289384F0002C027E /* Pretendard-SemiBold.otf in Resources */,
 				92F137722890DD820040859E /* Assets.xcassets in Resources */,
 				927EF5EB289B378200C83A0F /* ImageCollectionViewCell.xib in Resources */,
+				92B60687289CDAF0008D899D /* .gitignore in Resources */,
 				925DCBD128935D98002C027E /* Location.storyboard in Resources */,
 				925DCBE0289384F0002C027E /* Pretendard-Regular.otf in Resources */,
 				92F137702890DD800040859E /* Main.storyboard in Resources */,
@@ -434,6 +449,7 @@
 				925DCBCE28923AE8002C027E /* WebViewController.swift in Sources */,
 				92216E622898B4A500D523D0 /* Constant.swift in Sources */,
 				927EF5EA289B378200C83A0F /* ImageCollectionViewCell.swift in Sources */,
+				92B60685289CB3FA008D899D /* ImageSearchAPIManager.swift in Sources */,
 				92F137692890DD800040859E /* AppDelegate.swift in Sources */,
 				927DBC2928920CE600F25DE0 /* ViewPresentableProtocol.swift in Sources */,
 				9249A1222898F864007DDBD1 /* BeerCollectionViewCell.swift in Sources */,
@@ -445,8 +461,8 @@
 				9249A11D2898F70F007DDBD1 /* BeerViewController.swift in Sources */,
 				925DCBD528935DBF002C027E /* LocationViewController.swift in Sources */,
 				925DCBC628921746002C027E /* MainViewController.swift in Sources */,
+				92B6068F289CDBBD008D899D /* NetworkAPIKey.swift in Sources */,
 				92C0E24D2897603200B052C3 /* UserDefaultsHelper.swift in Sources */,
-				92216E5F2898ADB700D523D0 /* APIKey.swift in Sources */,
 				92216E5D2898A9F200D523D0 /* BeerResponse.swift in Sources */,
 				928974EC289845200047476F /* BeerDetailViewController.swift in Sources */,
 				925DCBCC28923057002C027E /* TranslateViewController.swift in Sources */,
