@@ -19,6 +19,10 @@ final class BeerViewController: UIViewController {
     // MARK: - Property
     
     private var beerList: [BeerResponse] = []
+    
+    private var beerImageList: [String] = []
+    private var beerNameList: [String] = []
+    private var beerDescriptionList: [String] = []
 
     // MARK: - Life Cycle
     
@@ -68,34 +72,11 @@ extension BeerViewController: UICollectionViewDataSource {
 
 extension BeerViewController {
     func requestBeerData() {
-        let url = Constant.EndPoint.beerURL
-        
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-//                print("===================")
-//                print(json)
-//                print("===================")
-                
-                let statusCode = response.response?.statusCode ?? 500
-                if statusCode == 200 {
-                    for beer in json.arrayValue {
-                        let imageURL = beer["image_url"].stringValue
-                        let name = beer["name"].stringValue
-                        let description = beer["description"].stringValue
-                        
-                        let data = BeerResponse(imageURL: imageURL, name: name, welcomeDescription: description)
-                        self.beerList.append(data)
-                        
-                        self.collectionView.reloadData()
-                    }
-                    
-                } else {
-                    
-                }
-            case .failure(let error):
-                print(error)
+        BeerAPIManager.shared.fetchBeerInfo { beerList in
+            self.beerList = beerList
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
         }
     }
