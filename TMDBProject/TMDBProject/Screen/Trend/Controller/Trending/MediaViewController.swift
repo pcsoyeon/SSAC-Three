@@ -29,7 +29,6 @@ final class MediaViewController: UIViewController {
     
     private var currentPage: Int = 1
     private var totalPage: Int = 1
-    private var canFetchData: Bool = true
     
     private var mediaId: Int = 0
     
@@ -87,17 +86,6 @@ extension MediaViewController: UICollectionViewDataSource {
 }
 
 extension MediaViewController: UICollectionViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if mediaCollectionView.contentOffset.y > (mediaCollectionView.contentSize.height - mediaCollectionView.bounds.size.height) {
-//            if canFetchData, currentPage < totalPage {
-//                currentPage += 1
-//                canFetchData = false
-//
-//                fetchTrendMedia(type: mediaType, time: timeType, page: currentPage)
-//            }
-//        }
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: MediaDetailViewController.reuseIdentifier) as? MediaDetailViewController else { return }
         viewController.id = mediaList[indexPath.item].id
@@ -130,7 +118,7 @@ extension MediaViewController: UICollectionViewDataSourcePrefetching {
 
 extension MediaViewController {
     private func fetchTrendMedia(type: String, time: String, page: Int) {
-        let url = URLConstant.BaseURL + URLConstant.TrendingURL + "/\(type)" + "/\(time)" + "?api_key=\(APIKey.APIKey)"
+        let url = URLConstant.BaseURL + URLConstant.TrendingURL + "/\(type)" + "/\(time)" + "?api_key=\(APIKey.APIKey)" + "&page=\(page)"
         
         let params: Parameters = ["media_type" : type,
                                   "time_window" : time]
@@ -145,7 +133,6 @@ extension MediaViewController {
                 let statusCode = response.response?.statusCode ?? 500
                 if statusCode == 200 {
                     self.totalPage = json["total_pages"].intValue
-//                    self.canFetchData = true
                     
                     for media in json["results"].arrayValue {
                         self.posterPath = media["poster_path"].stringValue
