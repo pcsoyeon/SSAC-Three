@@ -118,64 +118,12 @@ extension MediaViewController: UICollectionViewDataSourcePrefetching {
 
 extension MediaViewController {
     private func fetchTrendMedia(type: String, time: String, page: Int) {
-        let url = URLConstant.BaseURL + URLConstant.TrendingURL + "/\(type)" + "/\(time)" + "?api_key=\(APIKey.APIKey)" + "&page=\(page)"
-        
-        let params: Parameters = ["media_type" : type,
-                                  "time_window" : time]
-        
-        AF.request(url, method: .get, parameters: params).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("============== Trending Data ===============")
-                print(json)
-                
-                let statusCode = response.response?.statusCode ?? 500
-                if statusCode == 200 {
-                    self.totalPage = json["total_pages"].intValue
-                    
-                    for media in json["results"].arrayValue {
-                        self.posterPath = media["poster_path"].stringValue
-                        
-                        self.backdropPath = media["backdrop_path"].stringValue
-                        
-                        let originalTitle = media["original_title"].stringValue
-                        let title = media["title"].stringValue
-                        
-                        self.mediaId = media["id"].intValue
-                        
-                        let releaseDate = media["release_date"].stringValue
-                        
-                        let voteAverage = media["vote_average"].doubleValue
-                        
-                        let adult = media["adult"].boolValue
-                        
-                        let overview = media["overview"].stringValue
-                        
-                        for item in media["genre_ids"].arrayValue {
-                            let data = item.intValue
-                            self.genreList.append(data)
-                        }
-                        
-                        let trendData = TrendMediaData(posterPath: self.posterPath,
-                                                       backdropPath: self.backdropPath,
-                                                       originalTitle: originalTitle,
-                                                       title: title,
-                                                       id: self.mediaId,
-                                                       releaseDate: releaseDate,
-                                                       voteAverage: voteAverage,
-                                                       adult: adult,
-                                                       overview: overview,
-                                                       genre: self.genreList)
-                        
-                        self.mediaList.append(trendData)
-                    }
-                    
-                    self.mediaCollectionView.reloadData()
-                }
-                
-            case .failure(let error):
-                print(error)
+        MediaAPIManager.shared.fetchTrendMedia(type: type, time: time, page: page) { totalCount, trendMediaData in
+            self.totalPage = totalCount
+            self.mediaList.append(contentsOf: trendMediaData)
+            
+            DispatchQueue.main.async {
+                self.mediaCollectionView.reloadData()
             }
         }
     }
@@ -183,7 +131,7 @@ extension MediaViewController {
     private func fetchGenre() {
         let url = URLConstant.BaseURL + URLConstant.GenreBaseURL + "?api_key=\(APIKey.APIKey)&language=en-US"
         
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseJSON { response in
+        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
