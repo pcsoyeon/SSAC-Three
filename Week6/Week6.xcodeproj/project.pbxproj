@@ -16,6 +16,8 @@
 		927AFD3C28A0909E00A8BBEB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 927AFD3B28A0909E00A8BBEB /* SwiftyJSON */; };
 		927AFD3F28A090AA00A8BBEB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 927AFD3E28A090AA00A8BBEB /* Alamofire */; };
 		927AFD4228A090BB00A8BBEB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 927AFD4128A090BB00A8BBEB /* Kingfisher */; };
+		927AFD4B28A091A800A8BBEB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 927AFD4A28A091A800A8BBEB /* .gitignore */; };
+		927AFD4D28A091B800A8BBEB /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD4C28A091B800A8BBEB /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		927AFD2F28A0907E00A8BBEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		927AFD3228A0907E00A8BBEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		927AFD3428A0907E00A8BBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		927AFD4A28A091A800A8BBEB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		927AFD4C28A091B800A8BBEB /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,7 @@
 		927AFD1A28A0907C00A8BBEB = {
 			isa = PBXGroup;
 			children = (
+				927AFD4A28A091A800A8BBEB /* .gitignore */,
 				927AFD2528A0907C00A8BBEB /* Week6 */,
 				927AFD2428A0907C00A8BBEB /* Products */,
 			);
@@ -116,6 +121,7 @@
 		927AFD4828A090FE00A8BBEB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				927AFD4C28A091B800A8BBEB /* APIKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927AFD4B28A091A800A8BBEB /* .gitignore in Resources */,
 				927AFD3328A0907E00A8BBEB /* LaunchScreen.storyboard in Resources */,
 				927AFD3028A0907E00A8BBEB /* Assets.xcassets in Resources */,
 				927AFD2E28A0907C00A8BBEB /* Main.storyboard in Resources */,
@@ -212,6 +219,7 @@
 			files = (
 				927AFD2B28A0907C00A8BBEB /* ViewController.swift in Sources */,
 				927AFD2728A0907C00A8BBEB /* AppDelegate.swift in Sources */,
+				927AFD4D28A091B800A8BBEB /* APIKey.swift in Sources */,
 				927AFD2928A0907C00A8BBEB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
