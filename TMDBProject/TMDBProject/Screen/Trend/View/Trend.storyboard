@@ -67,6 +67,37 @@
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="97.767857142857139"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="wn3-6t-p0N">
+            <objects>
+                <viewController id="2Cb-on-a9a" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vUR-ws-wRs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RV1-kd-llH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ecU-RC-jDr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RV1-kd-llH" firstAttribute="leading" secondItem="ecU-RC-jDr" secondAttribute="leading" id="9OG-82-rNq"/>
+                            <constraint firstItem="RV1-kd-llH" firstAttribute="top" secondItem="ecU-RC-jDr" secondAttribute="top" id="Mx0-mJ-86B"/>
+                            <constraint firstItem="ecU-RC-jDr" firstAttribute="trailing" secondItem="RV1-kd-llH" secondAttribute="trailing" id="ghk-a9-d0B"/>
+                            <constraint firstItem="ecU-RC-jDr" firstAttribute="bottom" secondItem="RV1-kd-llH" secondAttribute="bottom" id="kJs-LG-hIw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ze9-a0-WRq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="566"/>
+        </scene>
         <!--Media Detail View Controller-->
         <scene sceneID="UVT-Kr-h5T">
             <objects>
@@ -95,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npa-7V-GFd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1778" y="98"/>
+            <point key="canvasLocation" x="1775" y="-127"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="Bhv-zV-hsm">

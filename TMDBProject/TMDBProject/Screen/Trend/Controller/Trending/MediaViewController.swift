@@ -81,7 +81,22 @@ extension MediaViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendMediaCollectionViewCell.reuseIdentifier, for: indexPath) as? TrendMediaCollectionViewCell else { return UICollectionViewCell() }
         cell.setData(mediaList[indexPath.item])
+        
+        // Closure를 이용한 버튼 이벤트 처리
+        cell.clipButtonAction = { [unowned self] in
+            self.mediaId = mediaList[indexPath.item].id
+        }
+        
+        cell.delegate = self
         return cell
+    }
+}
+
+// MARK: - Custom Protocol
+
+extension MediaViewController: TrendMediaCollectionViewCellDelegate {
+    func touchUpClipButton() {
+        // Delegate Pattern을 이용한 버튼 이벤트 처리
     }
 }
 

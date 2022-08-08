@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TrendMediaCollectionViewCellDelegate: MediaViewController {
+    func touchUpClipButton()
+}
+
 final class TrendMediaCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Property
@@ -22,7 +26,12 @@ final class TrendMediaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     
+    // MARK: - Property
+    
     private var genre: [Int] = []
+    var clipButtonAction : (() -> ())?
+    
+    weak var delegate: TrendMediaCollectionViewCellDelegate?
     
     // MARK: - Initializer
     
@@ -42,21 +51,13 @@ final class TrendMediaCollectionViewCell: UICollectionViewCell {
         
         backView.layer.applySketchShadow(color: .lightGray, alpha: 0.7, x: 0, y: 0, blur: 20, spread: 0)
     }
-    
-    private func setGenre() {
-        
-    }
 
     func setData(_ data: TrendMediaData) {
         if let dateText = data.releaseDate {
             releaseDateLabel.text = dateText.toDate()?.toString()
         }
         
-        if data.title == nil {
-            titleLabel.text = data.originalTitle
-        } else {
-            titleLabel.text = data.title
-        }
+        titleLabel.text = data.title == nil ? data.originalTitle : data.title
         
         overviewLabel.text = data.overview
         
@@ -73,6 +74,12 @@ final class TrendMediaCollectionViewCell: UICollectionViewCell {
         if genre.contains(28) {
             genreLabel.text = "#Action"
         }
+    }
+    
+    @IBAction func touchUpClipButton(_ sender: UIButton) {
+        clipButtonAction?()
+        
+        delegate?.touchUpClipButton()
     }
 }
 
