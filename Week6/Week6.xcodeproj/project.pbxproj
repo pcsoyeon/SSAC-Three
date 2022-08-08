@@ -21,6 +21,8 @@
 		927AFD5028A094A900A8BBEB /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD4F28A094A900A8BBEB /* EndPoint.swift */; };
 		927AFD5228A0950F00A8BBEB /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5128A0950F00A8BBEB /* URL+Extension.swift */; };
 		927AFD5528A0A79F00A8BBEB /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5428A0A79F00A8BBEB /* KakaoAPIManager.swift */; };
+		927AFD5728A0ABED00A8BBEB /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */; };
+		927AFD5B28A0AE7A00A8BBEB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		927AFD4F28A094A900A8BBEB /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		927AFD5128A0950F00A8BBEB /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		927AFD5428A0A79F00A8BBEB /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
+		927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
+		927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		927AFD2528A0907C00A8BBEB /* Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				927AFD5828A0AE5C00A8BBEB /* Global */,
 				927AFD4828A090FE00A8BBEB /* Network */,
 				927AFD4728A090F500A8BBEB /* Screen */,
 				927AFD4328A090C200A8BBEB /* Resource */,
@@ -138,6 +143,7 @@
 			children = (
 				927AFD2C28A0907C00A8BBEB /* Main.storyboard */,
 				927AFD2A28A0907C00A8BBEB /* ViewController.swift */,
+				927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -158,6 +164,22 @@
 				927AFD5428A0A79F00A8BBEB /* KakaoAPIManager.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		927AFD5828A0AE5C00A8BBEB /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				927AFD5928A0AE6300A8BBEB /* Extension */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		927AFD5928A0AE6300A8BBEB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927AFD5B28A0AE7A00A8BBEB /* UIViewController+Extension.swift in Sources */,
 				927AFD2B28A0907C00A8BBEB /* ViewController.swift in Sources */,
 				927AFD2728A0907C00A8BBEB /* AppDelegate.swift in Sources */,
+				927AFD5728A0ABED00A8BBEB /* ClosureViewController.swift in Sources */,
 				927AFD5028A094A900A8BBEB /* EndPoint.swift in Sources */,
 				927AFD4D28A091B800A8BBEB /* APIKey.swift in Sources */,
 				927AFD5528A0A79F00A8BBEB /* KakaoAPIManager.swift in Sources */,
