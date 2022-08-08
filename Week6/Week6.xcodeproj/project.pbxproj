@@ -13,6 +13,9 @@
 		927AFD2E28A0907C00A8BBEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927AFD2C28A0907C00A8BBEB /* Main.storyboard */; };
 		927AFD3028A0907E00A8BBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927AFD2F28A0907E00A8BBEB /* Assets.xcassets */; };
 		927AFD3328A0907E00A8BBEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927AFD3128A0907E00A8BBEB /* LaunchScreen.storyboard */; };
+		927AFD3C28A0909E00A8BBEB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 927AFD3B28A0909E00A8BBEB /* SwiftyJSON */; };
+		927AFD3F28A090AA00A8BBEB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 927AFD3E28A090AA00A8BBEB /* Alamofire */; };
+		927AFD4228A090BB00A8BBEB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 927AFD4128A090BB00A8BBEB /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927AFD4228A090BB00A8BBEB /* Kingfisher in Frameworks */,
+				927AFD3C28A0909E00A8BBEB /* SwiftyJSON in Frameworks */,
+				927AFD3F28A090AA00A8BBEB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +62,71 @@
 		927AFD2528A0907C00A8BBEB /* Week6 */ = {
 			isa = PBXGroup;
 			children = (
-				927AFD2628A0907C00A8BBEB /* AppDelegate.swift */,
-				927AFD2828A0907C00A8BBEB /* SceneDelegate.swift */,
-				927AFD2A28A0907C00A8BBEB /* ViewController.swift */,
-				927AFD2C28A0907C00A8BBEB /* Main.storyboard */,
-				927AFD2F28A0907E00A8BBEB /* Assets.xcassets */,
-				927AFD3128A0907E00A8BBEB /* LaunchScreen.storyboard */,
+				927AFD4828A090FE00A8BBEB /* Network */,
+				927AFD4728A090F500A8BBEB /* Screen */,
+				927AFD4328A090C200A8BBEB /* Resource */,
 				927AFD3428A0907E00A8BBEB /* Info.plist */,
 			);
 			path = Week6;
+			sourceTree = "<group>";
+		};
+		927AFD4328A090C200A8BBEB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				927AFD4628A090ED00A8BBEB /* Asset */,
+				927AFD4528A090DE00A8BBEB /* Support */,
+				927AFD4428A090D800A8BBEB /* Storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		927AFD4428A090D800A8BBEB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				927AFD3128A0907E00A8BBEB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		927AFD4528A090DE00A8BBEB /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				927AFD2628A0907C00A8BBEB /* AppDelegate.swift */,
+				927AFD2828A0907C00A8BBEB /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		927AFD4628A090ED00A8BBEB /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				927AFD2F28A0907E00A8BBEB /* Assets.xcassets */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		927AFD4728A090F500A8BBEB /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				927AFD4928A0910C00A8BBEB /* Main */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		927AFD4828A090FE00A8BBEB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		927AFD4928A0910C00A8BBEB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				927AFD2C28A0907C00A8BBEB /* Main.storyboard */,
+				927AFD2A28A0907C00A8BBEB /* ViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +145,11 @@
 			dependencies = (
 			);
 			name = Week6;
+			packageProductDependencies = (
+				927AFD3B28A0909E00A8BBEB /* SwiftyJSON */,
+				927AFD3E28A090AA00A8BBEB /* Alamofire */,
+				927AFD4128A090BB00A8BBEB /* Kingfisher */,
+			);
 			productName = Week6;
 			productReference = 927AFD2328A0907C00A8BBEB /* Week6.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +178,11 @@
 				Base,
 			);
 			mainGroup = 927AFD1A28A0907C00A8BBEB;
+			packageReferences = (
+				927AFD3A28A0909E00A8BBEB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				927AFD3D28A090AA00A8BBEB /* XCRemoteSwiftPackageReference "Alamofire" */,
+				927AFD4028A090BB00A8BBEB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 927AFD2428A0907C00A8BBEB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +430,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		927AFD3A28A0909E00A8BBEB /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		927AFD3D28A090AA00A8BBEB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		927AFD4028A090BB00A8BBEB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		927AFD3B28A0909E00A8BBEB /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 927AFD3A28A0909E00A8BBEB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		927AFD3E28A090AA00A8BBEB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 927AFD3D28A090AA00A8BBEB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		927AFD4128A090BB00A8BBEB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 927AFD4028A090BB00A8BBEB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 927AFD1B28A0907C00A8BBEB /* Project object */;
 }
