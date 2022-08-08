@@ -85,6 +85,15 @@ extension MediaViewController: UICollectionViewDataSource {
         // Closure를 이용한 버튼 이벤트 처리
         cell.clipButtonAction = { [unowned self] in
             self.mediaId = mediaList[indexPath.item].id
+            
+            var videoKey: String = ""
+            MediaVideoAPIManger.shared.fetchVideo(movieId: self.mediaId) { key in
+                videoKey = key
+                
+                guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: VideoWebViewController.reuseIdentifier) as? VideoWebViewController else { return }
+                viewController.videoKey = videoKey
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
         }
         
         cell.delegate = self
