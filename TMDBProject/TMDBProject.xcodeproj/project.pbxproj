@@ -19,6 +19,8 @@
 		927AFD1928A08B5800A8BBEB /* MediaCreditAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD1828A08B5800A8BBEB /* MediaCreditAPIManager.swift */; };
 		927AFD5D28A11EBD00A8BBEB /* VideoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5C28A11EBD00A8BBEB /* VideoWebViewController.swift */; };
 		927AFD5F28A1206B00A8BBEB /* MediaVideoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5E28A1206B00A8BBEB /* MediaVideoAPIManager.swift */; };
+		927AFD6128A12AC700A8BBEB /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD6028A12AC700A8BBEB /* EndPoint.swift */; };
+		927AFD6328A12B1600A8BBEB /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD6228A12B1600A8BBEB /* URL+Extension.swift */; };
 		927EF5E1289AC72600C83A0F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5E0289AC72600C83A0F /* NavigationViewController.swift */; };
 		927EF5E3289ACB0000C83A0F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */; };
 		92AC0D3D2899F6FB001A3757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D3C2899F6FB001A3757 /* AppDelegate.swift */; };
@@ -56,6 +58,8 @@
 		927AFD1828A08B5800A8BBEB /* MediaCreditAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCreditAPIManager.swift; sourceTree = "<group>"; };
 		927AFD5C28A11EBD00A8BBEB /* VideoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWebViewController.swift; sourceTree = "<group>"; };
 		927AFD5E28A1206B00A8BBEB /* MediaVideoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVideoAPIManager.swift; sourceTree = "<group>"; };
+		927AFD6028A12AC700A8BBEB /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		927AFD6228A12B1600A8BBEB /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		927EF5E0289AC72600C83A0F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		92AC0D392899F6FB001A3757 /* TMDBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +233,7 @@
 			children = (
 				92AC0D5A2899F92D001A3757 /* APIKey.swift */,
 				92AC0D61289A7B0D001A3757 /* URLConstant.swift */,
+				927AFD6028A12AC700A8BBEB /* EndPoint.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				92AC0D83289ABA17001A3757 /* String+Extension.swift */,
 				92AC0D85289ABA31001A3757 /* Date+Extension.swift */,
 				927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */,
+				927AFD6228A12B1600A8BBEB /* URL+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 				927AFD5D28A11EBD00A8BBEB /* VideoWebViewController.swift in Sources */,
 				92AC0D7F289AA81F001A3757 /* ReusableViewProtocol.swift in Sources */,
 				92002116289BAB8A00C2BE5C /* CastTableViewCell.swift in Sources */,
+				927AFD6128A12AC700A8BBEB /* EndPoint.swift in Sources */,
 				92AC0D82289AB685001A3757 /* CALayer+Extension.swift in Sources */,
 				92AC0D86289ABA31001A3757 /* Date+Extension.swift in Sources */,
 				927AFD1728A078C300A8BBEB /* MediaAPIManager.swift in Sources */,
@@ -413,6 +420,7 @@
 				92AC0D75289A89A7001A3757 /* TrendMediaResponse.swift in Sources */,
 				9200211A289BABC500C2BE5C /* OverviewTableViewCell.swift in Sources */,
 				92AC0D5B2899F92D001A3757 /* APIKey.swift in Sources */,
+				927AFD6328A12B1600A8BBEB /* URL+Extension.swift in Sources */,
 				9200210D289BA07700C2BE5C /* MediaDetailViewController.swift in Sources */,
 				92AC0D3F2899F6FB001A3757 /* SceneDelegate.swift in Sources */,
 				92AC0D6B289A7BDE001A3757 /* MediaViewController.swift in Sources */,

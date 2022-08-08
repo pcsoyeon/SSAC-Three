@@ -18,7 +18,7 @@ class MediaCreditAPIManager {
     typealias completionHandler = (([Cast]), ([Crew])) -> Void
     
     func fetchCredit(id: Int, completionHandler: @escaping completionHandler) {
-        let url = URLConstant.BaseURL + URLConstant.MovieURL + "/\(id)/credits?api_key=\(APIKey.APIKey)&language=en-US"
+        let url = EndPoint.movie.requestURL + "/\(id)/credits?api_key=\(APIKey.APIKey)&language=en-US"
         
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
             switch response.result {

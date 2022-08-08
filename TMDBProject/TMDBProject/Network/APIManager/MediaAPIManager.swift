@@ -18,7 +18,7 @@ class MediaAPIManager {
     typealias completionHandler = ((Int), ([TrendMediaData])) -> Void
     
     func fetchTrendMedia(type: String, time: String, page: Int, completionHandler: @escaping completionHandler) {
-        let url = URLConstant.BaseURL + URLConstant.TrendingURL + "/\(type)" + "/\(time)" + "?api_key=\(APIKey.APIKey)" + "&page=\(page)"
+        let url = EndPoint.trend.requestURL + "/\(type)" + "/\(time)" + "?api_key=\(APIKey.APIKey)" + "&page=\(page)"
         
         let params: Parameters = ["media_type" : type,
                                   "time_window" : time]
