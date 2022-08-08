@@ -150,59 +150,12 @@ extension MediaDetailViewController: OverviewTableViewCellDelegate {
 
 extension MediaDetailViewController {
     private func fetchCredit(id: Int) {
-        let url = URLConstant.BaseURL + URLConstant.MovieURL + "/\(id)/credits?api_key=\(APIKey.APIKey)&language=en-US"
-        
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("================= Cast Data =================")
-                print(json)
-                
-                let statusCode = response.response?.statusCode ?? 500
-                if statusCode == 200 {
-                    for cast in json["cast"].arrayValue {
-                        let adult = cast["adult"].boolValue
-                        
-                        let gender = cast["gender"].intValue
-                        
-                        let id = cast["id"].intValue
-                        
-                        let popularity = cast["popularity"].doubleValue
-                        
-                        let name = cast["name"].stringValue
-                        let originalName = cast["original_name"].stringValue
-                        
-                        let profilePath = cast["profile_path"].stringValue
-                        let character = cast["character"].stringValue
-                        
-                        let data = Cast(adult: adult,
-                                        gender: gender,
-                                        id: id,
-                                        name: name,
-                                        originalName: originalName,
-                                        popularity: popularity,
-                                        profilePath: profilePath,
-                                        character: character)
-                        self.castList.append(data)
-                    }
-                    
-                    for crew in json["crew"].arrayValue {
-                        let name = crew["name"].stringValue
-                        let originalName = crew["original_name"].stringValue
-                        let profilePath = crew["profile_path"].stringValue
-                        
-                        let data = Crew(name: name,
-                                        originalName: originalName,
-                                        profilePath: profilePath)
-                        self.crewList.append(data)
-                    }
-                    
-                    self.tableView.reloadData()
-                }
-                
-            case .failure(let error):
-                print(error)
+        MediaCreditAPIManager.shared.fetchCredit(id: id) { castData, crewData in
+            self.castList = castData
+            self.crewList = crewData
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
     }
