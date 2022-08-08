@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+extension URL {
+    static let baseURL = "https://dapi.kakao.com/v2/search/"
+    
+    static func makeEndPointString(_ endPoint: String) -> String {
+        return baseURL + endPoint
+    }
+}
