@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-final class MediaViewController: UIViewController {
+final class TrendingMediaViewController: UIViewController {
 
     // MARK: - UI Property
     
@@ -21,7 +21,7 @@ final class MediaViewController: UIViewController {
     let mediaType = MediaType.movie.rawValue
     let timeType = TimeType.day.rawValue
     
-    private var mediaList: [TrendMediaData] = []
+    private var mediaList: [TrendingMediaData] = []
     private var genreList: [Int] = []
     
     private var posterPath: String = ""
@@ -67,19 +67,19 @@ final class MediaViewController: UIViewController {
         mediaCollectionView.delegate = self
         mediaCollectionView.prefetchDataSource = self
         
-        mediaCollectionView.register(UINib(nibName: TrendMediaCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: TrendMediaCollectionViewCell.reuseIdentifier)
+        mediaCollectionView.register(UINib(nibName: TrendingMediaCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: TrendingMediaCollectionViewCell.reuseIdentifier)
     }
 }
 
 // MARK: - UICollectionView Protocol
 
-extension MediaViewController: UICollectionViewDataSource {
+extension TrendingMediaViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mediaList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendMediaCollectionViewCell.reuseIdentifier, for: indexPath) as? TrendMediaCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingMediaCollectionViewCell.reuseIdentifier, for: indexPath) as? TrendingMediaCollectionViewCell else { return UICollectionViewCell() }
         cell.setData(mediaList[indexPath.item])
         
         // Closure를 이용한 버튼 이벤트 처리
@@ -103,13 +103,13 @@ extension MediaViewController: UICollectionViewDataSource {
 
 // MARK: - Custom Protocol
 
-extension MediaViewController: TrendMediaCollectionViewCellDelegate {
+extension TrendingMediaViewController: TrendingMediaCollectionViewCellDelegate {
     func touchUpClipButton() {
         // Delegate Pattern을 이용한 버튼 이벤트 처리
     }
 }
 
-extension MediaViewController: UICollectionViewDelegate {
+extension TrendingMediaViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: MediaDetailViewController.reuseIdentifier) as? MediaDetailViewController else { return }
         viewController.id = mediaList[indexPath.item].id
@@ -123,7 +123,7 @@ extension MediaViewController: UICollectionViewDelegate {
     }
 }
 
-extension MediaViewController: UICollectionViewDataSourcePrefetching {
+extension TrendingMediaViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             if mediaList.count - 1 == indexPath.item && currentPage < totalPage {
@@ -140,9 +140,9 @@ extension MediaViewController: UICollectionViewDataSourcePrefetching {
 
 // MARK: - Network
 
-extension MediaViewController {
+extension TrendingMediaViewController {
     private func fetchTrendMedia(type: String, time: String, page: Int) {
-        MediaAPIManager.shared.fetchTrendMedia(type: type, time: time, page: page) { totalCount, trendMediaData in
+        TrendingMediaAPIManager.shared.fetchTrendMedia(type: type, time: time, page: page) { totalCount, trendMediaData in
             self.totalPage = totalCount
             self.mediaList.append(contentsOf: trendMediaData)
             

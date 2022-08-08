@@ -10,12 +10,12 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class MediaAPIManager {
-    static let shared = MediaAPIManager()
+class TrendingMediaAPIManager {
+    static let shared = TrendingMediaAPIManager()
     
     private init() { }
     
-    typealias completionHandler = ((Int), ([TrendMediaData])) -> Void
+    typealias completionHandler = ((Int), ([TrendingMediaData])) -> Void
     
     func fetchTrendMedia(type: String, time: String, page: Int, completionHandler: @escaping completionHandler) {
         let url = EndPoint.trend.requestURL + "/\(type)" + "/\(time)" + "?api_key=\(APIKey.APIKey)" + "&page=\(page)"
@@ -33,7 +33,7 @@ class MediaAPIManager {
                     let totalPage = json["total_pages"].intValue
                     
                     let mediaData = json["results"].arrayValue.map {
-                        TrendMediaData(posterPath: $0["poster_path"].stringValue,
+                        TrendingMediaData(posterPath: $0["poster_path"].stringValue,
                                        backdropPath: $0["backdrop_path"].stringValue,
                                        originalTitle: $0["original_title"].stringValue,
                                        title: $0["title"].stringValue,

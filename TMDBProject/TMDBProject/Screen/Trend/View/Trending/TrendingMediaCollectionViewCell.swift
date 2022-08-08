@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol TrendMediaCollectionViewCellDelegate: MediaViewController {
+protocol TrendingMediaCollectionViewCellDelegate: TrendingMediaViewController {
     func touchUpClipButton()
 }
 
-final class TrendMediaCollectionViewCell: UICollectionViewCell {
+final class TrendingMediaCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Property
     
@@ -31,7 +31,7 @@ final class TrendMediaCollectionViewCell: UICollectionViewCell {
     private var genre: [Int] = []
     var clipButtonAction : (() -> ())?
     
-    weak var delegate: TrendMediaCollectionViewCellDelegate?
+    weak var delegate: TrendingMediaCollectionViewCellDelegate?
     
     // MARK: - Initializer
     
@@ -52,7 +52,7 @@ final class TrendMediaCollectionViewCell: UICollectionViewCell {
         backView.layer.applySketchShadow(color: .lightGray, alpha: 0.7, x: 0, y: 0, blur: 20, spread: 0)
     }
 
-    func setData(_ data: TrendMediaData) {
+    func setData(_ data: TrendingMediaData) {
         if let dateText = data.releaseDate {
             releaseDateLabel.text = dateText.toDate()?.toString()
         }
