@@ -17,10 +17,10 @@ class KakaoAPIManager {
     
     private let header: HTTPHeaders = ["Authorization" : "KakaoAK \(APIKey.kakao)"]
     
-    func callRequest(type: EndPoint, query: String, completionHandler: @escaping (JSON) -> ()) {
+    func callRequest(type: EndPoint, query: String, page: Int = 1, completionHandler: @escaping (JSON) -> ()) {
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         
-        let url = type.requestURL + query
+        let url = type.requestURL + query + "&page=\(page)"
         
         AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseData { response in
             switch response.result {

@@ -38,6 +38,10 @@ class ViewController: UIViewController {
     
     var isExpanded = false // false면 2줄, true면 0으로
     
+    private var isEnd: Bool = false
+    private var currentPage: Int = 1
+    private var totalPage: Int = 1
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -55,10 +59,13 @@ class ViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
         
         // 모든 섹션의 셀에 대해서 유동적으로 높이를 설정하고 싶다.
         tableView.rowHeight = UITableView.automaticDimension
     }
+    
+    // MARK: - IBAction
     
     @IBAction func showTotalButtonClicked(_ sender: Any) {
         isExpanded.toggle()
@@ -110,19 +117,51 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
+extension ViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if !isEnd && blogList.count - 1 == indexPath.item && currentPage < totalPage {
+                currentPage += 1
+                
+                guard let text = searchBar.text else { return }
+                searchBlog(query: text)
+            }
+        }
+    }
+}
+
 // MARK: - Network
 
 extension ViewController {
     func searchBlog(query: String) {
-        KakaoAPIManager.shared.callRequest(type: .blog, query: query) { json in
-            self.blogList = json["documents"].arrayValue.map { $0["contents"].stringValue.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "") }
-            self.searchCafe(query: "고등어회")
+        KakaoAPIManager.shared.callRequest(type: .blog, query: query, page: currentPage) { json in
+            print("===================== ✅ 블로그 데이터 ✅ =====================")
+            print(json)
+            
+            self.isEnd = json["meta"]["is_end"].boolValue
+            self.totalPage = json["meta"]["pageable_count"].intValue
+            
+            let blogData = json["documents"].arrayValue.map {
+                $0["contents"].stringValue
+                .replacingOccurrences(of: "<b>", with: "")
+                .replacingOccurrences(of: "</b>", with: "")
+            }
+            self.blogList.append(contentsOf: blogData)
+            self.searchCafe(query: query)
         }
     }
     
     func searchCafe(query:String) {
-        KakaoAPIManager.shared.callRequest(type: .cafe, query: query) { json in
-            self.cafeList = json["documents"].arrayValue.map { $0["contents"].stringValue.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "") }
+        KakaoAPIManager.shared.callRequest(type: .cafe, query: query, page: currentPage) { json in
+            print("===================== ✅ 카페 데이터 ✅ =====================")
+            print(json)
+            
+            let cafeData = json["documents"].arrayValue.map {
+                $0["contents"].stringValue
+                .replacingOccurrences(of: "<b>", with: "")
+                .replacingOccurrences(of: "</b>", with: "")
+            }
+            self.cafeList.append(contentsOf: cafeData)
             self.tableView.reloadData()
         }
     }
