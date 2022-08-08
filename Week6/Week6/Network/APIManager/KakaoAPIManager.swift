@@ -17,7 +17,7 @@ class KakaoAPIManager {
     
     private let header: HTTPHeaders = ["Authorization" : "KakaoAK \(APIKey.kakao)"]
     
-    func callRequest(type: EndPoint, query: String) {
+    func callRequest(type: EndPoint, query: String, completionHandler: @escaping (JSON) -> ()) {
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         
         let url = type.requestURL + query
@@ -26,9 +26,8 @@ class KakaoAPIManager {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("======================== ✅ 블로그 검색 결과 ✅ ========================")
-                print(json)
                 
+                completionHandler(json)
                 
             case .failure(let error):
                 print(error)
