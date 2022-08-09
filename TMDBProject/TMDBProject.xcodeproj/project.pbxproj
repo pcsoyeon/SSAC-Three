@@ -23,9 +23,16 @@
 		927AFD6328A12B1600A8BBEB /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD6228A12B1600A8BBEB /* URL+Extension.swift */; };
 		927EF5E1289AC72600C83A0F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5E0289AC72600C83A0F /* NavigationViewController.swift */; };
 		927EF5E3289ACB0000C83A0F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */; };
+		929055A228A25716007E33A6 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055A028A25716007E33A6 /* MainTableViewCell.swift */; };
+		929055A328A25716007E33A6 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929055A128A25716007E33A6 /* MainTableViewCell.xib */; };
+		929055A628A25773007E33A6 /* MediaCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929055A528A25773007E33A6 /* MediaCardView.xib */; };
+		929055A828A2578E007E33A6 /* MediaCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055A728A2578E007E33A6 /* MediaCardView.swift */; };
+		929055AB28A25B3B007E33A6 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055A928A25B3B007E33A6 /* MainCollectionViewCell.swift */; };
+		929055AC28A25B3B007E33A6 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929055AA28A25B3B007E33A6 /* MainCollectionViewCell.xib */; };
+		929055B028A26CAA007E33A6 /* MainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929055AF28A26CAA007E33A6 /* MainHeaderView.xib */; };
 		92AC0D3D2899F6FB001A3757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D3C2899F6FB001A3757 /* AppDelegate.swift */; };
 		92AC0D3F2899F6FB001A3757 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D3E2899F6FB001A3757 /* SceneDelegate.swift */; };
-		92AC0D412899F6FB001A3757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D402899F6FB001A3757 /* ViewController.swift */; };
+		92AC0D412899F6FB001A3757 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC0D402899F6FB001A3757 /* MainViewController.swift */; };
 		92AC0D442899F6FB001A3757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D422899F6FB001A3757 /* Main.storyboard */; };
 		92AC0D462899F6FC001A3757 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D452899F6FC001A3757 /* Assets.xcassets */; };
 		92AC0D492899F6FC001A3757 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AC0D472899F6FC001A3757 /* LaunchScreen.storyboard */; };
@@ -62,10 +69,17 @@
 		927AFD6228A12B1600A8BBEB /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		927EF5E0289AC72600C83A0F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		929055A028A25716007E33A6 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		929055A128A25716007E33A6 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		929055A528A25773007E33A6 /* MediaCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCardView.xib; sourceTree = "<group>"; };
+		929055A728A2578E007E33A6 /* MediaCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCardView.swift; sourceTree = "<group>"; };
+		929055A928A25B3B007E33A6 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		929055AA28A25B3B007E33A6 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
+		929055AF28A26CAA007E33A6 /* MainHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeaderView.xib; sourceTree = "<group>"; };
 		92AC0D392899F6FB001A3757 /* TMDBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AC0D3C2899F6FB001A3757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92AC0D3E2899F6FB001A3757 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92AC0D402899F6FB001A3757 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92AC0D402899F6FB001A3757 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		92AC0D432899F6FB001A3757 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92AC0D452899F6FC001A3757 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92AC0D482899F6FC001A3757 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -144,6 +158,59 @@
 				927AFD5E28A1206B00A8BBEB /* MediaVideoAPIManager.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		9290559D28A256CC007E33A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9290559E28A256D2007E33A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D422899F6FB001A3757 /* Main.storyboard */,
+				929055AF28A26CAA007E33A6 /* MainHeaderView.xib */,
+				929055AE28A26C89007E33A6 /* CollectionViewCell */,
+				929055AD28A26C83007E33A6 /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9290559F28A256DC007E33A6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92AC0D402899F6FB001A3757 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		929055A428A25758007E33A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				929055A528A25773007E33A6 /* MediaCardView.xib */,
+				929055A728A2578E007E33A6 /* MediaCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		929055AD28A26C83007E33A6 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				929055A028A25716007E33A6 /* MainTableViewCell.swift */,
+				929055A128A25716007E33A6 /* MainTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		929055AE28A26C89007E33A6 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				929055A928A25B3B007E33A6 /* MainCollectionViewCell.swift */,
+				929055AA28A25B3B007E33A6 /* MainCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		92AC0D302899F6FB001A3757 = {
@@ -280,8 +347,9 @@
 		92AC0D69289A7BC6001A3757 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				92AC0D422899F6FB001A3757 /* Main.storyboard */,
-				92AC0D402899F6FB001A3757 /* ViewController.swift */,
+				9290559D28A256CC007E33A6 /* Model */,
+				9290559E28A256D2007E33A6 /* View */,
+				9290559F28A256DC007E33A6 /* Controller */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -289,6 +357,7 @@
 		92AC0D7C289AA7DB001A3757 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				929055A428A25758007E33A6 /* View */,
 				92AC0D80289AB67A001A3757 /* Extension */,
 				92AC0D7D289AA7FC001A3757 /* Protocol */,
 			);
@@ -381,6 +450,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929055B028A26CAA007E33A6 /* MainHeaderView.xib in Resources */,
+				929055A328A25716007E33A6 /* MainTableViewCell.xib in Resources */,
 				92AC0D65289A7B96001A3757 /* Trend.storyboard in Resources */,
 				92002117289BAB8A00C2BE5C /* CastTableViewCell.xib in Resources */,
 				92AC0D512899F7D3001A3757 /* .gitignore in Resources */,
@@ -388,7 +459,9 @@
 				9200211B289BABC500C2BE5C /* OverviewTableViewCell.xib in Resources */,
 				92AC0D492899F6FC001A3757 /* LaunchScreen.storyboard in Resources */,
 				92AC0D462899F6FC001A3757 /* Assets.xcassets in Resources */,
+				929055AC28A25B3B007E33A6 /* MainCollectionViewCell.xib in Resources */,
 				92AC0D442899F6FB001A3757 /* Main.storyboard in Resources */,
+				929055A628A25773007E33A6 /* MediaCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,17 +475,20 @@
 				9200210F289BA83700C2BE5C /* CastResponse.swift in Sources */,
 				927AFD5F28A1206B00A8BBEB /* MediaVideoAPIManager.swift in Sources */,
 				9200210B289B970500C2BE5C /* MediaType.swift in Sources */,
-				92AC0D412899F6FB001A3757 /* ViewController.swift in Sources */,
+				929055A828A2578E007E33A6 /* MediaCardView.swift in Sources */,
+				92AC0D412899F6FB001A3757 /* MainViewController.swift in Sources */,
 				927EF5E1289AC72600C83A0F /* NavigationViewController.swift in Sources */,
 				92002125289C21A800C2BE5C /* DetailHeaderView.swift in Sources */,
 				927EF5E3289ACB0000C83A0F /* UIImageView+Extension.swift in Sources */,
 				92AC0D84289ABA17001A3757 /* String+Extension.swift in Sources */,
 				92AC0D3D2899F6FB001A3757 /* AppDelegate.swift in Sources */,
 				927AFD5D28A11EBD00A8BBEB /* VideoWebViewController.swift in Sources */,
+				929055A228A25716007E33A6 /* MainTableViewCell.swift in Sources */,
 				92AC0D7F289AA81F001A3757 /* ReusableViewProtocol.swift in Sources */,
 				92002116289BAB8A00C2BE5C /* CastTableViewCell.swift in Sources */,
 				927AFD6128A12AC700A8BBEB /* EndPoint.swift in Sources */,
 				92AC0D82289AB685001A3757 /* CALayer+Extension.swift in Sources */,
+				929055AB28A25B3B007E33A6 /* MainCollectionViewCell.swift in Sources */,
 				92AC0D86289ABA31001A3757 /* Date+Extension.swift in Sources */,
 				927AFD1728A078C300A8BBEB /* TrendingMediaAPIManager.swift in Sources */,
 				92AC0D7A289AA79B001A3757 /* TrendingMediaCollectionViewCell.swift in Sources */,
