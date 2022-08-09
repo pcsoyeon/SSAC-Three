@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		92305DF028A1E03F00714740 /* SeSACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92305DEF28A1E03F00714740 /* SeSACButton.swift */; };
-		92305DF228A1E60200714740 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92305DF128A1E60200714740 /* CardView.xib */; };
-		92305DF528A1E63B00714740 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92305DF428A1E63B00714740 /* CardView.swift */; };
+		92305DF828A1F36C00714740 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92305DF628A1F36C00714740 /* CardCollectionViewCell.swift */; };
+		92305DF928A1F36C00714740 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92305DF728A1F36C00714740 /* CardCollectionViewCell.xib */; };
+		92305DFB28A1F65000714740 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92305DFA28A1F65000714740 /* MainViewController.swift */; };
+		923EB12C28A1FC39000DB0BE /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB12B28A1FC39000DB0BE /* MainTableViewCell.swift */; };
 		927AFD2728A0907C00A8BBEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD2628A0907C00A8BBEB /* AppDelegate.swift */; };
 		927AFD2928A0907C00A8BBEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD2828A0907C00A8BBEB /* SceneDelegate.swift */; };
 		927AFD2B28A0907C00A8BBEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD2A28A0907C00A8BBEB /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 		927AFD5528A0A79F00A8BBEB /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5428A0A79F00A8BBEB /* KakaoAPIManager.swift */; };
 		927AFD5728A0ABED00A8BBEB /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */; };
 		927AFD5B28A0AE7A00A8BBEB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */; };
+		92A2A74728A227A4007B5949 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A74628A227A4007B5949 /* CardView.xib */; };
+		92A2A74928A227EB007B5949 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A74828A227EB007B5949 /* CardView.swift */; };
 		92D3155328A148A100B6F568 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 92D3155228A148A100B6F568 /* SwiftyJSON */; };
 		92D3155628A148AC00B6F568 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92D3155528A148AC00B6F568 /* Alamofire */; };
 		92D3155928A148B700B6F568 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 92D3155828A148B700B6F568 /* Kingfisher */; };
@@ -30,8 +34,10 @@
 
 /* Begin PBXFileReference section */
 		92305DEF28A1E03F00714740 /* SeSACButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACButton.swift; sourceTree = "<group>"; };
-		92305DF128A1E60200714740 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
-		92305DF428A1E63B00714740 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		92305DF628A1F36C00714740 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		92305DF728A1F36C00714740 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		92305DFA28A1F65000714740 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		923EB12B28A1FC39000DB0BE /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		927AFD2328A0907C00A8BBEB /* Week6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		927AFD2628A0907C00A8BBEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		927AFD2828A0907C00A8BBEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,8 @@
 		927AFD5428A0A79F00A8BBEB /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		92A2A74628A227A4007B5949 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		92A2A74828A227EB007B5949 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,9 @@
 			isa = PBXGroup;
 			children = (
 				927AFD2C28A0907C00A8BBEB /* Main.storyboard */,
+				92305DF628A1F36C00714740 /* CardCollectionViewCell.swift */,
+				92305DF728A1F36C00714740 /* CardCollectionViewCell.xib */,
+				923EB12B28A1FC39000DB0BE /* MainTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -76,6 +87,7 @@
 			children = (
 				927AFD2A28A0907C00A8BBEB /* ViewController.swift */,
 				927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */,
+				92305DFA28A1F65000714740 /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -84,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				92305DEF28A1E03F00714740 /* SeSACButton.swift */,
-				92305DF128A1E60200714740 /* CardView.xib */,
-				92305DF428A1E63B00714740 /* CardView.swift */,
+				92A2A74628A227A4007B5949 /* CardView.xib */,
+				92A2A74828A227EB007B5949 /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,8 +297,9 @@
 			files = (
 				927AFD4B28A091A800A8BBEB /* .gitignore in Resources */,
 				927AFD3328A0907E00A8BBEB /* LaunchScreen.storyboard in Resources */,
-				92305DF228A1E60200714740 /* CardView.xib in Resources */,
+				92A2A74728A227A4007B5949 /* CardView.xib in Resources */,
 				927AFD3028A0907E00A8BBEB /* Assets.xcassets in Resources */,
+				92305DF928A1F36C00714740 /* CardCollectionViewCell.xib in Resources */,
 				927AFD2E28A0907C00A8BBEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,15 +312,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				927AFD5B28A0AE7A00A8BBEB /* UIViewController+Extension.swift in Sources */,
+				92305DFB28A1F65000714740 /* MainViewController.swift in Sources */,
 				927AFD2B28A0907C00A8BBEB /* ViewController.swift in Sources */,
 				927AFD2728A0907C00A8BBEB /* AppDelegate.swift in Sources */,
+				92A2A74928A227EB007B5949 /* CardView.swift in Sources */,
 				927AFD5728A0ABED00A8BBEB /* ClosureViewController.swift in Sources */,
+				92305DF828A1F36C00714740 /* CardCollectionViewCell.swift in Sources */,
 				927AFD5028A094A900A8BBEB /* EndPoint.swift in Sources */,
 				927AFD4D28A091B800A8BBEB /* APIKey.swift in Sources */,
 				927AFD5528A0A79F00A8BBEB /* KakaoAPIManager.swift in Sources */,
 				92305DF028A1E03F00714740 /* SeSACButton.swift in Sources */,
+				923EB12C28A1FC39000DB0BE /* MainTableViewCell.swift in Sources */,
 				927AFD2928A0907C00A8BBEB /* SceneDelegate.swift in Sources */,
-				92305DF528A1E63B00714740 /* CardView.swift in Sources */,
 				927AFD5228A0950F00A8BBEB /* URL+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
