@@ -54,8 +54,8 @@ final class TrendingMediaCollectionViewCell: UICollectionViewCell {
 
     func setData(_ data: TrendingMediaData) {
         if let dateText = data.releaseDate {
-            releaseDateLabel.text = dateText.replacingOccurrences(of: "-", with: "/")
-//            releaseDateLabel.text = dateText.toDate()?.toString()
+//            releaseDateLabel.text = dateText.replacingOccurrences(of: "-", with: "/")
+            releaseDateLabel.text = dateText.toDate()?.toString()
         }
         
         titleLabel.text = data.title == nil ? data.originalTitle : data.title
