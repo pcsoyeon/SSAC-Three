@@ -8,7 +8,7 @@
 import UIKit
 
 final class MainViewController: UIViewController {
-
+    
     // MARK: - UI Property
     
     @IBOutlet weak var bannerCollectionView: UICollectionView!
@@ -16,7 +16,16 @@ final class MainViewController: UIViewController {
     
     // MARK: - Property
     
-    let colorList: [UIColor] = [.red, .blue, .orange, .green, .purple]
+    private let color: [UIColor] = [.systemPink, .systemMint, .systemYellow, .systemPurple]
+    
+    private let numberList: [[Int]] = [
+        [Int](100...110),
+        [Int](55...75),
+        [Int](5000...5006),
+        [Int](31...40),
+        [Int](51...60),
+        [Int](81...90)
+    ]
     
     // MARK: - Life Cycle
     
@@ -32,10 +41,21 @@ final class MainViewController: UIViewController {
         bannerCollectionView.delegate = self
         bannerCollectionView.dataSource = self
         bannerCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")
+        bannerCollectionView.isPagingEnabled = true
         bannerCollectionView.collectionViewLayout = collectionViewLayout()
     }
     
-    private func configureTableView() {
+    private func collectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: bannerCollectionView.frame.height)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInset = UIEdgeInsets.zero
+        return layout
+    }
+    
+    func configureTableView() {
         mainTableView.delegate = self
         mainTableView.dataSource = self
     }
@@ -45,49 +65,28 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == bannerCollectionView ? colorList.count : 10
+        return collectionView == bannerCollectionView ? color.count : numberList[collectionView.tag].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
         
         if collectionView == bannerCollectionView {
-            cell.backgroundColor = colorList[indexPath.item]
-//            cell.cardView.posterImageView.backgroundColor = colorList[indexPath.item]
+            cell.cardView.posterImageView.backgroundColor = color[indexPath.item]
         } else {
-            cell.cardView.posterImageView.backgroundColor = collectionView.tag.isMultiple(of: 2) ? .purple : .black
+            cell.cardView.posterImageView.backgroundColor = collectionView.tag.isMultiple(of: 2) ? .black : .systemMint
+            cell.cardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
+            cell.cardView.contentLabel.textColor = .white
         }
-        
         return cell
-    }
-    
-    func collectionViewLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let width = UIScreen.main.bounds.width
-        let height = bannerCollectionView.frame.height
-        layout.itemSize = CGSize(width: width, height: height)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        layout.sectionInset = .zero
-        
-        // device width 기준으로 환산 처리 - 셀의 너비가 디바이스 너비와 같을 때 잘 동작
-        bannerCollectionView.isPagingEnabled = true
-        return layout
     }
 }
 
 // MARK: - UITableView Protocol
 
-extension MainViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
-    }
-}
-
-extension MainViewController: UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return numberList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,15 +94,17 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell") as? MainTableViewCell else { return UITableViewCell() }
-        cell.backgroundColor = .yellow
-        cell.contentCollectionView.backgroundColor = .lightGray
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
+        cell.contentCollectionView.tag = indexPath.section // 각 셀 구분 짓기
         cell.contentCollectionView.delegate = self
         cell.contentCollectionView.dataSource = self
-        cell.contentCollectionView.tag = indexPath.section // 각 셀 구분 짓기
-        
-        cell.contentCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")
+        cell.contentCollectionView.register(
+            UINib(nibName: "CardCollectionViewCell", bundle: nil),
+            forCellWithReuseIdentifier: "CardCollectionViewCell")
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 190
     }
 }

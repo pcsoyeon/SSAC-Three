@@ -9,9 +9,14 @@ import UIKit
 
 class CardView: UIView {
 
+    // MARK: - UI Property
+    
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var contentLabel: UILabel!
 
+    // MARK: - Initializer
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         

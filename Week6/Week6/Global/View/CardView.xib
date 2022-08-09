@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="Week6" customModuleProvider="target">
             <connections>
+                <outlet property="contentLabel" destination="Clb-hV-gbg" id="0ml-gj-aDh"/>
                 <outlet property="likeButton" destination="rwj-da-120" id="XUD-4z-Tvs"/>
                 <outlet property="posterImageView" destination="OzA-Eg-95A" id="TLc-ST-PfM"/>
             </connections>
@@ -32,15 +33,23 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system"/>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clb-hV-gbg">
+                    <rect key="frame" x="186" y="89.5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="rwj-da-120" secondAttribute="trailing" constant="8" id="2Ff-oG-Jpe"/>
                 <constraint firstAttribute="trailing" secondItem="OzA-Eg-95A" secondAttribute="trailing" constant="8" id="FzF-NI-ENV"/>
+                <constraint firstItem="Clb-hV-gbg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HSa-QU-T0a"/>
                 <constraint firstItem="rwj-da-120" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="byZ-nn-S6c"/>
                 <constraint firstItem="OzA-Eg-95A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="d3a-Vl-ioX"/>
                 <constraint firstItem="OzA-Eg-95A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="f74-vi-2p0"/>
                 <constraint firstAttribute="bottom" secondItem="OzA-Eg-95A" secondAttribute="bottom" constant="8" id="juX-ys-jbp"/>
+                <constraint firstItem="Clb-hV-gbg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vdp-7L-e9t"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-194" y="-204"/>
