@@ -26,7 +26,7 @@ class MainTableViewCell: UITableViewCell {
     
     private func configureLabel() {
         titleLabel.textColor = .darkGray
-        titleLabel.font = .boldSystemFont(ofSize: 13)
+        titleLabel.font = .boldSystemFont(ofSize: 15)
     }
     
     private func configureCollectionView() {
@@ -37,10 +37,10 @@ class MainTableViewCell: UITableViewCell {
     private func collectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 100, height: 120)
-        layout.minimumLineSpacing = 16
-        layout.minimumInteritemSpacing = 16
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: 80, height: 120)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         return layout
     }
 }

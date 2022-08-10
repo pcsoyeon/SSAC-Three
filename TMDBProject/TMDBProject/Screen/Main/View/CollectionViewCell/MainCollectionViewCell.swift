@@ -15,4 +15,9 @@ class MainCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        mediaCardView.posterImageView.image = nil
+    }
+        
 }

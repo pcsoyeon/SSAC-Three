@@ -30,6 +30,6 @@ class MediaCardView: UIView {
     }
     
     private func loadUI() {
-        posterImageView.backgroundColor = .systemMint
+        posterImageView.backgroundColor = .clear
     }
 }
