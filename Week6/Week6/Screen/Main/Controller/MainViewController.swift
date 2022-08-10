@@ -40,7 +40,7 @@ final class MainViewController: UIViewController {
     private func configureCollectionView() {
         bannerCollectionView.delegate = self
         bannerCollectionView.dataSource = self
-        bannerCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")
+        bannerCollectionView.register(UINib(nibName: CardCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: CardCollectionViewCell.reuseIdentifier)
         bannerCollectionView.isPagingEnabled = true
         bannerCollectionView.collectionViewLayout = collectionViewLayout()
     }
@@ -69,7 +69,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.reuseIdentifier, for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
         
         if collectionView == bannerCollectionView {
             cell.cardView.posterImageView.backgroundColor = color[indexPath.item]
@@ -94,13 +94,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseIdentifier, for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
         cell.contentCollectionView.tag = indexPath.section // 각 셀 구분 짓기
         cell.contentCollectionView.delegate = self
         cell.contentCollectionView.dataSource = self
         cell.contentCollectionView.register(
-            UINib(nibName: "CardCollectionViewCell", bundle: nil),
-            forCellWithReuseIdentifier: "CardCollectionViewCell")
+            UINib(nibName: CardCollectionViewCell.reuseIdentifier, bundle: nil),
+            forCellWithReuseIdentifier: CardCollectionViewCell.reuseIdentifier)
         return cell
     }
     
