@@ -26,6 +26,7 @@
 		927AFD5728A0ABED00A8BBEB /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */; };
 		927AFD5B28A0AE7A00A8BBEB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */; };
 		929055B728A33033007E33A6 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055B628A33033007E33A6 /* ReusableViewProtocol.swift */; };
+		929055B928A343F4007E33A6 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055B828A343F3007E33A6 /* TMDBAPIManager.swift */; };
 		92A2A74728A227A4007B5949 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A74628A227A4007B5949 /* CardView.xib */; };
 		92A2A74928A227EB007B5949 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A74828A227EB007B5949 /* CardView.swift */; };
 		92D3155328A148A100B6F568 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 92D3155228A148A100B6F568 /* SwiftyJSON */; };
@@ -55,6 +56,7 @@
 		927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		929055B628A33033007E33A6 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		929055B828A343F3007E33A6 /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
 		92A2A74628A227A4007B5949 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		92A2A74828A227EB007B5949 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				927AFD5428A0A79F00A8BBEB /* KakaoAPIManager.swift */,
+				929055B828A343F3007E33A6 /* TMDBAPIManager.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				927AFD5028A094A900A8BBEB /* EndPoint.swift in Sources */,
 				927AFD4D28A091B800A8BBEB /* APIKey.swift in Sources */,
 				927AFD5528A0A79F00A8BBEB /* KakaoAPIManager.swift in Sources */,
+				929055B928A343F4007E33A6 /* TMDBAPIManager.swift in Sources */,
 				92305DF028A1E03F00714740 /* SeSACButton.swift in Sources */,
 				923EB12C28A1FC39000DB0BE /* MainTableViewCell.swift in Sources */,
 				927AFD2928A0907C00A8BBEB /* SceneDelegate.swift in Sources */,

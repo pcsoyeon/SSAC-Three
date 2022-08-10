@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 /*
  awakeFromNib
  - 셀 UI 초기화, 재사용 메커니즘에 의해 일정 횟수 이상 호출되지 않음
@@ -44,12 +46,25 @@ final class MainViewController: UIViewController {
         [Int](81...90)
     ]
     
+    private var episodeList: [[String]] = []
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
         configureTableView()
+        
+        TMDBAPIManager.shared.requestImage { value in
+            print("========================== 💍 Poster List 💍 ==========================")
+            print(value)
+            
+            // 1. 네트워크 통신
+            // 2. 배열 생성
+            // 3. 배열 담기
+            self.episodeList = value
+            self.mainTableView.reloadData()
+        }
     }
     
     // MARK: - Custom Method
@@ -72,7 +87,7 @@ final class MainViewController: UIViewController {
         return layout
     }
     
-    func configureTableView() {
+    private func configureTableView() {
         mainTableView.delegate = self
         mainTableView.dataSource = self
     }
@@ -82,7 +97,7 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == bannerCollectionView ? color.count : numberList[collectionView.tag].count
+        return collectionView == bannerCollectionView ? color.count : episodeList[collectionView.tag].count
     }
     
     // bannerCollectionView || 테이블 뷰 안에 들어 있는 컬렉션 뷰
@@ -98,13 +113,16 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
 //            if indexPath.item < 2 {
                 // 따로 설정하지 않으면 xib 파일의 남아 있는 string 값이 나오게 됨
-                cell.cardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
+//                cell.cardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
 //            }
             // 나머지 경우에 대한 값을 처리하지 않아 값이 남게 됨 -> UI와 데이터는 별개이기 때문
             // 화면과 데이터는 별개이므로 모든 indexPath.item에 대한 조건이 없다면 재사용 시 오류가 날 수 있음
 //            else {
 //                cell.cardView.contentLabel.text = "Happy"
 //            }
+            
+            let url = URL(string: "\(TMDBAPIManager.shared.imageURL)\(episodeList[collectionView.tag][indexPath.item])")
+            cell.cardView.posterImageView.kf.setImage(with: url)
         }
         return cell
     }
@@ -114,7 +132,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return numberList.count
+        return episodeList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -134,6 +152,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentCollectionView.register(
             UINib(nibName: CardCollectionViewCell.reuseIdentifier, bundle: nil),
             forCellWithReuseIdentifier: CardCollectionViewCell.reuseIdentifier)
+        
+        cell.titleLabel.text = TMDBAPIManager.shared.tvList[indexPath.section].0
         
         // Index Out of Range 
         // 중첩구조에 대한 인덱스가 꼬이는 것 > 해결방법
