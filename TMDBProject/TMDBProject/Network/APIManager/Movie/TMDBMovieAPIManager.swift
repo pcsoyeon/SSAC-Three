@@ -174,4 +174,34 @@ class TMDBMovieAPIManager {
             }
         }
     }
+    
+    func fetchMovieDetail(movieId: Int, completionHandler: @escaping (MovieDetailResponse) -> ()) {
+        let url = EndPoint.movie.requestURL + "/\(movieId)?api_key=\(APIKey.APIKey)&language=ko-KR"
+        print(url)
+        
+        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                let statusCode = response.response?.statusCode ?? 500
+                if statusCode == 200 {
+                    let title = json["title"].stringValue
+                    let backdropPath = json["backdrop_path"].stringValue
+                    let originalTitle = json["original_title"].stringValue
+                    let genre = json["genres"].arrayValue.map { $0["name"].stringValue }
+                    
+                    let detailData = MovieDetailResponse(title: title,
+                                                         originalTitle: originalTitle,
+                                                         backdropPath: backdropPath,
+                                                         genre: genre)
+                    
+                    completionHandler(detailData)
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

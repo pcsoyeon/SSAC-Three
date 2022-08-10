@@ -15,6 +15,8 @@ final class MainViewController: UIViewController {
     
     @IBOutlet weak var movieTableView: UITableView!
     
+    private var movieHeaderView = MainMovieHeaderView()
+    
     // MARK: - Property
     
     private var movieList: [[MovieResponse]] = []
@@ -30,10 +32,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        TMDBMovieAPIManager.shared.requestMovie { value in
-            self.movieList = value
-            self.movieTableView.reloadData()
-        }
+        callRequest()
     }
     
     // MARK: - Custom Method
@@ -50,6 +49,17 @@ final class MainViewController: UIViewController {
         movieTableView.register(UINib(nibName: MainTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
         
         movieTableView.backgroundColor = .black
+    }
+    
+    private func callRequest() {
+        TMDBMovieAPIManager.shared.requestMovie { value in
+            self.movieList = value
+            self.movieTableView.reloadData()
+        }
+        
+        TMDBMovieAPIManager.shared.fetchMovieDetail(movieId: 361743) { [weak self] value in
+            self?.movieHeaderView.setData(title: value.title, imageName: value.backdropPath, genre: value.genre)
+        }
     }
 }
 
@@ -90,7 +100,7 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            return MainMediaHeaderView()
+            return movieHeaderView
         } else {
             return UIView()
         }

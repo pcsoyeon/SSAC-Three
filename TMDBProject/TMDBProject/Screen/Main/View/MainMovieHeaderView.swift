@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainMediaHeaderView: UIView {
+final class MainMovieHeaderView: UIView {
     
     private var logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -53,5 +53,10 @@ class MainMediaHeaderView: UIView {
             logoImageView.widthAnchor.constraint(equalToConstant: 50),
             logoImageView.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    func setData(title: String, imageName: String, genre: [String]) {
+        let posterImageURL = URL(string: URLConstant.ImageBaseURL + imageName)
+        posterImageView.kf.setImage(with: posterImageURL)
     }
 }
