@@ -13,15 +13,15 @@ final class MainViewController: UIViewController {
 
     // MARK: - UI Property
     
-    @IBOutlet weak var mediaTableView: UITableView!
+    @IBOutlet weak var movieTableView: UITableView!
     
     // MARK: - Property
     
     private var movieList: [[MovieResponse]] = []
     
     private var popularMovieList: [MovieResponse] = []
+    private var similarMovieList: [MovieResponse] = []
     private var nowPlayingMovieList: [MovieResponse] = []
-    private var latestMovieList: [MovieResponse] = []
     private var topRatedMovieList: [MovieResponse] = []
     private var upComingMovieList: [MovieResponse] = []
     
@@ -30,74 +30,26 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        callRequest()
+        TMDBMovieAPIManager.shared.requestMovie { value in
+            self.movieList = value
+            self.movieTableView.reloadData()
+        }
     }
     
     // MARK: - Custom Method
     
-    private func configureTableView() {
-        mediaTableView.delegate = self
-        mediaTableView.dataSource = self
-        
-        mediaTableView.register(UINib(nibName: MainTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
+    private func configureUI() {
+        setStatusBar()
+        view.backgroundColor = .black
     }
     
-    private func callRequest() {
-        TMDBMovieAPIManager.shared.fetchPopularMovie { json in
-            self.popularMovieList = json["results"].arrayValue.map {
-                MovieResponse(title: $0["title"].stringValue,
-                              original_title: $0["original_title"].stringValue,
-                              posterPath: $0["poster_path"].stringValue,
-                              id: $0["id"].intValue)
-            }
-            
-            self.mediaTableView.reloadData()
-        }
+    private func configureTableView() {
+        movieTableView.delegate = self
+        movieTableView.dataSource = self
         
-        TMDBMovieAPIManager.shared.fetchNowPlayingMovie { json in
-            self.nowPlayingMovieList = json["results"].arrayValue.map {
-                MovieResponse(title: $0["title"].stringValue,
-                              original_title: $0["original_title"].stringValue,
-                              posterPath: $0["poster_path"].stringValue,
-                              id: $0["id"].intValue)
-            }
-            
-            self.mediaTableView.reloadData()
-        }
+        movieTableView.register(UINib(nibName: MainTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
         
-        TMDBMovieAPIManager.shared.fetchLatestMovie { json in
-            self.latestMovieList = json["results"].arrayValue.map {
-                MovieResponse(title: $0["title"].stringValue,
-                              original_title: $0["original_title"].stringValue,
-                              posterPath: $0["poster_path"].stringValue,
-                              id: $0["id"].intValue)
-            }
-            
-            print(self.latestMovieList)
-            self.mediaTableView.reloadData()
-        }
-        
-        TMDBMovieAPIManager.shared.fetchTopRatedMovie { json in
-            self.topRatedMovieList = json["results"].arrayValue.map {
-                MovieResponse(title: $0["title"].stringValue,
-                              original_title: $0["original_title"].stringValue,
-                              posterPath: $0["poster_path"].stringValue,
-                              id: $0["id"].intValue)
-            }
-            
-            self.mediaTableView.reloadData()
-        }
-        
-        TMDBMovieAPIManager.shared.fetchUpComingMovie { json in
-            self.upComingMovieList = json["results"].arrayValue.map {
-                MovieResponse(title: $0["title"].stringValue,
-                              original_title: $0["original_title"].stringValue,
-                              posterPath: $0["poster_path"].stringValue,
-                              id: $0["id"].intValue)
-            }
-            
-            self.mediaTableView.reloadData()
-        }
+        movieTableView.backgroundColor = .black
     }
 }
 
@@ -111,7 +63,8 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return MainTableViewSection.allCases.count
+//        return MainTableViewSection.allCases.count
+        return movieList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -160,38 +113,14 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView.tag == 0 {
-            return popularMovieList.count
-        } else if collectionView.tag == 1 {
-            return latestMovieList.count
-        } else if collectionView.tag == 2 {
-            return nowPlayingMovieList.count
-        } else if collectionView.tag == 3 {
-            return topRatedMovieList.count
-        } else {
-            return upComingMovieList.count
-        }
+        return movieList[collectionView.tag].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.reuseIdentifier, for: indexPath) as? MainCollectionViewCell else { return UICollectionViewCell() }
         
-        if collectionView.tag == 0 {
-            let posterImageURL = URL(string: URLConstant.ImageBaseURL + popularMovieList[indexPath.item].posterPath)
-            cell.mediaCardView.posterImageView.kf.setImage(with: posterImageURL)
-        } else if collectionView.tag == 1 {
-            let posterImageURL = URL(string: URLConstant.ImageBaseURL + latestMovieList[indexPath.item].posterPath)
-            cell.mediaCardView.posterImageView.kf.setImage(with: posterImageURL)
-        } else if collectionView.tag == 2 {
-            let posterImageURL = URL(string: URLConstant.ImageBaseURL + nowPlayingMovieList[indexPath.item].posterPath)
-            cell.mediaCardView.posterImageView.kf.setImage(with: posterImageURL)
-        } else if collectionView.tag == 3 {
-            let posterImageURL = URL(string: URLConstant.ImageBaseURL + topRatedMovieList[indexPath.item].posterPath)
-            cell.mediaCardView.posterImageView.kf.setImage(with: posterImageURL)
-        } else if collectionView.tag == 4 {
-            let posterImageURL = URL(string: URLConstant.ImageBaseURL + upComingMovieList[indexPath.item].posterPath)
-            cell.mediaCardView.posterImageView.kf.setImage(with: posterImageURL)
-        }
+        let posterImageURL = URL(string: URLConstant.ImageBaseURL + movieList[collectionView.tag][indexPath.item].posterPath)
+        cell.mediaCardView.posterImageView.kf.setImage(with: posterImageURL)
         
         return cell
     }
