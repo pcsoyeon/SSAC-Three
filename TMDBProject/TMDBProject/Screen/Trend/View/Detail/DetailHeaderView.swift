@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailHeaderView : UIView{
+class DetailHeaderView : UIView {
 
     // MARK: - UI Property
     
@@ -53,7 +53,7 @@ class DetailHeaderView : UIView{
         
         posterImageView.contentMode = .scaleToFill
         posterImageView.layer.cornerRadius = 10
-        posterImageView.layer.masksToBounds = true
+        posterImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     private func setLayout(){

@@ -26,7 +26,7 @@ class MainTableViewCell: UITableViewCell {
     
     private func configureLabel() {
         titleLabel.textColor = .darkGray
-        titleLabel.font = .boldSystemFont(ofSize: 17)
+        titleLabel.font = .boldSystemFont(ofSize: 13)
     }
     
     private func configureCollectionView() {

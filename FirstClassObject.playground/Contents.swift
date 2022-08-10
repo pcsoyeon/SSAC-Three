@@ -319,4 +319,5 @@ for score in examScore {
 print(totalCount / 8)
 
 let totalCountUsingReduce = examScore.reduce(0) { return $0 + $1 }
-print(totalCountUsingReduce / 8)
+print(totalCountUsingReduce / 8
+)

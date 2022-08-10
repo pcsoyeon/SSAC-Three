@@ -25,6 +25,7 @@
 		927AFD5528A0A79F00A8BBEB /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5428A0A79F00A8BBEB /* KakaoAPIManager.swift */; };
 		927AFD5728A0ABED00A8BBEB /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */; };
 		927AFD5B28A0AE7A00A8BBEB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */; };
+		929055B728A33033007E33A6 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055B628A33033007E33A6 /* ReusableViewProtocol.swift */; };
 		92A2A74728A227A4007B5949 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A74628A227A4007B5949 /* CardView.xib */; };
 		92A2A74928A227EB007B5949 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A74828A227EB007B5949 /* CardView.swift */; };
 		92D3155328A148A100B6F568 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 92D3155228A148A100B6F568 /* SwiftyJSON */; };
@@ -53,6 +54,7 @@
 		927AFD5428A0A79F00A8BBEB /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		929055B628A33033007E33A6 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		92A2A74628A227A4007B5949 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		92A2A74828A227EB007B5949 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +215,7 @@
 		927AFD5828A0AE5C00A8BBEB /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				929055B528A33020007E33A6 /* Protocol */,
 				92305DF328A1E60B00714740 /* View */,
 				927AFD5928A0AE6300A8BBEB /* Extension */,
 			);
@@ -225,6 +228,14 @@
 				927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		929055B528A33020007E33A6 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				929055B628A33033007E33A6 /* ReusableViewProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +324,7 @@
 			files = (
 				927AFD5B28A0AE7A00A8BBEB /* UIViewController+Extension.swift in Sources */,
 				92305DFB28A1F65000714740 /* MainViewController.swift in Sources */,
+				929055B728A33033007E33A6 /* ReusableViewProtocol.swift in Sources */,
 				927AFD2B28A0907C00A8BBEB /* ViewController.swift in Sources */,
 				927AFD2728A0907C00A8BBEB /* AppDelegate.swift in Sources */,
 				92A2A74928A227EB007B5949 /* CardView.swift in Sources */,

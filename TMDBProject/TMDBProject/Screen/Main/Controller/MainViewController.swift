@@ -60,7 +60,6 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
-
 extension MainViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return MainTableViewSection.allCases.count
@@ -78,7 +77,29 @@ extension MainViewController: UITableViewDataSource {
         cell.posterCollectionView.register(
             UINib(nibName: MainCollectionViewCell.reuseIdentifier, bundle: nil),
             forCellWithReuseIdentifier: MainCollectionViewCell.reuseIdentifier)
+        cell.selectionStyle = .none
+        cell.contentView.backgroundColor = .yellow
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return MainMediaHeaderView()
+        } else {
+            return UIView()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 300
+        } else {
+            return CGFloat.leastNormalMagnitude
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
     }
 }
 
