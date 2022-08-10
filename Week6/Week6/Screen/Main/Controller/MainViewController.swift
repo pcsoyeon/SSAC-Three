@@ -153,7 +153,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             UINib(nibName: CardCollectionViewCell.reuseIdentifier, bundle: nil),
             forCellWithReuseIdentifier: CardCollectionViewCell.reuseIdentifier)
         
-        cell.titleLabel.text = TMDBAPIManager.shared.tvList[indexPath.section].0
+        cell.titleLabel.text = "\(TMDBAPIManager.shared.tvList[indexPath.section].0) 다시보기"
         
         // Index Out of Range 
         // 중첩구조에 대한 인덱스가 꼬이는 것 > 해결방법
@@ -163,6 +163,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
+        return 240
     }
 }
