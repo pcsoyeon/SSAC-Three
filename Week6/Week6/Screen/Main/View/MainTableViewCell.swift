@@ -14,8 +14,10 @@ class MainTableViewCell: UITableViewCell {
     
     // MARK: - Initialzier
     
+    // cellForRowAt보다 먼저 호출, 한번만 호출
     override func awakeFromNib() {
         super.awakeFromNib()
+        print(MainTableViewCell.reuseIdentifier, #function)
         configureUI()
     }
 
@@ -26,7 +28,6 @@ class MainTableViewCell: UITableViewCell {
         titleLabel.text = "넷플릭스 인기 콘텐츠"
         titleLabel.backgroundColor = .clear
         
-//        contentCollectionView.backgroundColor = .clear
         contentCollectionView.collectionViewLayout = collectionViewLayout()
     }
     

@@ -15,7 +15,15 @@ class CardCollectionViewCell: UICollectionViewCell {
     // awakeFromNib이 CellforRowAt 보다 앞선 시점에 동작
     override func awakeFromNib() {
         super.awakeFromNib()
+        print(CardCollectionViewCell.reuseIdentifier, #function)
         configureUI()
+    }
+    
+    override func prepareForReuse() {
+        // 오버라이드 > 부모 클래스 상속 받을 것
+        super.prepareForReuse()
+        // 처음에는 awakeFromNib이 실행되어서 xib 파일의 값이 보이지만 재사용을 하면서 사라지게 됨 
+        cardView.contentLabel.text = nil
     }
     
     // MARK: - Cutom Method
@@ -23,9 +31,6 @@ class CardCollectionViewCell: UICollectionViewCell {
     // 공통된 UI에 작성
     private func configureUI() {
         cardView.backgroundColor = .clear
-//        cardView.posterImageView.backgroundColor = .lightGray
-//        cardView.posterImageView.layer.cornerRadius = 10
-//        cardView.likeButton.tintColor = .systemBlue
     }
 
 }
