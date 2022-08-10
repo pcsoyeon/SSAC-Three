@@ -19,5 +19,4 @@ class MainCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         mediaCardView.posterImageView.image = nil
     }
-        
 }

@@ -19,6 +19,7 @@
 		927A8AF628A3C4730029892F /* TMDBMovieAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A8AF528A3C4730029892F /* TMDBMovieAPIManager.swift */; };
 		927A8AF928A3CA830029892F /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A8AF828A3CA830029892F /* MovieResponse.swift */; };
 		927A8AFC28A3DC650029892F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 927A8AFB28A3DC650029892F /* Kingfisher */; };
+		927A8AFE28A472E10029892F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A8AFD28A472E10029892F /* UIViewController+Extension.swift */; };
 		927AFD1728A078C300A8BBEB /* TrendingMediaAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD1628A078C300A8BBEB /* TrendingMediaAPIManager.swift */; };
 		927AFD1928A08B5800A8BBEB /* MediaCreditAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD1828A08B5800A8BBEB /* MediaCreditAPIManager.swift */; };
 		927AFD5D28A11EBD00A8BBEB /* VideoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5C28A11EBD00A8BBEB /* VideoWebViewController.swift */; };
@@ -70,6 +71,7 @@
 		927A8AF328A3C2610029892F /* MainTableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewSection.swift; sourceTree = "<group>"; };
 		927A8AF528A3C4730029892F /* TMDBMovieAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMovieAPIManager.swift; sourceTree = "<group>"; };
 		927A8AF828A3CA830029892F /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
+		927A8AFD28A472E10029892F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		927AFD1628A078C300A8BBEB /* TrendingMediaAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMediaAPIManager.swift; sourceTree = "<group>"; };
 		927AFD1828A08B5800A8BBEB /* MediaCreditAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCreditAPIManager.swift; sourceTree = "<group>"; };
 		927AFD5C28A11EBD00A8BBEB /* VideoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWebViewController.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				92AC0D85289ABA31001A3757 /* Date+Extension.swift */,
 				927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */,
 				927AFD6228A12B1600A8BBEB /* URL+Extension.swift */,
+				927A8AFD28A472E10029892F /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				929055B428A28ECC007E33A6 /* MainMediaHeaderView.swift in Sources */,
 				92AC0D7F289AA81F001A3757 /* ReusableViewProtocol.swift in Sources */,
 				92002116289BAB8A00C2BE5C /* CastTableViewCell.swift in Sources */,
+				927A8AFE28A472E10029892F /* UIViewController+Extension.swift in Sources */,
 				927AFD6128A12AC700A8BBEB /* EndPoint.swift in Sources */,
 				92AC0D82289AB685001A3757 /* CALayer+Extension.swift in Sources */,
 				927A8AF428A3C2610029892F /* MainTableViewSection.swift in Sources */,

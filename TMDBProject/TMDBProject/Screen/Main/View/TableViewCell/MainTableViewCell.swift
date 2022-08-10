@@ -18,20 +18,26 @@ class MainTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUI()
         configureLabel()
         configureCollectionView()
     }
     
     // MARK: - Custom Method
     
+    private func configureUI() {
+        contentView.backgroundColor = .black
+    }
+    
     private func configureLabel() {
-        titleLabel.textColor = .darkGray
+        titleLabel.textColor = .white
         titleLabel.font = .boldSystemFont(ofSize: 15)
     }
     
     private func configureCollectionView() {
         posterCollectionView.backgroundColor = .clear
         posterCollectionView.collectionViewLayout = collectionViewLayout()
+        posterCollectionView.showsHorizontalScrollIndicator = false
     }
     
     private func collectionViewLayout() -> UICollectionViewFlowLayout {
