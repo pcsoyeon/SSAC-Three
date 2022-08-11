@@ -29,6 +29,9 @@
 		927AFD6328A12B1600A8BBEB /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD6228A12B1600A8BBEB /* URL+Extension.swift */; };
 		927EF5E1289AC72600C83A0F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5E0289AC72600C83A0F /* NavigationViewController.swift */; };
 		927EF5E3289ACB0000C83A0F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */; };
+		928A2A0D28A4FFCB0033FEC8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928A2A0C28A4FFCB0033FEC8 /* MapViewController.swift */; };
+		928A2A0F28A500160033FEC8 /* MyMedia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928A2A0E28A500160033FEC8 /* MyMedia.storyboard */; };
+		928A2A1428A500E30033FEC8 /* TheaterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928A2A1328A500E30033FEC8 /* TheaterDataModel.swift */; };
 		929055A228A25716007E33A6 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055A028A25716007E33A6 /* MainTableViewCell.swift */; };
 		929055A328A25716007E33A6 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929055A128A25716007E33A6 /* MainTableViewCell.xib */; };
 		929055A628A25773007E33A6 /* MediaCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929055A528A25773007E33A6 /* MediaCardView.xib */; };
@@ -82,6 +85,9 @@
 		927AFD6228A12B1600A8BBEB /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		927EF5E0289AC72600C83A0F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		927EF5E2289ACB0000C83A0F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		928A2A0C28A4FFCB0033FEC8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		928A2A0E28A500160033FEC8 /* MyMedia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyMedia.storyboard; sourceTree = "<group>"; };
+		928A2A1328A500E30033FEC8 /* TheaterDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterDataModel.swift; sourceTree = "<group>"; };
 		929055A028A25716007E33A6 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		929055A128A25716007E33A6 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		929055A528A25773007E33A6 /* MediaCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCardView.xib; sourceTree = "<group>"; };
@@ -185,6 +191,40 @@
 			path = APIManager;
 			sourceTree = "<group>";
 		};
+		928A2A0B28A4FFAB0033FEC8 /* MyMedia */ = {
+			isa = PBXGroup;
+			children = (
+				928A2A1228A5008C0033FEC8 /* Model */,
+				928A2A1128A500830033FEC8 /* View */,
+				928A2A1028A5007B0033FEC8 /* Controller */,
+			);
+			path = MyMedia;
+			sourceTree = "<group>";
+		};
+		928A2A1028A5007B0033FEC8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				928A2A0C28A4FFCB0033FEC8 /* MapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		928A2A1128A500830033FEC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				928A2A0E28A500160033FEC8 /* MyMedia.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		928A2A1228A5008C0033FEC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				928A2A1328A500E30033FEC8 /* TheaterDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9290559D28A256CC007E33A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +324,7 @@
 		92AC0D532899F83A001A3757 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				928A2A0B28A4FFAB0033FEC8 /* MyMedia */,
 				92AC0D69289A7BC6001A3757 /* Main */,
 				92AC0D63289A7B8B001A3757 /* Trend */,
 			);
@@ -490,6 +531,7 @@
 				92AC0D512899F7D3001A3757 /* .gitignore in Resources */,
 				92AC0D7B289AA79B001A3757 /* TrendingMediaCollectionViewCell.xib in Resources */,
 				9200211B289BABC500C2BE5C /* OverviewTableViewCell.xib in Resources */,
+				928A2A0F28A500160033FEC8 /* MyMedia.storyboard in Resources */,
 				92AC0D492899F6FC001A3757 /* LaunchScreen.storyboard in Resources */,
 				92AC0D462899F6FC001A3757 /* Assets.xcassets in Resources */,
 				929055AC28A25B3B007E33A6 /* MainCollectionViewCell.xib in Resources */,
@@ -508,6 +550,7 @@
 				9200210F289BA83700C2BE5C /* CastResponse.swift in Sources */,
 				927AFD5F28A1206B00A8BBEB /* MediaVideoAPIManager.swift in Sources */,
 				9200210B289B970500C2BE5C /* MediaType.swift in Sources */,
+				928A2A1428A500E30033FEC8 /* TheaterDataModel.swift in Sources */,
 				929055A828A2578E007E33A6 /* MediaCardView.swift in Sources */,
 				92AC0D412899F6FB001A3757 /* MainViewController.swift in Sources */,
 				927EF5E1289AC72600C83A0F /* NavigationViewController.swift in Sources */,
@@ -532,6 +575,7 @@
 				92AC0D86289ABA31001A3757 /* Date+Extension.swift in Sources */,
 				927AFD1728A078C300A8BBEB /* TrendingMediaAPIManager.swift in Sources */,
 				92AC0D7A289AA79B001A3757 /* TrendingMediaCollectionViewCell.swift in Sources */,
+				928A2A0D28A4FFCB0033FEC8 /* MapViewController.swift in Sources */,
 				927AFD1928A08B5800A8BBEB /* MediaCreditAPIManager.swift in Sources */,
 				92AC0D75289A89A7001A3757 /* TrendingMediaResponse.swift in Sources */,
 				9200211A289BABC500C2BE5C /* OverviewTableViewCell.swift in Sources */,
