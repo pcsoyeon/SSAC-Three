@@ -29,6 +29,7 @@
 		929055B928A343F4007E33A6 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055B828A343F3007E33A6 /* TMDBAPIManager.swift */; };
 		92A2A74728A227A4007B5949 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A74628A227A4007B5949 /* CardView.xib */; };
 		92A2A74928A227EB007B5949 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A74828A227EB007B5949 /* CardView.swift */; };
+		92CFB2ED28A4939A00598E30 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CFB2EC28A4939A00598E30 /* MapViewController.swift */; };
 		92D3155328A148A100B6F568 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 92D3155228A148A100B6F568 /* SwiftyJSON */; };
 		92D3155628A148AC00B6F568 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92D3155528A148AC00B6F568 /* Alamofire */; };
 		92D3155928A148B700B6F568 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 92D3155828A148B700B6F568 /* Kingfisher */; };
@@ -59,6 +60,7 @@
 		929055B828A343F3007E33A6 /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
 		92A2A74628A227A4007B5949 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		92A2A74828A227EB007B5949 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		92CFB2EC28A4939A00598E30 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				927AFD2A28A0907C00A8BBEB /* ViewController.swift */,
 				927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */,
 				92305DFA28A1F65000714740 /* MainViewController.swift */,
+				92CFB2EC28A4939A00598E30 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				923EB12C28A1FC39000DB0BE /* MainTableViewCell.swift in Sources */,
 				927AFD2928A0907C00A8BBEB /* SceneDelegate.swift in Sources */,
 				927AFD5228A0950F00A8BBEB /* URL+Extension.swift in Sources */,
+				92CFB2ED28A4939A00598E30 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
