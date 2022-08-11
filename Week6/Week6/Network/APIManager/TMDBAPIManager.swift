@@ -39,7 +39,7 @@ class TMDBAPIManager {
                 let statusCode = response.response?.statusCode ?? 500
                 if statusCode == 200 {
                     
-                    let stillPath: [String] = json["episodes"].arrayValue.map { $0["still_path"].stringValue }
+                    let stillPath: [String] = json["episodes"].arrayValue.map { $0["still_path"].stringValue }.filter { $0 != "" }
                     print("========================== 🦾 Still Path 🦾 ==========================")
                     print(stillPath)
                     

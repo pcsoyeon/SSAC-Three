@@ -14,6 +14,12 @@ class ClosureViewController: UIViewController {
     // Type: CardView > Custom Class 연결을 했기 때문
     @IBOutlet weak var cardView: CardView!
     
+    var sampleButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("버튼", for: .normal)
+        return button
+    }()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
