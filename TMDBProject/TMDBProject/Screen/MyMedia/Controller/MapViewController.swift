@@ -60,35 +60,35 @@ class MapViewController: UIViewController {
     @IBAction func touchUpFilterButton(_ sender: UIBarButtonItem) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "메가박스", style: .default, handler: {_ in
+        actionSheet.addAction(UIAlertAction(title: "메가박스", style: .default, handler: { _ in
             self.mapView.removeAnnotations(self.mapView.annotations)
-            for cinema in self.theaterList.filter({$0.type == "메가박스"}) {
-                let center = CLLocationCoordinate2D(latitude: cinema.latitude, longitude: cinema.longitude)
-                self.setAnnotation(center: center, title: cinema.location)
+            for theater in self.theaterList.filter( { $0.type == "메가박스" } ) {
+                let center = CLLocationCoordinate2D(latitude: theater.latitude, longitude: theater.longitude)
+                self.setAnnotation(center: center, title: theater.location)
             }
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "롯데시네마", style: .default, handler: {_ in
+        actionSheet.addAction(UIAlertAction(title: "롯데시네마", style: .default, handler: { _ in
             self.mapView.removeAnnotations(self.mapView.annotations)
-            for cinema in self.theaterList.filter({$0.type == "롯데시네마"}) {
-                let center = CLLocationCoordinate2D(latitude: cinema.latitude, longitude: cinema.longitude)
-                self.setAnnotation(center: center, title: cinema.location)
+            for theater in self.theaterList.filter({ $0.type == "롯데시네마"} ) {
+                let center = CLLocationCoordinate2D(latitude: theater.latitude, longitude: theater.longitude)
+                self.setAnnotation(center: center, title: theater.location)
             }
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "CGV", style: .default, handler: {_ in
+        actionSheet.addAction(UIAlertAction(title: "CGV", style: .default, handler: { _ in
             self.mapView.removeAnnotations(self.mapView.annotations)
-            for cinema in self.theaterList.filter({$0.type == "CGV"}) {
-                let center = CLLocationCoordinate2D(latitude: cinema.latitude, longitude: cinema.longitude)
-                self.setAnnotation(center: center, title: cinema.location)
+            for theater in self.theaterList.filter( { $0.type == "CGV" } ) {
+                let center = CLLocationCoordinate2D(latitude: theater.latitude, longitude: theater.longitude)
+                self.setAnnotation(center: center, title: theater.location)
             }
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "전체보기", style: .default, handler: {_ in
+        actionSheet.addAction(UIAlertAction(title: "전체보기", style: .default, handler: { _ in
             self.mapView.removeAnnotations(self.mapView.annotations)
-            for cinema in self.theaterList {
-                let center = CLLocationCoordinate2D(latitude: cinema.latitude, longitude: cinema.longitude)
-                self.setAnnotation(center: center, title: cinema.location)
+            for theater in self.theaterList {
+                let center = CLLocationCoordinate2D(latitude: theater.latitude, longitude: theater.longitude)
+                self.setAnnotation(center: center, title: theater.location)
             }
         }))
         
