@@ -71,13 +71,13 @@ class CameraViewController: UIViewController {
         // TODO: - 사진 저장 Alert
         if let image = resultImageView.image {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            self.showToast(message: "갤러리에 저장되었습니다.")
         }
     }
     
     // 이미지 뷰 이미지 > 네이버 > 얼굴 분석 요청 > 응답
     // 문자열이 아닌 파일, 이미지 PDF 파일 자체가 그대로 전송되지 않음 => 파일을 텍스트 형태로 인코딩
     // 어떤 파일의 종류가 서버에게 전달이 되는지 명시하는 것이 필요 = Content-Type
-    
     @IBAction func clovaFaceButtonClicked(_ sender: UIButton) {
         let url = "https://openapi.naver.com/v1/vision/celebrity"
         
@@ -127,23 +127,25 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print(#function)
         
+        var newImage: UIImage? = nil
+        
         // 원본, 편집, 메타데이터 - infoKey
-        // TODO: - 여러개의 infoKey를 어떻게 관리?
         if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            resultImageView.image = originalImage
-            dismiss(animated: true)
+            newImage = originalImage
+        } else if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage { // Any로 타입이 설정되어 있으므로 타입 캐스팅을 통해서 UIImage로 변경
+            newImage = editedImage
         }
         
-        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage { // Any로 타입이 설정되어 있으므로 타입 캐스팅을 통해서 UIImage로 변경
-            resultImageView.image = editedImage
-            dismiss(animated: true)
-        }
+        resultImageView.image = newImage
+        
+        dismiss(animated: true)
     }
     
     // UIImagePickerController 5.
     // 취소 버튼 눌렀을 때
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         print(#function)
+        dismiss(animated: true)
     }
 }
 
