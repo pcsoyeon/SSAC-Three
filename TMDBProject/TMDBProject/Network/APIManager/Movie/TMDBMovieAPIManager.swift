@@ -24,7 +24,7 @@ enum MovieServie {
         case .nowPlaying:
             return EndPoint.nowPlaying.requestURL
         case .similiar(let id):
-            return EndPoint.nowPlaying.requestURL
+            return EndPoint.similar(id: id).requestURL
         case .topRated:
             return EndPoint.topRated.requestURL
         case .upComing:
@@ -40,36 +40,10 @@ class TMDBMovieAPIManager {
     
     typealias completionHandler = ([MovieResponse]) -> ()
     
-    private let movieId: Int = 361743
+    var movieId: Int = 361743
     
     func fetchMovie(type: MovieServie, page: Int = 1, completionHandler: @escaping completionHandler) {
         let url = type.path + "?api_key=\(APIKey.APIKey)&language=ko-KR&page=\(page)"
-        
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                let statusCode = response.response?.statusCode ?? 500
-                if statusCode == 200 {
-                    let data = json["results"].arrayValue.map {
-                        MovieResponse(title: $0["title"].stringValue,
-                                      original_title: $0["original_title"].stringValue,
-                                      posterPath: $0["poster_path"].stringValue,
-                                      id: $0["id"].intValue)
-                    }
-                    
-                    completionHandler(data)
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func fetchSimilarMovie(movieId: Int = TMDBMovieAPIManager.shared.movieId, page: Int = 1, completionHandler: @escaping completionHandler) {
-        let url = EndPoint.similar(id: movieId).requestURL + "?api_key=\(APIKey.APIKey)&language=ko-KR&page=\(page)"
         
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
             switch response.result {
@@ -100,7 +74,7 @@ class TMDBMovieAPIManager {
         TMDBMovieAPIManager.shared.fetchMovie(type: .popular) { value in
             movieList.append(value)
             
-            TMDBMovieAPIManager.shared.fetchSimilarMovie { value in
+            TMDBMovieAPIManager.shared.fetchMovie(type: .similiar(id: self.movieId)) { value in
                 movieList.append(value)
                 
                 TMDBMovieAPIManager.shared.fetchMovie(type: .nowPlaying) { value in
