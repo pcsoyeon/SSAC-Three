@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O8W-vO-wHy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jO5-UX-GRb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -315,6 +315,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oec-pd-d8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="112" y="2129"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="6dH-OX-1uf">
+            <objects>
+                <viewController id="jO5-UX-GRb" customClass="CameraViewController" customModule="Week6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qpL-Mp-rGQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMq-Z1-mwi">
+                                <rect key="frame" x="20" y="64" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WUI-AT-EYh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="YPImagePickerButtonClicked:" destination="jO5-UX-GRb" eventType="touchUpInside" id="gOR-zS-g4r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmV-jX-vUV">
+                                <rect key="frame" x="20" y="128" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WGK-0z-xBq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="cameraButtonClicked:" destination="jO5-UX-GRb" eventType="touchUpInside" id="JbK-6t-7ce"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqp-3C-ODK">
+                                <rect key="frame" x="20" y="192" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="vyk-I8-BmI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="photoLibraryButtonClicked:" destination="jO5-UX-GRb" eventType="touchUpInside" id="DHG-QO-re2"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hPO-dJ-ySV">
+                                <rect key="frame" x="20" y="256" width="374" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="x9F-O2-eSF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s92-p2-7b1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Eqp-3C-ODK" firstAttribute="top" secondItem="VmV-jX-vUV" secondAttribute="bottom" constant="20" id="2Wc-jP-1VY"/>
+                            <constraint firstItem="s92-p2-7b1" firstAttribute="trailing" secondItem="hPO-dJ-ySV" secondAttribute="trailing" constant="20" id="3VA-mz-OiR"/>
+                            <constraint firstItem="s92-p2-7b1" firstAttribute="trailing" secondItem="Eqp-3C-ODK" secondAttribute="trailing" constant="20" id="D4B-n3-qCZ"/>
+                            <constraint firstItem="BMq-Z1-mwi" firstAttribute="leading" secondItem="s92-p2-7b1" secondAttribute="leading" constant="20" id="Luk-7m-nUE"/>
+                            <constraint firstItem="VmV-jX-vUV" firstAttribute="leading" secondItem="s92-p2-7b1" secondAttribute="leading" constant="20" id="N1A-Vd-KA0"/>
+                            <constraint firstItem="s92-p2-7b1" firstAttribute="trailing" secondItem="BMq-Z1-mwi" secondAttribute="trailing" constant="20" id="Se9-A9-rDr"/>
+                            <constraint firstItem="hPO-dJ-ySV" firstAttribute="leading" secondItem="s92-p2-7b1" secondAttribute="leading" constant="20" id="ZM3-oP-Rib"/>
+                            <constraint firstItem="BMq-Z1-mwi" firstAttribute="top" secondItem="s92-p2-7b1" secondAttribute="top" constant="20" id="hmj-0a-MhY"/>
+                            <constraint firstItem="VmV-jX-vUV" firstAttribute="top" secondItem="BMq-Z1-mwi" secondAttribute="bottom" constant="20" id="in4-6p-UoD"/>
+                            <constraint firstItem="hPO-dJ-ySV" firstAttribute="top" secondItem="Eqp-3C-ODK" secondAttribute="bottom" constant="20" id="p4V-nF-9Xo"/>
+                            <constraint firstItem="s92-p2-7b1" firstAttribute="trailing" secondItem="VmV-jX-vUV" secondAttribute="trailing" constant="20" id="p4t-Df-1Mi"/>
+                            <constraint firstItem="Eqp-3C-ODK" firstAttribute="leading" secondItem="s92-p2-7b1" secondAttribute="leading" constant="20" id="pfo-Mh-WwJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultImageView" destination="hPO-dJ-ySV" id="VIF-jt-FXG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pND-fQ-s0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="2835"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="485-gw-TGL">
