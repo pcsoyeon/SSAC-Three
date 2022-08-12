@@ -10,6 +10,29 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+enum MovieServie {
+    case popular
+    case nowPlaying
+    case similiar(id: Int)
+    case topRated
+    case upComing
+    
+    var path: String {
+        switch self {
+        case .popular:
+            return EndPoint.popular.requestURL
+        case .nowPlaying:
+            return EndPoint.nowPlaying.requestURL
+        case .similiar(let id):
+            return EndPoint.nowPlaying.requestURL
+        case .topRated:
+            return EndPoint.topRated.requestURL
+        case .upComing:
+            return EndPoint.upComing.requestURL
+        }
+    }
+}
+
 class TMDBMovieAPIManager {
     static let shared = TMDBMovieAPIManager()
     
@@ -19,34 +42,8 @@ class TMDBMovieAPIManager {
     
     private let movieId: Int = 361743
     
-    func fetchPopularMovie(page: Int = 1, completionHandler: @escaping completionHandler) {
-        let url = EndPoint.popular.requestURL + "?api_key=\(APIKey.APIKey)&language=ko-KR&page=\(page)"
-        
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                let statusCode = response.response?.statusCode ?? 500
-                if statusCode == 200 {
-                    let data = json["results"].arrayValue.map {
-                        MovieResponse(title: $0["title"].stringValue,
-                                      original_title: $0["original_title"].stringValue,
-                                      posterPath: $0["poster_path"].stringValue,
-                                      id: $0["id"].intValue)
-                    }
-                    
-                    completionHandler(data)
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func fetchNowPlayingMovie(page: Int = 1, completionHandler: @escaping completionHandler) {
-        let url = EndPoint.nowPlaying.requestURL + "?api_key=\(APIKey.APIKey)&language=ko-KR&page=\(page)"
+    func fetchMovie(type: MovieServie, page: Int = 1, completionHandler: @escaping completionHandler) {
+        let url = type.path + "?api_key=\(APIKey.APIKey)&language=ko-KR&page=\(page)"
         
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
             switch response.result {
@@ -97,75 +94,23 @@ class TMDBMovieAPIManager {
         }
     }
     
-    func fetchTopRatedMovie(page: Int = 1, completionHandler: @escaping completionHandler) {
-        let url = EndPoint.topRated.requestURL + "?api_key=\(APIKey.APIKey)&language=ko-KR&page=\(page)"
-        
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                let statusCode = response.response?.statusCode ?? 500
-                if statusCode == 200 {
-                    let data = json["results"].arrayValue.map {
-                        MovieResponse(title: $0["title"].stringValue,
-                                      original_title: $0["original_title"].stringValue,
-                                      posterPath: $0["poster_path"].stringValue,
-                                      id: $0["id"].intValue)
-                    }
-                    
-                    completionHandler(data)
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func fetchUpComingMovie(page: Int = 1, completionHandler: @escaping completionHandler) {
-        let url = EndPoint.upComing.requestURL + "?api_key=\(APIKey.APIKey)&language=ko-KR&page=\(page)"
-        
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                let statusCode = response.response?.statusCode ?? 500
-                if statusCode == 200 {
-                    let data = json["results"].arrayValue.map {
-                        MovieResponse(title: $0["title"].stringValue,
-                                      original_title: $0["original_title"].stringValue,
-                                      posterPath: $0["poster_path"].stringValue,
-                                      id: $0["id"].intValue)
-                    }
-                    
-                    completionHandler(data)
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
     func requestMovie(completionHandler: @escaping ([[MovieResponse]]) -> ()) {
         var movieList: [[MovieResponse]] = []
         
-        TMDBMovieAPIManager.shared.fetchPopularMovie { value in
+        TMDBMovieAPIManager.shared.fetchMovie(type: .popular) { value in
             movieList.append(value)
             
             TMDBMovieAPIManager.shared.fetchSimilarMovie { value in
                 movieList.append(value)
                 
-                TMDBMovieAPIManager.shared.fetchNowPlayingMovie { value in
+                TMDBMovieAPIManager.shared.fetchMovie(type: .nowPlaying) { value in
                     movieList.append(value)
                 }
                 
-                TMDBMovieAPIManager.shared.fetchTopRatedMovie { value in
+                TMDBMovieAPIManager.shared.fetchMovie(type: .topRated){ value in
                     movieList.append(value)
                     
-                    TMDBMovieAPIManager.shared.fetchUpComingMovie { value in
+                    TMDBMovieAPIManager.shared.fetchMovie(type: .upComing) { value in
                         movieList.append(value)
                         
                         completionHandler(movieList)
@@ -177,7 +122,6 @@ class TMDBMovieAPIManager {
     
     func fetchMovieDetail(movieId: Int, completionHandler: @escaping (MovieDetailResponse) -> ()) {
         let url = EndPoint.movie.requestURL + "/\(movieId)?api_key=\(APIKey.APIKey)&language=ko-KR"
-        print(url)
         
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
             switch response.result {
