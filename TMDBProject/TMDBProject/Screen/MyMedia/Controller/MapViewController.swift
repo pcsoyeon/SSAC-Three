@@ -70,7 +70,7 @@ class MapViewController: UIViewController {
         
         actionSheet.addAction(UIAlertAction(title: "롯데시네마", style: .default, handler: { _ in
             self.mapView.removeAnnotations(self.mapView.annotations)
-            for theater in self.theaterList.filter({ $0.type == "롯데시네마"} ) {
+            for theater in self.theaterList.filter({ $0.type == "롯데시네마" } ) {
                 let center = CLLocationCoordinate2D(latitude: theater.latitude, longitude: theater.longitude)
                 self.setAnnotation(center: center, title: theater.location)
             }
