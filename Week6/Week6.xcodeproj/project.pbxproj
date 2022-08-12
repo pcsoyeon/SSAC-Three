@@ -25,6 +25,7 @@
 		927AFD5528A0A79F00A8BBEB /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5428A0A79F00A8BBEB /* KakaoAPIManager.swift */; };
 		927AFD5728A0ABED00A8BBEB /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */; };
 		927AFD5B28A0AE7A00A8BBEB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */; };
+		928A2A2A28A5D6E30033FEC8 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 928A2A2928A5D6E30033FEC8 /* YPImagePicker */; };
 		929055B728A33033007E33A6 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055B628A33033007E33A6 /* ReusableViewProtocol.swift */; };
 		929055B928A343F4007E33A6 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055B828A343F3007E33A6 /* TMDBAPIManager.swift */; };
 		92A2A74728A227A4007B5949 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A74628A227A4007B5949 /* CardView.xib */; };
@@ -71,6 +72,7 @@
 				92D3155928A148B700B6F568 /* Kingfisher in Frameworks */,
 				92D3155328A148A100B6F568 /* SwiftyJSON in Frameworks */,
 				92D3155628A148AC00B6F568 /* Alamofire in Frameworks */,
+				928A2A2A28A5D6E30033FEC8 /* YPImagePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +266,7 @@
 				92D3155228A148A100B6F568 /* SwiftyJSON */,
 				92D3155528A148AC00B6F568 /* Alamofire */,
 				92D3155828A148B700B6F568 /* Kingfisher */,
+				928A2A2928A5D6E30033FEC8 /* YPImagePicker */,
 			);
 			productName = Week6;
 			productReference = 927AFD2328A0907C00A8BBEB /* Week6.app */;
@@ -297,6 +300,7 @@
 				92D3155128A148A100B6F568 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				92D3155428A148AC00B6F568 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				92D3155728A148B700B6F568 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				928A2A2828A5D6E30033FEC8 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = 927AFD2428A0907C00A8BBEB /* Products */;
 			projectDirPath = "";
@@ -564,6 +568,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		928A2A2828A5D6E30033FEC8 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		92D3155128A148A100B6F568 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
@@ -591,6 +603,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		928A2A2928A5D6E30033FEC8 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 928A2A2828A5D6E30033FEC8 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
+		};
 		92D3155228A148A100B6F568 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 92D3155128A148A100B6F568 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
