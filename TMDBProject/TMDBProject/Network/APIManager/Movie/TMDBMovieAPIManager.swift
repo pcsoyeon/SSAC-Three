@@ -42,6 +42,8 @@ class TMDBMovieAPIManager {
     
     var movieId: Int = 361743
     
+    // MARK: - CompletionHandler
+    
     func fetchMovie(type: MovieServie, page: Int = 1, completionHandler: @escaping completionHandler) {
         let url = type.path + "?api_key=\(APIKey.APIKey)&language=ko-KR&page=\(page)"
         
@@ -93,6 +95,56 @@ class TMDBMovieAPIManager {
             }
         }
     }
+    
+    // MARK: - Async/Await
+    
+    func fetchMovieWithAsyncAwait(type: MovieServie, page: Int = 1) async -> [MovieResponse] {
+        let url = type.path + "?api_key=\(APIKey.APIKey)&language=ko-KR&page=\(page)"
+        var movieList: [MovieResponse] = []
+        
+        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                let statusCode = response.response?.statusCode ?? 500
+                if statusCode == 200 {
+                    let data = json["results"].arrayValue.map {
+                        MovieResponse(title: $0["title"].stringValue,
+                                      original_title: $0["original_title"].stringValue,
+                                      posterPath: $0["poster_path"].stringValue,
+                                      id: $0["id"].intValue)
+                    }
+                    movieList = data
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        return movieList
+    }
+    
+    func requestMovieWithAsyncAwait(completionHandler: @escaping ([[MovieResponse]]) -> ()) async {
+        var movieList: [[MovieResponse]] = []
+        
+        let popularMovie = await self.fetchMovieWithAsyncAwait(type: .popular)
+        let similiarMovie = await self.fetchMovieWithAsyncAwait(type: .similiar(id: self.movieId))
+        let nowPlayingMovie = await self.fetchMovieWithAsyncAwait(type: .nowPlaying)
+        let topRatedMovie = await self.fetchMovieWithAsyncAwait(type: .topRated)
+        let upComingMovie = await self.fetchMovieWithAsyncAwait(type: .upComing)
+        
+        movieList.append(popularMovie)
+        movieList.append(similiarMovie)
+        movieList.append(nowPlayingMovie)
+        movieList.append(topRatedMovie)
+        movieList.append(upComingMovie)
+        
+        completionHandler(movieList)
+    }
+    
+    // MARK: - GET Movie Detail
     
     func fetchMovieDetail(movieId: Int, completionHandler: @escaping (MovieDetailResponse) -> ()) {
         let url = EndPoint.movie.requestURL + "/\(movieId)?api_key=\(APIKey.APIKey)&language=ko-KR"

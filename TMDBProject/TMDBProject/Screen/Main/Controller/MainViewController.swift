@@ -52,9 +52,16 @@ final class MainViewController: UIViewController {
     }
     
     private func callRequest() {
-        TMDBMovieAPIManager.shared.requestMovie { value in
-            self.movieList = value
-            self.movieTableView.reloadData()
+//        TMDBMovieAPIManager.shared.requestMovie { value in
+//            self.movieList = value
+//            self.movieTableView.reloadData()
+//        }
+        
+        Task {
+            await TMDBMovieAPIManager.shared.requestMovie(completionHandler: { value in
+                self.movieList = value
+                self.movieTableView.reloadData()
+            })
         }
         
         TMDBMovieAPIManager.shared.fetchMovieDetail(movieId: 361743) { [weak self] value in
