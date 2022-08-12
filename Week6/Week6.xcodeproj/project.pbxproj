@@ -27,6 +27,7 @@
 		927AFD5B28A0AE7A00A8BBEB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */; };
 		928A2A2A28A5D6E30033FEC8 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 928A2A2928A5D6E30033FEC8 /* YPImagePicker */; };
 		928A2A2C28A5DD6C0033FEC8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928A2A2B28A5DD6C0033FEC8 /* CameraViewController.swift */; };
+		928A2A2E28A5F04B0033FEC8 /* NaverAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928A2A2D28A5F04B0033FEC8 /* NaverAPIManager.swift */; };
 		929055B728A33033007E33A6 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055B628A33033007E33A6 /* ReusableViewProtocol.swift */; };
 		929055B928A343F4007E33A6 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929055B828A343F3007E33A6 /* TMDBAPIManager.swift */; };
 		92A2A74728A227A4007B5949 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A74628A227A4007B5949 /* CardView.xib */; };
@@ -59,6 +60,7 @@
 		927AFD5628A0ABED00A8BBEB /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		927AFD5A28A0AE7A00A8BBEB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		928A2A2B28A5DD6C0033FEC8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		928A2A2D28A5F04B0033FEC8 /* NaverAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIManager.swift; sourceTree = "<group>"; };
 		929055B628A33033007E33A6 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		929055B828A343F3007E33A6 /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
 		92A2A74628A227A4007B5949 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				927AFD5428A0A79F00A8BBEB /* KakaoAPIManager.swift */,
 				929055B828A343F3007E33A6 /* TMDBAPIManager.swift */,
+				928A2A2D28A5F04B0033FEC8 /* NaverAPIManager.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				927AFD2B28A0907C00A8BBEB /* ViewController.swift in Sources */,
 				927AFD2728A0907C00A8BBEB /* AppDelegate.swift in Sources */,
 				92A2A74928A227EB007B5949 /* CardView.swift in Sources */,
+				928A2A2E28A5F04B0033FEC8 /* NaverAPIManager.swift in Sources */,
 				927AFD5728A0ABED00A8BBEB /* ClosureViewController.swift in Sources */,
 				92305DF828A1F36C00714740 /* CardCollectionViewCell.swift in Sources */,
 				927AFD5028A094A900A8BBEB /* EndPoint.swift in Sources */,
