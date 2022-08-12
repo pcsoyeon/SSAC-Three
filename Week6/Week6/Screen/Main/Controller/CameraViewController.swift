@@ -13,8 +13,14 @@ class CameraViewController: UIViewController {
 
     @IBOutlet weak var resultImageView: UIImageView!
     
+    // UIImagePickerController 1.
+    let picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // UIImagePickerController 2.
+        picker.delegate = self
     }
     
     // 오픈 소스 활용
@@ -39,10 +45,62 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func cameraButtonClicked(_ sender: UIButton) {
-        
+        // 카메라를 사용할 수 있는 기기인가?
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            print("사용 불가 > 사용자에게 토스트/얼럿")
+            return
+        }
+        picker.sourceType = .camera
+        picker.allowsEditing = true // 촬영 이후, 편집을 할 수 있는지 (default : false)
+        present(picker, animated: true)
     }
     
     @IBAction func photoLibraryButtonClicked(_ sender: UIButton) {
-        
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            print("사용 불가 > 사용자에게 토스트/얼럿")
+            return
+        }
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = false
+        present(picker, animated: true)
+    }
+    
+    @IBAction func saveToPhotoLibrary(_ sender: UIButton) {
+        // TODO: - 사진 저장 Alert
+        if let image = resultImageView.image {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
     }
 }
+
+// UIImagePickerController 3.
+// 네비게이션 컨트롤러를 상속 받고 있음 (왜 네비게이션 컨트롤러를 상속받는가?)
+
+// MARK: - UIImagePickerController Protocol
+
+extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    // UIImagePickerController 4.
+    // 사진을 선택 || 카메라 촬영 직후
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print(#function)
+        
+        // 원본, 편집, 메타데이터 - infoKey
+        // TODO: - 여러개의 infoKey를 어떻게 관리?
+        if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            resultImageView.image = originalImage
+            dismiss(animated: true)
+        }
+        
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage { // Any로 타입이 설정되어 있으므로 타입 캐스팅을 통해서 UIImage로 변경
+            resultImageView.image = editedImage
+            dismiss(animated: true)
+        }
+    }
+    
+    // UIImagePickerController 5.
+    // 취소 버튼 눌렀을 때
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print(#function)
+    }
+}
+
