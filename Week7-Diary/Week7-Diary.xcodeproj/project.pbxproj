@@ -13,26 +13,26 @@
 		922062DB28AB1FD7004988A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922062D928AB1FD7004988A1 /* Main.storyboard */; };
 		922062DD28AB1FD9004988A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 922062DC28AB1FD9004988A1 /* Assets.xcassets */; };
 		922062E028AB1FD9004988A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922062DE28AB1FD9004988A1 /* LaunchScreen.storyboard */; };
-		9220632F28AB2C79004988A1 /* SokyteUIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9220632C28AB2C4B004988A1 /* SokyteUIFramework.framework */; };
-		9220633028AB2C79004988A1 /* SokyteUIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9220632C28AB2C4B004988A1 /* SokyteUIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9220633E28AB3AC2004988A1 /* WalkThrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9220633D28AB3AC2004988A1 /* WalkThrough.storyboard */; };
 		9220634028AB3ADA004988A1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220633F28AB3ADA004988A1 /* FirstViewController.swift */; };
 		9220634228AB40D6004988A1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220634128AB40D6004988A1 /* SecondViewController.swift */; };
 		9220634428AB40E3004988A1 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220634328AB40E3004988A1 /* ThirdViewController.swift */; };
 		9220634628AB4104004988A1 /* WalkThroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220634528AB4104004988A1 /* WalkThroughPageViewController.swift */; };
+		92B11C5D28ABD92400A22509 /* SokyteUIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923D8AEB28ABD8DD003C143B /* SokyteUIFramework.framework */; };
+		92B11C5E28ABD92400A22509 /* SokyteUIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 923D8AEB28ABD8DD003C143B /* SokyteUIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9220632B28AB2C4B004988A1 /* PBXContainerItemProxy */ = {
+		923D8AEA28ABD8DD003C143B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9220632628AB2C4B004988A1 /* SokyteUIFramework.xcodeproj */;
+			containerPortal = 923D8AE528ABD8DD003C143B /* SokyteUIFramework.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9220630428AB27D2004988A1;
 			remoteInfo = SokyteUIFramework;
 		};
-		9220632D28AB2C4B004988A1 /* PBXContainerItemProxy */ = {
+		923D8AEC28ABD8DD003C143B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9220632628AB2C4B004988A1 /* SokyteUIFramework.xcodeproj */;
+			containerPortal = 923D8AE528ABD8DD003C143B /* SokyteUIFramework.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9220630E28AB27D2004988A1;
 			remoteInfo = SokyteUIFrameworkTests;
@@ -40,13 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		922062F328AB20FF004988A1 /* Embed Frameworks */ = {
+		92B11C5F28ABD92400A22509 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9220633028AB2C79004988A1 /* SokyteUIFramework.framework in Embed Frameworks */,
+				92B11C5E28ABD92400A22509 /* SokyteUIFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,12 +62,12 @@
 		922062DC28AB1FD9004988A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		922062DF28AB1FD9004988A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		922062E128AB1FD9004988A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9220632628AB2C4B004988A1 /* SokyteUIFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SokyteUIFramework.xcodeproj; path = ../SokyteUIFramework/SokyteUIFramework.xcodeproj; sourceTree = "<group>"; };
 		9220633D28AB3AC2004988A1 /* WalkThrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalkThrough.storyboard; sourceTree = "<group>"; };
 		9220633F28AB3ADA004988A1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9220634128AB40D6004988A1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9220634328AB40E3004988A1 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		9220634528AB4104004988A1 /* WalkThroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughPageViewController.swift; sourceTree = "<group>"; };
+		923D8AE528ABD8DD003C143B /* SokyteUIFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SokyteUIFramework.xcodeproj; path = ../SokyteUIFramework/SokyteUIFramework.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9220632F28AB2C79004988A1 /* SokyteUIFramework.framework in Frameworks */,
+				92B11C5D28ABD92400A22509 /* SokyteUIFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +85,7 @@
 		922062C728AB1FD7004988A1 = {
 			isa = PBXGroup;
 			children = (
-				9220632628AB2C4B004988A1 /* SokyteUIFramework.xcodeproj */,
+				923D8AE528ABD8DD003C143B /* SokyteUIFramework.xcodeproj */,
 				922062D228AB1FD7004988A1 /* Week7-Diary */,
 				922062D128AB1FD7004988A1 /* Products */,
 				922062F028AB20FF004988A1 /* Frameworks */,
@@ -141,15 +141,6 @@
 			children = (
 			);
 			path = Global;
-			sourceTree = "<group>";
-		};
-		9220632728AB2C4B004988A1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9220632C28AB2C4B004988A1 /* SokyteUIFramework.framework */,
-				9220632E28AB2C4B004988A1 /* SokyteUIFrameworkTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		9220633628AB3A41004988A1 /* Support */ = {
@@ -215,6 +206,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		923D8AE628ABD8DD003C143B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				923D8AEB28ABD8DD003C143B /* SokyteUIFramework.framework */,
+				923D8AED28ABD8DD003C143B /* SokyteUIFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,7 +225,7 @@
 				922062CC28AB1FD7004988A1 /* Sources */,
 				922062CD28AB1FD7004988A1 /* Frameworks */,
 				922062CE28AB1FD7004988A1 /* Resources */,
-				922062F328AB20FF004988A1 /* Embed Frameworks */,
+				92B11C5F28ABD92400A22509 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,8 +264,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9220632728AB2C4B004988A1 /* Products */;
-					ProjectRef = 9220632628AB2C4B004988A1 /* SokyteUIFramework.xcodeproj */;
+					ProductGroup = 923D8AE628ABD8DD003C143B /* Products */;
+					ProjectRef = 923D8AE528ABD8DD003C143B /* SokyteUIFramework.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -276,18 +276,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9220632C28AB2C4B004988A1 /* SokyteUIFramework.framework */ = {
+		923D8AEB28ABD8DD003C143B /* SokyteUIFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SokyteUIFramework.framework;
-			remoteRef = 9220632B28AB2C4B004988A1 /* PBXContainerItemProxy */;
+			remoteRef = 923D8AEA28ABD8DD003C143B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9220632E28AB2C4B004988A1 /* SokyteUIFrameworkTests.xctest */ = {
+		923D8AED28ABD8DD003C143B /* SokyteUIFrameworkTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SokyteUIFrameworkTests.xctest;
-			remoteRef = 9220632D28AB2C4B004988A1 /* PBXContainerItemProxy */;
+			remoteRef = 923D8AEC28ABD8DD003C143B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
