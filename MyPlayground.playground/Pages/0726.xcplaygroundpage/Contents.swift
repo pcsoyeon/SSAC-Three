@@ -171,3 +171,21 @@ var test: SoKyte = SoKyte() {
 
 test.age = 25
 
+
+struct Device {
+    fileprivate let name: String = "iPhone"
+    private let price: Int = 1000
+}
+
+extension Device {
+    func example() {
+        print(self.name, self.price)
+    }
+}
+
+struct AppleDevice {
+    func example() {
+        let device = Device()
+        device.
+    }
+}
