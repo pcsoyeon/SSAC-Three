@@ -15,6 +15,8 @@
 		9220632128AB28B1004988A1 /* SokyteReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220632028AB28B1004988A1 /* SokyteReusableProtocol.swift */; };
 		9220632328AB2930004988A1 /* SokyteActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220632228AB2930004988A1 /* SokyteActivityViewController.swift */; };
 		9220632528AB2A1E004988A1 /* SokyteWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220632428AB2A1E004988A1 /* SokyteWebView.swift */; };
+		923D8ACB28AB898B003C143B /* SokyteStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D8ACA28AB898B003C143B /* SokyteStatusBar.swift */; };
+		923D8AD128AB8A02003C143B /* SokyteSketchShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D8AD028AB8A02003C143B /* SokyteSketchShadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		9220632028AB28B1004988A1 /* SokyteReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteReusableProtocol.swift; sourceTree = "<group>"; };
 		9220632228AB2930004988A1 /* SokyteActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteActivityViewController.swift; sourceTree = "<group>"; };
 		9220632428AB2A1E004988A1 /* SokyteWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteWebView.swift; sourceTree = "<group>"; };
+		923D8ACA28AB898B003C143B /* SokyteStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteStatusBar.swift; sourceTree = "<group>"; };
+		923D8AD028AB8A02003C143B /* SokyteSketchShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteSketchShadow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				9220632028AB28B1004988A1 /* SokyteReusableProtocol.swift */,
 				9220632228AB2930004988A1 /* SokyteActivityViewController.swift */,
 				9220632428AB2A1E004988A1 /* SokyteWebView.swift */,
+				923D8ACA28AB898B003C143B /* SokyteStatusBar.swift */,
+				923D8AD028AB8A02003C143B /* SokyteSketchShadow.swift */,
 			);
 			path = SokyteUIFramework;
 			sourceTree = "<group>";
@@ -208,9 +214,11 @@
 			files = (
 				9220632328AB2930004988A1 /* SokyteActivityViewController.swift in Sources */,
 				9220632528AB2A1E004988A1 /* SokyteWebView.swift in Sources */,
+				923D8ACB28AB898B003C143B /* SokyteStatusBar.swift in Sources */,
 				9220630928AB27D2004988A1 /* SokyteUIFramework.docc in Sources */,
 				9220631F28AB2814004988A1 /* SokyteAlert.swift in Sources */,
 				9220632128AB28B1004988A1 /* SokyteReusableProtocol.swift in Sources */,
+				923D8AD128AB8A02003C143B /* SokyteSketchShadow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
