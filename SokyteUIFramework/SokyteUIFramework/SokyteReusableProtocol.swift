@@ -7,9 +7,6 @@
 
 import UIKit
 
-// open VS public
-// 상속이 가능한가? -> 클래스에만 open 사용 가능
-
 public protocol ReusableViewProtocol {
     static var reuseIdentifier: String { get }
 }
@@ -25,6 +22,7 @@ extension UICollectionViewCell: ReusableViewProtocol {
         return String(describing: self)
     }
 }
+
 extension UITableViewCell: ReusableViewProtocol {
     public static var reuseIdentifier: String {
         return String(describing: self)

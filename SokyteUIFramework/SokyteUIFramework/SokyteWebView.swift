@@ -9,14 +9,12 @@ import UIKit
 import WebKit
 
 open class OpenWebView {
-
     public enum TransitionStyle {
         case present
         case push
     }
 
     public static func presentWebViewController(_ viewController: UIViewController, url: String, transitionStyle: TransitionStyle) {
-
         let vc = WebViewController()
         vc.url = url
 
@@ -30,7 +28,6 @@ open class OpenWebView {
 }
 
 class WebViewController: UIViewController {
-
     private var webView: WKWebView!
 
     var url: String = "https://www.apple.com"
