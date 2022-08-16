@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		922062B028AB1BCC004988A1 /* SokyteUIFramework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 922062AF28AB1BCC004988A1 /* SokyteUIFramework.docc */; };
+		922062B628AB1BCD004988A1 /* SokyteUIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922062AB28AB1BCC004988A1 /* SokyteUIFramework.framework */; };
+		922062BB28AB1BCD004988A1 /* SokyteUIFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922062BA28AB1BCD004988A1 /* SokyteUIFrameworkTests.swift */; };
+		922062BC28AB1BCD004988A1 /* SokyteUIFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 922062AE28AB1BCC004988A1 /* SokyteUIFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		922062C628AB1C38004988A1 /* SokyteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922062C528AB1C38004988A1 /* SokyteAlert.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		922062B728AB1BCD004988A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 922062A228AB1BCC004988A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 922062AA28AB1BCC004988A1;
+			remoteInfo = SokyteUIFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		922062AB28AB1BCC004988A1 /* SokyteUIFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SokyteUIFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		922062AE28AB1BCC004988A1 /* SokyteUIFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SokyteUIFramework.h; sourceTree = "<group>"; };
+		922062AF28AB1BCC004988A1 /* SokyteUIFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SokyteUIFramework.docc; sourceTree = "<group>"; };
+		922062B528AB1BCD004988A1 /* SokyteUIFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SokyteUIFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		922062BA28AB1BCD004988A1 /* SokyteUIFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteUIFrameworkTests.swift; sourceTree = "<group>"; };
+		922062C528AB1C38004988A1 /* SokyteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteAlert.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		922062A828AB1BCC004988A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		922062B228AB1BCD004988A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				922062B628AB1BCD004988A1 /* SokyteUIFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		922062A128AB1BCC004988A1 = {
+			isa = PBXGroup;
+			children = (
+				922062AD28AB1BCC004988A1 /* SokyteUIFramework */,
+				922062B928AB1BCD004988A1 /* SokyteUIFrameworkTests */,
+				922062AC28AB1BCC004988A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		922062AC28AB1BCC004988A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				922062AB28AB1BCC004988A1 /* SokyteUIFramework.framework */,
+				922062B528AB1BCD004988A1 /* SokyteUIFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		922062AD28AB1BCC004988A1 /* SokyteUIFramework */ = {
+			isa = PBXGroup;
+			children = (
+				922062AE28AB1BCC004988A1 /* SokyteUIFramework.h */,
+				922062AF28AB1BCC004988A1 /* SokyteUIFramework.docc */,
+				922062C528AB1C38004988A1 /* SokyteAlert.swift */,
+			);
+			path = SokyteUIFramework;
+			sourceTree = "<group>";
+		};
+		922062B928AB1BCD004988A1 /* SokyteUIFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				922062BA28AB1BCD004988A1 /* SokyteUIFrameworkTests.swift */,
+			);
+			path = SokyteUIFrameworkTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		922062A628AB1BCC004988A1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				922062BC28AB1BCD004988A1 /* SokyteUIFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		922062AA28AB1BCC004988A1 /* SokyteUIFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 922062BF28AB1BCD004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFramework" */;
+			buildPhases = (
+				922062A628AB1BCC004988A1 /* Headers */,
+				922062A728AB1BCC004988A1 /* Sources */,
+				922062A828AB1BCC004988A1 /* Frameworks */,
+				922062A928AB1BCC004988A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SokyteUIFramework;
+			productName = SokyteUIFramework;
+			productReference = 922062AB28AB1BCC004988A1 /* SokyteUIFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		922062B428AB1BCD004988A1 /* SokyteUIFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 922062C228AB1BCD004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFrameworkTests" */;
+			buildPhases = (
+				922062B128AB1BCD004988A1 /* Sources */,
+				922062B228AB1BCD004988A1 /* Frameworks */,
+				922062B328AB1BCD004988A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				922062B828AB1BCD004988A1 /* PBXTargetDependency */,
+			);
+			name = SokyteUIFrameworkTests;
+			productName = SokyteUIFrameworkTests;
+			productReference = 922062B528AB1BCD004988A1 /* SokyteUIFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		922062A228AB1BCC004988A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					922062AA28AB1BCC004988A1 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					922062B428AB1BCD004988A1 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 922062A528AB1BCC004988A1 /* Build configuration list for PBXProject "SokyteUIFramework" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 922062A128AB1BCC004988A1;
+			productRefGroup = 922062AC28AB1BCC004988A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				922062AA28AB1BCC004988A1 /* SokyteUIFramework */,
+				922062B428AB1BCD004988A1 /* SokyteUIFrameworkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		922062A928AB1BCC004988A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		922062B328AB1BCD004988A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		922062A728AB1BCC004988A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				922062B028AB1BCC004988A1 /* SokyteUIFramework.docc in Sources */,
+				922062C628AB1C38004988A1 /* SokyteAlert.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		922062B128AB1BCD004988A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				922062BB28AB1BCD004988A1 /* SokyteUIFrameworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		922062B828AB1BCD004988A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 922062AA28AB1BCC004988A1 /* SokyteUIFramework */;
+			targetProxy = 922062B728AB1BCD004988A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		922062BD28AB1BCD004988A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		922062BE28AB1BCD004988A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		922062C028AB1BCD004988A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PU64TS56AD;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soyeon.SokyteUIFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		922062C128AB1BCD004988A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PU64TS56AD;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soyeon.SokyteUIFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		922062C328AB1BCD004988A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PU64TS56AD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soyeon.SokyteUIFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		922062C428AB1BCD004988A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PU64TS56AD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soyeon.SokyteUIFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		922062A528AB1BCC004988A1 /* Build configuration list for PBXProject "SokyteUIFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				922062BD28AB1BCD004988A1 /* Debug */,
+				922062BE28AB1BCD004988A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		922062BF28AB1BCD004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				922062C028AB1BCD004988A1 /* Debug */,
+				922062C128AB1BCD004988A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		922062C228AB1BCD004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				922062C328AB1BCD004988A1 /* Debug */,
+				922062C428AB1BCD004988A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 922062A228AB1BCC004988A1 /* Project object */;
+}
