@@ -70,4 +70,15 @@ extension WalkThroughPageViewController: UIPageViewControllerDelegate, UIPageVie
         
         return nextIndex >= pageViewControllerList.count ? nil : pageViewControllerList[nextIndex]
     }
+    
+    // page control 1. count
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return pageViewControllerList.count
+    }
+    
+    // page control 2.
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        guard let first = viewControllers?.first, let index = pageViewControllerList.firstIndex(of: first) else { return 0 }
+        return index
+    }
 }
