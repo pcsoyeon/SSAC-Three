@@ -7,83 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		922062B028AB1BCC004988A1 /* SokyteUIFramework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 922062AF28AB1BCC004988A1 /* SokyteUIFramework.docc */; };
-		922062B628AB1BCD004988A1 /* SokyteUIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922062AB28AB1BCC004988A1 /* SokyteUIFramework.framework */; };
-		922062BB28AB1BCD004988A1 /* SokyteUIFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922062BA28AB1BCD004988A1 /* SokyteUIFrameworkTests.swift */; };
-		922062BC28AB1BCD004988A1 /* SokyteUIFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 922062AE28AB1BCC004988A1 /* SokyteUIFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		922062C628AB1C38004988A1 /* SokyteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922062C528AB1C38004988A1 /* SokyteAlert.swift */; };
+		9220630928AB27D2004988A1 /* SokyteUIFramework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9220630828AB27D2004988A1 /* SokyteUIFramework.docc */; };
+		9220630F28AB27D2004988A1 /* SokyteUIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9220630428AB27D2004988A1 /* SokyteUIFramework.framework */; };
+		9220631428AB27D2004988A1 /* SokyteUIFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220631328AB27D2004988A1 /* SokyteUIFrameworkTests.swift */; };
+		9220631528AB27D2004988A1 /* SokyteUIFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9220630728AB27D2004988A1 /* SokyteUIFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9220631F28AB2814004988A1 /* SokyteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220631E28AB2814004988A1 /* SokyteAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		922062B728AB1BCD004988A1 /* PBXContainerItemProxy */ = {
+		9220631028AB27D2004988A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 922062A228AB1BCC004988A1 /* Project object */;
+			containerPortal = 922062FB28AB27D2004988A1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 922062AA28AB1BCC004988A1;
+			remoteGlobalIDString = 9220630328AB27D2004988A1;
 			remoteInfo = SokyteUIFramework;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		922062AB28AB1BCC004988A1 /* SokyteUIFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SokyteUIFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		922062AE28AB1BCC004988A1 /* SokyteUIFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SokyteUIFramework.h; sourceTree = "<group>"; };
-		922062AF28AB1BCC004988A1 /* SokyteUIFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SokyteUIFramework.docc; sourceTree = "<group>"; };
-		922062B528AB1BCD004988A1 /* SokyteUIFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SokyteUIFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		922062BA28AB1BCD004988A1 /* SokyteUIFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteUIFrameworkTests.swift; sourceTree = "<group>"; };
-		922062C528AB1C38004988A1 /* SokyteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteAlert.swift; sourceTree = "<group>"; };
+		9220630428AB27D2004988A1 /* SokyteUIFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SokyteUIFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9220630728AB27D2004988A1 /* SokyteUIFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SokyteUIFramework.h; sourceTree = "<group>"; };
+		9220630828AB27D2004988A1 /* SokyteUIFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SokyteUIFramework.docc; sourceTree = "<group>"; };
+		9220630E28AB27D2004988A1 /* SokyteUIFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SokyteUIFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9220631328AB27D2004988A1 /* SokyteUIFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteUIFrameworkTests.swift; sourceTree = "<group>"; };
+		9220631E28AB2814004988A1 /* SokyteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SokyteAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		922062A828AB1BCC004988A1 /* Frameworks */ = {
+		9220630128AB27D2004988A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		922062B228AB1BCD004988A1 /* Frameworks */ = {
+		9220630B28AB27D2004988A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				922062B628AB1BCD004988A1 /* SokyteUIFramework.framework in Frameworks */,
+				9220630F28AB27D2004988A1 /* SokyteUIFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		922062A128AB1BCC004988A1 = {
+		922062FA28AB27D2004988A1 = {
 			isa = PBXGroup;
 			children = (
-				922062AD28AB1BCC004988A1 /* SokyteUIFramework */,
-				922062B928AB1BCD004988A1 /* SokyteUIFrameworkTests */,
-				922062AC28AB1BCC004988A1 /* Products */,
+				9220630628AB27D2004988A1 /* SokyteUIFramework */,
+				9220631228AB27D2004988A1 /* SokyteUIFrameworkTests */,
+				9220630528AB27D2004988A1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		922062AC28AB1BCC004988A1 /* Products */ = {
+		9220630528AB27D2004988A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				922062AB28AB1BCC004988A1 /* SokyteUIFramework.framework */,
-				922062B528AB1BCD004988A1 /* SokyteUIFrameworkTests.xctest */,
+				9220630428AB27D2004988A1 /* SokyteUIFramework.framework */,
+				9220630E28AB27D2004988A1 /* SokyteUIFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		922062AD28AB1BCC004988A1 /* SokyteUIFramework */ = {
+		9220630628AB27D2004988A1 /* SokyteUIFramework */ = {
 			isa = PBXGroup;
 			children = (
-				922062AE28AB1BCC004988A1 /* SokyteUIFramework.h */,
-				922062AF28AB1BCC004988A1 /* SokyteUIFramework.docc */,
-				922062C528AB1C38004988A1 /* SokyteAlert.swift */,
+				9220630728AB27D2004988A1 /* SokyteUIFramework.h */,
+				9220630828AB27D2004988A1 /* SokyteUIFramework.docc */,
+				9220631E28AB2814004988A1 /* SokyteAlert.swift */,
 			);
 			path = SokyteUIFramework;
 			sourceTree = "<group>";
 		};
-		922062B928AB1BCD004988A1 /* SokyteUIFrameworkTests */ = {
+		9220631228AB27D2004988A1 /* SokyteUIFrameworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				922062BA28AB1BCD004988A1 /* SokyteUIFrameworkTests.swift */,
+				9220631328AB27D2004988A1 /* SokyteUIFrameworkTests.swift */,
 			);
 			path = SokyteUIFrameworkTests;
 			sourceTree = "<group>";
@@ -91,25 +91,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		922062A628AB1BCC004988A1 /* Headers */ = {
+		922062FF28AB27D2004988A1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				922062BC28AB1BCD004988A1 /* SokyteUIFramework.h in Headers */,
+				9220631528AB27D2004988A1 /* SokyteUIFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		922062AA28AB1BCC004988A1 /* SokyteUIFramework */ = {
+		9220630328AB27D2004988A1 /* SokyteUIFramework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 922062BF28AB1BCD004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFramework" */;
+			buildConfigurationList = 9220631828AB27D2004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFramework" */;
 			buildPhases = (
-				922062A628AB1BCC004988A1 /* Headers */,
-				922062A728AB1BCC004988A1 /* Sources */,
-				922062A828AB1BCC004988A1 /* Frameworks */,
-				922062A928AB1BCC004988A1 /* Resources */,
+				922062FF28AB27D2004988A1 /* Headers */,
+				9220630028AB27D2004988A1 /* Sources */,
+				9220630128AB27D2004988A1 /* Frameworks */,
+				9220630228AB27D2004988A1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -117,46 +117,46 @@
 			);
 			name = SokyteUIFramework;
 			productName = SokyteUIFramework;
-			productReference = 922062AB28AB1BCC004988A1 /* SokyteUIFramework.framework */;
+			productReference = 9220630428AB27D2004988A1 /* SokyteUIFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		922062B428AB1BCD004988A1 /* SokyteUIFrameworkTests */ = {
+		9220630D28AB27D2004988A1 /* SokyteUIFrameworkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 922062C228AB1BCD004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFrameworkTests" */;
+			buildConfigurationList = 9220631B28AB27D2004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFrameworkTests" */;
 			buildPhases = (
-				922062B128AB1BCD004988A1 /* Sources */,
-				922062B228AB1BCD004988A1 /* Frameworks */,
-				922062B328AB1BCD004988A1 /* Resources */,
+				9220630A28AB27D2004988A1 /* Sources */,
+				9220630B28AB27D2004988A1 /* Frameworks */,
+				9220630C28AB27D2004988A1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				922062B828AB1BCD004988A1 /* PBXTargetDependency */,
+				9220631128AB27D2004988A1 /* PBXTargetDependency */,
 			);
 			name = SokyteUIFrameworkTests;
 			productName = SokyteUIFrameworkTests;
-			productReference = 922062B528AB1BCD004988A1 /* SokyteUIFrameworkTests.xctest */;
+			productReference = 9220630E28AB27D2004988A1 /* SokyteUIFrameworkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		922062A228AB1BCC004988A1 /* Project object */ = {
+		922062FB28AB27D2004988A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					922062AA28AB1BCC004988A1 = {
+					9220630328AB27D2004988A1 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					922062B428AB1BCD004988A1 = {
+					9220630D28AB27D2004988A1 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 922062A528AB1BCC004988A1 /* Build configuration list for PBXProject "SokyteUIFramework" */;
+			buildConfigurationList = 922062FE28AB27D2004988A1 /* Build configuration list for PBXProject "SokyteUIFramework" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -164,26 +164,26 @@
 				en,
 				Base,
 			);
-			mainGroup = 922062A128AB1BCC004988A1;
-			productRefGroup = 922062AC28AB1BCC004988A1 /* Products */;
+			mainGroup = 922062FA28AB27D2004988A1;
+			productRefGroup = 9220630528AB27D2004988A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				922062AA28AB1BCC004988A1 /* SokyteUIFramework */,
-				922062B428AB1BCD004988A1 /* SokyteUIFrameworkTests */,
+				9220630328AB27D2004988A1 /* SokyteUIFramework */,
+				9220630D28AB27D2004988A1 /* SokyteUIFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		922062A928AB1BCC004988A1 /* Resources */ = {
+		9220630228AB27D2004988A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		922062B328AB1BCD004988A1 /* Resources */ = {
+		9220630C28AB27D2004988A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -193,35 +193,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		922062A728AB1BCC004988A1 /* Sources */ = {
+		9220630028AB27D2004988A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				922062B028AB1BCC004988A1 /* SokyteUIFramework.docc in Sources */,
-				922062C628AB1C38004988A1 /* SokyteAlert.swift in Sources */,
+				9220630928AB27D2004988A1 /* SokyteUIFramework.docc in Sources */,
+				9220631F28AB2814004988A1 /* SokyteAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		922062B128AB1BCD004988A1 /* Sources */ = {
+		9220630A28AB27D2004988A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				922062BB28AB1BCD004988A1 /* SokyteUIFrameworkTests.swift in Sources */,
+				9220631428AB27D2004988A1 /* SokyteUIFrameworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		922062B828AB1BCD004988A1 /* PBXTargetDependency */ = {
+		9220631128AB27D2004988A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 922062AA28AB1BCC004988A1 /* SokyteUIFramework */;
-			targetProxy = 922062B728AB1BCD004988A1 /* PBXContainerItemProxy */;
+			target = 9220630328AB27D2004988A1 /* SokyteUIFramework */;
+			targetProxy = 9220631028AB27D2004988A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		922062BD28AB1BCD004988A1 /* Debug */ = {
+		9220631628AB27D2004988A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -284,7 +284,7 @@
 			};
 			name = Debug;
 		};
-		922062BE28AB1BCD004988A1 /* Release */ = {
+		9220631728AB27D2004988A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -341,7 +341,7 @@
 			};
 			name = Release;
 		};
-		922062C028AB1BCD004988A1 /* Debug */ = {
+		9220631928AB27D2004988A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -369,7 +369,7 @@
 			};
 			name = Debug;
 		};
-		922062C128AB1BCD004988A1 /* Release */ = {
+		9220631A28AB27D2004988A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -397,7 +397,7 @@
 			};
 			name = Release;
 		};
-		922062C328AB1BCD004988A1 /* Debug */ = {
+		9220631C28AB27D2004988A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -414,7 +414,7 @@
 			};
 			name = Debug;
 		};
-		922062C428AB1BCD004988A1 /* Release */ = {
+		9220631D28AB27D2004988A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -434,34 +434,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		922062A528AB1BCC004988A1 /* Build configuration list for PBXProject "SokyteUIFramework" */ = {
+		922062FE28AB27D2004988A1 /* Build configuration list for PBXProject "SokyteUIFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				922062BD28AB1BCD004988A1 /* Debug */,
-				922062BE28AB1BCD004988A1 /* Release */,
+				9220631628AB27D2004988A1 /* Debug */,
+				9220631728AB27D2004988A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		922062BF28AB1BCD004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFramework" */ = {
+		9220631828AB27D2004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				922062C028AB1BCD004988A1 /* Debug */,
-				922062C128AB1BCD004988A1 /* Release */,
+				9220631928AB27D2004988A1 /* Debug */,
+				9220631A28AB27D2004988A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		922062C228AB1BCD004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFrameworkTests" */ = {
+		9220631B28AB27D2004988A1 /* Build configuration list for PBXNativeTarget "SokyteUIFrameworkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				922062C328AB1BCD004988A1 /* Debug */,
-				922062C428AB1BCD004988A1 /* Release */,
+				9220631C28AB27D2004988A1 /* Debug */,
+				9220631D28AB27D2004988A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 922062A228AB1BCC004988A1 /* Project object */;
+	rootObject = 922062FB28AB27D2004988A1 /* Project object */;
 }
