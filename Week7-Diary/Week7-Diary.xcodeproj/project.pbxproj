@@ -96,13 +96,6 @@
 				922062F928AB2716004988A1 /* Global */,
 				922062F828AB2710004988A1 /* Screen */,
 				922062F528AB2707004988A1 /* Resource */,
-				922062D328AB1FD7004988A1 /* AppDelegate.swift */,
-				922062D528AB1FD7004988A1 /* SceneDelegate.swift */,
-				922062D728AB1FD7004988A1 /* ViewController.swift */,
-				922062D928AB1FD7004988A1 /* Main.storyboard */,
-				922062DC28AB1FD9004988A1 /* Assets.xcassets */,
-				922062DE28AB1FD9004988A1 /* LaunchScreen.storyboard */,
-				922062E128AB1FD9004988A1 /* Info.plist */,
 			);
 			path = "Week7-Diary";
 			sourceTree = "<group>";
@@ -117,6 +110,9 @@
 		922062F528AB2707004988A1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				9220633C28AB3A72004988A1 /* Asset */,
+				9220633A28AB3A5C004988A1 /* Storyboard */,
+				9220633628AB3A41004988A1 /* Support */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -124,6 +120,8 @@
 		922062F828AB2710004988A1 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				9220633B28AB3A67004988A1 /* Main */,
+				9220633928AB3A4C004988A1 /* WalkThrough */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -142,6 +140,48 @@
 				9220632E28AB2C4B004988A1 /* SokyteUIFrameworkTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9220633628AB3A41004988A1 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				922062E128AB1FD9004988A1 /* Info.plist */,
+				922062D328AB1FD7004988A1 /* AppDelegate.swift */,
+				922062D528AB1FD7004988A1 /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		9220633928AB3A4C004988A1 /* WalkThrough */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WalkThrough;
+			sourceTree = "<group>";
+		};
+		9220633A28AB3A5C004988A1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				922062DE28AB1FD9004988A1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9220633B28AB3A67004988A1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				922062D728AB1FD7004988A1 /* ViewController.swift */,
+				922062D928AB1FD7004988A1 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9220633C28AB3A72004988A1 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				922062DC28AB1FD9004988A1 /* Assets.xcassets */,
+			);
+			path = Asset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,7 +430,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PU64TS56AD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Week7-Diary/Info.plist";
+				INFOPLIST_FILE = "Week7-Diary/Resource/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -418,7 +458,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PU64TS56AD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Week7-Diary/Info.plist";
+				INFOPLIST_FILE = "Week7-Diary/Resource/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
