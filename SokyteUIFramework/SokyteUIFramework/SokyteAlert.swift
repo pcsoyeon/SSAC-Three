@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    func showSokyteAlert(title: String, message: String, buttionTitle: String, buttonAction: @escaping (UIAlertAction) -> ()) {
+    public func showSokyteAlert(title: String, message: String, buttionTitle: String, buttonAction: @escaping (UIAlertAction) -> ()) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancel = UIAlertAction(title: "취소", style: .cancel)

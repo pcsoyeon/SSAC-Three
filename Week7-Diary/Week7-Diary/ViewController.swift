@@ -7,11 +7,27 @@
 
 import UIKit
 
+import SokyteUIFramework
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        showActivityViewController()
+        OpenWebView.presentWebViewController(self, url: "https://www.naver.com", transitionStyle: .present)
+    }
+    
+    private func showActivityViewController() {
+        let image = UIImage(systemName: "star.fill")!
+        let shareURL = "http://www.apple.com"
+        let text = "WWDC What's New!!"
+        
+        sesacShowActivityViewController(shareImage: image, shareURL: shareURL, shareText: text)
+    }
+    
 }
 

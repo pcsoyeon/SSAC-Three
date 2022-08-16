@@ -9,36 +9,38 @@ import UIKit
 import WebKit
 
 open class OpenWebView {
+
     public enum TransitionStyle {
         case present
         case push
     }
-    
-    public func presentWebViewController(_ viewController: UIViewController, url: String, transitionStyle: TransitionStyle) {
-        
-        let viewController = WebViewController()
-        viewController.url = url
-        
+
+    public static func presentWebViewController(_ viewController: UIViewController, url: String, transitionStyle: TransitionStyle) {
+
+        let vc = WebViewController()
+        vc.url = url
+
         switch transitionStyle {
         case .present:
-            viewController.present(viewController, animated: true)
+            viewController.present(vc, animated: true)
         case .push:
-            viewController.navigationController?.pushViewController(viewController, animated: true)
+            viewController.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
 
 class WebViewController: UIViewController {
+
     private var webView: WKWebView!
-    
+
     var url: String = "https://www.apple.com"
-    
+
     override func loadView() {
         let configuration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: configuration)
         view = webView
     }
- 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
