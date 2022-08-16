@@ -14,7 +14,7 @@ extension UIViewController {
     public func showSokyteAlert(title: String, message: String, buttionTitle: String, buttonAction: @escaping (UIAlertAction) -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let cancel = UIAlertAction(title: "", style: .cancel)
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
         let ok = UIAlertAction(title: buttionTitle, style: .default, handler: buttonAction)
         
         alert.addAction(cancel)
