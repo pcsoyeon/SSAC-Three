@@ -15,6 +15,8 @@
 		922062E028AB1FD9004988A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922062DE28AB1FD9004988A1 /* LaunchScreen.storyboard */; };
 		9220632F28AB2C79004988A1 /* SokyteUIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9220632C28AB2C4B004988A1 /* SokyteUIFramework.framework */; };
 		9220633028AB2C79004988A1 /* SokyteUIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9220632C28AB2C4B004988A1 /* SokyteUIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9220633E28AB3AC2004988A1 /* WalkThrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9220633D28AB3AC2004988A1 /* WalkThrough.storyboard */; };
+		9220634028AB3ADA004988A1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220633F28AB3ADA004988A1 /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		922062DF28AB1FD9004988A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		922062E128AB1FD9004988A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9220632628AB2C4B004988A1 /* SokyteUIFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SokyteUIFramework.xcodeproj; path = ../SokyteUIFramework/SokyteUIFramework.xcodeproj; sourceTree = "<group>"; };
+		9220633D28AB3AC2004988A1 /* WalkThrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalkThrough.storyboard; sourceTree = "<group>"; };
+		9220633F28AB3ADA004988A1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 		9220633928AB3A4C004988A1 /* WalkThrough */ = {
 			isa = PBXGroup;
 			children = (
+				9220633D28AB3AC2004988A1 /* WalkThrough.storyboard */,
+				9220633F28AB3ADA004988A1 /* FirstViewController.swift */,
 			);
 			path = WalkThrough;
 			sourceTree = "<group>";
@@ -267,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				922062E028AB1FD9004988A1 /* LaunchScreen.storyboard in Resources */,
+				9220633E28AB3AC2004988A1 /* WalkThrough.storyboard in Resources */,
 				922062DD28AB1FD9004988A1 /* Assets.xcassets in Resources */,
 				922062DB28AB1FD7004988A1 /* Main.storyboard in Resources */,
 			);
@@ -282,6 +289,7 @@
 				922062D828AB1FD7004988A1 /* ViewController.swift in Sources */,
 				922062D428AB1FD7004988A1 /* AppDelegate.swift in Sources */,
 				922062D628AB1FD7004988A1 /* SceneDelegate.swift in Sources */,
+				9220634028AB3ADA004988A1 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
