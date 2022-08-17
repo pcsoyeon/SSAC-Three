@@ -16,7 +16,7 @@ import UIKit
     => NSLayoutConstraints
  */
 
-class CodeBaseViewController: UIViewController {
+class CodeViewController: UIViewController {
     
     // MARK: - UI Property
     
