@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 //        showActivityViewController()
 //        OpenWebView.presentWebViewController(self, url: "https://www.naver.com", transitionStyle: .present)
         
-        let viewController = CodeSnapViewController()
+        let viewController = CodeSnapSecondViewController()
         viewController.modalPresentationStyle = .overFullScreen
         present(viewController, animated: true)
     }
