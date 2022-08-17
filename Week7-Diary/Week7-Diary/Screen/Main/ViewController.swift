@@ -18,7 +18,11 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 //        showActivityViewController()
-        OpenWebView.presentWebViewController(self, url: "https://www.naver.com", transitionStyle: .present)
+//        OpenWebView.presentWebViewController(self, url: "https://www.naver.com", transitionStyle: .present)
+        
+        let viewController = CodeBaseViewController()
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true)
     }
     
     private func showActivityViewController() {
