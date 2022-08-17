@@ -10,11 +10,15 @@ import UIKit
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var tutorialLabel: UILabel!
+    
     @IBOutlet weak var blackView: UIView!
+    
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLabel()
+        animateImageView()
     }
     
     private func configureLabel() {
@@ -40,9 +44,19 @@ class FirstViewController: UIViewController {
         
         UIView.animate(withDuration: 2.0) {
             self.blackView.alpha = 1
-            self.blackView.frame.size.width += 150
+            self.blackView.transform = CGAffineTransform(scaleX: 2, y: 1)
         } completion: { _ in
             print("끝났당")
+        }
+    }
+    
+    private func animateImageView() {
+        // option : 반복 > .repeat
+        UIView.animate(withDuration: 1.5, delay: 0.5, options: .repeat) {
+            self.imageView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        } completion: { _ in
+            self.imageView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            print("이미지 애니메이션 끝 ~")
         }
 
     }

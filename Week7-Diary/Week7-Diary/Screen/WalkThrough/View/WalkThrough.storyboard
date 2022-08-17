@@ -18,6 +18,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjL-Gz-NuF">
                                 <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="yBy-7D-Snl"/>
                                 </constraints>
@@ -72,6 +73,14 @@
                                     <constraint firstAttribute="width" constant="100" id="kmK-sK-SOB"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zGr-2b-Qmj">
+                                <rect key="frame" x="334" y="75.5" width="50" height="47"/>
+                                <color key="tintColor" systemColor="systemMintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zGr-2b-Qmj" secondAttribute="height" multiplier="1:1" id="Jid-BD-uXd"/>
+                                    <constraint firstAttribute="width" constant="50" id="Wvg-sg-xzp"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -79,18 +88,21 @@
                             <constraint firstItem="PBk-wi-5Wp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="3uj-27-Qdi"/>
                             <constraint firstItem="PBk-wi-5Wp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="A27-uK-TQh"/>
                             <constraint firstItem="RW7-ZM-N4J" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Fh7-qP-ElA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zGr-2b-Qmj" secondAttribute="trailing" constant="30" id="ljA-r6-dil"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PBk-wi-5Wp" secondAttribute="trailing" constant="30" id="m0h-gL-Anf"/>
+                            <constraint firstItem="zGr-2b-Qmj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="siz-DM-OMR"/>
                             <constraint firstItem="RW7-ZM-N4J" firstAttribute="top" secondItem="PBk-wi-5Wp" secondAttribute="bottom" constant="8" id="yk6-L2-sF0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="blackView" destination="RW7-ZM-N4J" id="j3O-hq-Rr5"/>
+                        <outlet property="imageView" destination="zGr-2b-Qmj" id="Bmg-iT-w0A"/>
                         <outlet property="tutorialLabel" destination="PBk-wi-5Wp" id="QrB-Iw-Eea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="80"/>
+            <point key="canvasLocation" x="-23.188405797101453" y="79.6875"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="gGj-ib-DFG">
@@ -124,8 +136,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
