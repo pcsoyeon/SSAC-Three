@@ -8,30 +8,54 @@
 import UIKit
 
 import SokyteUIFramework
+import SnapKit
 
 class ViewController: UIViewController {
 
+    // MARK: UI Property
+    
+    let nameButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("닉네임", for: .normal)
+        button.setTitleColor(UIColor.systemPink, for: .normal)
+        return button
+    }()
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+        setLayout()
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        showActivityViewController()
-//        OpenWebView.presentWebViewController(self, url: "https://www.naver.com", transitionStyle: .present)
+    
+    // MARK: - UI Method
+    
+    private func configureUI() {
+        configureButton()
+    }
+    
+    private func setLayout() {
+        view.addSubview(nameButton)
         
-        let viewController = CodeSnapSecondViewController()
-        viewController.modalPresentationStyle = .overFullScreen
+        nameButton.snp.makeConstraints { make in
+            make.width.height.equalTo(200)
+            make.center.equalTo(view)
+        }
+    }
+    
+    private func configureButton() {
+        nameButton.addTarget(self, action: #selector(touchUpNameButton), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc
+    
+    @objc func touchUpNameButton() {
+        let viewController = ProfileViewController()
+        viewController.saveButtonActionHandler = {
+            self.nameButton.setTitle(viewController.nameTextField.text, for: .normal)
+        }
         present(viewController, animated: true)
     }
-    
-    private func showActivityViewController() {
-        let image = UIImage(systemName: "star.fill")!
-        let shareURL = "http://www.apple.com"
-        let text = "WWDC What's New!!"
-        
-        sesacShowActivityViewController(shareImage: image, shareURL: shareURL, shareText: text)
-    }
-    
 }
 

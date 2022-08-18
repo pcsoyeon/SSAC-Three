@@ -25,6 +25,7 @@
 		92B11CAD28AC827300A22509 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92B11CAC28AC827300A22509 /* SnapKit */; };
 		92B11CAF28AC8C1100A22509 /* CodeSnapSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B11CAE28AC8C1100A22509 /* CodeSnapSecondViewController.swift */; };
 		92DCE4D328ADDF19007FEEF1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCE4D228ADDF19007FEEF1 /* UIViewController+Extension.swift */; };
+		92DCE4D528ADE622007FEEF1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCE4D428ADE622007FEEF1 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		92B11CA928AC822D00A22509 /* CodeSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnapViewController.swift; sourceTree = "<group>"; };
 		92B11CAE28AC8C1100A22509 /* CodeSnapSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnapSecondViewController.swift; sourceTree = "<group>"; };
 		92DCE4D228ADDF19007FEEF1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		92DCE4D428ADE622007FEEF1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			children = (
 				922062D728AB1FD7004988A1 /* ViewController.swift */,
 				922062D928AB1FD7004988A1 /* Main.storyboard */,
+				92DCE4D428ADE622007FEEF1 /* ProfileViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				922062D628AB1FD7004988A1 /* SceneDelegate.swift in Sources */,
 				92B11CAF28AC8C1100A22509 /* CodeSnapSecondViewController.swift in Sources */,
 				9220634228AB40D6004988A1 /* SecondViewController.swift in Sources */,
+				92DCE4D528ADE622007FEEF1 /* ProfileViewController.swift in Sources */,
 				92B11CAA28AC822D00A22509 /* CodeSnapViewController.swift in Sources */,
 				92B11CA528AC71CE00A22509 /* CodeViewController.swift in Sources */,
 				9220634628AB4104004988A1 /* WalkThroughPageViewController.swift in Sources */,
