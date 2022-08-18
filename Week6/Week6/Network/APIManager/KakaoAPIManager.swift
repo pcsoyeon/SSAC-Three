@@ -11,20 +11,24 @@ import Alamofire
 import SwiftyJSON
 
 struct User {
-    fileprivate let name = "고래밥" // 같은 스위프트 파일에서 다른 클래스, 구조체에서 사용 가능 / 다른 스위프트 파일에서는 접근 불가
-    private let age = 11 // 같은 스위프트 파일 내에서 같은 파일
+    // 같은 스위프트 파일에서 다른 클래스, 구조체에서 사용 가능 / 다른 스위프트 파일에서는 접근 불가
+    fileprivate let name = "고래밥"
+    
+    // 같은 스위프트 파일 내에서 같은 파일
+    private let age = 11
 }
 
 extension User {
     func example() {
-        print(self.name, self.age)
+        // User Extension 함수 추가
+        print(self.name, self.age) // 프로퍼티 접근 가능
     }
 }
 
 struct Person {
     func example() {
         let user = User()
-        user.name // Ok
+        user.name
 //        user.age // error
     }
 }
