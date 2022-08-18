@@ -24,6 +24,7 @@
 		92B11CAA28AC822D00A22509 /* CodeSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B11CA928AC822D00A22509 /* CodeSnapViewController.swift */; };
 		92B11CAD28AC827300A22509 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92B11CAC28AC827300A22509 /* SnapKit */; };
 		92B11CAF28AC8C1100A22509 /* CodeSnapSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B11CAE28AC8C1100A22509 /* CodeSnapSecondViewController.swift */; };
+		92DCE4D328ADDF19007FEEF1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCE4D228ADDF19007FEEF1 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		92B11CA428AC71CE00A22509 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		92B11CA928AC822D00A22509 /* CodeSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnapViewController.swift; sourceTree = "<group>"; };
 		92B11CAE28AC8C1100A22509 /* CodeSnapSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnapSecondViewController.swift; sourceTree = "<group>"; };
+		92DCE4D228ADDF19007FEEF1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		922062F928AB2716004988A1 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				92DCE4CF28ADDEFE007FEEF1 /* Extension */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -232,6 +235,14 @@
 				92B11CAE28AC8C1100A22509 /* CodeSnapSecondViewController.swift */,
 			);
 			path = CodeBase;
+			sourceTree = "<group>";
+		};
+		92DCE4CF28ADDEFE007FEEF1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				92DCE4D228ADDF19007FEEF1 /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				922062D828AB1FD7004988A1 /* ViewController.swift in Sources */,
+				92DCE4D328ADDF19007FEEF1 /* UIViewController+Extension.swift in Sources */,
 				922062D428AB1FD7004988A1 /* AppDelegate.swift in Sources */,
 				922062D628AB1FD7004988A1 /* SceneDelegate.swift in Sources */,
 				92B11CAF28AC8C1100A22509 /* CodeSnapSecondViewController.swift in Sources */,
