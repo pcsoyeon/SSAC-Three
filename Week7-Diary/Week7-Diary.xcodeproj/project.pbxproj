@@ -21,6 +21,7 @@
 		9220663228AF1271005281D2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220663128AF1271005281D2 /* BaseViewController.swift */; };
 		9220663528AF1458005281D2 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220663428AF1458005281D2 /* WriteViewController.swift */; };
 		9220663728AF16AE005281D2 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220663628AF16AE005281D2 /* BaseView.swift */; };
+		9220663928AF17A2005281D2 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220663828AF17A2005281D2 /* WriteView.swift */; };
 		92B11C5D28ABD92400A22509 /* SokyteUIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923D8AEB28ABD8DD003C143B /* SokyteUIFramework.framework */; };
 		92B11C5E28ABD92400A22509 /* SokyteUIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 923D8AEB28ABD8DD003C143B /* SokyteUIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92B11CA528AC71CE00A22509 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B11CA428AC71CE00A22509 /* CodeViewController.swift */; };
@@ -79,6 +80,7 @@
 		9220663128AF1271005281D2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9220663428AF1458005281D2 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		9220663628AF16AE005281D2 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		9220663828AF17A2005281D2 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		923D8AE528ABD8DD003C143B /* SokyteUIFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SokyteUIFramework.xcodeproj; path = ../SokyteUIFramework/SokyteUIFramework.xcodeproj; sourceTree = "<group>"; };
 		92B11CA428AC71CE00A22509 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		92B11CA928AC822D00A22509 /* CodeSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnapViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				9220663428AF1458005281D2 /* WriteViewController.swift */,
+				9220663828AF17A2005281D2 /* WriteView.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9220663928AF17A2005281D2 /* WriteView.swift in Sources */,
 				9220663228AF1271005281D2 /* BaseViewController.swift in Sources */,
 				922062D828AB1FD7004988A1 /* ViewController.swift in Sources */,
 				92DCE4D328ADDF19007FEEF1 /* UIViewController+Extension.swift in Sources */,
