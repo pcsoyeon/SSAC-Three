@@ -18,6 +18,9 @@
 		9220634228AB40D6004988A1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220634128AB40D6004988A1 /* SecondViewController.swift */; };
 		9220634428AB40E3004988A1 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220634328AB40E3004988A1 /* ThirdViewController.swift */; };
 		9220634628AB4104004988A1 /* WalkThroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220634528AB4104004988A1 /* WalkThroughPageViewController.swift */; };
+		9220663228AF1271005281D2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220663128AF1271005281D2 /* BaseViewController.swift */; };
+		9220663528AF1458005281D2 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220663428AF1458005281D2 /* WriteViewController.swift */; };
+		9220663728AF16AE005281D2 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220663628AF16AE005281D2 /* BaseView.swift */; };
 		92B11C5D28ABD92400A22509 /* SokyteUIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923D8AEB28ABD8DD003C143B /* SokyteUIFramework.framework */; };
 		92B11C5E28ABD92400A22509 /* SokyteUIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 923D8AEB28ABD8DD003C143B /* SokyteUIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92B11CA528AC71CE00A22509 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B11CA428AC71CE00A22509 /* CodeViewController.swift */; };
@@ -73,6 +76,9 @@
 		9220634128AB40D6004988A1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9220634328AB40E3004988A1 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		9220634528AB4104004988A1 /* WalkThroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughPageViewController.swift; sourceTree = "<group>"; };
+		9220663128AF1271005281D2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9220663428AF1458005281D2 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		9220663628AF16AE005281D2 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		923D8AE528ABD8DD003C143B /* SokyteUIFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SokyteUIFramework.xcodeproj; path = ../SokyteUIFramework/SokyteUIFramework.xcodeproj; sourceTree = "<group>"; };
 		92B11CA428AC71CE00A22509 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		92B11CA928AC822D00A22509 /* CodeSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnapViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 		922062F828AB2710004988A1 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				9220663328AF1445005281D2 /* Diary */,
 				92B11CA128AC71C000A22509 /* CodeBase */,
 				9220633B28AB3A67004988A1 /* Main */,
 				9220633928AB3A4C004988A1 /* WalkThrough */,
@@ -152,6 +159,7 @@
 		922062F928AB2716004988A1 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				9220662E28AF125C005281D2 /* Utility */,
 				92DCE4CF28ADDEFE007FEEF1 /* Extension */,
 			);
 			path = Global;
@@ -219,6 +227,23 @@
 				9220634528AB4104004988A1 /* WalkThroughPageViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9220662E28AF125C005281D2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9220663128AF1271005281D2 /* BaseViewController.swift */,
+				9220663628AF16AE005281D2 /* BaseView.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		9220663328AF1445005281D2 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				9220663428AF1458005281D2 /* WriteViewController.swift */,
+			);
+			path = Diary;
 			sourceTree = "<group>";
 		};
 		923D8AE628ABD8DD003C143B /* Products */ = {
@@ -350,16 +375,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9220663228AF1271005281D2 /* BaseViewController.swift in Sources */,
 				922062D828AB1FD7004988A1 /* ViewController.swift in Sources */,
 				92DCE4D328ADDF19007FEEF1 /* UIViewController+Extension.swift in Sources */,
 				922062D428AB1FD7004988A1 /* AppDelegate.swift in Sources */,
 				922062D628AB1FD7004988A1 /* SceneDelegate.swift in Sources */,
 				92B11CAF28AC8C1100A22509 /* CodeSnapSecondViewController.swift in Sources */,
+				9220663528AF1458005281D2 /* WriteViewController.swift in Sources */,
 				9220634228AB40D6004988A1 /* SecondViewController.swift in Sources */,
 				92DCE4D528ADE622007FEEF1 /* ProfileViewController.swift in Sources */,
 				92B11CAA28AC822D00A22509 /* CodeSnapViewController.swift in Sources */,
 				92B11CA528AC71CE00A22509 /* CodeViewController.swift in Sources */,
 				9220634628AB4104004988A1 /* WalkThroughPageViewController.swift in Sources */,
+				9220663728AF16AE005281D2 /* BaseView.swift in Sources */,
 				9220634428AB40E3004988A1 /* ThirdViewController.swift in Sources */,
 				9220634028AB3ADA004988A1 /* FirstViewController.swift in Sources */,
 			);
