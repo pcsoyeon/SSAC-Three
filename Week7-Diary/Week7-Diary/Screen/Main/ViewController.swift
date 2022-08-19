@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         setLayout()
+        getNotification()
     }
     
     // MARK: - UI Method
@@ -48,9 +49,17 @@ class ViewController: UIViewController {
         nameButton.addTarget(self, action: #selector(touchUpNameButton), for: .touchUpInside)
     }
     
+    private func getNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(saveButtonNotificationObserver(_:)), name: NSNotification.Name("SaveButtonNotification"), object: nil)
+    }
+    
     // MARK: - @objc
     
     @objc func touchUpNameButton() {
+        NotificationCenter.default.post(name: NSNotification.Name("TEST"),
+                                        object: nil,
+                                        userInfo: ["name" : Int.random(in: 1...100), "value" : 123456])
+        
         let viewController = ProfileViewController()
         viewController.saveButtonActionHandler = { value in
 //            self.nameButton.setTitle(viewController.nameTextField.text, for: .normal)
@@ -60,6 +69,14 @@ class ViewController: UIViewController {
 //        let viewController = WriteViewController()
 //        viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
+    }
+    
+    @objc func saveButtonNotificationObserver(_ notification: NSNotification) {
+        if let name = notification.userInfo?["name"] as? String {
+            self.nameButton.setTitle(name, for: .normal)
+        } else {
+            print("값없음요")
+        }
     }
 }
 
