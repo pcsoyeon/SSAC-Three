@@ -18,23 +18,15 @@ class WriteView: BaseView {
         return imageView
     }()
     
-    let titleTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .none
-        textField.layer.borderColor = UIColor.black.cgColor
+    let titleTextField: BlackRadiusTextField = {
+        let textField = BlackRadiusTextField()
         textField.placeholder = "제목을 입력해주세요"
-        textField.textAlignment = .center
-        textField.font = .boldSystemFont(ofSize: 15)
         return textField
     }()
     
-    let dateTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .none
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.placeholder = "날ㄹ짜을 입력해주세요"
-        textField.textAlignment = .center
-        textField.font = .boldSystemFont(ofSize: 15)
+    let dateTextField: BlackRadiusTextField = {
+        let textField = BlackRadiusTextField()
+        textField.placeholder = "날짜을 입력해주세요"
         return textField
     }()
     
