@@ -51,13 +51,14 @@ class ViewController: UIViewController {
     // MARK: - @objc
     
     @objc func touchUpNameButton() {
-//        let viewController = ProfileViewController()
-//        viewController.saveButtonActionHandler = {
+        let viewController = ProfileViewController()
+        viewController.saveButtonActionHandler = { value in
 //            self.nameButton.setTitle(viewController.nameTextField.text, for: .normal)
-//        }
+            self.nameButton.setTitle(value, for: .normal)
+        }
         
-        let viewController = WriteViewController()
-        viewController.modalPresentationStyle = .fullScreen
+//        let viewController = WriteViewController()
+//        viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
     }
 }

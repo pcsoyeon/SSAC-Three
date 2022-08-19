@@ -30,7 +30,7 @@ final class ProfileViewController: UIViewController {
 
     // MARK: - Property
     
-    var saveButtonActionHandler: (() -> ())?
+    var saveButtonActionHandler: ((String) -> ())?
     
     // MARK: - Life Cycle
     
@@ -69,7 +69,9 @@ final class ProfileViewController: UIViewController {
     
     @objc func touchUpSaveButton() {
         // 값 전달 기능 실행 -> 클로저 구문
-        saveButtonActionHandler?()
+        if let text = nameTextField.text {
+            saveButtonActionHandler?(text)
+        }
         
         // 화면 dismiss
         dismiss(animated: true)
