@@ -13,12 +13,9 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         configure()
-        setConstranits()
     }
     
     func configure() { }
-    
-    func setConstranits() { }
     
     func showAlertMessage(title: String, button: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
