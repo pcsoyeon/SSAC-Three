@@ -19,14 +19,26 @@ final class ViewController: UIViewController {
         tableView.backgroundColor = .clear
         return tableView
     }()
+    
+    // MARK: - Property
+    
+    let localRealm = try! Realm()
+    
+    var tasks: Results<Product>!
 
     // MARK: - Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listTableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBarUI()
         configureUI()
         setConstraints()
+        getRealmData()
     }
 
     // MARK: - UI Method
@@ -57,6 +69,12 @@ final class ViewController: UIViewController {
         listTableView.dataSource = self
     }
     
+    // MARK: - Custom Method
+    
+    private func getRealmData() {
+        tasks = localRealm.objects(Product.self).sorted(byKeyPath: "name", ascending: false)
+    }
+    
     // MARK: - @objc
     
     @objc func touchUpPlusButton() {
@@ -73,12 +91,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.reuseIdentifier, for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
         cell.delegate = self
+        cell.setData(tasks[indexPath.row])
         return cell
     }
 }

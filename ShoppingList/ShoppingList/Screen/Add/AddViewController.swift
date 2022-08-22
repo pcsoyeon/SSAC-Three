@@ -24,10 +24,15 @@ final class AddViewController: UIViewController {
         return textField
     }()
     
+    // MARK: - Property
+    
+    private let localRealm = try! Realm()
+    
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Realm is located at: ", localRealm.configuration.fileURL!)
         configureNavigationBarUI()
         configureUI()
         setConstraints()
@@ -61,7 +66,14 @@ final class AddViewController: UIViewController {
     // MARK: - @objc
     
     @objc func touchUpDoneButton() {
-        self.navigationController?.popViewController(animated: true)
+        if let text = textField.text {
+            let task = Product(name: text, check: false)
+            
+            try! localRealm.write {
+                localRealm.add(task)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
 }
 

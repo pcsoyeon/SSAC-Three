@@ -29,6 +29,7 @@ class ListTableViewCell: UITableViewCell {
         let button = UIButton()
         button.setTitle("", for: .normal)
         button.tintColor = .systemMint
+        button.setImage(UIImage(systemName: "star"), for: .normal)
         return button
     }()
     
@@ -87,7 +88,7 @@ class ListTableViewCell: UITableViewCell {
     
     // MARK: - Data Binding
     
-    func setData(_ data: String) {
-        
+    func setData(_ data: Product) {
+        label.text = data.name
     }
 }

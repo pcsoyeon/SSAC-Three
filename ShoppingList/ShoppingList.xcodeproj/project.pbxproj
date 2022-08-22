@@ -20,6 +20,7 @@
 		92126A5628B39C8F00E43F7E /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5528B39C8F00E43F7E /* ListTableViewCell.swift */; };
 		92126A5928B3A0A000E43F7E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5828B3A0A000E43F7E /* AddViewController.swift */; };
 		92126A5C28B3A81100E43F7E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5B28B3A81100E43F7E /* UITextField+Extension.swift */; };
+		92126A5F28B3AB1500E43F7E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5E28B3AB1500E43F7E /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		92126A5528B39C8F00E43F7E /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		92126A5828B3A0A000E43F7E /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		92126A5B28B3A81100E43F7E /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		92126A5E28B3AB1500E43F7E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				92126A5728B3A08500E43F7E /* Add */,
-				92126A4828B399FB00E43F7E /* Main */,
+				92126A4828B399FB00E43F7E /* List */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -99,6 +101,7 @@
 		92126A4428B399CC00E43F7E /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				92126A5D28B3AADC00E43F7E /* Realm */,
 				92126A5A28B3A80200E43F7E /* Extension */,
 				92126A4A28B39A1400E43F7E /* Protocol */,
 			);
@@ -124,13 +127,13 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		92126A4828B399FB00E43F7E /* Main */ = {
+		92126A4828B399FB00E43F7E /* List */ = {
 			isa = PBXGroup;
 			children = (
 				92126A3128B3998D00E43F7E /* ViewController.swift */,
 				92126A5528B39C8F00E43F7E /* ListTableViewCell.swift */,
 			);
-			path = Main;
+			path = List;
 			sourceTree = "<group>";
 		};
 		92126A4928B39A0200E43F7E /* Asset */ = {
@@ -163,6 +166,14 @@
 				92126A5B28B3A81100E43F7E /* UITextField+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		92126A5D28B3AADC00E43F7E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				92126A5E28B3AB1500E43F7E /* Product.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92126A3228B3998D00E43F7E /* ViewController.swift in Sources */,
+				92126A5F28B3AB1500E43F7E /* Product.swift in Sources */,
 				92126A4C28B39A5700E43F7E /* ReusableViewProtocol.swift in Sources */,
 				92126A5C28B3A81100E43F7E /* UITextField+Extension.swift in Sources */,
 				92126A5928B3A0A000E43F7E /* AddViewController.swift in Sources */,
