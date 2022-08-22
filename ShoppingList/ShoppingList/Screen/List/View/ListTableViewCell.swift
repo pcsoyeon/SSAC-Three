@@ -9,8 +9,8 @@ import UIKit
 
 import SnapKit
 
-protocol ListTableViewCellDelegate: ViewController {
-    func touchUpCheckButton()
+protocol ListTableViewCellDelegate: ListViewController {
+    func touchUpCheckButton(index: Int)
 }
 
 class ListTableViewCell: UITableViewCell {
@@ -36,6 +36,7 @@ class ListTableViewCell: UITableViewCell {
     // MARK: - Property
     
     weak var delegate: ListTableViewCellDelegate?
+    var index: Int = 0
     
     var isChecked: Bool = false {
         didSet {
@@ -83,7 +84,7 @@ class ListTableViewCell: UITableViewCell {
     
     @objc func touchUpCheckButton() {
         isChecked.toggle()
-        delegate?.touchUpCheckButton()
+        delegate?.touchUpCheckButton(index: index)
     }
     
     // MARK: - Data Binding

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		92126A2E28B3998D00E43F7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A2D28B3998D00E43F7E /* AppDelegate.swift */; };
 		92126A3028B3998D00E43F7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A2F28B3998D00E43F7E /* SceneDelegate.swift */; };
-		92126A3228B3998D00E43F7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A3128B3998D00E43F7E /* ViewController.swift */; };
+		92126A3228B3998D00E43F7E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A3128B3998D00E43F7E /* ListViewController.swift */; };
 		92126A3528B3998D00E43F7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92126A3328B3998D00E43F7E /* Main.storyboard */; };
 		92126A3728B3998F00E43F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92126A3628B3998F00E43F7E /* Assets.xcassets */; };
 		92126A3A28B3998F00E43F7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92126A3828B3998F00E43F7E /* LaunchScreen.storyboard */; };
@@ -27,7 +27,7 @@
 		92126A2A28B3998D00E43F7E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92126A2D28B3998D00E43F7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92126A2F28B3998D00E43F7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92126A3128B3998D00E43F7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92126A3128B3998D00E43F7E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		92126A3428B3998D00E43F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92126A3628B3998F00E43F7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92126A3928B3998F00E43F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,8 +130,8 @@
 		92126A4828B399FB00E43F7E /* List */ = {
 			isa = PBXGroup;
 			children = (
-				92126A3128B3998D00E43F7E /* ViewController.swift */,
-				92126A5528B39C8F00E43F7E /* ListTableViewCell.swift */,
+				92126A6028B44BB700E43F7E /* View */,
+				92126A6128B44BBD00E43F7E /* Controller */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -155,7 +155,7 @@
 		92126A5728B3A08500E43F7E /* Add */ = {
 			isa = PBXGroup;
 			children = (
-				92126A5828B3A0A000E43F7E /* AddViewController.swift */,
+				92126A6228B44BD000E43F7E /* Controller */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -174,6 +174,30 @@
 				92126A5E28B3AB1500E43F7E /* Product.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		92126A6028B44BB700E43F7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92126A5528B39C8F00E43F7E /* ListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92126A6128B44BBD00E43F7E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92126A3128B3998D00E43F7E /* ListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		92126A6228B44BD000E43F7E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92126A5828B3A0A000E43F7E /* AddViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92126A3228B3998D00E43F7E /* ViewController.swift in Sources */,
+				92126A3228B3998D00E43F7E /* ListViewController.swift in Sources */,
 				92126A5F28B3AB1500E43F7E /* Product.swift in Sources */,
 				92126A4C28B39A5700E43F7E /* ReusableViewProtocol.swift in Sources */,
 				92126A5C28B3A81100E43F7E /* UITextField+Extension.swift in Sources */,

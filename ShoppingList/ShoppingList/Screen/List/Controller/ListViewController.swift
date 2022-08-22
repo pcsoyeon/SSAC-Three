@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import SnapKit
 
-final class ViewController: UIViewController {
+final class ListViewController: UIViewController {
     
     // MARK: - UI Property
     
@@ -85,7 +85,7 @@ final class ViewController: UIViewController {
 
 // MARK: - UITableView Protocol
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
@@ -98,14 +98,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.reuseIdentifier, for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
         cell.delegate = self
         cell.setData(tasks[indexPath.row])
+        cell.index = indexPath.row
         return cell
     }
 }
 
 // MARK: - Custom Delegate
 
-extension ViewController: ListTableViewCellDelegate {
-    func touchUpCheckButton() {
-        
+extension ListViewController: ListTableViewCellDelegate {
+    func touchUpCheckButton(index: Int) {
+        try! localRealm.write {
+            tasks[index].check.toggle()
+        }
     }
 }
