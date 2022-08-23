@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9206D27C28B4E77E00290F00 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206D27B28B4E77E00290F00 /* ProductViewController.swift */; };
 		92126A2E28B3998D00E43F7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A2D28B3998D00E43F7E /* AppDelegate.swift */; };
 		92126A3028B3998D00E43F7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A2F28B3998D00E43F7E /* SceneDelegate.swift */; };
 		92126A3228B3998D00E43F7E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A3128B3998D00E43F7E /* ListViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9206D27B28B4E77E00290F00 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		92126A2A28B3998D00E43F7E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92126A2D28B3998D00E43F7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92126A2F28B3998D00E43F7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9206D27A28B4E76800290F00 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				9206D27B28B4E77E00290F00 /* ProductViewController.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		92126A2128B3998D00E43F7E = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 		92126A4228B399C100E43F7E /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				9206D27A28B4E76800290F00 /* Product */,
 				92126A5728B3A08500E43F7E /* Add */,
 				92126A4828B399FB00E43F7E /* List */,
 			);
@@ -286,6 +297,7 @@
 				92126A5C28B3A81100E43F7E /* UITextField+Extension.swift in Sources */,
 				92126A5928B3A0A000E43F7E /* AddViewController.swift in Sources */,
 				92126A2E28B3998D00E43F7E /* AppDelegate.swift in Sources */,
+				9206D27C28B4E77E00290F00 /* ProductViewController.swift in Sources */,
 				92126A3028B3998D00E43F7E /* SceneDelegate.swift in Sources */,
 				92126A5628B39C8F00E43F7E /* ListTableViewCell.swift in Sources */,
 			);

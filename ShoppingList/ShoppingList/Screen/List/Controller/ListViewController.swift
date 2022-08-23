@@ -107,7 +107,24 @@ final class ListViewController: UIViewController {
 
 // MARK: - UITableView Protocol
 
-extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            try! localRealm.write {
+                localRealm.delete(tasks[indexPath.row])
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = ProductViewController()
+        viewController.task = tasks[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
@@ -118,15 +135,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setData(tasks[indexPath.row])
         cell.index = indexPath.row
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            try! localRealm.write {
-                localRealm.delete(tasks[indexPath.row])
-            }
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
     }
 }
 
