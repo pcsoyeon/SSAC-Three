@@ -21,6 +21,7 @@ class ListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .darkGray
         label.font = .boldSystemFont(ofSize: 15)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -86,12 +87,12 @@ class ListTableViewCell: UITableViewCell {
     
     private func setConstraints() {
         label.snp.makeConstraints { make in
-            make.top.leading.bottom.equalToSuperview().inset(15)
+            make.top.leading.trailing.equalToSuperview().inset(15)
         }
         
         dateLabel.snp.makeConstraints { make in
             make.top.equalTo(label.snp.bottom).offset(8)
-            make.leading.equalToSuperview().inset(15)
+            make.leading.bottom.equalToSuperview().inset(15)
         }
         
         checkButton.snp.makeConstraints { make in
