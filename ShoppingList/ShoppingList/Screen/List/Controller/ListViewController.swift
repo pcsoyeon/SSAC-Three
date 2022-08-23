@@ -37,6 +37,9 @@ final class ListViewController: UIViewController {
             }),
             UIAction(title: "날짜순", image: UIImage(systemName: "square.and.arrow.up"), handler: { _ in
                 self.tasks = self.localRealm.objects(Product.self).sorted(byKeyPath: "date", ascending: false)
+            }),
+            UIAction(title: "구매완료", image: UIImage(systemName: "square.and.arrow.down"), handler: { _ in
+                self.tasks = self.localRealm.objects(Product.self).filter("check == true")
             })
         ]
     }()
