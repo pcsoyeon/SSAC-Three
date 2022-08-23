@@ -41,8 +41,8 @@ final class AddViewController: UIViewController {
     // MARK: - UI Method
     
     private func configureNavigationBarUI() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(touchUpDoneButton))
-        self.navigationController?.navigationBar.tintColor = .systemMint
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(touchUpDoneButton))
+        navigationController?.navigationBar.tintColor = .systemMint
     }
     
     private func configureUI() {

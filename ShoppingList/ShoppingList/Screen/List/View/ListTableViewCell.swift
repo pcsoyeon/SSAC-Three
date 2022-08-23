@@ -36,13 +36,13 @@ class ListTableViewCell: UITableViewCell {
         let button = UIButton()
         button.setTitle("", for: .normal)
         button.tintColor = .systemPink
-        button.setImage(UIImage(systemName: "check"), for: .normal)
+        button.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
         return button
     }()
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM.YY.DD. HH:mm"
+        formatter.dateFormat = "yyyy.MM.dd HH:mm"
         return formatter
     }()
     
@@ -54,9 +54,9 @@ class ListTableViewCell: UITableViewCell {
     var isChecked: Bool = false {
         didSet {
             if isChecked {
-                checkButton.setImage(UIImage(systemName: "check.fill"), for: .normal)
+                checkButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
             } else {
-                checkButton.setImage(UIImage(systemName: "check"), for: .normal)
+                checkButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
             }
         }
     }
@@ -79,6 +79,7 @@ class ListTableViewCell: UITableViewCell {
         [label, dateLabel, checkButton].forEach {
             contentView.addSubview($0)
         }
+        configureButton()
     }
     
     private func configureButton() {
@@ -96,14 +97,16 @@ class ListTableViewCell: UITableViewCell {
         }
         
         checkButton.snp.makeConstraints { make in
-            make.centerY.equalTo(label.snp.centerY)
-            make.width.height.equalTo(44)
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().inset(15)
+            make.width.height.equalTo(47)
         }
     }
     
     // MARK: - @objc
     
     @objc func touchUpCheckButton() {
+        print("버튼 안눌리니?")
         isChecked.toggle()
         delegate?.touchUpCheckButton(index: index)
     }

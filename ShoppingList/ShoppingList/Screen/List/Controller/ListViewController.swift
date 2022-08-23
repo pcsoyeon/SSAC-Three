@@ -22,13 +22,28 @@ final class ListViewController: UIViewController {
     
     // MARK: - Property
     
-    let localRealm = try! Realm()
+    private let localRealm = try! Realm()
     
-    var tasks: Results<Product>! {
+    private var tasks: Results<Product>! {
         didSet {
             listTableView.reloadData()
         }
     }
+    
+    private lazy var menuItems: [UIAction] = {
+        return [
+            UIAction(title: "제목순", image: UIImage(systemName: "arrow.down.circle"), handler: { _ in
+                self.tasks = self.localRealm.objects(Product.self).sorted(byKeyPath: "name", ascending: true)
+            }),
+            UIAction(title: "날짜순", image: UIImage(systemName: "square.and.arrow.up"), handler: { _ in
+                self.tasks = self.localRealm.objects(Product.self).sorted(byKeyPath: "date", ascending: false)
+            })
+        ]
+    }()
+    
+    private lazy var menu: UIMenu = {
+        return UIMenu(title: "", options: [], children: menuItems)
+    }()
 
     // MARK: - Life Cycle
     
@@ -46,8 +61,10 @@ final class ListViewController: UIViewController {
     // MARK: - UI Method
     
     private func configureNavigationBarUI() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(touchUpPlusButton))
-        navigationItem.rightBarButtonItem?.tintColor = .systemMint
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(touchUpPlusButton))
+        navigationController?.navigationBar.tintColor = .systemMint
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), menu: menu)
         
         title = "쇼핑 리스트"
     }
