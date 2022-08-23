@@ -34,15 +34,13 @@ final class ListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        listTableView.reloadData()
+        getRealmData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBarUI()
         configureUI()
         setConstraints()
-        getRealmData()
     }
 
     // MARK: - UI Method
@@ -50,12 +48,14 @@ final class ListViewController: UIViewController {
     private func configureNavigationBarUI() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(touchUpPlusButton))
         navigationItem.rightBarButtonItem?.tintColor = .systemMint
+        
+        title = "쇼핑 리스트"
     }
     
     private func configureUI() {
         view.backgroundColor = .white
-        title = "쇼핑 리스트"
         configureTableView()
+        configureNavigationBarUI()
     }
     
     private func setConstraints() {
@@ -68,6 +68,7 @@ final class ListViewController: UIViewController {
     
     private func configureTableView() {
         listTableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
+        listTableView.rowHeight = UITableView.automaticDimension
         
         listTableView.delegate = self
         listTableView.dataSource = self
@@ -76,7 +77,7 @@ final class ListViewController: UIViewController {
     // MARK: - Custom Method
     
     private func getRealmData() {
-        tasks = localRealm.objects(Product.self).sorted(byKeyPath: "name", ascending: false)
+        tasks = localRealm.objects(Product.self).sorted(byKeyPath: "date", ascending: false)
     }
     
     // MARK: - @objc
@@ -90,10 +91,6 @@ final class ListViewController: UIViewController {
 // MARK: - UITableView Protocol
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }

@@ -67,7 +67,7 @@ final class AddViewController: UIViewController {
     
     @objc func touchUpDoneButton() {
         if let text = textField.text {
-            let task = Product(name: text, check: false)
+            let task = Product(name: text, check: false, date: Date())
             
             try! localRealm.write {
                 localRealm.add(task)
