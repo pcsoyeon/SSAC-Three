@@ -24,7 +24,11 @@ final class ListViewController: UIViewController {
     
     let localRealm = try! Realm()
     
-    var tasks: Results<Product>!
+    var tasks: Results<Product>! {
+        didSet {
+            listTableView.reloadData()
+        }
+    }
 
     // MARK: - Life Cycle
     
@@ -100,6 +104,15 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setData(tasks[indexPath.row])
         cell.index = indexPath.row
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            try! localRealm.write {
+                localRealm.delete(tasks[indexPath.row])
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }
 
