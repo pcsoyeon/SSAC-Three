@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import PhotosUI
+
+import RealmSwift
+import SnapKit
 
 class ProductViewController: UIViewController {
     
@@ -26,6 +30,15 @@ class ProductViewController: UIViewController {
         label.font = .systemFont(ofSize: 12)
         label.textAlignment = .center
         return label
+    }()
+    
+    private var productImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .systemGray6
+        imageView.layer.cornerRadius = 8
+        imageView.isUserInteractionEnabled = true
+        return imageView
     }()
     
     private let dateFormatter: DateFormatter = {
@@ -55,20 +68,74 @@ class ProductViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
+        configureImageView()
     }
     
     private func setConstraints() {
-        [label, dateLabel].forEach {
+        [label, dateLabel, productImageView].forEach {
             view.addSubview($0)
         }
         
-        label.snp.makeConstraints { make in
+        productImageView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
+            make.height.equalTo(200)
+        }
+        
+        label.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(28)
+            make.top.equalTo(productImageView.snp.bottom).offset(10)
         }
         
         dateLabel.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(10)
+            make.top.equalTo(label.snp.bottom).offset(8)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
+    }
+    
+    private func configureImageView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchUpImageView))
+        productImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    private func openGallery() {
+        var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
+        config.filter = .images
+        config.selectionLimit = 1
+        let controller = PHPickerViewController(configuration: config)
+
+        controller.delegate = self
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    // MARK: - @objc
+    
+    @objc func touchUpImageView() {
+        openGallery()
+    }
+}
+
+// MARK: - PHPicker Delegate
+
+extension ProductViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        guard !results.isEmpty else {
+            return
+        }
+        
+        let imageResult = results[0]
+        
+        if imageResult.itemProvider.canLoadObject(ofClass: UIImage.self) {
+            imageResult.itemProvider.loadObject(ofClass: UIImage.self) { (selectedImage, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    DispatchQueue.main.async {
+                        self.productImageView.image = selectedImage as? UIImage
+                    }
+                }
+            }
+        }
+        
+        picker.dismiss(animated: true)
     }
 }
