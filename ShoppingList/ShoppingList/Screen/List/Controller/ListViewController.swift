@@ -65,7 +65,6 @@ final class ListViewController: UIViewController {
     
     private func configureNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(touchUpPlusButton))
-        navigationController?.navigationBar.tintColor = .systemMint
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), menu: menu)
         

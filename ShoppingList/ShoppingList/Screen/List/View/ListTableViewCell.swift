@@ -88,7 +88,7 @@ class ListTableViewCell: UITableViewCell {
     
     private func setConstraints() {
         label.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(15)
+            make.top.leading.equalToSuperview().inset(15)
         }
         
         dateLabel.snp.makeConstraints { make in
@@ -97,9 +97,8 @@ class ListTableViewCell: UITableViewCell {
         }
         
         checkButton.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().inset(15)
-            make.width.height.equalTo(47)
+            make.trailing.centerY.equalToSuperview()
+            make.width.height.equalTo(55)
         }
     }
     
