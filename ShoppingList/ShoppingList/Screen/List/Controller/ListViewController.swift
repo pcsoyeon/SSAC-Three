@@ -63,7 +63,7 @@ final class ListViewController: UIViewController {
 
     // MARK: - UI Method
     
-    private func configureNavigationBarUI() {
+    private func configureNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(touchUpPlusButton))
         navigationController?.navigationBar.tintColor = .systemMint
         
@@ -75,7 +75,7 @@ final class ListViewController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .white
         configureTableView()
-        configureNavigationBarUI()
+        configureNavigationBar()
     }
     
     private func setConstraints() {
@@ -103,8 +103,7 @@ final class ListViewController: UIViewController {
     // MARK: - @objc
     
     @objc func touchUpPlusButton() {
-        let viewController = AddViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
+        transition(viewController: AddViewController(), style: .presentNavigation)
     }
 }
 

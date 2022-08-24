@@ -10,6 +10,7 @@
 		9206D27C28B4E77E00290F00 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206D27B28B4E77E00290F00 /* ProductViewController.swift */; };
 		9207933F28B65ADD0089F2B6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9207933E28B65ADD0089F2B6 /* Realm */; };
 		9207934128B65ADD0089F2B6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9207934028B65ADD0089F2B6 /* RealmSwift */; };
+		9207934328B65FB20089F2B6 /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207934228B65FB20089F2B6 /* Transition+Extension.swift */; };
 		92126A2E28B3998D00E43F7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A2D28B3998D00E43F7E /* AppDelegate.swift */; };
 		92126A3028B3998D00E43F7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A2F28B3998D00E43F7E /* SceneDelegate.swift */; };
 		92126A3228B3998D00E43F7E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A3128B3998D00E43F7E /* ListViewController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		9206D27B28B4E77E00290F00 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		9207934228B65FB20089F2B6 /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
 		92126A2A28B3998D00E43F7E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92126A2D28B3998D00E43F7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92126A2F28B3998D00E43F7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				92126A5B28B3A81100E43F7E /* UITextField+Extension.swift */,
+				9207934228B65FB20089F2B6 /* Transition+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				92126A5F28B3AB1500E43F7E /* Product.swift in Sources */,
 				92126A4C28B39A5700E43F7E /* ReusableViewProtocol.swift in Sources */,
 				92126A5C28B3A81100E43F7E /* UITextField+Extension.swift in Sources */,
+				9207934328B65FB20089F2B6 /* Transition+Extension.swift in Sources */,
 				92126A5928B3A0A000E43F7E /* AddViewController.swift in Sources */,
 				92126A2E28B3998D00E43F7E /* AppDelegate.swift in Sources */,
 				9206D27C28B4E77E00290F00 /* ProductViewController.swift in Sources */,
