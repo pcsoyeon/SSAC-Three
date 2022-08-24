@@ -111,9 +111,15 @@ final class ListViewController: UIViewController {
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            try! localRealm.write {
-                localRealm.delete(tasks[indexPath.row])
+            do {
+                try localRealm.write {
+                    removeImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
+                    localRealm.delete(tasks[indexPath.row])
+                }
+            } catch let error {
+                print(error)
             }
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
