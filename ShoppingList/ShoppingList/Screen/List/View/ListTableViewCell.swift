@@ -105,7 +105,6 @@ class ListTableViewCell: UITableViewCell {
     // MARK: - @objc
     
     @objc func touchUpCheckButton() {
-        print("버튼 안눌리니?")
         isChecked.toggle()
         delegate?.touchUpCheckButton(index: index)
     }

@@ -66,9 +66,14 @@ class ProductViewController: UIViewController {
     
     // MARK: - UI Method
     
+    private func configureNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(touchUpSaveButton))
+    }
+    
     private func configureUI() {
         view.backgroundColor = .white
         configureImageView()
+        configureNavigationBar()
     }
     
     private func setConstraints() {
@@ -93,6 +98,9 @@ class ProductViewController: UIViewController {
     }
     
     private func configureImageView() {
+        guard let task = task else { return }
+        productImageView.image = loadImageFromDocument(fileName: "\(task.objectId).jpg")
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchUpImageView))
         productImageView.addGestureRecognizer(tapGesture)
     }
@@ -111,6 +119,16 @@ class ProductViewController: UIViewController {
     
     @objc func touchUpImageView() {
         openGallery()
+    }
+    
+    @objc func touchUpSaveButton() {
+        showToast(message: "저장 완료")
+        
+        if let image = productImageView.image {
+            guard let task = task else { return }
+
+            saveImageToDocument(fileName: "\(task.objectId).jpg", image: image)
+        }
     }
 }
 
