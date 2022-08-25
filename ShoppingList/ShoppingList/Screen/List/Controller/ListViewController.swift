@@ -108,7 +108,7 @@ final class ListViewController: UIViewController {
     }
     
     @objc func touchUpBackUpButton() {
-        transition(viewController: BackUpViewController(), style: .presentNavigation)
+        transition(viewController: BackUpViewController(), style: .push)
     }
 }
 
