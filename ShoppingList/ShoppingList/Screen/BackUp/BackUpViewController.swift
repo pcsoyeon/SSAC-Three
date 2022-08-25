@@ -8,6 +8,7 @@
 import UIKit
 
 import SnapKit
+import Zip
 
 class BackUpViewController: UIViewController {
     
@@ -43,6 +44,12 @@ class BackUpViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
         return tableView
+    }()
+    
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd HH:mm"
+        return formatter
     }()
 
     // MARK: - Life Cycle
@@ -84,10 +91,48 @@ class BackUpViewController: UIViewController {
         listTableView.register(BackUpListTableViewCell.self, forCellReuseIdentifier: BackUpListTableViewCell.reuseIdentifier)
     }
     
+    // MARK: - Custom Method
+    
+    private func showActivityViewController() {
+        guard let path = documentDirectoryPath() else {
+            showAlertMessage(title: "도큐먼트 위치에 오류가 있습니다.")
+            return
+        }
+        
+        let backupFileURL = path.appendingPathComponent("ShoppingList_\(dateFormatter.string(from: Date())).zip")
+        
+        let viewController = UIActivityViewController(activityItems: [backupFileURL], applicationActivities: [])
+        self.present(viewController, animated: true)
+    }
+    
     // MARK: - @objc
     
     @objc func touchUpBackUpButton() {
+        var urlPaths = [URL]()
         
+        guard let path = documentDirectoryPath() else {
+            showAlertMessage(title: "도큐먼트 위치에 오류가 있습니다.")
+            return
+        }
+        
+        let realmFile = path.appendingPathComponent("default.realm")
+        guard FileManager.default.fileExists(atPath: realmFile.path) else {
+            showAlertMessage(title: "백업할 파일이 없습니다.")
+            return
+        }
+        
+        if let url = URL(string: realmFile.path) {
+            urlPaths.append(url)
+        }
+        
+        do {
+            let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "ShoppingList_\(dateFormatter.string(from: Date()))")
+            print("Archive Location: \(zipFilePath)")
+            
+            showActivityViewController()
+        } catch {
+            showAlertMessage(title: "압축을 실패했습니다")
+        }
     }
     
     @objc func touchUpRestoreButton() {
