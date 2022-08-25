@@ -116,6 +116,14 @@ class BackUpViewController: UIViewController {
         self.present(viewController, animated: true)
     }
     
+    private func changeRootViewController() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: ListViewController())
+        sceneDelegate?.window?.makeKeyAndVisible()
+    }
+    
     // MARK: - @objc
     
     @objc func touchUpBackUpButton() {
@@ -213,7 +221,7 @@ extension BackUpViewController: UIDocumentPickerDelegate {
                     print("unzippedFile: \(unzippedFile)")
                     self.showAlertMessage(title: "복구가 완료되었습니다.")
                     
-                    
+                    self.changeRootViewController()
                 })
                 
             } catch {
