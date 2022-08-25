@@ -80,6 +80,8 @@ class BackUpViewController: UIViewController {
     private func configureTableView() {
         listTableView.delegate = self
         listTableView.dataSource = self
+        
+        listTableView.register(BackUpListTableViewCell.self, forCellReuseIdentifier: BackUpListTableViewCell.reuseIdentifier)
     }
     
     // MARK: - @objc
@@ -96,5 +98,12 @@ class BackUpViewController: UIViewController {
 // MARK: - UITableView Protocol
 
 extension BackUpViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BackUpListTableViewCell.reuseIdentifier, for: indexPath) as? BackUpListTableViewCell else { return UITableViewCell() }
+        return cell
+    }
 }
