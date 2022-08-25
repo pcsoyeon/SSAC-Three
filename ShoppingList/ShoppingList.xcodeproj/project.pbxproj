@@ -26,6 +26,7 @@
 		92126A5C28B3A81100E43F7E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5B28B3A81100E43F7E /* UITextField+Extension.swift */; };
 		92126A5F28B3AB1500E43F7E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5E28B3AB1500E43F7E /* Product.swift */; };
 		92708A9928B82E7B009D41B3 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 92708A9828B82E7B009D41B3 /* Zip */; };
+		92708A9C28B8302A009D41B3 /* BackUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92708A9B28B8302A009D41B3 /* BackUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		92126A5828B3A0A000E43F7E /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		92126A5B28B3A81100E43F7E /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		92126A5E28B3AB1500E43F7E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		92708A9B28B8302A009D41B3 /* BackUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		92126A4228B399C100E43F7E /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				92708A9A28B83014009D41B3 /* BackUp */,
 				9206D27A28B4E76800290F00 /* Product */,
 				92126A5728B3A08500E43F7E /* Add */,
 				92126A4828B399FB00E43F7E /* List */,
@@ -222,6 +225,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		92708A9A28B83014009D41B3 /* BackUp */ = {
+			isa = PBXGroup;
+			children = (
+				92708A9B28B8302A009D41B3 /* BackUpViewController.swift */,
+			);
+			path = BackUp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,6 +321,7 @@
 				92126A5F28B3AB1500E43F7E /* Product.swift in Sources */,
 				92126A4C28B39A5700E43F7E /* ReusableViewProtocol.swift in Sources */,
 				92126A5C28B3A81100E43F7E /* UITextField+Extension.swift in Sources */,
+				92708A9C28B8302A009D41B3 /* BackUpViewController.swift in Sources */,
 				9207934328B65FB20089F2B6 /* Transition+Extension.swift in Sources */,
 				92126A5928B3A0A000E43F7E /* AddViewController.swift in Sources */,
 				92126A2E28B3998D00E43F7E /* AppDelegate.swift in Sources */,

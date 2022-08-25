@@ -64,8 +64,10 @@ final class ListViewController: UIViewController {
     // MARK: - UI Method
     
     private func configureNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(touchUpPlusButton))
+        let addButton = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(touchUpPlusButton))
+        let backupButton = UIBarButtonItem(title: "백업", style: .plain, target: self, action: #selector(touchUpBackUpButton))
         
+        navigationItem.rightBarButtonItems = [addButton, backupButton]
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), menu: menu)
         
         title = "쇼핑 리스트"
@@ -103,6 +105,10 @@ final class ListViewController: UIViewController {
     
     @objc func touchUpPlusButton() {
         transition(viewController: AddViewController(), style: .presentNavigation)
+    }
+    
+    @objc func touchUpBackUpButton() {
+        transition(viewController: BackUpViewController(), style: .presentNavigation)
     }
 }
 
