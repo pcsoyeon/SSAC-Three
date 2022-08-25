@@ -25,6 +25,7 @@
 		92126A5928B3A0A000E43F7E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5828B3A0A000E43F7E /* AddViewController.swift */; };
 		92126A5C28B3A81100E43F7E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5B28B3A81100E43F7E /* UITextField+Extension.swift */; };
 		92126A5F28B3AB1500E43F7E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5E28B3AB1500E43F7E /* Product.swift */; };
+		92708A9928B82E7B009D41B3 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 92708A9828B82E7B009D41B3 /* Zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 			files = (
 				9207934128B65ADD0089F2B6 /* RealmSwift in Frameworks */,
 				9207933F28B65ADD0089F2B6 /* Realm in Frameworks */,
+				92708A9928B82E7B009D41B3 /* Zip in Frameworks */,
 				92126A4F28B39A7B00E43F7E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +242,7 @@
 				92126A4E28B39A7B00E43F7E /* SnapKit */,
 				9207933E28B65ADD0089F2B6 /* Realm */,
 				9207934028B65ADD0089F2B6 /* RealmSwift */,
+				92708A9828B82E7B009D41B3 /* Zip */,
 			);
 			productName = ShoppingList;
 			productReference = 92126A2A28B3998D00E43F7E /* ShoppingList.app */;
@@ -272,6 +275,7 @@
 			packageReferences = (
 				92126A4D28B39A7B00E43F7E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				9207933D28B65ADD0089F2B6 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				92708A9728B82E7B009D41B3 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 92126A2B28B3998D00E43F7E /* Products */;
 			projectDirPath = "";
@@ -547,6 +551,14 @@
 				kind = branch;
 			};
 		};
+		92708A9728B82E7B009D41B3 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -564,6 +576,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 92126A4D28B39A7B00E43F7E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		92708A9828B82E7B009D41B3 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92708A9728B82E7B009D41B3 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
