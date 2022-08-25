@@ -51,8 +51,19 @@ class BackUpViewController: UIViewController {
         formatter.dateFormat = "yyyy.MM.dd HH:mm"
         return formatter
     }()
-
+    
+    private var zipList: [String] = [] {
+        didSet {
+            listTableView.reloadData()
+        }
+    }
+    
     // MARK: - Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        zipList = fetchDocumentZipFile()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,7 +147,10 @@ class BackUpViewController: UIViewController {
     }
     
     @objc func touchUpRestoreButton() {
-        
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.archive], asCopy: true)
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        self.present(documentPicker, animated: true)
     }
 }
 
@@ -144,11 +158,67 @@ class BackUpViewController: UIViewController {
 
 extension BackUpViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return zipList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BackUpListTableViewCell.reuseIdentifier, for: indexPath) as? BackUpListTableViewCell else { return UITableViewCell() }
+        cell.setData(zipList[indexPath.row])
         return cell
+    }
+}
+
+// MARK: - UIDocumentPickerView Protocol
+
+extension BackUpViewController: UIDocumentPickerDelegate {
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print(#function)
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let selectedFileURL = urls.first else {
+            showAlertMessage(title: "선택하신 파일을 찾을 수 없습니다.")
+            return
+        }
+        
+        guard let path = documentDirectoryPath() else {
+            showAlertMessage(title: "도큐먼트 위치에 오류가 있습니다.")
+            return
+        }
+        
+        let sandboxFileURL = path.appendingPathComponent(selectedFileURL.lastPathComponent)
+        
+        if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
+            let fileURL = sandboxFileURL
+            
+            do {
+                try Zip.unzipFile(fileURL, destination: path, overwrite: true, password: nil, progress: { progress in
+                    print("progress: \(progress)")
+                }, fileOutputHandler: { unzippedFile in
+                    print("unzippedFile: \(unzippedFile)")
+                    self.showAlertMessage(title: "복구가 완료되었습니다.")
+                })
+            } catch {
+                showAlertMessage(title: "압축 해제에 실패했습니다.")
+            }
+        } else {
+            do {
+                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
+                
+                let fileURL = sandboxFileURL
+                
+                try Zip.unzipFile(fileURL, destination: path, overwrite: true, password: nil, progress: { progress in
+                    print("progress: \(progress)")
+                }, fileOutputHandler: { unzippedFile in
+                    print("unzippedFile: \(unzippedFile)")
+                    self.showAlertMessage(title: "복구가 완료되었습니다.")
+                    
+                    
+                })
+                
+            } catch {
+                showAlertMessage(title: "압축 해제에 실패했습니다.")
+            }
+        }
     }
 }
