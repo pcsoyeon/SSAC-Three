@@ -42,4 +42,29 @@ extension UIViewController {
             print("file save error", error)
         }
     }
+    
+    func documentDirectoryPath() -> URL? {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        return documentDirectory
+    }
+    
+    func fetchDocumentZipFile() -> [String] {
+        var zipList: [String] = [""]
+        
+        do {
+            guard let path = documentDirectoryPath() else { return zipList }
+            let docs = try FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil)
+            print("docs: \(docs)")
+
+            let zip = docs.filter { $0.pathExtension == "zip" } 
+            print("zip: \(zip)")
+            
+            zipList = zip.map { $0.lastPathComponent }
+            return zipList
+        } catch {
+            print("ERROR")
+        }
+        
+        return zipList
+    }
 }
