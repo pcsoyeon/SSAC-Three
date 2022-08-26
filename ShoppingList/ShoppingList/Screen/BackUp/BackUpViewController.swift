@@ -219,11 +219,10 @@ extension BackUpViewController: UIDocumentPickerDelegate {
                     print("progress: \(progress)")
                 }, fileOutputHandler: { unzippedFile in
                     print("unzippedFile: \(unzippedFile)")
-                    self.showAlertMessage(title: "복구가 완료되었습니다.")
-                    
-                    self.changeRootViewController()
+                    self.showAlertMessage(title: "복구가 완료되었습니다.") { _ in
+                        self.changeRootViewController()
+                    }
                 })
-                
             } catch {
                 showAlertMessage(title: "압축 해제에 실패했습니다.")
             }
