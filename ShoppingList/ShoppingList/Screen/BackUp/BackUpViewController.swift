@@ -46,6 +46,15 @@ class BackUpViewController: UIViewController {
         return tableView
     }()
     
+    private var progressView: BackUpProgressView = {
+        let progreeView = BackUpProgressView()
+        progreeView.color = .systemPink
+        progreeView.isHidden = true
+        return progreeView
+    }()
+    
+    // MARK: - Property
+    
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd HH:mm"
@@ -79,7 +88,7 @@ class BackUpViewController: UIViewController {
     }
     
     private func setConstraints() {
-        [buttonStackView, listTableView].forEach {
+        [buttonStackView, listTableView, progressView].forEach {
             view.addSubview($0)
         }
         
@@ -92,6 +101,11 @@ class BackUpViewController: UIViewController {
             make.top.equalTo(buttonStackView.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview().inset(20)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        progressView.snp.makeConstraints { make in
+            make.width.height.equalTo(100)
+            make.centerX.centerY.equalToSuperview()
         }
     }
     
@@ -202,9 +216,14 @@ extension BackUpViewController: UIDocumentPickerDelegate {
             do {
                 try Zip.unzipFile(fileURL, destination: path, overwrite: true, password: nil, progress: { progress in
                     print("progress: \(progress)")
+                    self.progressView.isHidden = false
+                    self.progressView.progress = progress
                 }, fileOutputHandler: { unzippedFile in
                     print("unzippedFile: \(unzippedFile)")
-                    self.showAlertMessage(title: "복구가 완료되었습니다.")
+                    self.showAlertMessage(title: "복구가 완료되었습니다.") { _ in
+                        self.progressView.isHidden = true
+                        self.changeRootViewController()
+                    }
                 })
             } catch {
                 showAlertMessage(title: "압축 해제에 실패했습니다.")

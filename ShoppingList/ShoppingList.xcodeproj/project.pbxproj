@@ -28,6 +28,7 @@
 		92708A9928B82E7B009D41B3 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 92708A9828B82E7B009D41B3 /* Zip */; };
 		92708A9C28B8302A009D41B3 /* BackUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92708A9B28B8302A009D41B3 /* BackUpViewController.swift */; };
 		92708A9E28B83240009D41B3 /* BackUpListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92708A9D28B83240009D41B3 /* BackUpListTableViewCell.swift */; };
+		92708AA528B8BD07009D41B3 /* BackUpProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92708AA428B8BD07009D41B3 /* BackUpProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		92126A5E28B3AB1500E43F7E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		92708A9B28B8302A009D41B3 /* BackUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpViewController.swift; sourceTree = "<group>"; };
 		92708A9D28B83240009D41B3 /* BackUpListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpListTableViewCell.swift; sourceTree = "<group>"; };
+		92708AA428B8BD07009D41B3 /* BackUpProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			children = (
 				92708A9B28B8302A009D41B3 /* BackUpViewController.swift */,
 				92708A9D28B83240009D41B3 /* BackUpListTableViewCell.swift */,
+				92708AA428B8BD07009D41B3 /* BackUpProgressView.swift */,
 			);
 			path = BackUp;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				92126A2E28B3998D00E43F7E /* AppDelegate.swift in Sources */,
 				9206D27C28B4E77E00290F00 /* ProductViewController.swift in Sources */,
 				92126A3028B3998D00E43F7E /* SceneDelegate.swift in Sources */,
+				92708AA528B8BD07009D41B3 /* BackUpProgressView.swift in Sources */,
 				92126A5628B39C8F00E43F7E /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
