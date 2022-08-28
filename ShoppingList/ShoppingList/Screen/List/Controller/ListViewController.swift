@@ -22,7 +22,7 @@ final class ListViewController: UIViewController {
     
     // MARK: - Property
     
-    private let localRealm = try! Realm()
+    private let repository = ProductRepository()
     
     private var tasks: Results<Product>! {
         didSet {
@@ -33,13 +33,13 @@ final class ListViewController: UIViewController {
     private lazy var menuItems: [UIAction] = {
         return [
             UIAction(title: "제목순", image: UIImage(systemName: "arrow.down.circle"), handler: { _ in
-                self.tasks = self.localRealm.objects(Product.self).sorted(byKeyPath: "name", ascending: true)
+                self.tasks = self.repository.fetchSort("name")
             }),
             UIAction(title: "날짜순", image: UIImage(systemName: "square.and.arrow.up"), handler: { _ in
-                self.tasks = self.localRealm.objects(Product.self).sorted(byKeyPath: "date", ascending: false)
+                self.tasks = self.repository.fetchSort("date")
             }),
             UIAction(title: "구매완료", image: UIImage(systemName: "square.and.arrow.down"), handler: { _ in
-                self.tasks = self.localRealm.objects(Product.self).filter("check == true")
+                self.tasks = self.repository.fetchFilter()
             })
         ]
     }()
@@ -98,7 +98,7 @@ final class ListViewController: UIViewController {
     // MARK: - Custom Method
     
     private func getRealmData() {
-        tasks = localRealm.objects(Product.self).sorted(byKeyPath: "date", ascending: false)
+        tasks = repository.fetch()
     }
     
     // MARK: - @objc
@@ -117,15 +117,7 @@ final class ListViewController: UIViewController {
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            do {
-                try localRealm.write {
-                    removeImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
-                    localRealm.delete(tasks[indexPath.row])
-                }
-            } catch let error {
-                print(error)
-            }
-            
+            self.repository.deleteItem(item: tasks[indexPath.row])
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -155,8 +147,6 @@ extension ListViewController: UITableViewDataSource {
 
 extension ListViewController: ListTableViewCellDelegate {
     func touchUpCheckButton(index: Int) {
-        try! localRealm.write {
-            tasks[index].check.toggle()
-        }
+        repository.updateCheck(item: tasks[index])
     }
 }

@@ -25,6 +25,7 @@
 		92126A5928B3A0A000E43F7E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5828B3A0A000E43F7E /* AddViewController.swift */; };
 		92126A5C28B3A81100E43F7E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5B28B3A81100E43F7E /* UITextField+Extension.swift */; };
 		92126A5F28B3AB1500E43F7E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92126A5E28B3AB1500E43F7E /* Product.swift */; };
+		926AB60128BA8BA400CC68D6 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926AB60028BA8BA400CC68D6 /* ProductRepository.swift */; };
 		92708A9928B82E7B009D41B3 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 92708A9828B82E7B009D41B3 /* Zip */; };
 		92708A9C28B8302A009D41B3 /* BackUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92708A9B28B8302A009D41B3 /* BackUpViewController.swift */; };
 		92708A9E28B83240009D41B3 /* BackUpListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92708A9D28B83240009D41B3 /* BackUpListTableViewCell.swift */; };
@@ -49,6 +50,7 @@
 		92126A5828B3A0A000E43F7E /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		92126A5B28B3A81100E43F7E /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		92126A5E28B3AB1500E43F7E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		926AB60028BA8BA400CC68D6 /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
 		92708A9B28B8302A009D41B3 /* BackUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpViewController.swift; sourceTree = "<group>"; };
 		92708A9D28B83240009D41B3 /* BackUpListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpListTableViewCell.swift; sourceTree = "<group>"; };
 		92708AA428B8BD07009D41B3 /* BackUpProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpProgressView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				92126A5E28B3AB1500E43F7E /* Product.swift */,
+				926AB60028BA8BA400CC68D6 /* ProductRepository.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				9207934728B66E390089F2B6 /* UIViewController+Extension.swift in Sources */,
 				9207934528B66C530089F2B6 /* FileManager+Extension.swift in Sources */,
 				92126A3228B3998D00E43F7E /* ListViewController.swift in Sources */,
+				926AB60128BA8BA400CC68D6 /* ProductRepository.swift in Sources */,
 				92708A9E28B83240009D41B3 /* BackUpListTableViewCell.swift in Sources */,
 				92126A5F28B3AB1500E43F7E /* Product.swift in Sources */,
 				92126A4C28B39A5700E43F7E /* ReusableViewProtocol.swift in Sources */,

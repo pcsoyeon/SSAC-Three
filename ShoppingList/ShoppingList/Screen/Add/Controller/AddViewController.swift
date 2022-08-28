@@ -26,13 +26,13 @@ final class AddViewController: UIViewController {
     
     // MARK: - Property
     
-    private let localRealm = try! Realm()
+    private let repository = ProductRepository()
     
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Realm is located at: ", localRealm.configuration.fileURL!)
+        print("Realm is located at: ", repository.localRealm.configuration.fileURL!)
         configureNavigationBar()
         configureUI()
         setConstraints()
@@ -69,9 +69,7 @@ final class AddViewController: UIViewController {
         if let text = textField.text {
             let task = Product(name: text, check: false, date: Date())
             
-            try! localRealm.write {
-                localRealm.add(task)
-            }
+            repository.addItem(item: task)
             
             dismiss(animated: true)
         }
