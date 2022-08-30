@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - UI Property
+    
     private var label: UILabel = {
         let label = UILabel()
         label.textColor = .darkGray
@@ -16,13 +18,34 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
+    }
+    
+    // MARK: - Property
+    
+    private var personList = [Result]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    private var list: Person?
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setConstraints()
         callRequestLotto()
         callRequestPerson()
     }
+    
+    // MARK: - UI Method
     
     private func setConstraints() {
         view.addSubview(label)
@@ -31,6 +54,20 @@ class ViewController: UIViewController {
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
+    }
+}
+
+// MARK: - UITableView Protocl
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list?.results.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = list?.results[indexPath.row].name
+        return cell
     }
 }
 
@@ -48,8 +85,12 @@ extension ViewController {
     }
     
     private func callRequestPerson() {
-        PersonAPIManager.requestPerson(query: "김") { person, error in
+        PersonAPIManager.requestPerson(query: "kim") { person, error in
             dump(person)
+            if let person = person {
+                self.list = person
+                self.tableView.reloadData()
+            }
         }
     }
 }
