@@ -20,7 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setConstraints()
-        callRequest()
+        callRequestLotto()
+        callRequestPerson()
     }
     
     private func setConstraints() {
@@ -36,13 +37,19 @@ class ViewController: UIViewController {
 // MARK: - Network
 
 extension ViewController {
-    private func callRequest() {
+    private func callRequestLotto() {
         LottoAPIManager.requestLotto(drwNo: 1011) { lotto, error in
             guard let lotto = lotto else {
                 return
             }
             
             self.label.text = "\(lotto.drwNoDate)"
+        }
+    }
+    
+    private func callRequestPerson() {
+        PersonAPIManager.requestPerson(query: "김") { person, error in
+            dump(person)
         }
     }
 }

@@ -15,6 +15,10 @@
 		92CDC92C28BD94F200150360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CDC92A28BD94F200150360 /* LaunchScreen.storyboard */; };
 		92CDC93528BD956800150360 /* LottoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC93428BD956800150360 /* LottoAPIManager.swift */; };
 		92CDC93728BD9BAA00150360 /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC93628BD9BAA00150360 /* Lotto.swift */; };
+		92CDC93A28BDA76400150360 /* PersonAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC93928BDA76400150360 /* PersonAPIManager.swift */; };
+		92CDC93C28BDA87000150360 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC93B28BDA87000150360 /* Person.swift */; };
+		92CDC93E28BDAB6000150360 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 92CDC93D28BDAB6000150360 /* .gitignore */; };
+		92CDC94328BDAC4500150360 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC94228BDAC4500150360 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		92CDC92D28BD94F200150360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CDC93428BD956800150360 /* LottoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPIManager.swift; sourceTree = "<group>"; };
 		92CDC93628BD9BAA00150360 /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
+		92CDC93928BDA76400150360 /* PersonAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonAPIManager.swift; sourceTree = "<group>"; };
+		92CDC93B28BDA87000150360 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		92CDC93D28BDAB6000150360 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		92CDC94228BDAC4500150360 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +52,7 @@
 		92CDC91328BD94F000150360 = {
 			isa = PBXGroup;
 			children = (
+				92CDC93D28BDAB6000150360 /* .gitignore */,
 				92CDC91E28BD94F000150360 /* Week9-URLSession */,
 				92CDC91D28BD94F000150360 /* Products */,
 			);
@@ -60,6 +69,8 @@
 		92CDC91E28BD94F000150360 /* Week9-URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				92CDC93F28BDAB7200150360 /* Network */,
+				92CDC93828BDA75600150360 /* Person */,
 				92CDC93328BD955B00150360 /* Lotto */,
 				92CDC91F28BD94F000150360 /* AppDelegate.swift */,
 				92CDC92128BD94F000150360 /* SceneDelegate.swift */,
@@ -79,6 +90,39 @@
 				92CDC93628BD9BAA00150360 /* Lotto.swift */,
 			);
 			path = Lotto;
+			sourceTree = "<group>";
+		};
+		92CDC93828BDA75600150360 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				92CDC93928BDA76400150360 /* PersonAPIManager.swift */,
+				92CDC93B28BDA87000150360 /* Person.swift */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		92CDC93F28BDAB7200150360 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				92CDC94128BDAC3600150360 /* Base */,
+				92CDC94028BDAB7C00150360 /* APIManager */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		92CDC94028BDAB7C00150360 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		92CDC94128BDAC3600150360 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				92CDC94228BDAC4500150360 /* APIKey.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92CDC93E28BDAB6000150360 /* .gitignore in Resources */,
 				92CDC92C28BD94F200150360 /* LaunchScreen.storyboard in Resources */,
 				92CDC92928BD94F200150360 /* Assets.xcassets in Resources */,
 				92CDC92728BD94F000150360 /* Main.storyboard in Resources */,
@@ -154,7 +199,10 @@
 			files = (
 				92CDC93728BD9BAA00150360 /* Lotto.swift in Sources */,
 				92CDC92428BD94F000150360 /* ViewController.swift in Sources */,
+				92CDC94328BDAC4500150360 /* APIKey.swift in Sources */,
 				92CDC92028BD94F000150360 /* AppDelegate.swift in Sources */,
+				92CDC93A28BDA76400150360 /* PersonAPIManager.swift in Sources */,
+				92CDC93C28BDA87000150360 /* Person.swift in Sources */,
 				92CDC92228BD94F000150360 /* SceneDelegate.swift in Sources */,
 				92CDC93528BD956800150360 /* LottoAPIManager.swift in Sources */,
 			);
