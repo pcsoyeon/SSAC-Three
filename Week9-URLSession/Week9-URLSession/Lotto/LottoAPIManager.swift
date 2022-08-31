@@ -24,43 +24,45 @@ class LottoAPIManager {
     static func requestLotto(drwNo: Int, completionHandler: @escaping (Lotto?, APIError?) -> ()) {
         guard let url = URL(string: "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(drwNo)") else { return }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            
-            DispatchQueue.main.async {
-                guard error == nil else {
-                    print("Failed Request")
-                    completionHandler(nil, .failedRequest)
-                    return
-                }
-                
-                guard let data = data else {
-                    print("No Data Returned")
-                    completionHandler(nil, .noData)
-                    return
-                }
-                
-                guard let response = response as? HTTPURLResponse else {
-                    print("Unable Response")
-                    completionHandler(nil, .invalidResponse)
-                    return
-                }
-                
-                guard response.statusCode == 200 else {
-                    print("Failed Response")
-                    completionHandler(nil, .failedRequest)
-                    return
-                }
-                
-                do {
-                    let result = try JSONDecoder().decode(Lotto.self, from: data)
-                    completionHandler(result, nil)
-                    
-                } catch let error {
-                    completionHandler(nil, .invalidData)
-                    print(error)
-                }
-            }
-            
-        }.resume()
+        URLSession.request(endpoint: URLRequest(url: url), completionHandler: completionHandler)
+        
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//
+//            DispatchQueue.main.async {
+//                guard error == nil else {
+//                    print("Failed Request")
+//                    completionHandler(nil, .failedRequest)
+//                    return
+//                }
+//
+//                guard let data = data else {
+//                    print("No Data Returned")
+//                    completionHandler(nil, .noData)
+//                    return
+//                }
+//
+//                guard let response = response as? HTTPURLResponse else {
+//                    print("Unable Response")
+//                    completionHandler(nil, .invalidResponse)
+//                    return
+//                }
+//
+//                guard response.statusCode == 200 else {
+//                    print("Failed Response")
+//                    completionHandler(nil, .failedRequest)
+//                    return
+//                }
+//
+//                do {
+//                    let result = try JSONDecoder().decode(Lotto.self, from: data)
+//                    completionHandler(result, nil)
+//
+//                } catch let error {
+//                    completionHandler(nil, .invalidData)
+//                    print(error)
+//                }
+//            }
+//
+//        }.resume()
     }
 }

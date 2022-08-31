@@ -81,6 +81,7 @@ extension ViewController {
             }
             
             self.label.text = "\(lotto.drwNoDate)"
+            dump(lotto)
         }
     }
     

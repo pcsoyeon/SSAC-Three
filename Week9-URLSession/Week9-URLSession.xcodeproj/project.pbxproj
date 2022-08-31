@@ -19,6 +19,7 @@
 		92CDC93C28BDA87000150360 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC93B28BDA87000150360 /* Person.swift */; };
 		92CDC93E28BDAB6000150360 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 92CDC93D28BDAB6000150360 /* .gitignore */; };
 		92CDC94328BDAC4500150360 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC94228BDAC4500150360 /* APIKey.swift */; };
+		92CDC94528BDB79300150360 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC94428BDB79300150360 /* URLSession+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		92CDC93B28BDA87000150360 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		92CDC93D28BDAB6000150360 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		92CDC94228BDAC4500150360 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		92CDC94428BDB79300150360 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				92CDC94228BDAC4500150360 /* APIKey.swift */,
+				92CDC94428BDB79300150360 /* URLSession+Extension.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				92CDC94328BDAC4500150360 /* APIKey.swift in Sources */,
 				92CDC92028BD94F000150360 /* AppDelegate.swift in Sources */,
 				92CDC93A28BDA76400150360 /* PersonAPIManager.swift in Sources */,
+				92CDC94528BDB79300150360 /* URLSession+Extension.swift in Sources */,
 				92CDC93C28BDA87000150360 /* Person.swift in Sources */,
 				92CDC92228BD94F000150360 /* SceneDelegate.swift in Sources */,
 				92CDC93528BD956800150360 /* LottoAPIManager.swift in Sources */,
