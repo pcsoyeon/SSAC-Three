@@ -34,14 +34,14 @@ class ViewController: UIViewController {
         }
     }
     
-    private var list: Person?
+    private var viewModel = PersonViewModel()
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setConstraints()
-        callRequestLotto()
+//        callRequestLotto()
         callRequestPerson()
     }
     
@@ -61,12 +61,16 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list?.results.count ?? 0
+        return viewModel.numberOfRowsInsection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = list?.results[indexPath.row].name
+        
+        let data = viewModel.cellForRowAt(at: indexPath)
+        
+        cell.textLabel?.text = data.name
+        cell.detailTextLabel?.text = data.knownForDepartment
         return cell
     }
 }
@@ -86,12 +90,10 @@ extension ViewController {
     }
     
     private func callRequestPerson() {
-        PersonAPIManager.requestPerson(query: "kim") { person, error in
-            dump(person)
-            if let person = person {
-                self.list = person
-                self.tableView.reloadData()
-            }
+        viewModel.fetchPerson(query: "kim")
+        viewModel.list.bind { person in
+            print("VC bind")
+            self.tableView.reloadData()
         }
     }
 }
