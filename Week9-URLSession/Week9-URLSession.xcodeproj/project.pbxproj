@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		923DC7E028C0381200407EEF /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923DC7DF28C0381200407EEF /* Sample.swift */; };
+		923DC7E328C0488100407EEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923DC7E228C0488100407EEF /* LoginViewController.swift */; };
+		923DC7E528C04A0700407EEF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923DC7E428C04A0700407EEF /* LoginViewModel.swift */; };
 		929535F428BEF9740002C504 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929535F328BEF9740002C504 /* Observable.swift */; };
 		929535F628BEFC100002C504 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929535F528BEFC100002C504 /* PersonViewModel.swift */; };
 		92CDC92028BD94F000150360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC91F28BD94F000150360 /* AppDelegate.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		923DC7DF28C0381200407EEF /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
+		923DC7E228C0488100407EEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		923DC7E428C04A0700407EEF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		929535F328BEF9740002C504 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		929535F528BEFC100002C504 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		92CDC91C28BD94F000150360 /* Week9-URLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week9-URLSession.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		923DC7E128C0487100407EEF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				923DC7E228C0488100407EEF /* LoginViewController.swift */,
+				923DC7E428C04A0700407EEF /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		92CDC91328BD94F000150360 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +90,7 @@
 		92CDC91E28BD94F000150360 /* Week9-URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				923DC7E128C0487100407EEF /* Login */,
 				92CDC93F28BDAB7200150360 /* Network */,
 				92CDC93828BDA75600150360 /* Person */,
 				92CDC93328BD955B00150360 /* Lotto */,
@@ -215,11 +229,13 @@
 				92CDC94328BDAC4500150360 /* APIKey.swift in Sources */,
 				929535F628BEFC100002C504 /* PersonViewModel.swift in Sources */,
 				92CDC92028BD94F000150360 /* AppDelegate.swift in Sources */,
+				923DC7E528C04A0700407EEF /* LoginViewModel.swift in Sources */,
 				92CDC93A28BDA76400150360 /* PersonAPIManager.swift in Sources */,
 				92CDC94528BDB79300150360 /* URLSession+Extension.swift in Sources */,
 				929535F428BEF9740002C504 /* Observable.swift in Sources */,
 				92CDC93C28BDA87000150360 /* Person.swift in Sources */,
 				92CDC92228BD94F000150360 /* SceneDelegate.swift in Sources */,
+				923DC7E328C0488100407EEF /* LoginViewController.swift in Sources */,
 				92CDC93528BD956800150360 /* LottoAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

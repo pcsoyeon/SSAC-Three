@@ -60,19 +60,19 @@ class ViewController: UIViewController {
 //        number3.value = 200
 //        number3.value = 50
         
-        let example = User("소깡")
-        
-        example.bind { value in
-            print("이름이 \(value)입니다")
-        }
-        
-        example.value = "후리"
-        example.value = "태끼"
-        
-        let new = User([1, 2, 3, 4])
-        new.bind { value in
-            print(value)
-        }
+//        let example = User("소깡")
+//        
+//        example.bind { value in
+//            print("이름이 \(value)입니다")
+//        }
+//        
+//        example.value = "후리"
+//        example.value = "태끼"
+//        
+//        let new = User([1, 2, 3, 4])
+//        new.bind { value in
+//            print(value)
+//        }
         
         
         setConstraints()
