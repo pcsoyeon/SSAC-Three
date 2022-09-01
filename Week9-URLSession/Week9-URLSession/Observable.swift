@@ -29,19 +29,19 @@ class Observable<T> { // 양방향 바인딩
     }
 }
 
-class User {
-
-    private var listener: ((String) -> ())?
-    
-    var value: String {
-        didSet {
-            print("데이터 바뀜요")
-            listener?(value) // didSet 구문 안에서만 실행, 데이터가 변경되면 실행
-        }
-    }
-    
-    // 파라미터 이름 + 와일드카드 를 적용해서 수정하면 위와 같은 형태로 변경
-    init(_ value: String) {
-        self.value = value
-    }
-}
+//class User {
+//
+//    private var listener: ((String) -> ())?
+//
+//    var value: String {
+//        didSet {
+//            print("데이터 바뀜요")
+//            listener?(value) // didSet 구문 안에서만 실행, 데이터가 변경되면 실행
+//        }
+//    }
+//
+//    // 파라미터 이름 + 와일드카드 를 적용해서 수정하면 위와 같은 형태로 변경
+//    init(_ value: String) {
+//        self.value = value
+//    }
+//}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923DC7E028C0381200407EEF /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923DC7DF28C0381200407EEF /* Sample.swift */; };
 		929535F428BEF9740002C504 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929535F328BEF9740002C504 /* Observable.swift */; };
 		929535F628BEFC100002C504 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929535F528BEFC100002C504 /* PersonViewModel.swift */; };
 		92CDC92028BD94F000150360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC91F28BD94F000150360 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		923DC7DF28C0381200407EEF /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		929535F328BEF9740002C504 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		929535F528BEFC100002C504 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		92CDC91C28BD94F000150360 /* Week9-URLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week9-URLSession.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 				92CDC92A28BD94F200150360 /* LaunchScreen.storyboard */,
 				92CDC92D28BD94F200150360 /* Info.plist */,
 				929535F328BEF9740002C504 /* Observable.swift */,
+				923DC7DF28C0381200407EEF /* Sample.swift */,
 			);
 			path = "Week9-URLSession";
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92CDC93728BD9BAA00150360 /* Lotto.swift in Sources */,
+				923DC7E028C0381200407EEF /* Sample.swift in Sources */,
 				92CDC92428BD94F000150360 /* ViewController.swift in Sources */,
 				92CDC94328BDAC4500150360 /* APIKey.swift in Sources */,
 				929535F628BEFC100002C504 /* PersonViewModel.swift in Sources */,

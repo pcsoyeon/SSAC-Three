@@ -40,9 +40,44 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        var number1 = 10
+//        var number2 = 3
+//
+//        print(number1 - number2)
+//
+//        number1 = 3
+//        number2 = 1
+//
+//        var number3 = Observable(10)
+//        var number4 = Observable(3)
+//
+//        number3.bind { a in
+//            print(number3.value - number4.value)
+//        }
+//
+//        number3.value = 100
+//        number3.value = 200
+//        number3.value = 50
+        
+        let example = User("소깡")
+        
+        example.bind { value in
+            print("이름이 \(value)입니다")
+        }
+        
+        example.value = "후리"
+        example.value = "태끼"
+        
+        let new = User([1, 2, 3, 4])
+        new.bind { value in
+            print(value)
+        }
+        
+        
         setConstraints()
 //        callRequestLotto()
-        callRequestPerson()
+//        callRequestPerson()
     }
     
     // MARK: - UI Method
