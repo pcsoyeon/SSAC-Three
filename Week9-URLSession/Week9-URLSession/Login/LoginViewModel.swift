@@ -15,10 +15,15 @@ class LoginViewModel {
     var email: Observable<String> = Observable("") // 구조 확인 하고 초기화
     var password: Observable<String> = Observable("")
     var name: Observable<String> = Observable("")
+    
+    var loginData: Observable<Login> = Observable(Login(name: "", password: "", email: ""))
+    
     var isValid: Observable<Bool> = Observable(false)
     
+    // MARK: - Method
+    
     func checkValidation() {
-        if email.value.count >= 6 && password.value.count > 4 {
+        if loginData.value.email.count >= 6 && loginData.value.password.count > 4 {
             isValid.value = true
         } else {
             isValid.value = false
@@ -26,7 +31,7 @@ class LoginViewModel {
     }
     
     func signIn(completion: @escaping () -> ()) {
-        // 조건 처리 .. 서버 통신 .. 등등 모두 한 다음에
+        // 조건 처리 .. 서버 통신 ..
         UserDefaults.standard.set(name.value, forKey: "name")
         
         // 화면 전환 코드 

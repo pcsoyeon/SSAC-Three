@@ -12,6 +12,7 @@
 		923DC7E528C04A0700407EEF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923DC7E428C04A0700407EEF /* LoginViewModel.swift */; };
 		923DC7E728C05B0600407EEF /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923DC7E628C05B0600407EEF /* LottoViewController.swift */; };
 		923DC7E928C05C1A00407EEF /* LottoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923DC7E828C05C1A00407EEF /* LottoViewModel.swift */; };
+		923DC7EB28C0839C00407EEF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923DC7EA28C0839B00407EEF /* Login.swift */; };
 		929535F428BEF9740002C504 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929535F328BEF9740002C504 /* Observable.swift */; };
 		929535F628BEFC100002C504 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929535F528BEFC100002C504 /* PersonViewModel.swift */; };
 		92CDC92028BD94F000150360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC91F28BD94F000150360 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		923DC7E428C04A0700407EEF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		923DC7E628C05B0600407EEF /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		923DC7E828C05C1A00407EEF /* LottoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewModel.swift; sourceTree = "<group>"; };
+		923DC7EA28C0839B00407EEF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		929535F328BEF9740002C504 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		929535F528BEFC100002C504 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		92CDC91C28BD94F000150360 /* Week9-URLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week9-URLSession.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 			children = (
 				923DC7E228C0488100407EEF /* LoginViewController.swift */,
 				923DC7E428C04A0700407EEF /* LoginViewModel.swift */,
+				923DC7EA28C0839B00407EEF /* Login.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				923DC7E728C05B0600407EEF /* LottoViewController.swift in Sources */,
+				923DC7EB28C0839C00407EEF /* Login.swift in Sources */,
 				92CDC93728BD9BAA00150360 /* Lotto.swift in Sources */,
 				923DC7E028C0381200407EEF /* Sample.swift in Sources */,
 				92CDC92428BD94F000150360 /* ViewController.swift in Sources */,

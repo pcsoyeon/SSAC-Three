@@ -26,17 +26,17 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.name.bind { text in
-            self.nameTextField.text = text
-        }
-        
-        viewModel.password.bind { text in
-            self.passwordTextField.text = text
-        }
-        
-        viewModel.email.bind { text in
-            self.emailTextField.text = text
-        }
+//        viewModel.name.bind { text in
+//            self.nameTextField.text = text
+//        }
+//
+//        viewModel.password.bind { text in
+//            self.passwordTextField.text = text
+//        }
+//
+//        viewModel.email.bind { text in
+//            self.emailTextField.text = text
+//        }
         
         viewModel.isValid.bind { isValid in
             self.button.isEnabled = isValid
@@ -46,21 +46,21 @@ final class LoginViewController: UIViewController {
     
     @IBAction func touchUpNameTextField(_ sender: UITextField) {
         guard let text = nameTextField.text else { return }
-        viewModel.name.value = text
+        viewModel.loginData.value.name = text
         
         viewModel.checkValidation()
     }
     
     @IBAction func touchUpPasswordTextField(_ sender: Any) {
         guard let text = passwordTextField.text else { return }
-        viewModel.password.value = text
+        viewModel.loginData.value.password = text
         
         viewModel.checkValidation()
     }
     
     @IBAction func touchUpEmailTextField(_ sender: UITextField) {
         guard let text = emailTextField.text else { return }
-        viewModel.email.value = text
+        viewModel.loginData.value.email = text
         
         viewModel.checkValidation()
     }
