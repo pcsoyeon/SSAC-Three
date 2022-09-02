@@ -28,6 +28,8 @@
 		92CDC93E28BDAB6000150360 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 92CDC93D28BDAB6000150360 /* .gitignore */; };
 		92CDC94328BDAC4500150360 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC94228BDAC4500150360 /* APIKey.swift */; };
 		92CDC94528BDB79300150360 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC94428BDB79300150360 /* URLSession+Extension.swift */; };
+		92D87F6428C1866A009AAFE5 /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D87F6328C1866A009AAFE5 /* GCDViewController.swift */; };
+		92D87F6628C1A27E009AAFE5 /* NASAAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D87F6528C1A27E009AAFE5 /* NASAAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		92CDC93D28BDAB6000150360 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		92CDC94228BDAC4500150360 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		92CDC94428BDB79300150360 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
+		92D87F6328C1866A009AAFE5 /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
+		92D87F6528C1A27E009AAFE5 /* NASAAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		92CDC91E28BD94F000150360 /* Week9-URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				92D87F6228C1865E009AAFE5 /* GCD */,
 				923DC7E128C0487100407EEF /* Login */,
 				92CDC93F28BDAB7200150360 /* Network */,
 				92CDC93828BDA75600150360 /* Person */,
@@ -158,6 +163,15 @@
 				92CDC94428BDB79300150360 /* URLSession+Extension.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		92D87F6228C1865E009AAFE5 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				92D87F6328C1866A009AAFE5 /* GCDViewController.swift */,
+				92D87F6528C1A27E009AAFE5 /* NASAAPIManager.swift */,
+			);
+			path = GCD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,12 +257,14 @@
 				923DC7E528C04A0700407EEF /* LoginViewModel.swift in Sources */,
 				92CDC93A28BDA76400150360 /* PersonAPIManager.swift in Sources */,
 				92CDC94528BDB79300150360 /* URLSession+Extension.swift in Sources */,
+				92D87F6628C1A27E009AAFE5 /* NASAAPIManager.swift in Sources */,
 				929535F428BEF9740002C504 /* Observable.swift in Sources */,
 				92CDC93C28BDA87000150360 /* Person.swift in Sources */,
 				92CDC92228BD94F000150360 /* SceneDelegate.swift in Sources */,
 				923DC7E928C05C1A00407EEF /* LottoViewModel.swift in Sources */,
 				923DC7E328C0488100407EEF /* LoginViewController.swift in Sources */,
 				92CDC93528BD956800150360 /* LottoAPIManager.swift in Sources */,
+				92D87F6428C1866A009AAFE5 /* GCDViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

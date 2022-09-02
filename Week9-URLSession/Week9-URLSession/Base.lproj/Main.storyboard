@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FPA-3z-SmJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZWH-1T-4Zt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -239,6 +239,176 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aC-y2-A6k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="54" y="1579"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qs7-yh-1ai">
+            <objects>
+                <viewController id="ZWH-1T-4Zt" customClass="GCDViewController" customModule="Week9_URLSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rY2-Mi-ASo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wd2-ql-Vxm">
+                                <rect key="frame" x="20" y="64" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="h3V-aV-dFt"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Serial(Main) / Sync"/>
+                                <connections>
+                                    <action selector="serialSync:" destination="ZWH-1T-4Zt" eventType="touchUpInside" id="Rp9-7X-OjP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yii-rR-PUK">
+                                <rect key="frame" x="20" y="198" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Fvj-wL-zqb"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Concurrent(Global) / Sync"/>
+                                <connections>
+                                    <action selector="globalSync:" destination="ZWH-1T-4Zt" eventType="touchUpInside" id="caE-yK-27h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M5-gB-YPv">
+                                <rect key="frame" x="20" y="131" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="yaZ-9d-h13"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Serial(Main) / Async"/>
+                                <connections>
+                                    <action selector="serialAsync:" destination="ZWH-1T-4Zt" eventType="touchUpInside" id="vJp-cZ-SuN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGx-oz-rZ0">
+                                <rect key="frame" x="20" y="332" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Lws-bo-Wuk"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="QoS"/>
+                                <connections>
+                                    <action selector="qos:" destination="ZWH-1T-4Zt" eventType="touchUpInside" id="986-2I-TKs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCt-W4-DVX">
+                                <rect key="frame" x="20" y="399" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="JwV-Kq-2QF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DispatchGroup"/>
+                                <connections>
+                                    <action selector="dispatchGroup:" destination="ZWH-1T-4Zt" eventType="touchUpInside" id="OAV-YL-4ps"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhq-hL-snA">
+                                <rect key="frame" x="20" y="466" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="0qB-RJ-iPw"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DispatchGroup - NASA"/>
+                                <connections>
+                                    <action selector="dispatchGroupNASA:" destination="ZWH-1T-4Zt" eventType="touchUpInside" id="bX6-d9-rsr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPG-w4-vHP">
+                                <rect key="frame" x="20" y="265" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="zWt-eM-Suz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Concurrent(Global) / Async"/>
+                                <connections>
+                                    <action selector="globalAsync:" destination="ZWH-1T-4Zt" eventType="touchUpInside" id="SFS-ig-WBE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbn-YR-qmF">
+                                <rect key="frame" x="20" y="533" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="hn7-ou-Vhb"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="enterLeave:" destination="ZWH-1T-4Zt" eventType="touchUpInside" id="ayp-rU-nca"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="wZ2-Ge-dff">
+                                <rect key="frame" x="20" y="600" width="374" height="125"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LRT-lV-fWH">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="125"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Crq-sJ-1CS">
+                                        <rect key="frame" x="132" y="0.0" width="110" height="125"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mmg-jb-6XF">
+                                        <rect key="frame" x="264" y="0.0" width="110" height="125"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="DtQ-5H-qGV"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbW-LG-kAt">
+                                <rect key="frame" x="20" y="745" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="V4g-06-Nai"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="raceCondition:" destination="ZWH-1T-4Zt" eventType="touchUpInside" id="mQk-II-WWu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W6p-rZ-3EN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1M5-gB-YPv" firstAttribute="leading" secondItem="W6p-rZ-3EN" secondAttribute="leading" constant="20" id="0cP-Qq-d0X"/>
+                            <constraint firstItem="W6p-rZ-3EN" firstAttribute="trailing" secondItem="yii-rR-PUK" secondAttribute="trailing" constant="20" id="6R2-Ti-3VI"/>
+                            <constraint firstItem="W6p-rZ-3EN" firstAttribute="trailing" secondItem="JCt-W4-DVX" secondAttribute="trailing" constant="20" id="6th-Ug-hhR"/>
+                            <constraint firstItem="W6p-rZ-3EN" firstAttribute="trailing" secondItem="JPG-w4-vHP" secondAttribute="trailing" constant="20" id="8BT-J4-TGs"/>
+                            <constraint firstItem="wd2-ql-Vxm" firstAttribute="leading" secondItem="W6p-rZ-3EN" secondAttribute="leading" constant="20" id="8y3-UJ-UPu"/>
+                            <constraint firstItem="lGx-oz-rZ0" firstAttribute="leading" secondItem="W6p-rZ-3EN" secondAttribute="leading" constant="20" id="9ZK-Qf-2mR"/>
+                            <constraint firstItem="yii-rR-PUK" firstAttribute="leading" secondItem="W6p-rZ-3EN" secondAttribute="leading" constant="20" id="9xr-4g-f9P"/>
+                            <constraint firstItem="W6p-rZ-3EN" firstAttribute="trailing" secondItem="wZ2-Ge-dff" secondAttribute="trailing" constant="20" id="BGH-CV-atW"/>
+                            <constraint firstItem="JCt-W4-DVX" firstAttribute="leading" secondItem="W6p-rZ-3EN" secondAttribute="leading" constant="20" id="CbY-g2-eOP"/>
+                            <constraint firstItem="cbW-LG-kAt" firstAttribute="top" secondItem="wZ2-Ge-dff" secondAttribute="bottom" constant="20" id="CnY-O2-K2d"/>
+                            <constraint firstItem="W6p-rZ-3EN" firstAttribute="trailing" secondItem="lGx-oz-rZ0" secondAttribute="trailing" constant="20" id="D5B-TC-wZj"/>
+                            <constraint firstItem="yii-rR-PUK" firstAttribute="top" secondItem="1M5-gB-YPv" secondAttribute="bottom" constant="20" id="Ena-O3-tw1"/>
+                            <constraint firstItem="W6p-rZ-3EN" firstAttribute="trailing" secondItem="1M5-gB-YPv" secondAttribute="trailing" constant="20" id="KdT-x5-uXp"/>
+                            <constraint firstItem="W6p-rZ-3EN" firstAttribute="trailing" secondItem="cbW-LG-kAt" secondAttribute="trailing" constant="20" id="MAi-dL-MWh"/>
+                            <constraint firstItem="JCt-W4-DVX" firstAttribute="top" secondItem="lGx-oz-rZ0" secondAttribute="bottom" constant="20" id="OMM-Nz-qaP"/>
+                            <constraint firstItem="JPG-w4-vHP" firstAttribute="leading" secondItem="W6p-rZ-3EN" secondAttribute="leading" constant="20" id="Sku-4D-VRP"/>
+                            <constraint firstItem="Qbn-YR-qmF" firstAttribute="top" secondItem="rhq-hL-snA" secondAttribute="bottom" constant="20" id="UZr-Zg-PtC"/>
+                            <constraint firstItem="W6p-rZ-3EN" firstAttribute="trailing" secondItem="rhq-hL-snA" secondAttribute="trailing" constant="20" id="cRd-Ix-ssZ"/>
+                            <constraint firstItem="Qbn-YR-qmF" firstAttribute="leading" secondItem="W6p-rZ-3EN" secondAttribute="leading" constant="20" id="cTE-yB-d88"/>
+                            <constraint firstItem="wZ2-Ge-dff" firstAttribute="leading" secondItem="W6p-rZ-3EN" secondAttribute="leading" constant="20" id="gXc-hn-ns9"/>
+                            <constraint firstItem="cbW-LG-kAt" firstAttribute="leading" secondItem="W6p-rZ-3EN" secondAttribute="leading" constant="20" id="guz-gk-83L"/>
+                            <constraint firstItem="1M5-gB-YPv" firstAttribute="top" secondItem="wd2-ql-Vxm" secondAttribute="bottom" constant="20" id="hOr-oS-42z"/>
+                            <constraint firstItem="JPG-w4-vHP" firstAttribute="top" secondItem="yii-rR-PUK" secondAttribute="bottom" constant="20" id="iiN-CL-MXz"/>
+                            <constraint firstItem="wZ2-Ge-dff" firstAttribute="top" secondItem="Qbn-YR-qmF" secondAttribute="bottom" constant="20" id="kjO-d9-qZd"/>
+                            <constraint firstItem="W6p-rZ-3EN" firstAttribute="trailing" secondItem="Qbn-YR-qmF" secondAttribute="trailing" constant="20" id="pky-VB-8DT"/>
+                            <constraint firstItem="rhq-hL-snA" firstAttribute="leading" secondItem="W6p-rZ-3EN" secondAttribute="leading" constant="20" id="qZx-0D-blj"/>
+                            <constraint firstItem="rhq-hL-snA" firstAttribute="top" secondItem="JCt-W4-DVX" secondAttribute="bottom" constant="20" id="ujs-Wp-DoF"/>
+                            <constraint firstItem="lGx-oz-rZ0" firstAttribute="top" secondItem="JPG-w4-vHP" secondAttribute="bottom" constant="20" id="unr-kU-Eul"/>
+                            <constraint firstItem="W6p-rZ-3EN" firstAttribute="trailing" secondItem="wd2-ql-Vxm" secondAttribute="trailing" constant="20" id="veF-zz-bau"/>
+                            <constraint firstItem="wd2-ql-Vxm" firstAttribute="top" secondItem="W6p-rZ-3EN" secondAttribute="top" constant="20" id="w1v-Vg-7sx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstImageView" destination="LRT-lV-fWH" id="M6Z-YQ-hoE"/>
+                        <outlet property="secondImageView" destination="Crq-sJ-1CS" id="8VT-qv-1Bc"/>
+                        <outlet property="thirdImageView" destination="Mmg-jb-6XF" id="F5L-Av-yAx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mc5-wA-x5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.623188405797109" y="2335.7142857142858"/>
         </scene>
     </scenes>
     <resources>
