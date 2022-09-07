@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Week9-URLSession
+
+  Created by 소연 on 2022/09/06.
+  
+*/
+
+"navigation_title" = "소깡이의 다이어리";
+
+"search_placeholder" = "검색해보세용가리";
+
+"main_age_placeholder" = "나이를 입력해보거라";
+
+"common_cancel" = "취소";
+
+"introduce" = "제 닉네임은 %@입니다.";
+
+"number_test" = "저는 %lld살입니다.";

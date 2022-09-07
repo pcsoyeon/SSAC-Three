@@ -15,6 +15,9 @@
 		923DC7EB28C0839C00407EEF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923DC7EA28C0839B00407EEF /* Login.swift */; };
 		929535F428BEF9740002C504 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929535F328BEF9740002C504 /* Observable.swift */; };
 		929535F628BEFC100002C504 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929535F528BEFC100002C504 /* PersonViewModel.swift */; };
+		92C1990B28C6D5A2007CA558 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92C1990D28C6D5A2007CA558 /* Localizable.strings */; };
+		92C1991228C6D976007CA558 /* LocalizableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C1991128C6D976007CA558 /* LocalizableViewController.swift */; };
+		92C1991528C6E17C007CA558 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92C1991728C6E17C007CA558 /* InfoPlist.strings */; };
 		92CDC92028BD94F000150360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC91F28BD94F000150360 /* AppDelegate.swift */; };
 		92CDC92228BD94F000150360 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC92128BD94F000150360 /* SceneDelegate.swift */; };
 		92CDC92428BD94F000150360 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC92328BD94F000150360 /* ViewController.swift */; };
@@ -45,6 +48,13 @@
 		92C1990628C6D043007CA558 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		92C1990728C6D076007CA558 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		92C1990828C6D076007CA558 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		92C1990C28C6D5A2007CA558 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		92C1990E28C6D5A8007CA558 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		92C1990F28C6D5A9007CA558 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		92C1991128C6D976007CA558 /* LocalizableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableViewController.swift; sourceTree = "<group>"; };
+		92C1991628C6E17C007CA558 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92C1991828C6E17F007CA558 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92C1991928C6E17F007CA558 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92CDC91C28BD94F000150360 /* Week9-URLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week9-URLSession.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CDC91F28BD94F000150360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92CDC92128BD94F000150360 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +95,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		92C1991028C6D958007CA558 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				92C1991128C6D976007CA558 /* LocalizableViewController.swift */,
+				92C1991728C6E17C007CA558 /* InfoPlist.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		92CDC91328BD94F000150360 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +124,7 @@
 		92CDC91E28BD94F000150360 /* Week9-URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				92C1991028C6D958007CA558 /* Localizable */,
 				92D87F6228C1865E009AAFE5 /* GCD */,
 				923DC7E128C0487100407EEF /* Login */,
 				92CDC93F28BDAB7200150360 /* Network */,
@@ -119,6 +139,7 @@
 				92CDC92D28BD94F200150360 /* Info.plist */,
 				929535F328BEF9740002C504 /* Observable.swift */,
 				923DC7DF28C0381200407EEF /* Sample.swift */,
+				92C1990D28C6D5A2007CA558 /* Localizable.strings */,
 			);
 			path = "Week9-URLSession";
 			sourceTree = "<group>";
@@ -238,6 +259,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C1990B28C6D5A2007CA558 /* Localizable.strings in Resources */,
+				92C1991528C6E17C007CA558 /* InfoPlist.strings in Resources */,
 				92CDC93E28BDAB6000150360 /* .gitignore in Resources */,
 				92CDC92C28BD94F200150360 /* LaunchScreen.storyboard in Resources */,
 				92CDC92928BD94F200150360 /* Assets.xcassets in Resources */,
@@ -271,12 +294,33 @@
 				923DC7E328C0488100407EEF /* LoginViewController.swift in Sources */,
 				92CDC93528BD956800150360 /* LottoAPIManager.swift in Sources */,
 				92D87F6428C1866A009AAFE5 /* GCDViewController.swift in Sources */,
+				92C1991228C6D976007CA558 /* LocalizableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		92C1990D28C6D5A2007CA558 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92C1990C28C6D5A2007CA558 /* en */,
+				92C1990E28C6D5A8007CA558 /* ko */,
+				92C1990F28C6D5A9007CA558 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		92C1991728C6E17C007CA558 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92C1991628C6E17C007CA558 /* en */,
+				92C1991828C6E17F007CA558 /* ja */,
+				92C1991928C6E17F007CA558 /* ko */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		92CDC92528BD94F000150360 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
