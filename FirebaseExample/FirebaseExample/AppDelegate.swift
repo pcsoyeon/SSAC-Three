@@ -76,10 +76,33 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     // foreground 알림 수신: 로컬 푸시와 동일
-    // 카카오톡: 후리방구와의 채팅방, 푸시마다 설정, 화면마다 설정 .. 
+    // 카카오톡: 후리방구와의 채팅방, 푸시마다 설정, 화면마다 설정 ..
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        // .banner, .list, iOS 14+
         completionHandler([.badge, .sound, .banner, .list])
     }
+    
+    // push click: 특정 화면으로 이동
+    
+    // 유저가 푸시를 클릭했을 때만 수신확인 가능
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("🍋 사용자가 푸시를 클릭했습니다. 🍋")
+        
+        print(response.notification.request.content.body) // 알림 메시지의 내용
+        print(response.notification.request.content.userInfo) // 딕셔너리 타입 (키:값)
+        
+        let userInfo = response.notification.request.content.userInfo
+        
+        if userInfo[AnyHashable("sesac")] as? String == "project" {
+            print("🍋 project 알림이 왔음요 🍋")
+        } else {
+            print("🍊 다른 알림이 왔음요 🍊")
+        }
+    }
+    
+    // UNNotificationInterruptionLevel (iOS 15이후부터)
+    
 }
 
 extension AppDelegate: MessagingDelegate {
