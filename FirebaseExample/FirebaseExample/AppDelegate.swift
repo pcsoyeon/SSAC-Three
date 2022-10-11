@@ -74,6 +74,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
+    
+    // foreground 알림 수신: 로컬 푸시와 동일
+    // 카카오톡: 후리방구와의 채팅방, 푸시마다 설정, 화면마다 설정 .. 
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.badge, .sound, .banner, .list])
+    }
 }
 
 extension AppDelegate: MessagingDelegate {
