@@ -8,7 +8,6 @@
 import UIKit
 
 import FirebaseAnalytics
-import SYKit
 
 class ViewController: UIViewController {
 
@@ -26,11 +25,6 @@ class ViewController: UIViewController {
           "level_name": "Caverns01",
           "level_difficulty": 4
         ])
-    }
-
-
-    @IBAction func touchUpCrashButton(_ sender: UIButton) {
-        
     }
 }
 
