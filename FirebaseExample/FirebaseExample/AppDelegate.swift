@@ -40,13 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Messaging.messaging().delegate = self
         
         // 현재 등록된 토큰 가져오기
-        Messaging.messaging().token { token, error in
-            if let error = error {
-                print("Error fetching FCM registration token: \(error)")
-            } else if let token = token {
-                print("FCM registration token: \(token)")
-            }
-        }
+//        Messaging.messaging().token { token, error in
+//            if let error = error {
+//                print("Error fetching FCM registration token: \(error)")
+//            } else if let token = token {
+//                print("FCM registration token: \(token)")
+//            }
+//        }
         
         return true
     }
@@ -98,6 +98,19 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             print("🍋 project 알림이 왔음요 🍋")
         } else {
             print("🍊 다른 알림이 왔음요 🍊")
+        }
+        
+        guard let viewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController?.topViewController else { return }
+        print(viewController)
+        
+        // 클래스의 인스턴스 비교
+        // 만약 최상단의 뷰가 ViewController라면 설정 뷰로 이동
+        if viewController is ViewController {
+            viewController.navigationController?.pushViewController(SettingViewController(), animated: true)
+        }
+        // 프로필 뷰라면 dismiss
+        else if viewController is ProfileViewController {
+            viewController.dismiss(animated: true)
         }
     }
     
