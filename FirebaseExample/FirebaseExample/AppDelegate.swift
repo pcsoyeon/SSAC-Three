@@ -79,8 +79,21 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     // 카카오톡: 후리방구와의 채팅방, 푸시마다 설정, 화면마다 설정 ..
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
-        // .banner, .list, iOS 14+
-        completionHandler([.badge, .sound, .banner, .list])
+        guard let viewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController?.topViewController else { return }
+        
+        // setting 뷰에 있을 대는 포그라운드 푸시 띄우지 않도록
+        if viewController is SettingViewController {
+            // 배지만
+            completionHandler([.badge])
+            
+            // 아무것도 X
+            completionHandler([])
+        } else {
+            // .banner, .list, iOS 14+
+            completionHandler([.badge, .sound, .banner, .list])
+        }
+        
+        
     }
     
     // push click: 특정 화면으로 이동
