@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UIViewController.swizzleMethod() // 괄호(인스턴스가 아니라 타입으로)로 호출할 수 없음
+        
         FirebaseApp.configure()
         
         // 원격 알림 시스템에 앱을 등록

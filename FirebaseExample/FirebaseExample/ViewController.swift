@@ -26,6 +26,12 @@ class ViewController: UIViewController {
 //          "level_difficulty": 4
 //        ])
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("🍊 ViewController ViewWillAppear")
+    }
+    
     @IBAction func touchUpProfileButton(_ sender: UIButton) {
         present(ProfileViewController(), animated: true)
     }
@@ -41,12 +47,22 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("🍊 ProfileViewController ViewWillAppear")
+    }
 }
 
 class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .brown
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // super를 작성하지 않으면 메서드 스위즐링이 잘 안될 수 있다. 
+        print("🍊 SettingViewController ViewWillAppear")
     }
 }
 
@@ -75,5 +91,23 @@ extension UIViewController {
         else {
             return currentViewController
         }
+    }
+}
+
+extension UIViewController {
+    class func swizzleMethod() {
+        let origin = #selector(viewWillAppear)
+        let change = #selector(changeViewWillAppear)
+        
+        guard let originMethod = class_getInstanceMethod(UIViewController.self, origin), let changeMethod = class_getInstanceMethod(UIViewController.self, change) else {
+            print("함수를 찾을 수 없거나 오류 발생")
+            return
+        }
+        
+        method_exchangeImplementations(originMethod, changeMethod)
+    }
+    
+    @objc func changeViewWillAppear() {
+        print("Change ViewWillAppear SUCCEED")
     }
 }
