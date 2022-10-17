@@ -36,13 +36,13 @@ class MigrationViewController: UIViewController {
 //            }
 //        }
         
-        for i in 1...10 {
-            let task = DetailTodo(detailTitle: "127 앨범깡 \(i)개 ", favorite: true)
-
-            try! localRealm.write {
-                localRealm.add(task)
-            }
-        }
+//        for i in 1...10 {
+//            let task = DetailTodo(detailTitle: "127 앨범깡 \(i)개 ", favorite: true)
+//
+//            try! localRealm.write {
+//                localRealm.add(task)
+//            }
+//        }
         
         // 특정 Todo 테이블에 Detail Todo 추가
 //        guard let task = localRealm.objects(Todo.self).filter("title = '소깡이 할 일 7'")
@@ -55,23 +55,34 @@ class MigrationViewController: UIViewController {
 //        }
         
         // 특정 Todo 테이블에 Detail Todo 여러개 추가
-        guard let task = localRealm.objects(Todo.self).filter("title = '소깡이 할 일 2'")
-            .first else { return }
-        
-        let detail = DetailTodo(detailTitle: "도영이 포카 \(Int.random(in: 1...5))개 보관하기", favorite: false)
-        
-        for _ in 1...10 {
-            try! localRealm.write {
-                task.detail.append(detail)
-            }
-        }
+//        guard let task = localRealm.objects(Todo.self).filter("title = '소깡이 할 일 2'")
+//            .first else { return }
+//
+//        let detail = DetailTodo(detailTitle: "도영이 포카 \(Int.random(in: 1...5))개 보관하기", favorite: false)
+//
+//        for _ in 1...10 {
+//            try! localRealm.write {
+//                task.detail.append(detail)
+//            }
+//        }
         
         // 특정 Todo 테이블  삭제
-        guard let task = localRealm.objects(Todo.self).filter("title = '소깡이 할 일 7'").first else { return }
+//        guard let task = localRealm.objects(Todo.self).filter("title = '소깡이 할 일 2'").first else { return }
+//
+//        try! localRealm.write {
+//            localRealm.delete(task.detail)
+//            localRealm.delete(task)
+//        }
+        
+        // 특정 Todo에 메모 추가
+        guard let task = localRealm.objects(Todo.self).filter("title = '소깡이 할 일 1'").first else { return }
+        
+        let memo = Memo()
+        memo.content = "제발 도영이가 나오게 해주세요 🙏🏻"
+        memo.date = Date()
         
         try! localRealm.write {
-            localRealm.delete(task.detail)
-            localRealm.delete(task)
+            task.memo = memo
         }
     }
 }

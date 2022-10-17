@@ -17,6 +17,8 @@ class Todo: Object {
     
     @Persisted var detail: List<DetailTodo>
     
+    @Persisted var memo: Memo? // 🔥 Embedded Object는 항상 Optional
+    
     convenience init(title: String, importance: Int) {
         self.init()
         self.title = title
@@ -35,4 +37,18 @@ class DetailTodo: Object {
         self.detailTitle = detailTitle
         self.favorite = favorite
     }
+}
+
+// Realm 에서는 따로 생성되지 않는 테이블
+class Memo: EmbeddedObject {
+    @Persisted var content: String
+    @Persisted var date: Date
+    
+    // ObjectId 없어도 된다.
+    
+    // convenience 필요 없다. 
+//    init(content: String, date: Date) {
+//        self.content = content
+//        self.date = date
+//    }
 }
