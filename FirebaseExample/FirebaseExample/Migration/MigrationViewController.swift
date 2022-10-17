@@ -43,5 +43,27 @@ class MigrationViewController: UIViewController {
                 localRealm.add(task)
             }
         }
+        
+        // 특정 Todo 테이블에 Detail Todo 추가
+//        guard let task = localRealm.objects(Todo.self).filter("title = '소깡이 할 일 7'")
+//            .first else { return }
+//
+//        let detail = DetailTodo(detailTitle: "포카 교환하기", favorite: false)
+//
+//        try! localRealm.write {
+//            task.detail.append(detail)
+//        }
+        
+        // 특정 Todo 테이블에 Detail Todo 여러개 추가
+        guard let task = localRealm.objects(Todo.self).filter("title = '소깡이 할 일 2'")
+            .first else { return }
+        
+        let detail = DetailTodo(detailTitle: "도영이 포카 \(Int.random(in: 1...5))개 보관하기", favorite: false)
+        
+        for _ in 1...10 {
+            try! localRealm.write {
+                task.detail.append(detail)
+            }
+        }
     }
 }
