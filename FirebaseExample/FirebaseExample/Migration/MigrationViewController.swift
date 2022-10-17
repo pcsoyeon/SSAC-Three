@@ -65,5 +65,13 @@ class MigrationViewController: UIViewController {
                 task.detail.append(detail)
             }
         }
+        
+        // 특정 Todo 테이블  삭제
+        guard let task = localRealm.objects(Todo.self).filter("title = '소깡이 할 일 7'").first else { return }
+        
+        try! localRealm.write {
+            localRealm.delete(task.detail)
+            localRealm.delete(task)
+        }
     }
 }
