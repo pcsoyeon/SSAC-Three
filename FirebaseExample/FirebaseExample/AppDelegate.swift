@@ -209,13 +209,17 @@ extension AppDelegate {
 
 extension AppDelegate {
     func updateSchemaVersion() {
-        let config = Realm.Configuration(schemaVersion: 2) { migration, oldSchemaVersion in
+        let config = Realm.Configuration(schemaVersion: 3) { migration, oldSchemaVersion in
             if oldSchemaVersion < 1 {
                 // Todo 구조에 DetailTodo 리스트 추가
             }
             
             if oldSchemaVersion < 2 {
                 // Embedded Object 추가
+            }
+            
+            if oldSchemaVersion < 3 {
+                // DetailTodo에 deadline 컬럼 추가 
             }
         }
         

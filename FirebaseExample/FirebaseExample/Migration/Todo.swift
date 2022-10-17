@@ -29,6 +29,7 @@ class Todo: Object {
 class DetailTodo: Object {
     @Persisted var detailTitle: String
     @Persisted var favorite: Bool
+    @Persisted var deadline: Date
     
     @Persisted(primaryKey: true) var objectId: ObjectId
     
