@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        aboutRealmMigration()
+//        aboutRealmMigration()
         
         UIViewController.swizzleMethod() // 괄호(인스턴스가 아니라 타입으로)로 호출할 수 없음
         
