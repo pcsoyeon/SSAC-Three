@@ -28,8 +28,16 @@ class MigrationViewController: UIViewController {
         }
         
         // 3. Test
-        for i in 1...100 {
-            let task = Todo(title: "소깡이 할 일 \(i)", importance: Int.random(in: 1...5))
+//        for i in 1...100 {
+//            let task = Todo(title: "소깡이 할 일 \(i)", importance: Int.random(in: 1...5))
+//
+//            try! localRealm.write {
+//                localRealm.add(task)
+//            }
+//        }
+        
+        for i in 1...10 {
+            let task = DetailTodo(detailTitle: "127 앨범깡 \(i)개 ", favorite: true)
 
             try! localRealm.write {
                 localRealm.add(task)

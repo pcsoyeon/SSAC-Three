@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        updateSchemaVersion()
 //        aboutRealmMigration()
         
         UIViewController.swizzleMethod() // 괄호(인스턴스가 아니라 타입으로)로 호출할 수 없음
@@ -199,6 +200,18 @@ extension AppDelegate {
                     
                     new["favorite"] = old["favorite"]
                 }
+            }
+        }
+        
+        Realm.Configuration.defaultConfiguration = config
+    }
+}
+
+extension AppDelegate {
+    func updateSchemaVersion() {
+        let config = Realm.Configuration(schemaVersion: 1) { migration, oldSchemaVersion in
+            if oldSchemaVersion < 1 {
+                // Todo 구조에 DetailTodo 리스트 추가
             }
         }
         
