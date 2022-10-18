@@ -7,13 +7,25 @@
 
 import UIKit
 
+// 이러한 modeling -> 구조체를 사용하는 것이 좋다.
+struct User {
+    let name: String
+    let age: Int
+}
+
 class SimpleCollectionViewController: UICollectionViewController {
     
-    var list = ["밍키", "현호", "주니곰", "재용", "후리", "소깡"]
+    var list = [
+        User(name: "밍키", age: 28),
+        User(name: "현호", age: 26),
+        User(name: "재용", age: 26),
+        User(name: "후리", age: 25),
+        User(name: "소깡", age: 25),
+    ]
     
     // cellForItemAt이 호출되기 전에 만들어져야 하므로 함수 밖에서 선언 !!!
     // register 코드와 유사
-    var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, String>!
+    var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, User>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +48,14 @@ class SimpleCollectionViewController: UICollectionViewController {
 //            var content = cell.defaultContentConfiguration()
             var content = UIListContentConfiguration.valueCell()
             
-            content.text = itemIdentifier
+            content.text = "이름: \(itemIdentifier.name)"
             content.textProperties.color = .darkGray
             
-            content.secondaryText = "H2 ><"
+            content.secondaryText =  "나이: \(itemIdentifier.age)"
             content.prefersSideBySideTextAndSecondaryText = false // default : true, secondaryText 아래로 배치 가능
             content.textToSecondaryTextVerticalPadding = 20
             
-            content.image = indexPath.item < 3 ? UIImage(systemName: "heart") : UIImage(systemName: "heart.fill")
+            content.image = itemIdentifier.age < 26 ? UIImage(systemName: "heart") : UIImage(systemName: "heart.fill")
             content.imageProperties.tintColor = .systemPink
             
             cell.contentConfiguration = content
