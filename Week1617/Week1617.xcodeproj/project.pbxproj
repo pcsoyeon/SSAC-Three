@@ -13,6 +13,7 @@
 		92E8F35328FE2D9D00507F64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E8F35128FE2D9D00507F64 /* Main.storyboard */; };
 		92E8F35528FE2D9E00507F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E8F35428FE2D9E00507F64 /* Assets.xcassets */; };
 		92E8F35828FE2D9E00507F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E8F35628FE2D9E00507F64 /* LaunchScreen.storyboard */; };
+		92E8F36028FE390F00507F64 /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8F35F28FE390F00507F64 /* SimpleCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		92E8F35428FE2D9E00507F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92E8F35728FE2D9E00507F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92E8F35928FE2D9E00507F64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92E8F35F28FE390F00507F64 /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				92E8F35428FE2D9E00507F64 /* Assets.xcassets */,
 				92E8F35628FE2D9E00507F64 /* LaunchScreen.storyboard */,
 				92E8F35928FE2D9E00507F64 /* Info.plist */,
+				92E8F35F28FE390F00507F64 /* SimpleCollectionViewController.swift */,
 			);
 			path = Week1617;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E8F36028FE390F00507F64 /* SimpleCollectionViewController.swift in Sources */,
 				92E8F35028FE2D9D00507F64 /* SimpleTableViewController.swift in Sources */,
 				92E8F34C28FE2D9D00507F64 /* AppDelegate.swift in Sources */,
 				92E8F34E28FE2D9D00507F64 /* SceneDelegate.swift in Sources */,

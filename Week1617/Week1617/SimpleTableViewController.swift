@@ -23,7 +23,7 @@ class SimpleTableViewController: UITableViewController {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "")!
 //        cell.textLabel?.text = list[indexPath.row]
         
-        let cell = UITableViewCell() // let으로 선언 
+        let cell = UITableViewCell() // let으로 선언
         
         var content = cell.defaultContentConfiguration() // 구조체이므로 var로 선언
         
