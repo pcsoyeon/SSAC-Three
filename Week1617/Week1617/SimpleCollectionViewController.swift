@@ -20,6 +20,8 @@ class SimpleCollectionViewController: UICollectionViewController {
         
         // 14+ 컬렉션뷰를 테이블 뷰 스타일처럼 사용 가능 (List Configuration)
         var  configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        configuration.showsSeparators = false // separator style 지정
+        configuration.backgroundColor = .systemPink
         
         // 위에서 만든 configuration을 바탕으로 레이아웃 설정
         let layout = UICollectionViewCompositionalLayout.list(using: configuration)
