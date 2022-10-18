@@ -34,8 +34,12 @@ class SimpleCollectionViewController: UICollectionViewController {
             // itemIdentifier : 보여지는 데이터
             
             var content = cell.defaultContentConfiguration()
+            
             content.text = itemIdentifier
+            content.textProperties.color = .darkGray
+            
             content.image = UIImage(systemName: "heart.fill")
+            content.imageProperties.tintColor = .systemPink
             
             cell.contentConfiguration = content
         }
