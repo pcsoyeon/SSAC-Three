@@ -33,12 +33,17 @@ class SimpleCollectionViewController: UICollectionViewController {
             // indexPath : 컬레션 뷰의 indexPath
             // itemIdentifier : 보여지는 데이터
             
-            var content = cell.defaultContentConfiguration()
+//            var content = cell.defaultContentConfiguration()
+            var content = UIListContentConfiguration.valueCell()
             
             content.text = itemIdentifier
             content.textProperties.color = .darkGray
             
-            content.image = UIImage(systemName: "heart.fill")
+            content.secondaryText = "H2 ><"
+            content.prefersSideBySideTextAndSecondaryText = false // default : true, secondaryText 아래로 배치 가능
+            content.textToSecondaryTextVerticalPadding = 20
+            
+            content.image = indexPath.item < 3 ? UIImage(systemName: "heart") : UIImage(systemName: "heart.fill")
             content.imageProperties.tintColor = .systemPink
             
             cell.contentConfiguration = content
