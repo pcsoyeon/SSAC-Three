@@ -10,6 +10,7 @@
 		9250CFD628F4ED5000628593 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9250CFD528F4ED5000628593 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		9250CFD828F4ED5000628593 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9250CFD728F4ED5000628593 /* FirebaseCrashlytics */; };
 		9250CFDA28F4ED5000628593 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9250CFD928F4ED5000628593 /* FirebaseMessaging */; };
+		92E8F36228FE4DB400507F64 /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8F36128FE4DB400507F64 /* SimpleCollectionViewController.swift */; };
 		92ED338928ED157E00F780C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED338828ED157E00F780C9 /* AppDelegate.swift */; };
 		92ED338B28ED157E00F780C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED338A28ED157E00F780C9 /* SceneDelegate.swift */; };
 		92ED338D28ED157E00F780C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED338C28ED157E00F780C9 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		9250CFDB28F4F23600628593 /* FirebaseExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseExample.entitlements; sourceTree = "<group>"; };
+		92E8F36128FE4DB400507F64 /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
 		92ED338528ED157E00F780C9 /* FirebaseExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92ED338828ED157E00F780C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92ED338A28ED157E00F780C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				92ED339128ED158000F780C9 /* Assets.xcassets */,
 				92ED339328ED158000F780C9 /* LaunchScreen.storyboard */,
 				92ED339628ED158000F780C9 /* Info.plist */,
+				92E8F36128FE4DB400507F64 /* SimpleCollectionViewController.swift */,
 			);
 			path = FirebaseExample;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				92ED338928ED157E00F780C9 /* AppDelegate.swift in Sources */,
 				92F303E128F79BB700E32422 /* MigrationViewController.swift in Sources */,
 				92ED338B28ED157E00F780C9 /* SceneDelegate.swift in Sources */,
+				92E8F36228FE4DB400507F64 /* SimpleCollectionViewController.swift in Sources */,
 				92F303DE28F79A0E00E32422 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
