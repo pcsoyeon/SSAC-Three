@@ -60,22 +60,42 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fo5-FC-d9t">
+                                <rect key="frame" x="20" y="147" width="165" height="60"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqm-yf-CLK">
+                                <rect key="frame" x="205" y="147" width="165" height="60"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Load"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Gd-aZ-FE7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2Gd-aZ-FE7" firstAttribute="trailing" secondItem="fqm-yf-CLK" secondAttribute="trailing" constant="20" id="1AT-oT-JyG"/>
                             <constraint firstItem="2Gd-aZ-FE7" firstAttribute="trailing" secondItem="t0h-SE-rxB" secondAttribute="trailing" constant="30" id="2iP-nP-Sdz"/>
+                            <constraint firstItem="BJn-Nm-eAM" firstAttribute="top" secondItem="fo5-FC-d9t" secondAttribute="bottom" constant="20" id="35Y-26-4sq"/>
                             <constraint firstItem="2Gd-aZ-FE7" firstAttribute="bottom" secondItem="BJn-Nm-eAM" secondAttribute="bottom" id="96f-ke-Jjk"/>
+                            <constraint firstItem="fo5-FC-d9t" firstAttribute="top" secondItem="t0h-SE-rxB" secondAttribute="bottom" constant="20" id="Dvt-fG-0tT"/>
+                            <constraint firstItem="fqm-yf-CLK" firstAttribute="leading" secondItem="fo5-FC-d9t" secondAttribute="trailing" constant="20" id="YrN-Z6-pgu"/>
                             <constraint firstItem="2Gd-aZ-FE7" firstAttribute="trailing" secondItem="BJn-Nm-eAM" secondAttribute="trailing" id="dGD-fY-sb6"/>
+                            <constraint firstItem="fqm-yf-CLK" firstAttribute="top" secondItem="t0h-SE-rxB" secondAttribute="bottom" constant="20" id="iFx-L7-ECb"/>
                             <constraint firstItem="BJn-Nm-eAM" firstAttribute="leading" secondItem="2Gd-aZ-FE7" secondAttribute="leading" id="iWT-cf-Ije"/>
                             <constraint firstItem="BJn-Nm-eAM" firstAttribute="top" secondItem="t0h-SE-rxB" secondAttribute="bottom" constant="100" id="mfR-sd-XKP"/>
+                            <constraint firstItem="BJn-Nm-eAM" firstAttribute="top" secondItem="fqm-yf-CLK" secondAttribute="bottom" constant="20" id="ol8-hz-blT"/>
+                            <constraint firstItem="fqm-yf-CLK" firstAttribute="width" secondItem="fo5-FC-d9t" secondAttribute="width" id="r4D-Xk-CYQ"/>
+                            <constraint firstItem="fo5-FC-d9t" firstAttribute="leading" secondItem="2Gd-aZ-FE7" secondAttribute="leading" constant="20" id="rni-XO-JFd"/>
                             <constraint firstItem="t0h-SE-rxB" firstAttribute="leading" secondItem="2Gd-aZ-FE7" secondAttribute="leading" constant="30" id="vso-fC-NdN"/>
                             <constraint firstItem="t0h-SE-rxB" firstAttribute="top" secondItem="2Gd-aZ-FE7" secondAttribute="top" constant="30" id="wGI-RE-aa1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="BJn-Nm-eAM" id="TaQ-SW-nEB"/>
+                        <outlet property="loadButton" destination="fqm-yf-CLK" id="iqH-1d-KTu"/>
                         <outlet property="numberTextField" destination="t0h-SE-rxB" id="zB3-9H-2kw"/>
+                        <outlet property="resetButton" destination="fo5-FC-d9t" id="3mV-c1-icM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JvW-P5-eWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
