@@ -40,16 +40,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BJn-Nm-eAM">
+                                <rect key="frame" x="0.0" y="227" width="390" height="583"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wOK-ES-OhE">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GdO-KB-Yln">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DO6-g1-4eM">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Gd-aZ-FE7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2Gd-aZ-FE7" firstAttribute="trailing" secondItem="t0h-SE-rxB" secondAttribute="trailing" constant="30" id="2iP-nP-Sdz"/>
+                            <constraint firstItem="2Gd-aZ-FE7" firstAttribute="bottom" secondItem="BJn-Nm-eAM" secondAttribute="bottom" id="96f-ke-Jjk"/>
+                            <constraint firstItem="2Gd-aZ-FE7" firstAttribute="trailing" secondItem="BJn-Nm-eAM" secondAttribute="trailing" id="dGD-fY-sb6"/>
+                            <constraint firstItem="BJn-Nm-eAM" firstAttribute="leading" secondItem="2Gd-aZ-FE7" secondAttribute="leading" id="iWT-cf-Ije"/>
+                            <constraint firstItem="BJn-Nm-eAM" firstAttribute="top" secondItem="t0h-SE-rxB" secondAttribute="bottom" constant="100" id="mfR-sd-XKP"/>
                             <constraint firstItem="t0h-SE-rxB" firstAttribute="leading" secondItem="2Gd-aZ-FE7" secondAttribute="leading" constant="30" id="vso-fC-NdN"/>
                             <constraint firstItem="t0h-SE-rxB" firstAttribute="top" secondItem="2Gd-aZ-FE7" secondAttribute="top" constant="30" id="wGI-RE-aa1"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="BJn-Nm-eAM" id="TaQ-SW-nEB"/>
                         <outlet property="numberTextField" destination="t0h-SE-rxB" id="zB3-9H-2kw"/>
                     </connections>
                 </viewController>
