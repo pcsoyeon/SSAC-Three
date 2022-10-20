@@ -8,7 +8,8 @@
 import UIKit
 
 // 이러한 modeling -> 구조체를 사용하는 것이 좋다.
-struct User {
+struct User: Hashable {
+    let id = UUID().uuidString
     let name: String
     let age: Int
 }
@@ -18,7 +19,7 @@ class SimpleCollectionViewController: UICollectionViewController {
     var list = [
         User(name: "밍키", age: 28),
         User(name: "현호", age: 26),
-        User(name: "재용", age: 26),
+        User(name: "후리", age: 25),
         User(name: "후리", age: 25),
         User(name: "소깡", age: 25),
     ]
@@ -27,6 +28,8 @@ class SimpleCollectionViewController: UICollectionViewController {
     // register 코드와 유사
     // 커스텀 셀이라면? 타입을 여기서 바꿔줘야 한다. <여기서, User>
     var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, User>!
+    
+    var dataSource: UICollectionViewDiffableDataSource<Int, User>!
     
     var hello: (() -> Void)! // 매개변수, 반환값 없는 프로퍼티
     
@@ -82,16 +85,16 @@ class SimpleCollectionViewController: UICollectionViewController {
             backgroundConfig.strokeWidth = 1
             cell.backgroundConfiguration = backgroundConfig
         }
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return list.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = list[indexPath.row] // 어떤 내용을 보여줄 것인지?
-        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item) // using: 어떤 셀? 어떤 데이터? (2가지 매개변수를 받음, 어떤 형태인지 모르기 때문에 제너릭)
-        return cell
+        
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let cell = collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration, for: indexPath, item: itemIdentifier)
+            return cell
+        })
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Int, User>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(list)
+        dataSource.apply(snapshot)
     }
 
 }
