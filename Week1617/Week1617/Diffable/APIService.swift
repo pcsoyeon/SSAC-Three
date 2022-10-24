@@ -8,7 +8,6 @@
 import Foundation
 
 import Alamofire
-import Kingfisher
 
 class APIService {
     
