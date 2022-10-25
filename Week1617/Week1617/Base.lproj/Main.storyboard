@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1qY-oq-frx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nhg-jq-JST">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -223,13 +223,49 @@
                     <view key="view" contentMode="scaleToFill" id="P8v-F6-B8u">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IfU-0l-R3J">
+                                <rect key="frame" x="0.0" y="135" width="390" height="675"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="f42-9A-Hda">
+                                <rect key="frame" x="0.0" y="91" width="390" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="174-tg-hbg"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="UXi-x6-tIR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IfU-0l-R3J" firstAttribute="top" secondItem="f42-9A-Hda" secondAttribute="bottom" id="05c-j6-oMg"/>
+                            <constraint firstItem="UXi-x6-tIR" firstAttribute="bottom" secondItem="IfU-0l-R3J" secondAttribute="bottom" id="9fG-gU-SCv"/>
+                            <constraint firstItem="f42-9A-Hda" firstAttribute="trailing" secondItem="UXi-x6-tIR" secondAttribute="trailing" id="Jnd-c1-Jzh"/>
+                            <constraint firstItem="f42-9A-Hda" firstAttribute="leading" secondItem="UXi-x6-tIR" secondAttribute="leading" id="Mlm-bV-lZ8"/>
+                            <constraint firstItem="UXi-x6-tIR" firstAttribute="trailing" secondItem="IfU-0l-R3J" secondAttribute="trailing" id="Ptf-oF-f66"/>
+                            <constraint firstItem="IfU-0l-R3J" firstAttribute="leading" secondItem="UXi-x6-tIR" secondAttribute="leading" id="mhR-7E-JnP"/>
+                            <constraint firstItem="f42-9A-Hda" firstAttribute="top" secondItem="UXi-x6-tIR" secondAttribute="top" id="rKw-lx-G28"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qrv-Zi-mX6">
+                        <barButtonItem key="leftBarButtonItem" title="새로운 연락처" id="I97-PM-7gz"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="가져오기" id="xl9-vR-2ym"/>
+                            <barButtonItem title="리셋" id="Dzw-0D-SyO"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="xl9-vR-2ym" id="HYs-d7-TOE"/>
+                        <outlet property="newButton" destination="I97-PM-7gz" id="CKK-kf-7XM"/>
+                        <outlet property="resetButton" destination="Dzw-0D-SyO" id="zBh-cf-J2U"/>
+                        <outlet property="searchBar" destination="f42-9A-Hda" id="C3N-82-4kM"/>
+                        <outlet property="tableView" destination="IfU-0l-R3J" id="dor-gK-VXw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2c-Bg-MSM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="2400"/>
+            <point key="canvasLocation" x="950.76923076923072" y="2400"/>
         </scene>
         <!--Diffable Collection View Controller-->
         <scene sceneID="VuG-ri-gei">
@@ -352,6 +388,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAc-Ps-XtO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880" y="-707"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="c3R-hx-1eV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nhg-jq-JST" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AXJ-k3-Yjp">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1qY-oq-frx" kind="relationship" relationship="rootViewController" id="HyR-aY-by7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AaK-4U-VWJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.538461538461537" y="2400"/>
         </scene>
     </scenes>
     <resources>

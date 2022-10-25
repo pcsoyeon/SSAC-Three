@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9265DD8129077A2A005D56BE /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD8029077A2A005D56BE /* SubjectViewController.swift */; };
+		9265DD83290788D3005D56BE /* SubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD82290788D3005D56BE /* SubjectViewModel.swift */; };
 		929DA4E728FF8FA300810B2A /* DiffableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA4E628FF8FA300810B2A /* DiffableCollectionViewController.swift */; };
 		929DA5252900CF8100810B2A /* CObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5242900CF8100810B2A /* CObservable.swift */; };
 		929DA5272900D13900810B2A /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5262900D13900810B2A /* NewsViewController.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		9265DD8029077A2A005D56BE /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
+		9265DD82290788D3005D56BE /* SubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewModel.swift; sourceTree = "<group>"; };
 		929DA4E628FF8FA300810B2A /* DiffableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableCollectionViewController.swift; sourceTree = "<group>"; };
 		929DA5242900CF8100810B2A /* CObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CObservable.swift; sourceTree = "<group>"; };
 		929DA5262900D13900810B2A /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				92F80EFF290625BC00938A01 /* RxCocoaExampleViewController.swift */,
 				9265DD8029077A2A005D56BE /* SubjectViewController.swift */,
+				9265DD82290788D3005D56BE /* SubjectViewModel.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				92E8F34E28FE2D9D00507F64 /* SceneDelegate.swift in Sources */,
 				929DA5292900D24700810B2A /* NewsViewModel.swift in Sources */,
 				929DA5342900EE5F00810B2A /* APIKey.swift in Sources */,
+				9265DD83290788D3005D56BE /* SubjectViewModel.swift in Sources */,
 				929DA52D2900ED6900810B2A /* DiffableViewModel.swift in Sources */,
 				92F80F00290625BC00938A01 /* RxCocoaExampleViewController.swift in Sources */,
 			);

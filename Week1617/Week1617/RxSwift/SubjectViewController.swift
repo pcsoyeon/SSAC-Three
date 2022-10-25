@@ -12,6 +12,16 @@ import RxSwift
 
 class SubjectViewController: UIViewController {
     
+    // MARK: - UI Property
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var resetButton: UIBarButtonItem!
+    @IBOutlet weak var newButton: UIBarButtonItem!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Property
     
     let publish = PublishSubject<Int>() // 초기값이 없는 빈 상태
@@ -20,16 +30,53 @@ class SubjectViewController: UIViewController {
     let async = AsyncSubject<Int>()
     
     let disposeBag = DisposeBag()
+    private let viewModel = SubjectViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        publishSubject()
-        behaviorSubject()
-        replaySubject()
-        asyncSubject()
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ContactCell")
+        
+        viewModel.list
+            .bind(to: tableView.rx.items(cellIdentifier: "ContactCell", cellType: UITableViewCell.self)) { (row, element, cell) in
+                cell.textLabel?.text = "\(element.name) : \(element.age)세 \(element.number)"
+            }
+            .disposed(by: disposeBag)
+        
+        addButton.rx.tap
+            .withUnretained(self)
+            .subscribe { (vc, _) in
+                vc.viewModel.fetchData()
+            }
+            .disposed(by: disposeBag)
+        
+        resetButton.rx.tap
+            .withUnretained(self)
+            .subscribe { (vc, _) in
+                vc.viewModel.resetData()
+            }
+            .disposed(by: disposeBag)
+        
+        newButton.rx.tap
+            .withUnretained(self)
+            .subscribe { (vc, _) in
+                vc.viewModel.newData()
+            }
+            .disposed(by: disposeBag)
+        
+        searchBar.rx.text.orEmpty
+            .withUnretained(self)
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+//            .distinctUntilChanged() // 일단 보류 ..
+            .subscribe { (vc, value) in
+                vc.viewModel.filterData(value)
+            }
+            .disposed(by: disposeBag)
     }
     
+}
+
+extension SubjectViewController {
     private func publishSubject() {
         publish.onNext(1)
         publish.onNext(2)
@@ -74,9 +121,9 @@ class SubjectViewController: UIViewController {
 
         behavior.onNext(3)
         behavior.onNext(4)
-        behavior.on(.next(5)) // next만 실행
+        behavior.on(.next(5))
         
-        behavior.onCompleted() // onCompleted -> dispose
+        behavior.onCompleted()
         
         behavior.onNext(6)
         behavior.onNext(7)
@@ -103,40 +150,40 @@ class SubjectViewController: UIViewController {
 
         replay.onNext(3)
         replay.onNext(4)
-        replay.on(.next(5)) // next만 실행
+        replay.on(.next(5))
         
-        replay.onCompleted() // onCompleted -> dispose
+        replay.onCompleted()
         
         replay.onNext(6)
         replay.onNext(7)
     }
     
     private func asyncSubject() {
-        async.onNext(100)
-        async.onNext(200)
-        async.onNext(300)
-        async.onNext(400)
-        async.onNext(500)
-        
-        async
-            .subscribe { value in
-                print("async - \(value)")
-            } onError: { error in
-                print("async - \(error)")
-            } onCompleted: {
-                print("async completed")
-            } onDisposed: {
-                print("async disposed")
-            }
-            .disposed(by: disposeBag)
-
-        async.onNext(3)
-        async.onNext(4)
-        async.on(.next(5)) // next만 실행
-        
-        async.onCompleted() // onCompleted -> dispose
-        
-        async.onNext(6)
-        async.onNext(7)
+//        async.onNext(100)
+//        async.onNext(200)
+//        async.onNext(300)
+//        async.onNext(400)
+//        async.onNext(500)
+//
+//        async
+//            .subscribe { value in
+//                print("async - \(value)")
+//            } onError: { error in
+//                print("async - \(error)")
+//            } onCompleted: {
+//                print("async completed")
+//            } onDisposed: {
+//                print("async disposed")
+//            }
+//            .disposed(by: disposeBag)
+//
+//        async.onNext(3)
+//        async.onNext(4)
+//        async.on(.next(5)) // next만 실행
+//
+//        async.onCompleted() // onCompleted -> dispose
+//
+//        async.onNext(6)
+//        async.onNext(7)
     }
 }
