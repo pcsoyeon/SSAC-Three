@@ -71,6 +71,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		926292262908A07D00E2F223 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				92E8F34B28FE2D9D00507F64 /* AppDelegate.swift */,
+				92E8F34D28FE2D9D00507F64 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		926292272908A08B00E2F223 /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				92E8F34F28FE2D9D00507F64 /* SimpleTableViewController.swift */,
+				92E8F35F28FE390F00507F64 /* SimpleCollectionViewController.swift */,
+			);
+			path = Simple;
+			sourceTree = "<group>";
+		};
+		926292282908A09400E2F223 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				92E8F35128FE2D9D00507F64 /* Main.storyboard */,
+				92E8F35428FE2D9E00507F64 /* Assets.xcassets */,
+				92E8F35628FE2D9E00507F64 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		926292292908A0A400E2F223 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				92F80EFE2906256E00938A01 /* RxSwift */,
+				929DA52E2900ED6D00810B2A /* Diffable */,
+				929DA5232900CF6200810B2A /* MVVMSample */,
+				926292272908A08B00E2F223 /* Simple */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		929DA5232900CF6200810B2A /* MVVMSample */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,17 +153,10 @@
 		92E8F34A28FE2D9D00507F64 /* Week1617 */ = {
 			isa = PBXGroup;
 			children = (
-				92F80EFE2906256E00938A01 /* RxSwift */,
-				929DA52E2900ED6D00810B2A /* Diffable */,
-				929DA5232900CF6200810B2A /* MVVMSample */,
-				92E8F34B28FE2D9D00507F64 /* AppDelegate.swift */,
-				92E8F34D28FE2D9D00507F64 /* SceneDelegate.swift */,
-				92E8F34F28FE2D9D00507F64 /* SimpleTableViewController.swift */,
-				92E8F35128FE2D9D00507F64 /* Main.storyboard */,
-				92E8F35428FE2D9E00507F64 /* Assets.xcassets */,
-				92E8F35628FE2D9E00507F64 /* LaunchScreen.storyboard */,
+				926292292908A0A400E2F223 /* Presentation */,
+				926292282908A09400E2F223 /* Resource */,
+				926292262908A07D00E2F223 /* Application */,
 				92E8F35928FE2D9E00507F64 /* Info.plist */,
-				92E8F35F28FE390F00507F64 /* SimpleCollectionViewController.swift */,
 			);
 			path = Week1617;
 			sourceTree = "<group>";
