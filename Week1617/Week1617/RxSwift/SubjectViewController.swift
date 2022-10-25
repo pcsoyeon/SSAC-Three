@@ -14,13 +14,16 @@ class SubjectViewController: UIViewController {
     
     // MARK: - Property
     
-    let publish = PublishSubject<Int>()
+    let publish = PublishSubject<Int>() // 초기값이 없는 빈 상태
+    let behavior = BehaviorSubject(value: 100) // 초기값 필수
+    
     let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         publishSubject()
+        behaviorSubject()
     }
     
     private func publishSubject() {
@@ -47,5 +50,31 @@ class SubjectViewController: UIViewController {
         
         publish.onNext(6)
         publish.onNext(7)
+    }
+    
+    func behaviorSubject() {
+        behavior.onNext(1)
+        behavior.onNext(200)
+        
+        behavior
+            .subscribe { value in
+                print("behavior - \(value)")
+            } onError: { error in
+                print("behavior - \(error)")
+            } onCompleted: {
+                print("behavior completed")
+            } onDisposed: {
+                print("behavior disposed")
+            }
+            .disposed(by: disposeBag)
+
+        behavior.onNext(3)
+        behavior.onNext(4)
+        behavior.on(.next(5)) // next만 실행
+        
+        behavior.onCompleted() // onCompleted -> dispose
+        
+        behavior.onNext(6)
+        behavior.onNext(7)
     }
 }
