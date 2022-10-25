@@ -7,6 +7,9 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 class NewsViewController: UIViewController {
 
     // MARK: - UI Property
@@ -22,6 +25,8 @@ class NewsViewController: UIViewController {
     private var viewModel = NewsViewModel()
     
     var dataSource: UICollectionViewDiffableDataSource<Int, News.NewsItem>!
+    
+    private var disposeBag = DisposeBag()
     
     // MARK: - Life Cycle
     
@@ -40,18 +45,18 @@ class NewsViewController: UIViewController {
     
     func bindData() {
         viewModel.pageNumber.bind { value in
-            print("bind == \(value)")
             self.numberTextField.text = value
         }
         
         // 반응형으로 코드 개선
         // 코드 순서 주의
-        viewModel.sample.bind { item in
+        viewModel.list.bind { item in
             var snapshot = NSDiffableDataSourceSnapshot<Int, News.NewsItem>()
             snapshot.appendSections([0])
             snapshot.appendItems(item)
-            self.dataSource.apply(snapshot, animatingDifferences: false)
+            self.dataSource.apply(snapshot, animatingDifferences: true)
         }
+        .disposed(by: disposeBag)
     }
     
     // MARK: - UI Method
@@ -62,34 +67,40 @@ class NewsViewController: UIViewController {
     }
     
     private func configureTextField() {
-        numberTextField.addTarget(self, action: #selector(numberTextFieldChanged), for: .editingChanged)
+//        numberTextField.rx.text.orEmpty
+//            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+//            .subscribe(with: self) { (vc, value) in
+//                vc.viewModel.filterSample(value)
+//            }
+//            .disposed(by: disposeBag)
+        
+        numberTextField.rx.text.orEmpty
+            .withUnretained(self)
+            .bind { vc, value in
+                vc.viewModel.changePageNumberFormat(text: value)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureButton() {
-        resetButton.addTarget(self, action: #selector(touchUpResetButton), for: .touchUpInside)
-        loadButton.addTarget(self, action: #selector(touchUpLoadButton), for: .touchUpInside)
-    }
-    
-    // MARK: - @objc
-    
-    @objc func numberTextFieldChanged() {
-        print(#function)
-        if let text = numberTextField.text {
-            viewModel.changePageNumberFormat(text: text)
-        }
-    }
-    
-    @objc func touchUpResetButton() {
-        viewModel.resetSample()
-    }
-    
-    @objc func touchUpLoadButton() {
-        viewModel.loadSample()
+        resetButton.rx.tap
+            .withUnretained(self)
+            .bind { vc, _ in
+                self.viewModel.resetSample()
+            }
+            .disposed(by: disposeBag)
+        
+        loadButton.rx.tap
+            .withUnretained(self)
+            .bind { vc, _ in
+                self.viewModel.loadSample()
+            }
+            .disposed(by: disposeBag)
     }
 }
 
 extension NewsViewController {
-    func configureHierachy() { // addSubView, init, snapkit
+    func configureHierachy() {
         collectionView.collectionViewLayout = createLayout()
         collectionView.backgroundColor = .systemPink
     }
@@ -113,8 +124,7 @@ extension NewsViewController {
     }
     
     func createLayout() -> UICollectionViewLayout {
-        let configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped
-        )
+        let configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         let layout = UICollectionViewCompositionalLayout.list(using: configuration)
         return layout
     }

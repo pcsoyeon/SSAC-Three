@@ -7,11 +7,15 @@
 
 import Foundation
 
+import RxCocoa
+import RxSwift
+
 final class NewsViewModel {
     
-    var pageNumber: CObservable<String> = CObservable("3000")
+    var pageNumber: CObservable<String> = CObservable("2019")
     
-    var sample: CObservable<[News.NewsItem]> = CObservable(News.items)
+//    var sample: CObservable<[News.NewsItem]> = CObservable(News.items)
+    var list = PublishSubject<[News.NewsItem]>()
     
     func changePageNumberFormat(text: String) {
         let numberFormatter = NumberFormatter()
@@ -27,10 +31,17 @@ final class NewsViewModel {
     }
     
     func resetSample() {
-        sample.value = []
+//        sample.value = []
+        list.onNext([])
     }
     
     func loadSample() {
-        sample.value = News.items
+//        sample.value = News.items
+        list.onNext(News.items)
+    }
+    
+    func filterSample(_ query: String) {
+        let filteredData = query != "" ? News.items.filter { $0.title.contains(query) } : News.items
+        list.onNext(filteredData)
     }
 }
