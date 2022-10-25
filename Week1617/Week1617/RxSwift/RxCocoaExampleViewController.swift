@@ -25,7 +25,7 @@ class RxCocoaExampleViewController: UIViewController {
     
     // MARK: - Property
     
-    private let disposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     
     // MARK: - Life Cycle
     
@@ -38,6 +38,10 @@ class RxCocoaExampleViewController: UIViewController {
         setSign()
         
         setOperator()
+    }
+    
+    deinit {
+        print("RxCocoaExampleViewController")
     }
     
     // MARK: - UI Method
@@ -140,8 +144,10 @@ class RxCocoaExampleViewController: UIViewController {
             .disposed(by: disposeBag)
         
         signButton.rx.tap
-            .subscribe { _ in // bind가 아닌 이유 - 반환되는 값을 보내줄 객체가 없으므로
-                self.showAlert()
+            .withUnretained(self)
+            .subscribe { vc, _ in // bind가 아닌 이유 - 반환되는 값을 보내줄 객체가 없으므로
+//                guard let self = self else { return }
+                vc.showAlert()
             }
         .disposed(by: disposeBag)
     }
@@ -167,17 +173,60 @@ class RxCocoaExampleViewController: UIViewController {
             }
             .disposed(by: disposeBag) // 더이상 메모리에 있을 필요가 없으므로 (resource 정리)
         
-//        Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-//            .subscribe { value in
-//                print("repeat - \(value)")
-//            } onError: { error in
-//                print("repeat - \(error)")
-//            } onCompleted: {
-//                print("repeat compledted")
-//            } onDisposed: {
-//                print("repeat disposed")
-//            }
-//            .disposed(by: disposeBag)
+        Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+            .subscribe { value in
+                print("repeat - \(value)")
+            } onError: { error in
+                print("repeat - \(error)")
+            } onCompleted: {
+                print("repeat compledted")
+            } onDisposed: {
+                print("repeat disposed")
+            }
+            .disposed(by: disposeBag)
+        
+        let intervalObservable1 = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+            .subscribe { value in
+                print("repeat - \(value)")
+            } onError: { error in
+                print("repeat - \(error)")
+            } onCompleted: {
+                print("repeat compledted")
+            } onDisposed: {
+                print("repeat disposed")
+            }
+            .disposed(by: disposeBag)
+        
+        let intervalObservable2 = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+            .subscribe { value in
+                print("repeat - \(value)")
+            } onError: { error in
+                print("repeat - \(error)")
+            } onCompleted: {
+                print("repeat compledted")
+            } onDisposed: {
+                print("repeat disposed")
+            }
+            .disposed(by: disposeBag)
+        
+        let intervalObservable3 = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+            .subscribe { value in
+                print("repeat - \(value)")
+            } onError: { error in
+                print("repeat - \(error)")
+            } onCompleted: {
+                print("repeat compledted")
+            } onDisposed: {
+                print("repeat disposed")
+            }
+            .disposed(by: disposeBag)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//            intervalObservable1.dispose()
+//            intervalObservable2.dispose()
+//            intervalObservable3.dispose()
+            self.disposeBag = DisposeBag()
+        }
 
         
         let itemsA = [3.3, 4.0, 5.0, 2.0, 3.6, 4.8]
