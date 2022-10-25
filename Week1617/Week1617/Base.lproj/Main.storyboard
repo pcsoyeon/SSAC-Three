@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ixa-dK-DCB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1qY-oq-frx">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -162,10 +162,20 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJS-Wn-FTJ">
+                                <rect key="frame" x="10" y="437" width="370" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="OTb-bs-ACS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gyT-db-S7x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KJS-Wn-FTJ" firstAttribute="top" secondItem="CKM-uA-490" secondAttribute="bottom" constant="20" id="0JG-1t-1PO"/>
                             <constraint firstItem="gyT-db-S7x" firstAttribute="trailing" secondItem="CKM-uA-490" secondAttribute="trailing" constant="10" id="3eT-Ib-sEp"/>
                             <constraint firstItem="gyT-db-S7x" firstAttribute="trailing" secondItem="TPZ-Gt-FKO" secondAttribute="trailing" id="6tP-6w-liu"/>
                             <constraint firstItem="TPZ-Gt-FKO" firstAttribute="leading" secondItem="gyT-db-S7x" secondAttribute="leading" id="8Wg-hh-IH8"/>
@@ -175,6 +185,7 @@
                             <constraint firstItem="ARM-6c-nMu" firstAttribute="top" secondItem="TPZ-Gt-FKO" secondAttribute="bottom" constant="10" id="GuO-34-mcW"/>
                             <constraint firstItem="wal-qd-YP4" firstAttribute="top" secondItem="ARM-6c-nMu" secondAttribute="bottom" constant="10" id="H54-3U-RyR"/>
                             <constraint firstItem="CKM-uA-490" firstAttribute="top" secondItem="2zy-OH-asy" secondAttribute="bottom" constant="10" id="JkF-nO-By8"/>
+                            <constraint firstItem="gyT-db-S7x" firstAttribute="trailing" secondItem="KJS-Wn-FTJ" secondAttribute="trailing" constant="10" id="JpV-Lv-1DL"/>
                             <constraint firstItem="gyT-db-S7x" firstAttribute="trailing" secondItem="ARM-6c-nMu" secondAttribute="trailing" constant="10" id="KE3-8n-62h"/>
                             <constraint firstItem="YBO-kC-7MW" firstAttribute="top" secondItem="ARM-6c-nMu" secondAttribute="bottom" constant="10" id="UJe-ft-EbN"/>
                             <constraint firstItem="2gN-ce-MwC" firstAttribute="leading" secondItem="gyT-db-S7x" secondAttribute="leading" id="Uax-8t-PJl"/>
@@ -182,6 +193,7 @@
                             <constraint firstItem="TPZ-Gt-FKO" firstAttribute="top" secondItem="gyT-db-S7x" secondAttribute="top" id="c3B-Ri-5nT"/>
                             <constraint firstItem="2gN-ce-MwC" firstAttribute="trailing" secondItem="gyT-db-S7x" secondAttribute="trailing" id="dOu-aJ-hcc"/>
                             <constraint firstItem="ARM-6c-nMu" firstAttribute="leading" secondItem="gyT-db-S7x" secondAttribute="leading" constant="10" id="hLE-q1-dHt"/>
+                            <constraint firstItem="KJS-Wn-FTJ" firstAttribute="leading" secondItem="gyT-db-S7x" secondAttribute="leading" constant="10" id="k3w-JM-KS8"/>
                             <constraint firstItem="gyT-db-S7x" firstAttribute="trailing" secondItem="2zy-OH-asy" secondAttribute="trailing" constant="10" id="oZy-AA-grB"/>
                             <constraint firstItem="CKM-uA-490" firstAttribute="leading" secondItem="gyT-db-S7x" secondAttribute="leading" constant="10" id="ofQ-62-6mf"/>
                             <constraint firstItem="gyT-db-S7x" firstAttribute="bottom" secondItem="2gN-ce-MwC" secondAttribute="bottom" id="puS-P1-FUF"/>
@@ -190,6 +202,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="E0r-Hi-4L3"/>
                     <connections>
+                        <outlet property="nicknameLabel" destination="KJS-Wn-FTJ" id="Tpl-6Z-Bds"/>
                         <outlet property="signButton" destination="CKM-uA-490" id="ikZ-Jn-FIs"/>
                         <outlet property="signEmail" destination="2zy-OH-asy" id="I5K-GK-fTb"/>
                         <outlet property="signName" destination="wal-qd-YP4" id="klJ-oF-wek"/>
@@ -202,6 +215,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtj-01-pcL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="22" y="1677"/>
+        </scene>
+        <!--Subject View Controller-->
+        <scene sceneID="N3u-A1-cNV">
+            <objects>
+                <viewController id="1qY-oq-frx" customClass="SubjectViewController" customModule="Week1617" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P8v-F6-B8u">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="UXi-x6-tIR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j2c-Bg-MSM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="2400"/>
         </scene>
         <!--Diffable Collection View Controller-->
         <scene sceneID="VuG-ri-gei">

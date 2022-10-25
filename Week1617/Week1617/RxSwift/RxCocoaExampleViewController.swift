@@ -23,14 +23,28 @@ class RxCocoaExampleViewController: UIViewController {
     @IBOutlet weak var signEmail: UITextField!
     @IBOutlet weak var signButton: UIButton!
     
+    @IBOutlet weak var nicknameLabel: UILabel!
+    
     // MARK: - Property
     
     private var disposeBag = DisposeBag()
+    
+    private var nickname = Observable.just("SOKYTE")
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nickname
+            .bind(to: nicknameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            self.nickname = ""
+            // 왜 안되는가?
+            // nickname은 Observable로 이벤트를 방출만 할 수 있고 이벤트를 받을 수 없다.
+        }
         
         setTableView()
         setPickerView()
