@@ -16,6 +16,8 @@ class SubjectViewController: UIViewController {
     
     let publish = PublishSubject<Int>() // 초기값이 없는 빈 상태
     let behavior = BehaviorSubject(value: 100) // 초기값 필수
+    let replay = ReplaySubject<Int>.create(bufferSize: 5) // bufferSize에 작성된 이벤트의 개수만큼 메모리에서 이벤트를 갖고 있다가 subscribe 직후 한번에 이벤트 전달
+    let async = AsyncSubject<Int>()
     
     let disposeBag = DisposeBag()
 
@@ -24,6 +26,8 @@ class SubjectViewController: UIViewController {
 
         publishSubject()
         behaviorSubject()
+        replaySubject()
+        asyncSubject()
     }
     
     private func publishSubject() {
@@ -76,5 +80,63 @@ class SubjectViewController: UIViewController {
         
         behavior.onNext(6)
         behavior.onNext(7)
+    }
+    
+    private func replaySubject() {
+        replay.onNext(100)
+        replay.onNext(200)
+        replay.onNext(300)
+        replay.onNext(400)
+        replay.onNext(500)
+        
+        replay
+            .subscribe { value in
+                print("replay - \(value)")
+            } onError: { error in
+                print("replay - \(error)")
+            } onCompleted: {
+                print("replay completed")
+            } onDisposed: {
+                print("replay disposed")
+            }
+            .disposed(by: disposeBag)
+
+        replay.onNext(3)
+        replay.onNext(4)
+        replay.on(.next(5)) // next만 실행
+        
+        replay.onCompleted() // onCompleted -> dispose
+        
+        replay.onNext(6)
+        replay.onNext(7)
+    }
+    
+    private func asyncSubject() {
+        async.onNext(100)
+        async.onNext(200)
+        async.onNext(300)
+        async.onNext(400)
+        async.onNext(500)
+        
+        async
+            .subscribe { value in
+                print("async - \(value)")
+            } onError: { error in
+                print("async - \(error)")
+            } onCompleted: {
+                print("async completed")
+            } onDisposed: {
+                print("async disposed")
+            }
+            .disposed(by: disposeBag)
+
+        async.onNext(3)
+        async.onNext(4)
+        async.on(.next(5)) // next만 실행
+        
+        async.onCompleted() // onCompleted -> dispose
+        
+        async.onNext(6)
+        async.onNext(7)
     }
 }
