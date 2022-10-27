@@ -12,9 +12,13 @@ import RxSwift
 
 final class NewsViewModel {
     
-    var pageNumber: CObservable<String> = CObservable("2019")
+//    var pageNumber: CObservable<String> = CObservable("2019")
+    var pageNumber = BehaviorSubject<String>(value: "3,000")
     
 //    var sample: CObservable<[News.NewsItem]> = CObservable(News.items)
+//    var sample = BehaviorSubject(value: News.items)
+    var sample = BehaviorRelay<[News.NewsItem]>(value: News.items)
+    
     var list = PublishSubject<[News.NewsItem]>()
     
     func changePageNumberFormat(text: String) {
@@ -27,17 +31,21 @@ final class NewsViewModel {
         
         guard let number = Int(text) else { return }
         let result = numberFormatter.string(for: number)!
-        pageNumber.value = result
+//        pageNumber.value = result
+        pageNumber.onNext(result)
+//        pageNumber.on(.next(result)) // next만 전달, 위의 방식을 좀 더 많이 쓴다. 의미는 같다.
     }
     
     func resetSample() {
 //        sample.value = []
-        list.onNext([])
+//        list.onNext([])
+        sample.accept([])
     }
     
     func loadSample() {
 //        sample.value = News.items
-        list.onNext(News.items)
+//        list.onNext(News.items)
+        sample.accept(News.items)
     }
     
     func filterSample(_ query: String) {

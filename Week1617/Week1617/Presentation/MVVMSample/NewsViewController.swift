@@ -44,19 +44,27 @@ class NewsViewController: UIViewController {
     // MARK: - Bind
     
     func bindData() {
-        viewModel.pageNumber.bind { value in
-            self.numberTextField.text = value
-        }
+//        viewModel.pageNumber.bind { value in
+//            self.numberTextField.text = value
+//        }
+        viewModel.pageNumber
+            .withUnretained(self)
+            .subscribe { vc, value in
+                vc.numberTextField.text = value
+            }
+            .disposed(by: disposeBag)
         
         // 반응형으로 코드 개선
         // 코드 순서 주의
-        viewModel.list.bind { item in
-            var snapshot = NSDiffableDataSourceSnapshot<Int, News.NewsItem>()
-            snapshot.appendSections([0])
-            snapshot.appendItems(item)
-            self.dataSource.apply(snapshot, animatingDifferences: true)
-        }
-        .disposed(by: disposeBag)
+        viewModel.sample
+            .withUnretained(self)
+            .bind { vc, item in
+                var snapshot = NSDiffableDataSourceSnapshot<Int, News.NewsItem>()
+                snapshot.appendSections([0])
+                snapshot.appendItems(item)
+                vc.dataSource.apply(snapshot, animatingDifferences: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     // MARK: - UI Method
@@ -86,14 +94,14 @@ class NewsViewController: UIViewController {
         resetButton.rx.tap
             .withUnretained(self)
             .bind { vc, _ in
-                self.viewModel.resetSample()
+                vc.viewModel.resetSample()
             }
             .disposed(by: disposeBag)
         
         loadButton.rx.tap
             .withUnretained(self)
             .bind { vc, _ in
-                self.viewModel.loadSample()
+                vc.viewModel.loadSample()
             }
             .disposed(by: disposeBag)
     }

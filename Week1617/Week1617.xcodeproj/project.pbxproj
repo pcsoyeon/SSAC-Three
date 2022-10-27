@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9262922B2908CBA800E2F223 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9262922A2908CBA800E2F223 /* SubscribeViewController.swift */; };
 		9265DD8129077A2A005D56BE /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD8029077A2A005D56BE /* SubjectViewController.swift */; };
 		9265DD83290788D3005D56BE /* SubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD82290788D3005D56BE /* SubjectViewModel.swift */; };
 		929DA4E728FF8FA300810B2A /* DiffableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA4E628FF8FA300810B2A /* DiffableCollectionViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9262922A2908CBA800E2F223 /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		9265DD8029077A2A005D56BE /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		9265DD82290788D3005D56BE /* SubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewModel.swift; sourceTree = "<group>"; };
 		929DA4E628FF8FA300810B2A /* DiffableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableCollectionViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				92F80EFF290625BC00938A01 /* RxCocoaExampleViewController.swift */,
 				9265DD8029077A2A005D56BE /* SubjectViewController.swift */,
 				9265DD82290788D3005D56BE /* SubjectViewModel.swift */,
+				9262922A2908CBA800E2F223 /* SubscribeViewController.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9262922B2908CBA800E2F223 /* SubscribeViewController.swift in Sources */,
 				929DA5252900CF8100810B2A /* CObservable.swift in Sources */,
 				929DA4E728FF8FA300810B2A /* DiffableCollectionViewController.swift in Sources */,
 				92E8F36028FE390F00507F64 /* SimpleCollectionViewController.swift in Sources */,

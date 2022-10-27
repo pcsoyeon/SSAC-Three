@@ -7,6 +7,9 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 class DiffableCollectionViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -15,6 +18,7 @@ class DiffableCollectionViewController: UIViewController {
 //    var list = ["아이폰", "아이패드", "에어팟", "맥북", "애플워치"]
     
     private var viewModel = DiffableViewModel()
+    private let disposeBag = DisposeBag()
     
 //    private var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, String>!
     
@@ -31,31 +35,40 @@ class DiffableCollectionViewController: UIViewController {
         configureDataSource()
         collectionView.delegate = self
         
-        searchBar.delegate = self
+//        searchBar.delegate = self
         
         // 순서!!!!
-        viewModel.photoList.bind { photo in
-            // Initial
-            var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResult>()
-            
-            // 0번 섹션에 list 넣는다.
-            snapshot.appendSections([0])
-            snapshot.appendItems(photo.results)
-            
-            self.dataSource.apply(snapshot) // apply() : 연산 및 애니메이션까지 포함된 코드
-        }
+        viewModel.photoList
+            .withUnretained(self)
+            .subscribe(onNext: { vc, photo in
+                // Initial
+                var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResult>()
+                
+                // 0번 섹션에 list 넣는다.
+                snapshot.appendSections([0])
+                snapshot.appendItems(photo.results)
+                
+                vc.dataSource.apply(snapshot) // apply() : 연산 및 애니메이션까지 포함된 코드
+            }, onError: { error in
+                print(error)
+            }, onCompleted: {
+                print("completed")
+            }, onDisposed: {
+                print("disposed")
+            })
+            .disposed(by: DisposeBag()) // disposeBag이 아니라 새로운 인스턴스를 넣으면 방출한 이벤트에 대한 처리가 아니라 그냥 .. 냅다 .. 새로운걸 갈아끼는 .. -> viewDidLoad에서 실행되므로 
+        
+        searchBar.rx.text.orEmpty
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .withUnretained(self)
+            .subscribe { vc, value in
+                print(value)
+                vc.viewModel.requestSearchPhoto(query: value)
+            }
+            .disposed(by: disposeBag)
     }
 
-}
-
-extension DiffableCollectionViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        var snapshot = dataSource.snapshot()
-        if let word = searchBar.text {
-            viewModel.requestSearchPhoto(query: word)
-        }
-//        dataSource.apply(snapshot, animatingDifferences: true)
-    }
 }
 
 extension DiffableCollectionViewController: UICollectionViewDelegate {
