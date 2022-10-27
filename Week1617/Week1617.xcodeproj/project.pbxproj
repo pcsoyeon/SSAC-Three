@@ -22,6 +22,7 @@
 		929DA5362900EF6E00810B2A /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5352900EF6E00810B2A /* SearchPhoto.swift */; };
 		929DA5F82903BB7F00810B2A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 929DA5F72903BB7F00810B2A /* Alamofire */; };
 		92DAB7B5290A0950006A306D /* ValidateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DAB7B4290A0950006A306D /* ValidateViewController.swift */; };
+		92DAB7B7290A22DF006A306D /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DAB7B6290A22DF006A306D /* ValidationViewModel.swift */; };
 		92E8F34C28FE2D9D00507F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8F34B28FE2D9D00507F64 /* AppDelegate.swift */; };
 		92E8F34E28FE2D9D00507F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8F34D28FE2D9D00507F64 /* SceneDelegate.swift */; };
 		92E8F35028FE2D9D00507F64 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8F34F28FE2D9D00507F64 /* SimpleTableViewController.swift */; };
@@ -49,6 +50,7 @@
 		929DA5332900EE5F00810B2A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		929DA5352900EF6E00810B2A /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
 		92DAB7B4290A0950006A306D /* ValidateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateViewController.swift; sourceTree = "<group>"; };
+		92DAB7B6290A22DF006A306D /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
 		92E8F34828FE2D9D00507F64 /* Week1617.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week1617.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E8F34B28FE2D9D00507F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E8F34D28FE2D9D00507F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				9265DD82290788D3005D56BE /* SubjectViewModel.swift */,
 				9262922A2908CBA800E2F223 /* SubscribeViewController.swift */,
 				92DAB7B4290A0950006A306D /* ValidateViewController.swift */,
+				92DAB7B6290A22DF006A306D /* ValidationViewModel.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				9262922B2908CBA800E2F223 /* SubscribeViewController.swift in Sources */,
 				929DA5252900CF8100810B2A /* CObservable.swift in Sources */,
 				929DA4E728FF8FA300810B2A /* DiffableCollectionViewController.swift in Sources */,
+				92DAB7B7290A22DF006A306D /* ValidationViewModel.swift in Sources */,
 				92E8F36028FE390F00507F64 /* SimpleCollectionViewController.swift in Sources */,
 				92DAB7B5290A0950006A306D /* ValidateViewController.swift in Sources */,
 				929DA52B2900D7BB00810B2A /* News.swift in Sources */,

@@ -21,6 +21,7 @@ class ValidateViewController: UIViewController {
     // MARK: - Property
     
     private let disposeBag = DisposeBag()
+    private let viewModel = ValidationViewModel()
     
     // MARK: - Life Cycle
     
@@ -33,6 +34,12 @@ class ValidateViewController: UIViewController {
     // MARK: - Rx
     
     private func bind() {
+        viewModel.validText
+            .asDriver()
+            .drive(validationLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        
         // 2번
         // 코드의 간소화일 뿐, 불필요한 리소스의 낭비
         // 메모리에 하나만 갖고 있는 것이 아니라, 개수만큼 차지하게 된다.
