@@ -27,6 +27,7 @@ class ValidateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        observableVSSubject()
     }
     
     // MARK: - Rx
@@ -40,11 +41,11 @@ class ValidateViewController: UIViewController {
         let validation = nameTextField.rx.text // String?
             .orEmpty // String
             .map { $0.count >= 8 } // Bool
-        
+
         validation
             .bind(to: stepButton.rx.isEnabled, validationLabel.rx.isHidden) // 가변 매개변수이므로 ,를 통해서 여러개를 연결할 수 있다.
             .disposed(by: disposeBag)
-        
+
         validation
             .withUnretained(self)
             .bind  { vc, value in
@@ -72,6 +73,68 @@ class ValidateViewController: UIViewController {
             // dispose -> deinit, error/complete를 만나게 되면(= 생명주기가 끝났을 때)
             // next, error, complete -> 이벤트의 종류
             // 근데 UI의 경우는 error,complete가 발생하지 않는다. -> 그래서 bind로 !!
+    }
+    
+    func observableVSSubject() {
+        let testA = stepButton.rx.tap
+            .map { "안녕하세요." } // -> 3번 호출 (1대1로 대응되므로) / 여기까지는 RxSwift (근데 나는 UI에 특화된 형태로 바꾸고 싶다.)
+            .asDriver(onErrorJustReturn: "Error") // Driver로 쓸 수 있도록
+//            .share() // -> stream을 공유하게 되므로 1번 호출
+        
+        testA
+//            .bind(to: validationLabel.rx.text)
+            .drive(validationLabel.rx.text) // 역할상 subscribe와 같다.
+            .disposed(by: disposeBag)
+        
+        testA
+//            .bind(to: nameTextField.rx.text)
+            .drive(validationLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        testA
+//            .bind(to: stepButton.rx.title())
+            .drive(validationLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        let sampleInt = Observable<Int>.create { observer in
+            observer.onNext(Int.random(in: 1...100))
+            return Disposables.create()
+        }
+        
+        sampleInt.subscribe { value in
+            print("sampleInt: \(value)")
+        }
+        .disposed(by: disposeBag)
+        
+        sampleInt.subscribe { value in
+            print("sampleInt: \(value)")
+        }
+        .disposed(by: disposeBag)
+        
+        sampleInt.subscribe { value in
+            print("sampleInt: \(value)")
+        }
+        .disposed(by: disposeBag)
+        
+        let subjectInt = BehaviorSubject(value: 0)
+        subjectInt.onNext(Int.random(in: 1...100))
+        // stream을 공유
+        
+        
+        subjectInt.subscribe { value in
+            print("subjectInt: \(value)")
+        }
+        .disposed(by: disposeBag)
+        
+        subjectInt.subscribe { value in
+            print("subjectInt: \(value)")
+        }
+        .disposed(by: disposeBag)
+        
+        subjectInt.subscribe { value in
+            print("subjectInt: \(value)")
+        }
+        .disposed(by: disposeBag)
     }
 
 }
