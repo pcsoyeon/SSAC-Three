@@ -34,32 +34,51 @@ class ValidateViewController: UIViewController {
     // MARK: - Rx
     
     private func bind() {
+        nameTextField.rx.text
+            .orEmpty
+            .map { $0.count >= 8 }
+            .withUnretained(self)
+            .bind { vc, value in
+                let text = value ? "8자 이상 조건을 충족했어요" : "8자 이상 작성해주세요"
+                vc.viewModel.validText.accept(text)
+            }
+            .disposed(by: disposeBag)
+        
+        nameTextField.rx.text
+            .orEmpty
+            .map { $0.contains("1") }
+            .withUnretained(self)
+            .bind { vc, value in
+                let text = value ? "조건을 충족했어요" : "숫자 1을 입력해주세요"
+                vc.viewModel.validText.accept(text)
+            }
+            .disposed(by: disposeBag)
+        
         viewModel.validText
             .asDriver()
             .drive(validationLabel.rx.text)
             .disposed(by: disposeBag)
-        
         
         // 2번
         // 코드의 간소화일 뿐, 불필요한 리소스의 낭비
         // 메모리에 하나만 갖고 있는 것이 아니라, 개수만큼 차지하게 된다.
         // observable - observer
         // -> 어떻게 해결 ? -> share()
-        let validation = nameTextField.rx.text // String?
-            .orEmpty // String
-            .map { $0.count >= 8 } // Bool
-
-        validation
-            .bind(to: stepButton.rx.isEnabled, validationLabel.rx.isHidden) // 가변 매개변수이므로 ,를 통해서 여러개를 연결할 수 있다.
-            .disposed(by: disposeBag)
-
-        validation
-            .withUnretained(self)
-            .bind  { vc, value in
-                let color: UIColor = value ? .systemPink : .lightGray
-                vc.stepButton.backgroundColor = color
-            }
-            .disposed(by: disposeBag)
+//        let validation = nameTextField.rx.text // String?
+//            .orEmpty // String
+//            .map { $0.count >= 8 } // Bool
+//
+//        validation
+//            .bind(to: stepButton.rx.isEnabled, validationLabel.rx.isHidden) // 가변 매개변수이므로 ,를 통해서 여러개를 연결할 수 있다.
+//            .disposed(by: disposeBag)
+//
+//        validation
+//            .withUnretained(self)
+//            .bind  { vc, value in
+//                let color: UIColor = value ? .systemPink : .lightGray
+//                vc.stepButton.backgroundColor = color
+//            }
+//            .disposed(by: disposeBag)
         
         stepButton.rx.tap
             .subscribe { _ in

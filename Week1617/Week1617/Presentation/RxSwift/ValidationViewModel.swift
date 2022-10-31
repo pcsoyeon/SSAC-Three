@@ -12,5 +12,5 @@ import RxCocoa
 
 final class ValidationViewModel {
     // validation 문구
-    let validText = BehaviorRelay(value: "닉네임은 최소 8자 이상 필요해요") // 초기값이 필요한, UI에 특화된 형태 : Behavior Relay
+    let validText = BehaviorRelay(value: "닉네임은 최소 8자 이상, 그리고 숫자 1을 포함해주세요") // 초기값이 필요한, UI에 특화된 형태 : Behavior Relay
 }
