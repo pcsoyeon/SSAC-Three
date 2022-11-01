@@ -42,38 +42,39 @@ class SubjectViewController: UIViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ContactCell")
         
-        viewModel.list
-            .bind(to: tableView.rx.items(cellIdentifier: "ContactCell", cellType: UITableViewCell.self)) { (row, element, cell) in
+        let input = SubjectViewModel.Input(addTap: addButton.rx.tap, resetTap: resetButton.rx.tap, newTap: newButton.rx.tap, searchText: searchBar.rx.text)
+        
+        let output = viewModel.transform(input: input)
+        
+        output.list // VM -> VC
+            .drive(tableView.rx.items(cellIdentifier: "ContactCell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = "\(element.name) : \(element.age)세 \(element.number)"
             }
             .disposed(by: disposeBag)
         
-        addButton.rx.tap
+        output.addTap // VC -> VM
             .withUnretained(self)
             .subscribe { (vc, _) in
                 vc.viewModel.fetchData()
             }
             .disposed(by: disposeBag)
         
-        resetButton.rx.tap
+        output.resetTap // VC -> VM
             .withUnretained(self)
             .subscribe { (vc, _) in
                 vc.viewModel.resetData()
             }
             .disposed(by: disposeBag)
         
-        newButton.rx.tap // VC -> VM (Input)
+        output.newTap // VC -> VM (Input)
             .withUnretained(self)
             .subscribe { (vc, _) in
                 vc.viewModel.newData()
             }
             .disposed(by: disposeBag)
         
-        searchBar.rx.text.orEmpty // VC -> VM (Input)
-            // 아래의 연산을 모두 VM로 전달
+        output.searchText // VC -> VM (Input)
             .withUnretained(self)
-            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
-//            .distinctUntilChanged() // 일단 보류 ..
             // VC에서는 구독정도만
             .subscribe { (vc, value) in
                 vc.viewModel.filterData(value)

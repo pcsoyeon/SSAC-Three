@@ -48,4 +48,34 @@ class SubjectViewModel {
 //        list.onNext(filterData)
         list.accept(filterData)
     }
+    
+    struct Input {
+        let addTap: ControlEvent<Void>
+        let resetTap: ControlEvent<Void>
+        let newTap: ControlEvent<Void>
+        
+        let searchText: ControlProperty<String?>
+    }
+    
+    struct Output {
+        let addTap: ControlEvent<Void>
+        let resetTap: ControlEvent<Void>
+        let newTap: ControlEvent<Void>
+        
+        let list: Driver<[Contact]>
+        let searchText: Observable<String>
+    }
+    
+    func transform(input: Input) -> Output {
+        
+        let list = list
+            .asDriver(onErrorJustReturn: [])
+        
+        let text = input.searchText
+            .orEmpty
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+        
+        return Output(addTap: input.addTap, resetTap: input.resetTap, newTap: input.newTap, list: list, searchText: text)
+    }
 }
