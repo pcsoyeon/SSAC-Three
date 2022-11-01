@@ -20,7 +20,6 @@
 		929DA5322900EE5100810B2A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5312900EE5100810B2A /* .gitignore */; };
 		929DA5342900EE5F00810B2A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5332900EE5F00810B2A /* APIKey.swift */; };
 		929DA5362900EF6E00810B2A /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5352900EF6E00810B2A /* SearchPhoto.swift */; };
-		929DA5F82903BB7F00810B2A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 929DA5F72903BB7F00810B2A /* Alamofire */; };
 		92DAB7B5290A0950006A306D /* ValidateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DAB7B4290A0950006A306D /* ValidateViewController.swift */; };
 		92DAB7B7290A22DF006A306D /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DAB7B6290A22DF006A306D /* ValidationViewModel.swift */; };
 		92E8F34C28FE2D9D00507F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8F34B28FE2D9D00507F64 /* AppDelegate.swift */; };
@@ -30,6 +29,9 @@
 		92E8F35528FE2D9E00507F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E8F35428FE2D9E00507F64 /* Assets.xcassets */; };
 		92E8F35828FE2D9E00507F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E8F35628FE2D9E00507F64 /* LaunchScreen.storyboard */; };
 		92E8F36028FE390F00507F64 /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8F35F28FE390F00507F64 /* SimpleCollectionViewController.swift */; };
+		92F808E3290F76B1006956A2 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92F808E2290F76B1006956A2 /* RxAlamofire */; };
+		92F808E6290F7759006956A2 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 92F808E5290F7759006956A2 /* Differentiator */; };
+		92F808E8290F7759006956A2 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 92F808E7290F7759006956A2 /* RxDataSources */; };
 		92F80EFB290622AD00938A01 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 92F80EFA290622AD00938A01 /* RxCocoa */; };
 		92F80EFD290622AD00938A01 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 92F80EFC290622AD00938A01 /* RxSwift */; };
 		92F80F00290625BC00938A01 /* RxCocoaExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F80EFF290625BC00938A01 /* RxCocoaExampleViewController.swift */; };
@@ -68,9 +70,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F808E6290F7759006956A2 /* Differentiator in Frameworks */,
+				92F808E3290F76B1006956A2 /* RxAlamofire in Frameworks */,
 				92F80EFD290622AD00938A01 /* RxSwift in Frameworks */,
+				92F808E8290F7759006956A2 /* RxDataSources in Frameworks */,
 				92F80EFB290622AD00938A01 /* RxCocoa in Frameworks */,
-				929DA5F82903BB7F00810B2A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,9 +201,11 @@
 			);
 			name = Week1617;
 			packageProductDependencies = (
-				929DA5F72903BB7F00810B2A /* Alamofire */,
 				92F80EFA290622AD00938A01 /* RxCocoa */,
 				92F80EFC290622AD00938A01 /* RxSwift */,
+				92F808E2290F76B1006956A2 /* RxAlamofire */,
+				92F808E5290F7759006956A2 /* Differentiator */,
+				92F808E7290F7759006956A2 /* RxDataSources */,
 			);
 			productName = Week1617;
 			productReference = 92E8F34828FE2D9D00507F64 /* Week1617.app */;
@@ -230,8 +236,9 @@
 			);
 			mainGroup = 92E8F33F28FE2D9D00507F64;
 			packageReferences = (
-				929DA5F62903BB7F00810B2A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				92F80EF9290622AD00938A01 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				92F808E1290F76B1006956A2 /* XCRemoteSwiftPackageReference "RxAlamofire" */,
+				92F808E4290F7759006956A2 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 92E8F34928FE2D9D00507F64 /* Products */;
 			projectDirPath = "";
@@ -499,12 +506,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		929DA5F62903BB7F00810B2A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		92F808E1290F76B1006956A2 /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = exactVersion;
+				version = 6.1.2;
+			};
+		};
+		92F808E4290F7759006956A2 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 		92F80EF9290622AD00938A01 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
@@ -518,10 +533,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		929DA5F72903BB7F00810B2A /* Alamofire */ = {
+		92F808E2290F76B1006956A2 /* RxAlamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 929DA5F62903BB7F00810B2A /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = 92F808E1290F76B1006956A2 /* XCRemoteSwiftPackageReference "RxAlamofire" */;
+			productName = RxAlamofire;
+		};
+		92F808E5290F7759006956A2 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92F808E4290F7759006956A2 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		92F808E7290F7759006956A2 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92F808E4290F7759006956A2 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 		92F80EFA290622AD00938A01 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;

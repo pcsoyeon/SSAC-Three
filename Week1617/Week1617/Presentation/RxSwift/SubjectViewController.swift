@@ -77,6 +77,7 @@ class SubjectViewController: UIViewController {
                 vc.viewModel.filterData(value)
             }
             .disposed(by: disposeBag)
+        // 비어 있는 것이 보여지고 -> 서치바를 구독하면서 -> 새롭게 데이터가 들어오게 된다
     }
     
 }
