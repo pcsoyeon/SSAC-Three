@@ -62,17 +62,19 @@ class SubjectViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        newButton.rx.tap
+        newButton.rx.tap // VC -> VM (Input)
             .withUnretained(self)
             .subscribe { (vc, _) in
                 vc.viewModel.newData()
             }
             .disposed(by: disposeBag)
         
-        searchBar.rx.text.orEmpty
+        searchBar.rx.text.orEmpty // VC -> VM (Input)
+            // 아래의 연산을 모두 VM로 전달
             .withUnretained(self)
             .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
 //            .distinctUntilChanged() // 일단 보류 ..
+            // VC에서는 구독정도만
             .subscribe { (vc, value) in
                 vc.viewModel.filterData(value)
             }

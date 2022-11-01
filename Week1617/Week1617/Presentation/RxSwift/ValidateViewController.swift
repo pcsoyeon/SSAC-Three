@@ -34,28 +34,57 @@ class ValidateViewController: UIViewController {
     // MARK: - Rx
     
     private func bind() {
-        nameTextField.rx.text
-            .orEmpty
-            .map { $0.count >= 8 }
+//        nameTextField.rx.text
+//            .orEmpty
+//            .map { $0.count >= 8 }
+//            .withUnretained(self)
+//            .bind { vc, value in
+//                let text = value ? "8자 이상 조건을 충족했어요" : "8자 이상 작성해주세요"
+//                vc.viewModel.validText.accept(text)
+//            }
+//            .disposed(by: disposeBag)
+//
+//        nameTextField.rx.text
+//            .orEmpty
+//            .map { $0.contains("1") }
+//            .withUnretained(self)
+//            .bind { vc, value in
+//                let text = value ? "조건을 충족했어요" : "숫자 1을 입력해주세요"
+//                vc.viewModel.validText.accept(text)
+//            }
+//            .disposed(by: disposeBag)
+        
+        // After
+        let input = ValidationViewModel.Input(text: nameTextField.rx.text, tap: stepButton.rx.tap)
+        let output = viewModel.transform(input: input) // 인스턴스로 접근가능 
+        
+        output.validation
+            .bind(to: stepButton.rx.isEnabled, validationLabel.rx.isHidden) // 가변 매개변수이므로 ,를 통해서 여러개를 연결할 수 있다.
+            .disposed(by: disposeBag)
+        
+        output.validation
             .withUnretained(self)
-            .bind { vc, value in
-                let text = value ? "8자 이상 조건을 충족했어요" : "8자 이상 작성해주세요"
-                vc.viewModel.validText.accept(text)
+            .bind  { vc, value in
+                let color: UIColor = value ? .systemPink : .lightGray
+                vc.stepButton.backgroundColor = color
             }
             .disposed(by: disposeBag)
         
-        nameTextField.rx.text
-            .orEmpty
-            .map { $0.contains("1") }
-            .withUnretained(self)
-            .bind { vc, value in
-                let text = value ? "조건을 충족했어요" : "숫자 1을 입력해주세요"
-                vc.viewModel.validText.accept(text)
+        output.text
+            .drive(validationLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.tap
+            .bind { _ in
+                print("Alert")
             }
             .disposed(by: disposeBag)
         
-        viewModel.validText
-            .asDriver()
+        
+        
+        // Before
+        viewModel.validText // Output
+            .asDriver() // 여기서 타입 확인 Driver<String>
             .drive(validationLabel.rx.text)
             .disposed(by: disposeBag)
         
@@ -64,9 +93,11 @@ class ValidateViewController: UIViewController {
         // 메모리에 하나만 갖고 있는 것이 아니라, 개수만큼 차지하게 된다.
         // observable - observer
         // -> 어떻게 해결 ? -> share()
-//        let validation = nameTextField.rx.text // String?
-//            .orEmpty // String
+        
+//        let validation = nameTextField.rx.text // String? // Input
+//            .orEmpty // String // 여기서 타입 확인 ControlProperty<String?>
 //            .map { $0.count >= 8 } // Bool
+//            .share()
 //
 //        validation
 //            .bind(to: stepButton.rx.isEnabled, validationLabel.rx.isHidden) // 가변 매개변수이므로 ,를 통해서 여러개를 연결할 수 있다.
@@ -80,16 +111,19 @@ class ValidateViewController: UIViewController {
 //            }
 //            .disposed(by: disposeBag)
         
-        stepButton.rx.tap
-            .subscribe { _ in
-                print("next")
-            } onError: { error in
-                print("error")
-            } onCompleted: {
-                print("complete")
-            } onDisposed: {
-                print("dispose")
+        stepButton.rx.tap // Input
+            .bind { _ in
+                print("Alert")
             }
+//            .subscribe { _ in
+//                print("next")
+//            } onError: { error in
+//                print("error")
+//            } onCompleted: {
+//                print("complete")
+//            } onDisposed: {
+//                print("dispose")
+//            }
             .disposed(by: disposeBag)
             // disposeBag이 아니라 DisposeBag()으로 한다면? 빌드하자마자 dispose가 된다. 왜? viewDidLoad시점에 새로운 디스포즈 백으로 갈아끼워진 상태 -> 그래서 액션에 대한 연결이 끊어지게 된다. 이후로는 tap해도 액션이 되지 않는다.
             // dispose -> 리소스 정리, 다 버리는 것 !! 새롭게 인스턴스를 만들어서 넣으면 처음에 버려지게 되는 것.
