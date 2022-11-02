@@ -10,13 +10,23 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// associated type == generic
+protocol CommonViewModel {
+    // 왜 associated type : 타입이 여러개, 각 뷰모델마다 input/output의 개수도 다르다. 내부에 구성되어 있는 프로퍼티가 다 다르기 때문에, 공통적인 요소를 뽑아내기가 어렵다.
+    // 어떤 타입인지 명확하게 정의하기 어렵기 때문
+    associatedtype Input
+    associatedtype Output
+    
+    func transform(input: Input) -> Output
+}
+
 struct Contact {
     var name: String
     var age: Int
     var number: String
 }
 
-class SubjectViewModel {
+class SubjectViewModel: CommonViewModel {
     var contactData = [
         Contact(name: "SoKyte", age: 25, number: "01099998888"),
         Contact(name: "HuRee", age: 25, number: "123456789"),
