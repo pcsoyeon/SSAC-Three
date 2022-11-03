@@ -16,6 +16,7 @@
 		92B7B69429120A0500E0336C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92B7B69329120A0500E0336C /* Alamofire */; };
 		92B7B69729120F1A00E0336C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B69629120F1A00E0336C /* APIService.swift */; };
 		92B7B69929121BDB00E0336C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B69829121BDB00E0336C /* Endpoint.swift */; };
+		92B7B6DA291351CC00E0336C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6D9291351CC00E0336C /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		92B7B68C2911FDFA00E0336C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92B7B69629120F1A00E0336C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		92B7B69829121BDB00E0336C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		92B7B6D9291351CC00E0336C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				92B7B69629120F1A00E0336C /* APIService.swift */,
 				92B7B69829121BDB00E0336C /* Endpoint.swift */,
+				92B7B6D9291351CC00E0336C /* Network.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				92B7B6832911FDF800E0336C /* ViewController.swift in Sources */,
 				92B7B67F2911FDF800E0336C /* AppDelegate.swift in Sources */,
+				92B7B6DA291351CC00E0336C /* Network.swift in Sources */,
 				92B7B69729120F1A00E0336C /* APIService.swift in Sources */,
 				92B7B6812911FDF800E0336C /* SceneDelegate.swift in Sources */,
 				92B7B69929121BDB00E0336C /* Endpoint.swift in Sources */,

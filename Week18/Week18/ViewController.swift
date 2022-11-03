@@ -13,8 +13,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let service = APIService()
-//        service.login()
-        service.profile()
     }
 
 
